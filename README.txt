@@ -8,14 +8,24 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-This is a starter project.  It is intended to be a core learning asset for the students
-who have enrolled the Design and Testing subject of the Software Engineering curriculum of the 
-University of Seville.  This project helps them start working on their new information system 
-projects.
+Project Overview
 
-To get this project up and running, please follow the guideline in the theory/lab materials,
-taking into account that you must link the appropriate version of the Acme-Framework excluding 
-the following resources:
+Acme AirNav Solutions, Inc. (Acme ANS for short) is a fictitious company that focuses on optimizing airport operations through innovative software solutions. This project aims to develop a Web Information System (WIS) designed to streamline logistics management for charter flights, improving efficiency in scheduling, resource allocation, and incident handling.
 
-- **/fragments/**
+Key Functionalities
+
+The system will offer a range of tools to facilitate airport operations, including:
+
+  - Flight scheduling and booking management to ensure smooth operations and prevent scheduling conflicts.
+  - Crew management, allowing administrators to efficiently assign and monitor staff availability.
+  - Incident reporting and resolution, providing a structured approach to addressing operational issues.
+  - Aircraft maintenance tracking, ensuring compliance with safety regulations and preventive maintenance schedules.
+
+Additional Notes
+
+  - This repository contains all necessary files and documentation related to the project.
+  - Development follows a structured workflow, including tasks and version control.
+  - Team members are expected to adhere to the Chartering Report guidelines to ensure a smooth and collaborative development process.
+
+
  
