@@ -40,3 +40,5 @@ parameters that prevented UNICODE text from being saved correctly to the databas
 22.6 	Upgraded to the new version of the Acme Framework.
 22.7 	Upgraded to the new version of the Acme Framework.
 22.8 	Upgraded to the new version of the Acme Framework.
+
+25.1.0 This is the first version of Acme ANS
