@@ -20,7 +20,6 @@
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-Antonio" action="https://es.aliexpress.com/"/>
-			<acme:menu-suboption code="master.menu.anonymous.favourite-link-PabloC" action="https://www.amazon.es/"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRealm('Administrator')">
