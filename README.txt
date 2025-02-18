@@ -8,24 +8,28 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-Project Overview
+Enlace al Tablero de Github
 
-Acme AirNav Solutions, Inc. (Acme ANS for short) is a fictitious company that focuses on optimizing airport operations through innovative software solutions. This project aims to develop a Web Information System (WIS) designed to streamline logistics management for charter flights, improving efficiency in scheduling, resource allocation, and incident handling.
+Para este entregable, todos los miembros del grupo hemos trabajado sobre el mismo tablero, tanto para los requisitos grupales como los individuales. Así, se adjunta dicho enlace para cumplir con el requisito obligatorio grupal y con los individuales obligatorios relacionados: https://github.com/users/PDJ6975/projects/2/views/1?sortedBy%5Bdirection%5D=asc&sortedBy%5BcolumnId%5D=Assignees&sortedBy%5Bdirection%5D=asc&sortedBy%5BcolumnId%5D=Labels
 
-Key Functionalities
+Descripción del Proyecto
 
-The system will offer a range of tools to facilitate airport operations, including:
+Acme AirNav Solutions, Inc. (abreviado como Acme ANS) es una empresa centrada en la optimización de las operaciones aeroportuarias mediante soluciones de software innovadoras. Este proyecto tiene como objetivo desarrollar un Sistema de Información Web (WIS) diseñado para agilizar la gestión logística de vuelos chárter, mejorando la eficiencia en la programación, asignación de recursos y manejo de incidentes.
 
-  - Flight scheduling and booking management to ensure smooth operations and prevent scheduling conflicts.
-  - Crew management, allowing administrators to efficiently assign and monitor staff availability.
-  - Incident reporting and resolution, providing a structured approach to addressing operational issues.
-  - Aircraft maintenance tracking, ensuring compliance with safety regulations and preventive maintenance schedules.
+Funcionalidades Clave
 
-Additional Notes
+El sistema ofrecerá una variedad de herramientas para facilitar las operaciones aeroportuarias, entre ellas:
 
-  - This repository contains all necessary files and documentation related to the project.
-  - Development follows a structured workflow, including tasks and version control.
-  - Team members are expected to adhere to the Chartering Report guidelines to ensure a smooth and collaborative development process.
+  - Gestión de programación y reservas de vuelos, garantizando operaciones fluidas y evitando conflictos en los horarios.
+  - Gestión de tripulación, permitiendo a los administradores asignar y monitorear la disponibilidad del personal de manera eficiente.
+  - Registro y resolución de incidentes, proporcionando un enfoque estructurado para abordar problemas operativos.
+  - Seguimiento del mantenimiento de aeronaves, asegurando el cumplimiento de normativas de seguridad y cronogramas de mantenimiento preventivo.
+
+Notas Adicionales
+
+  - Este repositorio contiene todos los archivos y documentación necesarios para el proyecto.
+  - El desarrollo sigue un flujo de trabajo estructurado, incluyendo gestión de tareas y control de versiones.
+  - Se espera que los miembros del equipo sigan las directrices del Informe de Chartering para garantizar un proceso de desarrollo fluido y colaborativo.
 
 
  
