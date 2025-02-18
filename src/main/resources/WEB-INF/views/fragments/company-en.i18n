@@ -10,9 +10,10 @@
 
 master.company.title = The company
 master.company.text = \
-	Hello World, Inc. is a fictitious company that provides a starter \
-	project for the students of the Design and Testing subject of the \
-	Software Engineering Curriculum of the University of Seville.
+	ANS Air Nav Solutions is a company dedicated to providing cutting-edge \
+	navigation solutions for the aviation industry. This project is part of the \
+	Design and Testing subject within the Software Engineering Curriculum at the \
+	University of Seville.  
 master.company.name = Acme, Inc.
 master.company.address = 01 Acme Drive, Wondercity, Wonderland
 master.company.phone = +1 000 111 222
