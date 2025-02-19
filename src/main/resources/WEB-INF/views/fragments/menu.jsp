@@ -23,7 +23,7 @@
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-PabloC" action="https://www.amazon.es/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-Adrian" action="https://www.youtube.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-Jianwu" action="https://pomodoro-tracker.com/"/>
-			<acme:menu-suboption code="master.menu.anonymous.favourite-link-pabolimor" action="https://www.chollometro.com/categorias/montaje-pc"/>
+			<acme:menu-suboption code="master.menu.anonymous.favourite-link-pabolimor" action="https://eloquentclicks.com/"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRealm('Administrator')">
