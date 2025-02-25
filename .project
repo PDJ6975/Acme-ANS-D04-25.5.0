@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>Acme-ANS-D01-25.1.0</name>
+	<name>Acme-ANS-D02-25.2.0</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -16,12 +16,12 @@
 			</arguments>
 		</buildCommand>
 		<buildCommand>
-			<name>org.eclipse.m2e.core.maven2Builder</name>
+			<name>org.eclipse.wst.validation.validationbuilder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
 		<buildCommand>
-			<name>org.eclipse.wst.validation.validationbuilder</name>
+			<name>org.eclipse.m2e.core.maven2Builder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
@@ -34,14 +34,14 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>acme-framework</name>
+			<name>acme-framework-25.2.0</name>
 			<type>2</type>
-			<locationURI>WORKSPACE_LOC/Frameworks/Acme-Framework-25.1.0/target/classes</locationURI>
+			<locationURI>WORKSPACE_LOC/Frameworks/Acme-Framework-25.2.0/target/classes</locationURI>
 		</link>
 		<link>
 			<name>target/classes</name>
 			<type>2</type>
-			<location>WORKSPACE_LOC/Projects/Acme-ANS-D01-25.1.0/target/classes/</location>
+			<locationURI>WORKSPACE_LOC/Projects/Acme-ANS-D02-25.2.0/target/classes</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>
