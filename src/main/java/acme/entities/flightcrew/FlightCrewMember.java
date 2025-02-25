@@ -3,6 +3,9 @@ package acme.entities.flightcrew;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.datatypes.Money;
@@ -39,7 +42,9 @@ public class FlightCrewMember extends AbstractEntity {
 	@Automapped
 	private String				languageSkills;
 
+	@Enumerated(EnumType.STRING)
 	@Mandatory
+	@Valid
 	@Automapped
 	private AvailabilityStatus	availabilityStatus;
 

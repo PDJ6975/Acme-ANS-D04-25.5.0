@@ -45,6 +45,7 @@ public class FlightAssignment extends AbstractEntity {
 
 	@Enumerated(EnumType.STRING)
 	@Mandatory
+	@Valid
 	@Automapped
 	private CrewRole			crewRole;
 
@@ -55,6 +56,7 @@ public class FlightAssignment extends AbstractEntity {
 
 	@Enumerated(EnumType.STRING)
 	@Mandatory
+	@Valid
 	@Automapped
 	private AssignmentStatus	assignmentStatus;
 

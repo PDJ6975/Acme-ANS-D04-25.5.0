@@ -2,5 +2,5 @@
 package acme.entities.flightcrew;
 
 public enum AvailabilityStatus {
-	DISPONIBLE, DE_VACACIONES, DE_BAJA
+	AVAILABLE, ON_VACATION, ON_LEAVE
 }
