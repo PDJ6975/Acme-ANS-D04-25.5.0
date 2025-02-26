@@ -11,7 +11,9 @@ import acme.client.components.basis.AbstractEntity;
 import acme.client.components.datatypes.Money;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
+import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoney;
+import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
 import lombok.Getter;
 import lombok.Setter;
@@ -57,5 +59,10 @@ public class FlightCrewMember extends AbstractEntity {
 	@ValidMoney
 	@Automapped
 	private Money				salary;
+
+	@Optional
+	@ValidNumber(min = 0, integer = 2, fraction = 0)
+	@Automapped
+	private Integer				yearsOfExperience;
 
 }
