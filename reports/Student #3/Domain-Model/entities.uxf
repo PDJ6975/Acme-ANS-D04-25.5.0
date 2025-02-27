@@ -177,4 +177,30 @@ r1=+flightStage
 </panel_attributes>
     <additional_attributes>10.0;20.0;730.0;20.0</additional_attributes>
   </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1210</x>
+      <y>120</y>
+      <w>680</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+VisaRequirement
+--
++ passportCountry: String {Mandatory, ValidString, Automapped}
++ destinationCountry: String {Mandatory, ValidString, Automapped}
++ continent: String {Mandatory, ValidString, Automapped}
++ capital: String {Mandatory, ValidString, Automapped}
++ currency: String {Mandatory, ValidString, Automapped}
++ phoneCode: String {Optional, ValidString(min=2, max=6, pattern="^\+\d{1,5}$"), Automapped}
++ timezone: String {Optional, ValidString(min=3, max=6, pattern="^[+-]\d{2}:\d{2}$"), Automapped}
++ visaType: String {Mandatory, ValidString, Automapped}
++ stayDuration: String {Optional, ValidString, Automapped}
++ passportValidity: String {Optional, ValidString, Automapped}
++ additionalInfo: String {Optional, ValidString, Automapped}
++ officialLink: String {Optional, ValidString, Automapped}
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
 </diagram>
