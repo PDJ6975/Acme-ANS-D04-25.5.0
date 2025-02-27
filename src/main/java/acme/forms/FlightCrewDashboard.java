@@ -38,6 +38,10 @@ public class FlightCrewDashboard extends AbstractForm {
 	@Valid
 	private List<FlightCrewMember>							colleaguesInLastStage;
 
+	@Mandatory
+	@Valid
+	private FlightCrewMember								member;
+
 	// Asignaciones de vuelo agrupadas por estado
 	@Mandatory
 	@Valid
