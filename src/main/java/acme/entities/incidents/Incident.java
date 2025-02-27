@@ -1,5 +1,5 @@
 
-package acme.entities.flightcrew;
+package acme.entities.incidents;
 
 import java.util.Date;
 
@@ -15,6 +15,7 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
+import acme.entities.members.FlightCrewMember;
 import lombok.Getter;
 import lombok.Setter;
 

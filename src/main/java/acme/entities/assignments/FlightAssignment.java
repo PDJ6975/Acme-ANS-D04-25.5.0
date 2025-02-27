@@ -1,11 +1,9 @@
 
-package acme.entities.flightcrew;
+package acme.entities.assignments;
 
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -17,6 +15,8 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidString;
+import acme.entities.members.FlightCrewMember;
+import acme.entities.stages.FlightStage;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -43,7 +43,6 @@ public class FlightAssignment extends AbstractEntity {
 	@Automapped
 	private FlightStage			flightStage;
 
-	@Enumerated(EnumType.STRING)
 	@Mandatory
 	@Valid
 	@Automapped
@@ -54,7 +53,6 @@ public class FlightAssignment extends AbstractEntity {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				lastUpdated;
 
-	@Enumerated(EnumType.STRING)
 	@Mandatory
 	@Valid
 	@Automapped

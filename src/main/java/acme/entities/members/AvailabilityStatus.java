@@ -1,5 +1,5 @@
 
-package acme.entities.flightcrew;
+package acme.entities.members;
 
 public enum AvailabilityStatus {
 	AVAILABLE, ON_VACATION, ON_LEAVE

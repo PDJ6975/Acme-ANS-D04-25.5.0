@@ -1,10 +1,8 @@
 
-package acme.entities.flightcrew;
+package acme.entities.members;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
@@ -44,7 +42,6 @@ public class FlightCrewMember extends AbstractEntity {
 	@Automapped
 	private String				languageSkills;
 
-	@Enumerated(EnumType.STRING)
 	@Mandatory
 	@Valid
 	@Automapped

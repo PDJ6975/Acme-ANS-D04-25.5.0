@@ -1,5 +1,5 @@
 
-package acme.entities.flightcrew;
+package acme.entities.stages;
 
 import javax.persistence.Entity;
 

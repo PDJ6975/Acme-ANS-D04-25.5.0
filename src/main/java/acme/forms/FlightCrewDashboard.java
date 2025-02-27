@@ -9,9 +9,9 @@ import javax.validation.Valid;
 import acme.client.components.basis.AbstractForm;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidNumber;
-import acme.entities.flightcrew.AssignmentStatus;
-import acme.entities.flightcrew.FlightAssignment;
-import acme.entities.flightcrew.FlightCrewMember;
+import acme.entities.assignments.AssignmentStatus;
+import acme.entities.assignments.FlightAssignment;
+import acme.entities.members.FlightCrewMember;
 import lombok.Getter;
 import lombok.Setter;
 

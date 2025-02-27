@@ -1,5 +1,5 @@
 
-package acme.entities.flightcrew;
+package acme.entities.incidents;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
@@ -7,6 +7,7 @@ import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.validation.Mandatory;
+import acme.entities.stages.FlightStage;
 import lombok.Getter;
 import lombok.Setter;
 
