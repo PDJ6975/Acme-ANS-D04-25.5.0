@@ -8,7 +8,7 @@ import acme.client.components.basis.AbstractEntity;
 @Entity
 //@Getter
 //@Setter
-public class FlightLeg extends AbstractEntity {
+public class FlightStage extends AbstractEntity {
 
 	// Serialisation version
 

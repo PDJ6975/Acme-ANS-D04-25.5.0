@@ -24,6 +24,6 @@ public class ActivityLog extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@OneToOne(optional = false)
-	private FlightLeg			flightLeg;
+	private FlightStage			flightStage;
 
 }

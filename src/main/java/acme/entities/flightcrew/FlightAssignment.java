@@ -41,7 +41,7 @@ public class FlightAssignment extends AbstractEntity {
 	@Valid
 	@ManyToOne(optional = false)
 	@Automapped
-	private FlightLeg			flightLeg;
+	private FlightStage			flightStage;
 
 	@Enumerated(EnumType.STRING)
 	@Mandatory
