@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>6</zoom_level>
+  <zoom_level>9</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>378</x>
-      <y>150</y>
-      <w>408</w>
-      <h>84</h>
+      <x>720</x>
+      <y>0</y>
+      <w>612</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Service
@@ -23,10 +23,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>432</x>
-      <y>276</y>
-      <w>342</w>
-      <h>108</h>
+      <x>801</x>
+      <y>189</y>
+      <w>513</w>
+      <h>162</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Airport        
@@ -45,31 +45,30 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>300</y>
-      <w>408</w>
-      <h>96</h>
+      <x>81</x>
+      <y>468</y>
+      <w>612</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
-Airline        
+Review
 --
 + name: String	{Mandatory, ValidString(max=50), Automapped}
-+ iataCode : String	{Mandatory, ValidString(min=3, max=3), Unique}
-+ website : String {Mandatory, ValidUrl, Automapped}
-+ type : Type {LUXURY, STANDARD, LOW-COST}
-+ foundationMoment : Date {Mandatory, ValidMoment(past=true), Automapped}
-+ emailAddress? : String {Optional, ValidEmail, Automapped}
-+ contactPhone? : String {Optional, ValidString(pattern = "^+?\d{6,15}$"), Automapped}
++ moment : Date {Mandatory, ValidMoment(past=true), Automapped}
++ subject: String	{Mandatory, ValidString(max=50), Automapped}
++ text: String	{Mandatory, ValidString(max=255), Automapped}
++ score: Double {Optional, ValidNumber(min=0, max=10), Automapped}
++ recommended: boolean {Optional, Valid, Automapped}
 bg=green</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>378</x>
-      <y>438</y>
-      <w>342</w>
-      <h>108</h>
+      <x>720</x>
+      <y>432</y>
+      <w>513</w>
+      <h>162</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Aircraft        
@@ -82,6 +81,27 @@ Aircraft
 + details? : String {Optional, ValidString(max=255), Automapped}
 
 bg=GREEN</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>171</x>
+      <y>243</y>
+      <w>612</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Airline        
+--
++ name: String	{Mandatory, ValidString(max=50), Automapped}
++ iataCode : String	{Mandatory, ValidString(min=3, max=3), Unique}
++ website : String {Mandatory, ValidUrl, Automapped}
++ type : Type {LUXURY, STANDARD, LOW-COST}
++ foundationMoment : Date {Mandatory, ValidMoment(past=true), Automapped}
++ emailAddress? : String {Optional, ValidEmail, Automapped}
++ contactPhone? : String {Optional, ValidString(pattern = "^+?\d{6,15}$"), Automapped}
+bg=green</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
