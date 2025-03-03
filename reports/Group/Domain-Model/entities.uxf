@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>10</zoom_level>
+  <zoom_level>6</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>630</x>
-      <y>0</y>
-      <w>680</w>
-      <h>140</h>
+      <x>378</x>
+      <y>150</y>
+      <w>408</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Service
@@ -23,10 +23,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>710</x>
-      <y>220</y>
-      <w>570</w>
-      <h>180</h>
+      <x>432</x>
+      <y>276</y>
+      <w>342</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Airport        
@@ -46,9 +46,9 @@ bg=green</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>250</y>
-      <w>680</w>
-      <h>160</h>
+      <y>300</y>
+      <w>408</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Airline        
@@ -61,6 +61,27 @@ Airline
 + emailAddress? : String {Optional, ValidEmail, Automapped}
 + contactPhone? : String {Optional, ValidString(pattern = "^+?\d{6,15}$"), Automapped}
 bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>378</x>
+      <y>438</y>
+      <w>342</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Aircraft        
+--
++ model: String	{Mandatory, ValidString(max=50), Automapped}
++ registrationNumber : String	{Mandatory, ValidString(max=50), Unique}
++ capacity : Integer (Mandatory, ValidNumber(min=1), Automapped)
++ cargoWeight: Double (Mandatory, ValidNumber(min=2000, max=50000), Automapped)
++ status : Status {ACTIVE, MAINTENANCE}
++ details? : String {Optional, ValidString(max=255), Automapped}
+
+bg=GREEN</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
