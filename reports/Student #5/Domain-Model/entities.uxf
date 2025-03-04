@@ -4,7 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
+      <x>30</x>
       <y>30</y>
       <w>680</w>
       <h>170</h>
@@ -18,6 +18,25 @@ Technician
 + annualHealthTest: Boolean {Mandatory, Automapped}
 + yearsOfExperience: Integer {Mandatory, ValidNumber(min=0, integer=2, fraction=0), Automapped}
 + certifications?: String {Optional, ValidString(max=255), Automapped}
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>260</y>
+      <w>680</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+MaintenanceRecord
+--
++ moment: DateTime {Mandatory, ValidMoment(), Automapped}
++ status: Status {Mandatory, Valid, Automapped}
++ nextInspectionDue: Date {Mandatory, ValidMoment(), Temporal(TemporalTpe.TIMESTAMP)}
++ estimatedCost: Money {Mandatory, ValidMoney, Automapped}
++ notes?: String {Optional, ValidString(max=255), Automapped}
 bg=green</panel_attributes>
     <additional_attributes/>
   </element>
