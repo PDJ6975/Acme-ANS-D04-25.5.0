@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>30</y>
+      <w>680</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Technician
+--
++ licenseNumber: String {Mandatory, ValidString(pattern="^[A-Z]{2,3}\\d{6}$"), Unique}
++ phoneNumber: String {Mandatory, ValidString(min=6, max=15, pattern="^\\+?\\d{6,15}$"), Automapped}
++ specialisation: String {Mandatory, ValidString(max=50), Automapped}
++ annualHealthTest: Boolean {Mandatory, Automapped}
++ yearsOfExperience: Integer {Mandatory, ValidNumber(min=0, integer=2, fraction=0), Automapped}
++ certifications?: String {Optional, ValidString(max=255), Automapped}
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
