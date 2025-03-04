@@ -75,8 +75,8 @@ Aircraft
 --
 + model: String	{Mandatory, ValidString(max=50), Automapped}
 + registrationNumber : String	{Mandatory, ValidString(max=50), Unique}
-+ capacity : Integer (Mandatory, ValidNumber(min=1), Automapped)
-+ cargoWeight: Double (Mandatory, ValidNumber(min=2000, max=50000), Automapped)
++ capacity : Integer {Mandatory, ValidNumber(min=1), Automapped}
++ cargoWeight: Double {Mandatory, ValidNumber(min=2000, max=50000), Automapped}
 + status : Status {ACTIVE, MAINTENANCE}
 + details? : String {Optional, ValidString(max=255), Automapped}
 
