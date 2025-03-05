@@ -37,7 +37,7 @@ public class Technician extends AbstractEntity {
 
 	@Mandatory
 	@Automapped
-	private Boolean				annualHealtgTest;
+	private Boolean				annualHealthTest;
 
 	@Mandatory
 	@ValidNumber(min = 0, integer = 2, fraction = 0)

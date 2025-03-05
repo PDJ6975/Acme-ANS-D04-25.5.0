@@ -6,7 +6,7 @@
     <coordinates>
       <x>30</x>
       <y>150</y>
-      <w>160</w>
+      <w>150</w>
       <h>100</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Datatype&gt;&gt;
@@ -15,6 +15,25 @@ Status
 + PENDING
 + IN_PROGRESS
 + COMPLETED
+bg=LIGHT_GRAY
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>300</y>
+      <w>160</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Datatype&gt;&gt;
+TypeTask
+--
++ MAINTENANCE
++ INSPECTION
++ REPAIR
++ SYSTEM_CHECK
 bg=LIGHT_GRAY
 </panel_attributes>
     <additional_attributes/>

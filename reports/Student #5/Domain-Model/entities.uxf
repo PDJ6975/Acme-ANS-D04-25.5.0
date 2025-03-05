@@ -40,4 +40,22 @@ MaintenanceRecord
 bg=green</panel_attributes>
     <additional_attributes/>
   </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>450</y>
+      <w>680</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Task
+--
++ type: TypeTask {Mandatory, Valid, Automapped}
++ description: String {Mandatory, ValidString(max=255), Automapped}
++ priority: Integer {Mandatory, ValidNumber(min=0, max=10, integer=2,fraction=0), Automapped}
++ estimatedDuration: Double {Mandatory, ValidNumber(min=0, integer=2, fraction=1), Automapped}
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
 </diagram>
