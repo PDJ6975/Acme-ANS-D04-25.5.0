@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>8</zoom_level>
+  <zoom_level>7</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>736</x>
-      <y>0</y>
-      <w>544</w>
-      <h>112</h>
+      <x>644</x>
+      <y>147</y>
+      <w>476</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Manager
 --
-+ id: String {Mandatory, ValidString(pattern="^[A-Z]{2-3}\d{6}$"), Unique}
++ managerId: String {Mandatory, ValidString(pattern="^[A-Z]{2-3}\d{6}$"), Unique}
 + yearsOfExperience: Integer {Mandatory, ValidNumber(min=0), Automapped}
 + birth: Date {Mandatory, ValidMoment(past=true)}
 + pictureUrl: String {Optional, ValidUrl}
@@ -23,9 +23,9 @@ bg=green</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>272</y>
-      <w>544</w>
-      <h>168</h>
+      <y>385</y>
+      <w>476</w>
+      <h>147</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Flight
@@ -45,10 +45,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>728</x>
-      <y>272</y>
-      <w>544</w>
-      <h>168</h>
+      <x>637</x>
+      <y>385</y>
+      <w>476</w>
+      <h>147</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Leg
@@ -69,9 +69,9 @@ bg=green</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>0</y>
-      <w>544</w>
-      <h>152</h>
+      <y>147</y>
+      <w>476</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Weather
