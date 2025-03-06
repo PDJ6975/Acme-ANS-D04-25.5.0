@@ -34,7 +34,7 @@ public class MaintenanceRecord extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@Automapped
-	private Status				status;
+	private StatusMaintenance				status;
 
 	@Mandatory
 	@ValidMoment
