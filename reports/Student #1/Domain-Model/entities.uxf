@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>7</zoom_level>
+  <zoom_level>10</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>644</x>
-      <y>147</y>
-      <w>476</w>
-      <h>98</h>
+      <x>920</x>
+      <y>0</y>
+      <w>680</w>
+      <h>140</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Manager
@@ -23,9 +23,9 @@ bg=green</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>385</y>
-      <w>476</w>
-      <h>147</h>
+      <y>340</y>
+      <w>680</w>
+      <h>210</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Flight
@@ -45,17 +45,17 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>637</x>
-      <y>385</y>
-      <w>476</w>
-      <h>147</h>
+      <x>910</x>
+      <y>340</y>
+      <w>680</w>
+      <h>210</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Leg
 --
 + flightNumber: String {Mandatory, Unique, ValidString(pattern="^[A-Z]{2}\\d{4}$")}
 + duration: Double {Mandatory, ValidNumber(min=0)}
-+ status: LegStatus {Mandatory, Valid, Automapped}
++ legStatus: LegStatus {Mandatory, Valid, Automapped}
 + description: String {Optional, ValidString(max=255)}
 + scheduledDeparture: Date{ValidMoment(past=false), Mandatory}
 + scheduledArrival: Date{ValidMoment(past=false), Mandatory}
@@ -69,9 +69,9 @@ bg=green</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>147</y>
-      <w>476</w>
-      <h>133</h>
+      <y>0</y>
+      <w>680</w>
+      <h>190</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Weather

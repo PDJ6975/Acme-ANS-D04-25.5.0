@@ -4,7 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>720</x>
+      <x>639</x>
       <y>0</y>
       <w>612</w>
       <h>126</h>
@@ -23,7 +23,7 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>801</x>
+      <x>720</x>
       <y>189</y>
       <w>513</w>
       <h>162</h>
@@ -45,7 +45,7 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>81</x>
+      <x>0</x>
       <y>468</y>
       <w>612</w>
       <h>144</h>
@@ -65,7 +65,7 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>720</x>
+      <x>639</x>
       <y>432</y>
       <w>513</w>
       <h>162</h>
@@ -77,8 +77,8 @@ Aircraft
 + registrationNumber : String	{Mandatory, ValidString(max=50), Unique}
 + capacity : Integer {Mandatory, ValidNumber(min=1), Automapped}
 + cargoWeight: Double {Mandatory, ValidNumber(min=2000, max=50000), Automapped}
-+ status : Status {ACTIVE, MAINTENANCE}
-+ details? : String {Optional, ValidString(max=255), Automapped}
++ aircraftStatus : AircraftStatus {Mandatory, Valid, Automapped}
++ details : String {Optional, ValidString(max=255), Automapped}
 
 bg=GREEN</panel_attributes>
     <additional_attributes/>
@@ -86,7 +86,7 @@ bg=GREEN</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>171</x>
+      <x>90</x>
       <y>243</y>
       <w>612</w>
       <h>144</h>

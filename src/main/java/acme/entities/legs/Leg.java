@@ -14,6 +14,7 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
+import acme.entities.aircrafts.Aircraft;
 import acme.entities.airports.Airport;
 import lombok.Getter;
 import lombok.Setter;
@@ -38,7 +39,7 @@ public class Leg extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@Automapped
-	private LegStatus			status;
+	private LegStatus			legStatus;
 
 	@Optional
 	@ValidString(max = 255)
