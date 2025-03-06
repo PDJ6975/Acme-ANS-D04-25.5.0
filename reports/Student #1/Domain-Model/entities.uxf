@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>736</x>
+      <y>0</y>
+      <w>544</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Manager
+--
++ id: String {Mandatory, ValidString(pattern="^[A-Z]{2-3}\d{6}$"), Unique}
++ yearsOfExperience: Integer {Mandatory, ValidNumber(min=0), Automapped}
++ birth: Date {Mandatory, ValidMoment(past=true)}
++ pictureUrl: String {Optional, ValidUrl}
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>272</y>
+      <w>544</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Flight
+--
++ tag: String {Mandatory, ValidString(max-50)}
++ selfTransfer: Boolean {Mandatory}
++ cost: Money {Mandatory, ValidMoney, Automapped}
++ description: String {Optional, ValidString(max=255)}
++ scheduledDeparture: Date{ValidMoment(past=false), Derived}
++ scheduledArrival: Date{ValidMoment(past=false), Derived}
++ originCity: String {Derived}
++ destinationCity: String {Derived}
++ layovers: Integer {Mandatory, ValidNumber(min=0), Derived} 
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>728</x>
+      <y>272</y>
+      <w>544</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Leg
+--
++ flightNumber: String {Mandatory, Unique, ValidString(pattern="^[A-Z]{2}\\d{4}$")}
++ duration: Double {Mandatory, ValidNumber(min=0)}
++ status: LegStatus {Mandatory, Valid, Automapped}
++ description: String {Optional, ValidString(max=255)}
++ scheduledDeparture: Date{ValidMoment(past=false), Mandatory}
++ scheduledArrival: Date{ValidMoment(past=false), Mandatory}
++ departureAirport: Airport {Mandatory}
++ arrivalAirport: Airport {Mandatory}
++ aircraft: Aircraft {Mandatory} 
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>0</y>
+      <w>544</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Weather
+--
++ id: Long {Mandatory, Unique, Automapped}
++ timestamp: Date {Mandatory}
++ temperature: Double {Optional}
++ humidity: Double {Optional}
++ windSpeed: Double {Optional}
++ weatherDescription: String {ValidString(max=100), Optional}
++ location: String {Mandatory}
++ source: String {Mandatory}
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
