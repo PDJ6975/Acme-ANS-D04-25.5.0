@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>10</zoom_level>
+  <zoom_level>9</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>30</x>
-      <y>30</y>
-      <w>680</w>
-      <h>170</h>
+      <x>0</x>
+      <y>0</y>
+      <w>594</w>
+      <h>135</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
 Technician
 --
 + licenseNumber: String {Mandatory, ValidString(pattern="^[A-Z]{2,3}\\d{6}$"), Unique}
@@ -25,16 +25,16 @@ bg=green</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>260</y>
-      <w>680</w>
-      <h>170</h>
+      <y>234</y>
+      <w>540</w>
+      <h>117</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 MaintenanceRecord
 --
-+ moment: DateTime {Mandatory, ValidMoment(), Automapped}
-+ status: Status {Mandatory, Valid, Automapped}
-+ nextInspectionDue: Date {Mandatory, ValidMoment(), Temporal(TemporalTpe.TIMESTAMP)}
++ moment: Date {Mandatory, ValidMoment, Temporal(TemporalType.TIMESTAMP)}
++ status: StatusMaintenance {Mandatory, Valid, Automapped}
++ nextInspectionDue: Date {Mandatory, ValidMoment, Temporal(TemporalType.TIMESTAMP)}
 + estimatedCost: Money {Mandatory, ValidMoney, Automapped}
 + notes?: String {Optional, ValidString(max=255), Automapped}
 bg=green</panel_attributes>
@@ -43,10 +43,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>450</y>
-      <w>680</w>
-      <h>170</h>
+      <x>405</x>
+      <y>405</y>
+      <w>567</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Task
@@ -57,5 +57,113 @@ Task
 + estimatedDuration: Double {Mandatory, ValidNumber(min=0, integer=2, fraction=1), Automapped}
 bg=green</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>639</x>
+      <y>0</y>
+      <w>504</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+NoticeBoard        
+--
++ title: String	{Mandatory, ValidString(max=255), Automapped}
++ description : String	{Mandatory, ValidString(max=500), Automapped}
++ postedDate : Date {Mandatory, ValidMoment(past=true), Temporal(TemporalType.TIMESTAMP)}
++ expiryDate : Date {Mandatory, ValidMoment, Temporal(TemporalType.TIMESTAMP)}
++ externalService : String {Mandatory, ValidString(max=255), Automapped}
+bg=GREEN</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>549</y>
+      <w>504</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Aircraft        
+--
++ model: String	{Mandatory, ValidString(max=50), Automapped}
++ registrationNumber : String	{Mandatory, ValidString(max=50), Unique}
++ capacity : Integer {Mandatory, ValidNumber(min=1), Automapped}
++ cargoWeight: Double {Mandatory, ValidNumber(min=2000, max=50000), Automapped}
++ status : Status {ACTIVE, MAINTENANCE}
++ details? : String {Optional, ValidString(max=255), Automapped}
+
+bg=GREEN</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>576</x>
+      <y>126</y>
+      <w>153</w>
+      <h>297</h>
+    </coordinates>
+    <panel_attributes>assignedTo ▼
+lt=&lt;-x
+m1=1
+m2=*
+
+
+</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;310.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>531</x>
+      <y>324</y>
+      <w>108</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>partOf ▼
+lt=&lt;-x
+m1=1
+m2=*
+
+
+</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>234</x>
+      <y>342</y>
+      <w>99</w>
+      <h>225</h>
+    </coordinates>
+    <panel_attributes>belongsTo ▼
+lt=&lt;-x
+m1=1
+m2=*
+
+
+</panel_attributes>
+    <additional_attributes>20.0;230.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>135</x>
+      <y>126</y>
+      <w>135</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>handleBy ▼
+lt=&lt;-x
+m1=1
+m2=*
+
+
+</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;120.0</additional_attributes>
   </element>
 </diagram>
