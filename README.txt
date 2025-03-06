@@ -8,9 +8,20 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-Enlace al Tablero de Github
+Enlaces a los Tableros de GitHub:
 
-Para este entregable, todos los miembros del grupo hemos trabajado sobre el mismo tablero, tanto para los requisitos grupales como los individuales. Así, se adjunta dicho enlace para cumplir con el requisito obligatorio grupal y con los individuales obligatorios relacionados: https://github.com/users/PDJ6975/projects/2/views/1?sortedBy%5Bdirection%5D=asc&sortedBy%5BcolumnId%5D=Assignees&sortedBy%5Bdirection%5D=asc&sortedBy%5BcolumnId%5D=Labels
+Tablero Grupal (para las tareas grupales): https://github.com/users/PDJ6975/projects/11/views/1?filterQuery=
+
+Tablero Pablo Castrillón Mora (WYP8859): https://github.com/users/PDJ6975/projects/16/views/1
+
+Tablero Antonio Rodríguez Calderón ():
+
+Tablero Jianwu Hu (): 
+
+Tablero Pablo Olivencia Moreno (): 
+
+Tablero Adrián Ramírez Gil (): 
+
 
 Descripción del Proyecto
 
