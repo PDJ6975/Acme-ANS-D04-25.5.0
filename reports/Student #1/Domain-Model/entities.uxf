@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>10</zoom_level>
+  <zoom_level>9</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>920</x>
-      <y>0</y>
-      <w>680</w>
-      <h>140</h>
+      <x>864</x>
+      <y>72</y>
+      <w>612</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Manager
@@ -22,10 +22,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>340</y>
-      <w>680</w>
-      <h>210</h>
+      <x>36</x>
+      <y>369</y>
+      <w>612</w>
+      <h>189</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Flight
@@ -45,10 +45,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>910</x>
-      <y>340</y>
-      <w>680</w>
-      <h>210</h>
+      <x>855</x>
+      <y>378</y>
+      <w>612</w>
+      <h>189</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Leg
@@ -68,15 +68,15 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>0</y>
-      <w>680</w>
-      <h>190</h>
+      <x>36</x>
+      <y>72</y>
+      <w>612</w>
+      <h>171</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Weather
 --
-+ id: Long {Mandatory, Unique, Automapped}
++ weatherId: Long {Mandatory, Unique, Automapped}
 + timestamp: Date {Mandatory}
 + temperature: Double {Optional}
 + humidity: Double {Optional}
