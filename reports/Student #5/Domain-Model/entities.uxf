@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>9</zoom_level>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>0</x>
-      <y>0</y>
-      <w>594</w>
-      <h>135</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Role&gt;&gt;
+  <help_text>&lt;&lt;Role&gt;&gt;
 Technician
 --
 + licenseNumber: String {Mandatory, ValidString(pattern="^[A-Z]{2,3}\\d{6}$"), Unique}
@@ -18,13 +9,26 @@ Technician
 + annualHealthTest: Boolean {Mandatory, Automapped}
 + yearsOfExperience: Integer {Mandatory, ValidNumber(min=0, integer=2, fraction=0), Automapped}
 + certifications?: String {Optional, ValidString(max=255), Automapped}
-bg=green</panel_attributes>
+bg=green</help_text>
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>369</x>
+      <y>81</y>
+      <w>135</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Technician
+bg=pink
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
+      <x>18</x>
       <y>234</y>
       <w>540</w>
       <h>117</h>
@@ -36,7 +40,7 @@ MaintenanceRecord
 + status: StatusMaintenance {Mandatory, Valid, Automapped}
 + nextInspectionDue: Date {Mandatory, ValidMoment, Temporal(TemporalType.TIMESTAMP)}
 + estimatedCost: Money {Mandatory, ValidMoney, Automapped}
-+ notes?: String {Optional, ValidString(max=255), Automapped}
++ notes: String {Optional, ValidString(max=255), Automapped}
 bg=green</panel_attributes>
     <additional_attributes/>
   </element>
@@ -61,8 +65,8 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>639</x>
-      <y>0</y>
+      <x>675</x>
+      <y>72</y>
       <w>504</w>
       <h>117</h>
     </coordinates>
@@ -80,7 +84,7 @@ bg=GREEN</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
+      <x>27</x>
       <y>549</y>
       <w>504</w>
       <h>135</h>
@@ -93,7 +97,7 @@ Aircraft
 + capacity : Integer {Mandatory, ValidNumber(min=1), Automapped}
 + cargoWeight: Double {Mandatory, ValidNumber(min=2000, max=50000), Automapped}
 + status : Status {ACTIVE, MAINTENANCE}
-+ details? : String {Optional, ValidString(max=255), Automapped}
++ details : String {Optional, ValidString(max=255), Automapped}
 
 bg=GREEN</panel_attributes>
     <additional_attributes/>
@@ -101,10 +105,10 @@ bg=GREEN</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>576</x>
-      <y>126</y>
-      <w>153</w>
-      <h>297</h>
+      <x>495</x>
+      <y>108</y>
+      <w>198</w>
+      <h>315</h>
     </coordinates>
     <panel_attributes>assignedTo ▼
 lt=&lt;-x
@@ -113,12 +117,12 @@ m2=*
 
 
 </panel_attributes>
-    <additional_attributes>10.0;10.0;110.0;310.0</additional_attributes>
+    <additional_attributes>10.0;10.0;200.0;330.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>531</x>
+      <x>549</x>
       <y>324</y>
       <w>108</w>
       <h>99</h>
@@ -130,14 +134,14 @@ m2=*
 
 
 </panel_attributes>
-    <additional_attributes>10.0;10.0;100.0;90.0</additional_attributes>
+    <additional_attributes>10.0;10.0;80.0;90.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>234</x>
+      <x>252</x>
       <y>342</y>
-      <w>99</w>
+      <w>108</w>
       <h>225</h>
     </coordinates>
     <panel_attributes>belongsTo ▼
@@ -147,15 +151,15 @@ m2=*
 
 
 </panel_attributes>
-    <additional_attributes>20.0;230.0;10.0;10.0</additional_attributes>
+    <additional_attributes>30.0;230.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>135</x>
-      <y>126</y>
-      <w>135</w>
-      <h>126</h>
+      <x>234</x>
+      <y>108</y>
+      <w>153</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>handleBy ▼
 lt=&lt;-x
@@ -164,6 +168,6 @@ m2=*
 
 
 </panel_attributes>
-    <additional_attributes>10.0;10.0;100.0;120.0</additional_attributes>
+    <additional_attributes>150.0;10.0;10.0;140.0</additional_attributes>
   </element>
 </diagram>
