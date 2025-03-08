@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>140</x>
+      <y>259</y>
+      <w>476</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+	TrackingLogs
+--
++ lastUpdatedMoment: Date {Mandatory, ValidMoment(past=true), Temporal(temporalType.TIMESTAMP)}
++ step: String {Mandatory, ValidString(max=50), Automapped}
++ resolutionPercenage: Double {Mandatory, ValidScore,Autommaped }
++ indicator: boolean {Mandatory, Valid, Autommaped}
++ resolution: String {Mandatory, ValidString(max=255), Autommaped}
+
+
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>140</x>
+      <y>413</y>
+      <w>476</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+	Claim
+--
++ resgistrationMoment: Date {Mandatory, ValidMoment(past=true), Temporal(temporalType.TIMESTAMP)}
++ passengerEmail: String {Mandatory, ValidEmail, Automapped}
++ description: String {Mandatory, ValidString(max=255), Automapped}
++ type: Type {Mandatory, Valid, Automapped}
++ indicator: boolean {Mandatory, Valid, Autommaped}
+
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

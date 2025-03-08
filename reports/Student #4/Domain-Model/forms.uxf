@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>154</x>
+      <y>385</y>
+      <w>427</w>
+      <h>161</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Form&gt;&gt;
+AssistanceAgentDashboard
+--
++ ratioSusccessfulClaims: Double {Mandatory, ValidScore}
++ ratioRejectedClaims: Double {Mandatory, ValidScore}
++ highestClaimsMonths: String {Mandatory, ValidString}
++ aveLogs: Double {Mandatory, ValidNumber(min=0)}
++ minLogs: Double {Mandatory, ValidNumber(min=0)}
++ maxLogs: Double {Mandatory, ValidNumber(min=0)}
++ standardDesviationLogs: Double {Mandatory, ValidNumber(min=0)}
++ aveClaims: Double {Mandatory, ValidNumber(min=0)}
++ minClaims: Double {Mandatory, ValidNumber(min=0)}
++ maxClaims: Double {Mandatory, ValidNumber(min=0)}
++ standardDesviationClaims: Double {Mandatory, ValidNumber(min=0)}
+bg=cyan
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
