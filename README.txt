@@ -16,7 +16,7 @@ Tablero Pablo Castrillón Mora (WYP8859): https://github.com/users/PDJ6975/proje
 
 Tablero Antonio Rodríguez Calderón ():
 
-Tablero Jianwu Hu (): 
+Tablero Jianwu Hu (VXN8675): 
 
 Tablero Pablo Olivencia Moreno (): 
 
