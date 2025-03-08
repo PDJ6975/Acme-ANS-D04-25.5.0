@@ -4,7 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>424</x>
+      <x>460</x>
       <y>252</y>
       <w>72</w>
       <h>28</h>
@@ -17,7 +17,7 @@ bg=pink</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>24</x>
+      <x>60</x>
       <y>220</y>
       <w>272</w>
       <h>84</h>
@@ -40,7 +40,7 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>24</x>
+      <x>60</x>
       <y>0</y>
       <w>272</w>
       <h>84</h>
@@ -63,7 +63,7 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>420</x>
+      <x>456</x>
       <y>56</y>
       <w>272</w>
       <h>76</h>
@@ -85,7 +85,7 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>292</x>
+      <x>328</x>
       <y>260</y>
       <w>140</w>
       <h>20</h>
@@ -99,7 +99,7 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>44</x>
+      <x>80</x>
       <y>392</y>
       <w>80</w>
       <h>40</h>
@@ -113,7 +113,7 @@ bg=green</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>112</x>
+      <x>148</x>
       <y>376</y>
       <w>56</w>
       <h>28</h>
@@ -128,7 +128,7 @@ layer=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>220</x>
+      <x>256</x>
       <y>392</y>
       <w>92</w>
       <h>36</h>
@@ -142,7 +142,7 @@ bg=green</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>300</x>
+      <x>336</x>
       <y>376</y>
       <w>56</w>
       <h>28</h>
@@ -156,7 +156,7 @@ layer=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>80</x>
+      <x>116</x>
       <y>300</y>
       <w>32</w>
       <h>100</h>
@@ -170,7 +170,7 @@ m2=*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>252</x>
+      <x>288</x>
       <y>300</y>
       <w>48</w>
       <h>100</h>
@@ -184,7 +184,7 @@ m2=*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>152</x>
+      <x>188</x>
       <y>80</y>
       <w>44</w>
       <h>148</h>
