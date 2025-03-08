@@ -1,0 +1,6 @@
+key,employeeCode,phoneNumber,languageSkills,availabilityStatus,key:airline,salary,yearsOfExperience,key:user-account
+flight-crew-member-01,ZA859220,+34123456,"Lorem ipsum dolor sit amet, consectetur adipiscing",AVAILABLE,airline-01,EUR 500000.00,50,user-account-member-01
+flight-crew-member-02,PE403790,61341708,L,ONVACATION,airline-02,EUR 0.00,,user-account-member-02
+flight-crew-member-03,PNR895052,+9818872088,Lo,ONLEAVE,airline-02,EUR 0.01,0,user-account-member-03
+flight-crew-member-04,ROQ459171,+1229190,"Lorem ipsum dolor sit amet",ONVACATION,airline-03,EUR 999999.99,1,user-account-member-04
+flight-crew-member-05,TYK956828,9568974900,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor",AVAILABLE,airline-03,EUR 1000000.00,100,user-account-member

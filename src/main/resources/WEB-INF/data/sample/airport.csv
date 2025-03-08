@@ -1,0 +1,5 @@
+key,name,iataCode,operationalScope,city,country,website,emailAddress,contactPhone
+airport-01,Madrid Barajas,MAD,INTERNATIONAL,Madrid,Spain,http://www.aena.es,example@gmail.com,+34913245678
+airport-02,Barcelona El Prat,BCN,DOMESTIC,Barcelona,Spain,,example@gmail.com,61341708
+airport-03,John F. Kennedy,JFK,INTERNATIONAL,New York,USA,http://www.jfkairport.com,example@gmail.com,
+airport-04,Heathrow,LHR,INTERNATIONAL,London,UK,,example@gmail.com,

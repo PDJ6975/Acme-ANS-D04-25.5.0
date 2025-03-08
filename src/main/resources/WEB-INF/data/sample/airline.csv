@@ -1,0 +1,6 @@
+key,name,iataCode,website,type,foundationMoment,emailAddress,phoneNumber
+airline-01,Acme Airlines,ACM,https://www.acmeair.com,LUXURY,2000/05/15 10:00,example@gmail.com,+15551234567
+airline-02,Global Air,GLB,https://www.globalair.com,LUXURY,2000/05/15 10:00,example@gmail.com,+442071234567
+airline-03,Blue Sky Airlines,BSA,https://www.bluesky.com,LUXURY,2000/05/15 10:00,example@gmail.com,+33122334455
+airline-04,SwiftJet,SWT,https://www.swiftjet.com,LUXURY,2000/05/15 10:00,example@gmail.com,+498912345678
+airline-05,Air Freedom,AFR,https://www.airfreedom.com,LUXURY,2000/05/15 10:00,example@gmail.com,
