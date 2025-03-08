@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>60</y>
+      <w>680</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Manager
+--
++ managerId: String {Mandatory, ValidString(pattern="^[A-Z]{2-3}\d{6}$"), Unique}
++ yearsOfExperience: Integer {Mandatory, ValidNumber(min=0), Automapped}
++ birth: Date {Mandatory, ValidMoment(past=true)}
++ pictureUrl: String {Optional, ValidUrl}
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
