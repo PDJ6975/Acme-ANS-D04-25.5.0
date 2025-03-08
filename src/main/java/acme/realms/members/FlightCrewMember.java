@@ -1,5 +1,5 @@
 
-package acme.entities.members;
+package acme.realms.members;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

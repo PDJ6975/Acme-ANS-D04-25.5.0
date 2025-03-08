@@ -11,7 +11,7 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidNumber;
 import acme.entities.assignments.AssignmentStatus;
 import acme.entities.assignments.FlightAssignment;
-import acme.entities.members.FlightCrewMember;
+import acme.realms.members.FlightCrewMember;
 import lombok.Getter;
 import lombok.Setter;
 
