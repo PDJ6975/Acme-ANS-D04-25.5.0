@@ -16,29 +16,20 @@ import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
 import acme.entities.members.FlightCrewMember;
+import acme.entities.stages.FlightStage;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Incident extends AbstractEntity {
+public class LogEntry extends AbstractEntity {
 
 	// Serialisation version
 
 	private static final long	serialVersionUID	= 1L;
 
 	// Attributes
-
-	@Mandatory
-	@Valid
-	@ManyToOne(optional = false)
-	private FlightCrewMember	reporter;
-
-	@Mandatory
-	@Valid
-	@ManyToOne(optional = false)
-	private ActivityLog			log;
 
 	@Mandatory
 	@ValidMoment(past = true)
@@ -48,7 +39,7 @@ public class Incident extends AbstractEntity {
 	@Mandatory
 	@ValidString(max = 50)
 	@Automapped
-	private String				incident;
+	private String				typeOfIncident;
 
 	@Mandatory
 	@ValidString
@@ -59,5 +50,17 @@ public class Incident extends AbstractEntity {
 	@ValidNumber(min = 0, max = 10, integer = 2, fraction = 0)
 	@Automapped
 	private Integer				severityLevel;
+
+	// Relationships
+
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private FlightStage			flightStage;
+
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private FlightCrewMember	reporter;
 
 }
