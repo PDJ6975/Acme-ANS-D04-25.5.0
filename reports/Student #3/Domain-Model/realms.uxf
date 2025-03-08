@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1790</x>
+      <y>400</y>
+      <w>360</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+MoneyExchange
+--
++ source: Money {Mandatory, ValidMoney}
++ targetCurrency: String {Mandatory, ValidCurrency}
++ moment: Date {Optional, ValidMoment(past=true)}
++ target: Money {Optional, ValidMoney}
++ oops: Throwable {Optional, Valid}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>290</x>
+      <y>330</y>
+      <w>680</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+FlightCrewMember
+--
++ employeeCode: String {Mandatory, ValidString(min=8, max=9, pattern="^[A-Z]{2,3}\\d{6}$"), Unique}
++ phoneNumber: String {Mandatory, ValidString(min=6, max=15, pattern="^\\+?\\d{6,15}$"), Automapped}
++ languageSkills: String {Mandatory, ValidString, Automapped}
++ availabilityStatus: AvailabilityStatus {Mandatory, Valid, Automapped}
++ salary: Money {Mandatory, ValidMoney, Automapped}
++ yearsOfExperience: Integer {Optional, ValidNumber(min=0, integer=2, fraction=0), Automapped}
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
