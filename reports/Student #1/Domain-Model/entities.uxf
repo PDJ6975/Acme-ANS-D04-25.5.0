@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>2</zoom_level>
+  <zoom_level>4</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>354</x>
-      <y>188</y>
-      <w>36</w>
-      <h>14</h>
+      <x>424</x>
+      <y>252</y>
+      <w>72</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 Manager
@@ -17,10 +17,10 @@ bg=pink</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>154</x>
-      <y>172</y>
-      <w>136</w>
-      <h>42</h>
+      <x>24</x>
+      <y>220</y>
+      <w>272</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Flight
@@ -40,10 +40,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>154</x>
-      <y>62</y>
-      <w>136</w>
-      <h>42</h>
+      <x>24</x>
+      <y>0</y>
+      <w>272</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Leg
@@ -63,10 +63,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>352</x>
-      <y>90</y>
-      <w>136</w>
-      <h>38</h>
+      <x>420</x>
+      <y>56</y>
+      <w>272</w>
+      <h>76</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Weather
@@ -85,24 +85,24 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>288</x>
-      <y>190</y>
-      <w>70</w>
-      <h>10</h>
+      <x>292</x>
+      <y>260</y>
+      <w>140</w>
+      <h>20</h>
     </coordinates>
-    <panel_attributes>handleBy ▼
+    <panel_attributes>assignedTo ▼
 lt=&lt;-x
 m1=*
 m2=1</panel_attributes>
-    <additional_attributes>330.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>10.0;20.0;330.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>164</x>
-      <y>258</y>
-      <w>40</w>
-      <h>20</h>
+      <x>44</x>
+      <y>392</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Passenger
@@ -113,10 +113,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>198</x>
-      <y>250</y>
-      <w>28</w>
-      <h>14</h>
+      <x>112</x>
+      <y>376</y>
+      <w>56</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>Esta entidad será desarrollada 
 por un compañero en su requisito
@@ -128,10 +128,10 @@ layer=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>252</x>
-      <y>258</y>
-      <w>46</w>
-      <h>18</h>
+      <x>220</x>
+      <y>392</y>
+      <w>92</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Airline
@@ -142,10 +142,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>292</x>
-      <y>250</y>
-      <w>28</w>
-      <h>14</h>
+      <x>300</x>
+      <y>376</y>
+      <w>56</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>Esta entidad será desarrollada 
 en los requisitos grupales
@@ -156,10 +156,10 @@ layer=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>182</x>
-      <y>212</y>
-      <w>16</w>
-      <h>50</h>
+      <x>80</x>
+      <y>300</y>
+      <w>32</w>
+      <h>100</h>
     </coordinates>
     <panel_attributes>partOf ▼
 lt=&lt;-x
@@ -170,10 +170,10 @@ m2=*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>268</x>
-      <y>212</y>
-      <w>24</w>
-      <h>50</h>
+      <x>252</x>
+      <y>300</y>
+      <w>48</w>
+      <h>100</h>
     </coordinates>
     <panel_attributes>operatedBy ▼
 lt=&lt;-x
@@ -184,10 +184,10 @@ m2=*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>218</x>
-      <y>102</y>
-      <w>22</w>
-      <h>74</h>
+      <x>152</x>
+      <y>80</y>
+      <w>44</w>
+      <h>148</h>
     </coordinates>
     <panel_attributes>belongsTo ▼
 lt=&lt;-x
