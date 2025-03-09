@@ -56,12 +56,18 @@ public class Leg extends AbstractEntity {
 	private Date				scheduledArrival;
 
 	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
 	private Airport				departureAirport;
 
 	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
 	private Airport				arrivalAirport;
 
 	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
 	private Aircraft			aircraft;
 
 	// Relationships
