@@ -19,7 +19,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class trackingLogs extends AbstractEntity {
+public class TrackingLog extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
