@@ -1,31 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>9</zoom_level>
+  <zoom_level>7</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>864</x>
-      <y>72</y>
-      <w>612</w>
-      <h>126</h>
+<<<<<<< HEAD
+      <x>460</x>
+      <y>252</y>
+      <w>72</w>
+      <h>28</h>
+=======
+      <x>805</x>
+      <y>441</y>
+      <w>126</w>
+      <h>49</h>
+>>>>>>> tarea-016-WYP8859-r1
     </coordinates>
-    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
 Manager
---
-+ managerId: String {Mandatory, ValidString(pattern="^[A-Z]{2-3}\d{6}$"), Unique}
-+ yearsOfExperience: Integer {Mandatory, ValidNumber(min=0), Automapped}
-+ birth: Date {Mandatory, ValidMoment(past=true)}
-+ pictureUrl: String {Optional, ValidUrl}
-bg=green</panel_attributes>
+bg=pink</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>36</x>
-      <y>369</y>
-      <w>612</w>
-      <h>189</h>
+<<<<<<< HEAD
+      <x>60</x>
+      <y>220</y>
+      <w>272</w>
+      <h>84</h>
+=======
+      <x>105</x>
+      <y>385</y>
+      <w>476</w>
+      <h>147</h>
+>>>>>>> tarea-016-WYP8859-r1
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Flight
@@ -45,10 +54,14 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>855</x>
-      <y>378</y>
-      <w>612</w>
-      <h>189</h>
+<<<<<<< HEAD
+      <x>60</x>
+=======
+      <x>105</x>
+>>>>>>> tarea-016-WYP8859-r1
+      <y>0</y>
+      <w>476</w>
+      <h>147</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Leg
@@ -68,10 +81,17 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>36</x>
-      <y>72</y>
-      <w>612</w>
-      <h>171</h>
+<<<<<<< HEAD
+      <x>456</x>
+      <y>56</y>
+      <w>272</w>
+      <h>76</h>
+=======
+      <x>798</x>
+      <y>98</y>
+      <w>476</w>
+      <h>133</h>
+>>>>>>> tarea-016-WYP8859-r1
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Weather
@@ -86,5 +106,174 @@ Weather
 + source: String {Mandatory}
 bg=green</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+<<<<<<< HEAD
+      <x>328</x>
+      <y>260</y>
+      <w>140</w>
+      <h>20</h>
+=======
+      <x>574</x>
+      <y>455</y>
+      <w>245</w>
+      <h>35</h>
+>>>>>>> tarea-016-WYP8859-r1
+    </coordinates>
+    <panel_attributes>assignedTo ▼
+lt=&lt;-x
+m1=*
+m2=1</panel_attributes>
+    <additional_attributes>10.0;20.0;330.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+<<<<<<< HEAD
+      <x>80</x>
+      <y>392</y>
+      <w>80</w>
+      <h>40</h>
+=======
+      <x>140</x>
+      <y>686</y>
+      <w>140</w>
+      <h>70</h>
+>>>>>>> tarea-016-WYP8859-r1
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Passenger
+--
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+<<<<<<< HEAD
+      <x>148</x>
+      <y>376</y>
+      <w>56</w>
+      <h>28</h>
+=======
+      <x>259</x>
+      <y>658</y>
+      <w>98</w>
+      <h>49</h>
+>>>>>>> tarea-016-WYP8859-r1
+    </coordinates>
+    <panel_attributes>Esta entidad será desarrollada 
+por un compañero en su requisito
+individual
+bg=blue
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+<<<<<<< HEAD
+      <x>256</x>
+      <y>392</y>
+      <w>92</w>
+      <h>36</h>
+=======
+      <x>448</x>
+      <y>686</y>
+      <w>161</w>
+      <h>63</h>
+>>>>>>> tarea-016-WYP8859-r1
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Airline
+--
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+<<<<<<< HEAD
+      <x>336</x>
+      <y>376</y>
+      <w>56</w>
+      <h>28</h>
+=======
+      <x>588</x>
+      <y>658</y>
+      <w>98</w>
+      <h>49</h>
+>>>>>>> tarea-016-WYP8859-r1
+    </coordinates>
+    <panel_attributes>Esta entidad será desarrollada 
+en los requisitos grupales
+bg=blue
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+<<<<<<< HEAD
+      <x>116</x>
+      <y>300</y>
+      <w>32</w>
+      <h>100</h>
+=======
+      <x>203</x>
+      <y>525</y>
+      <w>56</w>
+      <h>175</h>
+>>>>>>> tarea-016-WYP8859-r1
+    </coordinates>
+    <panel_attributes>partOf ▼
+lt=&lt;-x
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;230.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+<<<<<<< HEAD
+      <x>288</x>
+      <y>300</y>
+      <w>48</w>
+      <h>100</h>
+=======
+      <x>504</x>
+      <y>525</y>
+      <w>84</w>
+      <h>175</h>
+>>>>>>> tarea-016-WYP8859-r1
+    </coordinates>
+    <panel_attributes>operatedBy ▼
+lt=&lt;-x
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>10.0;230.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+<<<<<<< HEAD
+      <x>188</x>
+      <y>80</y>
+      <w>44</w>
+      <h>148</h>
+=======
+      <x>329</x>
+      <y>140</y>
+      <w>77</w>
+      <h>259</h>
+>>>>>>> tarea-016-WYP8859-r1
+    </coordinates>
+    <panel_attributes>belongsTo ▼
+lt=&lt;-x
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>10.0;350.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
