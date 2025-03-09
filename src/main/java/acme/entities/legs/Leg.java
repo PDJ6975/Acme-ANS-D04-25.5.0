@@ -16,6 +16,7 @@ import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
 import acme.entities.aircrafts.Aircraft;
 import acme.entities.airports.Airport;
+import acme.entities.flights.Flight;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -27,7 +28,7 @@ public class Leg extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
-	@Mandatory
+	@Optional
 	@Column(unique = true)
 	@ValidString(pattern = "^[A-Z]{2}\\\\d{4}$", message = "El número de vuelo debe tener el siguiente patrón ^[A-Z]{2}\\\\d{4}$")
 	private String				flightNumber;
@@ -53,13 +54,20 @@ public class Leg extends AbstractEntity {
 	@ValidMoment(past = false, message = "La llegada programada debe ser en el futuro")
 	private Date				scheduledArrival;
 
-	@Mandatory
+	@Optional
 	private Airport				departureAirport;
 
-	@Mandatory
+	@Optional
 	private Airport				arrivalAirport;
 
-	@Mandatory
+	@Optional
 	private Aircraft			aircraft;
+
+	// Relationships
+
+	@Optional
+	@Valid
+	//@ManyToOne(optional = false)
+	private Flight				flight;
 
 }

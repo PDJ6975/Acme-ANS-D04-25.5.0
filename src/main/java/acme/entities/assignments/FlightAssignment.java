@@ -17,7 +17,7 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidString;
-import acme.entities.stages.FlightStage;
+import acme.entities.legs.Leg;
 import acme.realms.members.FlightCrewMember;
 import lombok.Getter;
 import lombok.Setter;
@@ -27,7 +27,7 @@ import lombok.Setter;
 @Setter
 @Table(uniqueConstraints = {
 	@UniqueConstraint(columnNames = {
-		"crew_member_id", "flight_stage_id"
+		"crew_member_id", "leg_id"
 	})
 })
 public class FlightAssignment extends AbstractEntity {
@@ -46,7 +46,7 @@ public class FlightAssignment extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private FlightStage			flightStage;
+	private Leg					leg;
 
 	@Mandatory
 	@Valid
@@ -64,8 +64,18 @@ public class FlightAssignment extends AbstractEntity {
 	private AssignmentStatus	assignmentStatus;
 
 	@Optional
-	@ValidString
+	@ValidString(min = 1)
 	@Automapped
 	private String				comments;
+
+	// Evitamos cadenas vacías no nulas, pues optional no las convierte a null
+
+
+	public void setComments(String c) {
+		// Si c está vacío o son solo espacios, lo pongo a null
+		if (c != null && c.trim().isEmpty())
+			c = null;
+		this.comments = c;
+	}
 
 }

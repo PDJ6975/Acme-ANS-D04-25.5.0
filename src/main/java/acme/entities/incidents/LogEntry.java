@@ -15,7 +15,7 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
-import acme.entities.stages.FlightStage;
+import acme.entities.legs.Leg;
 import acme.realms.members.FlightCrewMember;
 import lombok.Getter;
 import lombok.Setter;
@@ -47,7 +47,7 @@ public class LogEntry extends AbstractEntity {
 	private String				description;
 
 	@Mandatory
-	@ValidNumber(min = 0, max = 10, integer = 2, fraction = 0)
+	@ValidNumber(min = 0, max = 10, integer = 2)
 	@Automapped
 	private Integer				severityLevel;
 
@@ -56,7 +56,7 @@ public class LogEntry extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private FlightStage			flightStage;
+	private Leg					leg;
 
 	@Mandatory
 	@Valid

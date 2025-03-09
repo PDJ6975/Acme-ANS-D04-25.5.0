@@ -1,21 +1,34 @@
-key,key:crewMember,key:flightStage,crewRole,lastUpdated,assignmentStatus,comments
-flight-assignment-01,flight-crew-member-01,flight-stage-01,PILOT,2021/01/10 10:00,CONFIRMED,First assignment
-flight-assignment-02,flight-crew-member-01,flight-stage-02,COPILOT,2021/02/10 09:30,PENDING,
-flight-assignment-03,flight-crew-member-01,flight-stage-03,LEADATTENDANT,2021/03/01 15:45,CANCELLED,Due to crew shortage
-flight-assignment-04,flight-crew-member-01,flight-stage-04,CABINATTENDANT,2021/03/15 20:00,CONFIRMED,
-flight-assignment-05,flight-crew-member-01,flight-stage-05,PILOT,2021/04/01 10:00,PENDING,Pending approval
-flight-assignment-06,flight-crew-member-02,flight-stage-01,COPILOT,2021/01/11 11:00,CANCELLED,Cancelled for maintenance
-flight-assignment-07,flight-crew-member-02,flight-stage-02,LEADATTENDANT,2021/02/12 07:45,CONFIRMED,
-flight-assignment-08,flight-crew-member-02,flight-stage-03,CABINATTENDANT,2021/03/02 10:30,PENDING,Waiting final
-flight-assignment-09,flight-crew-member-02,flight-stage-04,PILOT,2021/03/16 22:00,CANCELLED,Pilot sick
-flight-assignment-10,flight-crew-member-02,flight-stage-05,COPILOT,2021/04/02 09:00,CONFIRMED,
-flight-assignment-11,flight-crew-member-03,flight-stage-01,LEADATTENDANT,2021/12/25 06:00,PENDING,Christmas flight
-flight-assignment-12,flight-crew-member-03,flight-stage-02,CABINATTENDANT,2021/01/01 05:55,CANCELLED,Low bookings
-flight-assignment-13,flight-crew-member-03,flight-stage-03,PILOT,2021/02/14 14:14,CONFIRMED,
-flight-assignment-14,flight-crew-member-03,flight-stage-04,COPILOT,2021/03/17 19:30,PENDING,Crew scheduling
-flight-assignment-15,flight-crew-member-03,flight-stage-05,LEADATTENDANT,2021/04/10 10:10,CANCELLED,Flight re-routed
-flight-assignment-16,flight-crew-member-04,flight-stage-01,CABINATTENDANT,2021/11/10 08:30,CONFIRMED,Ok
-flight-assignment-17,flight-crew-member-04,flight-stage-02,PILOT,2021/01/20 18:00,CANCELLED,
-flight-assignment-18,flight-crew-member-04,flight-stage-03,COPILOT,2021/02/28 23:59,CONFIRMED,Night flight
-flight-assignment-19,flight-crew-member-04,flight-stage-04,LEADATTENDANT,2021/03/18 15:00,PENDING,Check seats
-flight-assignment-20,flight-crew-member-04,flight-stage-05,CABINATTENDANT,2022/07/30 00:00,CANCELLED,Await instructions
+key,key:crewMember,key:leg,crewRole,lastUpdated,assignmentStatus,comments
+#base entity -> unique restriction crewMember-leg
+flight-assignment-01,flight-crew-member-01,leg-01,PILOT,2011/04/16 0:00,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*"
+# comments - standart variations
+flight-assignment-02,flight-crew-member-01,leg-02,PILOT,2011/04/16 0:00,CONFIRMED,
+flight-assignment-03,flight-crew-member-01,leg-03,PILOT,2011/04/16 0:00,CONFIRMED,null
+flight-assignment-04,flight-crew-member-01,leg-04,PILOT,2011/04/16 0:00,CONFIRMED,L
+flight-assignment-05,flight-crew-member-01,leg-05,PILOT,2011/04/16 0:00,CONFIRMED,Lo
+flight-assignment-06,flight-crew-member-01,leg-06,PILOT,2011/04/16 0:00,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor"
+flight-assignment-07,flight-crew-member-01,leg-07,PILOT,2011/04/16 0:00,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*"
+flight-assignment-08,flight-crew-member-01,leg-08,PILOT,2011/04/16 0:00,CONFIRMED,โลเร็ม อิปซัม
+flight-assignment-09,flight-crew-member-01,leg-09,PILOT,2011/04/16 0:00,CONFIRMED,لوريم إيبسوم
+flight-assignment-10,flight-crew-member-01,leg-10,PILOT,2011/04/16 0:00,CONFIRMED,洛伦·伊普森
+flight-assignment-11,flight-crew-member-01,leg-11,PILOT,2011/04/16 0:00,CONFIRMED,<marquee>Hacked</marquee>
+flight-assignment-12,flight-crew-member-01,leg-12,PILOT,2011/04/16 0:00,CONFIRMED,<script>alert(�Hacked!�);</script>
+flight-assignment-13,flight-crew-member-01,leg-13,PILOT,2011/04/16 0:00,CONFIRMED,' or 'A' = 'A
+# lastUpdate - standart variations
+flight-assignment-14,flight-crew-member-02,leg-01,PILOT,2000/01/01 0:00,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*"
+flight-assignment-15,flight-crew-member-02,leg-02,PILOT,2000/01/01 0:01,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*"
+flight-assignment-16,flight-crew-member-02,leg-03,PILOT,2022/07/29 23:59,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*"
+flight-assignment-17,flight-crew-member-02,leg-04,PILOT,2022/07/30 0:00,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*"
+# crewRole - basic variations
+flight-assignment-18,flight-crew-member-02,leg-05,COPILOT,2011/04/16 0:00,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*"
+flight-assignment-19,flight-crew-member-02,leg-06,LEADATTENDANT,2011/04/16 0:00,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*"
+flight-assignment-20,flight-crew-member-02,leg-07,CABINATTENDANT,2011/04/16 0:00,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*"
+# assignmentStatus - basic variations
+flight-assignment-21,flight-crew-member-02,leg-08,PILOT,2011/04/16 0:00,PENDING,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*"
+flight-assignment-22,flight-crew-member-02,leg-09,PILOT,2011/04/16 0:00,CANCELLED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*"
+# assignmentStatus - no singular values
+# crewMember - standard variations
+flight-assignment-23,flight-crew-member-03,leg-01,PILOT,2011/04/16 0:00,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*"
+flight-assignment-24,flight-crew-member-04,leg-01,PILOT,2011/04/16 0:00,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*"
+# crewMember - no singular values
+# flightStage - variations already done because of restrictions
