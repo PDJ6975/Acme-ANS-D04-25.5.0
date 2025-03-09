@@ -31,7 +31,7 @@ MoneyExchange
 AssistanceAgent
 --
 + employeeCode: String {Mandatory, ValidString(min=8, max=9, pattern="^[A-Z]{2-3}\d{6}$"), Column(unique=true)}
-+ spokenLanguages: Sting {Mandatory, ValidString(max=255), Auttommaped}
++ spokenLanguages: String {Mandatory, ValidString(max=255), Auttommaped}
 + airline: Arline {Mandatory, Valid, Automapped}
 + moment: Date {Mandatory, ValidMoment(past=true), Temporal(tempooralType.TIMESTAMP)}
 + briefBio: String {Optional, ValidString(max=255), Automapped}

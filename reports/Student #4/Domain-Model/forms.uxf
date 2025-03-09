@@ -12,7 +12,7 @@
     <panel_attributes>&lt;&lt;Form&gt;&gt;
 AssistanceAgentDashboard
 --
-+ ratioSusccessfulClaims: Double {Mandatory, ValidScore}
++ ratioSuccessfulClaims: Double {Mandatory, ValidScore}
 + ratioRejectedClaims: Double {Mandatory, ValidScore}
 + highestClaimsMonths: String {Mandatory, ValidString}
 + aveLogs: Double {Mandatory, ValidNumber(min=0)}
