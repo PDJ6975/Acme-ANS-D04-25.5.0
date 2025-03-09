@@ -35,7 +35,7 @@ FlightCrewMember
 + languageSkills: String {Mandatory, ValidString, Automapped}
 + availabilityStatus: AvailabilityStatus {Mandatory, Valid, Automapped}
 + salary: Money {Mandatory, ValidMoney, Automapped}
-+ yearsOfExperience: Integer {Optional, ValidNumber(min=0, integer=2, fraction=0), Automapped}
++ yearsOfExperience: Integer {Optional, ValidNumber(min=0, integer=2), Automapped}
 bg=pink</panel_attributes>
     <additional_attributes/>
   </element>

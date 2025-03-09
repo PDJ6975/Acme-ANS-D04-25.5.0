@@ -23,7 +23,7 @@ bg=pink</panel_attributes>
       <h>56</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
-FlightStage
+Leg
 --
 bg=green</panel_attributes>
     <additional_attributes/>
@@ -42,7 +42,7 @@ LogEntry
 + registrationMoment: Date {Mandatory, ValidMoment(past=true), Temporal(TemporalType.TIMESTAMP)}
 + typeOfIncident: String {Mandatory, ValidString(max=50), Automapped}
 + description: String {Mandatory, ValidString, Automapped}
-+ severityLevel: Integer {Mandatory, ValidNumber(min=0, max=10, integer=2, fraction=0), Automapped}
++ severityLevel: Integer {Mandatory, ValidNumber(min=0, max=10, integer=2), Automapped}
 bg=green
 </panel_attributes>
     <additional_attributes/>
@@ -61,7 +61,7 @@ FlightAssignment
 + crewRole: CrewRole {Mandatory, Valid, Automapped}
 + lastUpdated: Date {Mandatory, ValidMoment(past=true), Temporal(TemporalType.TIMESTAMP)}
 + assignmentStatus: AssignmentStatus {Mandatory, Valid, Automapped}
-+ comments: String {Optional, ValidString, Automapped}
++ comments: String {Optional, ValidString(min=1), Automapped}
 bg=green
 </panel_attributes>
     <additional_attributes/>

@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>930</x>
-      <y>570</y>
+      <x>530</x>
+      <y>410</y>
       <w>160</w>
       <h>120</h>
     </coordinates>
@@ -13,17 +13,17 @@
 CrewRole
 --
 + PILOT
-+ CO_PILOT
-+ LEAD_ATTENDANT
-+ CABIN_ATTENDANT
++ COPILOT
++ LEADATTENDANT
++ CABINATTENDANT
 bg=LIGHT_GRAY</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1110</x>
-      <y>450</y>
+      <x>710</x>
+      <y>290</y>
       <w>160</w>
       <h>100</h>
     </coordinates>
@@ -40,8 +40,8 @@ bg=LIGHT_GRAY
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>930</x>
-      <y>450</y>
+      <x>530</x>
+      <y>290</y>
       <w>160</w>
       <h>100</h>
     </coordinates>
@@ -49,8 +49,8 @@ bg=LIGHT_GRAY
 AvailabilityStatus
 --
 + AVAILABLE
-+ ON_VACATION
-+ ON_LEAVE
++ ONVACATION
++ ONLEAVE
 bg=LIGHT_GRAY
 </panel_attributes>
     <additional_attributes/>
