@@ -29,6 +29,7 @@ public class Leg extends AbstractEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	@Optional
+	//@Mandatory
 	@Column(unique = true)
 	@ValidString(pattern = "^[A-Z]{2}\\\\d{4}$", message = "El número de vuelo debe tener el siguiente patrón ^[A-Z]{2}\\\\d{4}$")
 	private String				flightNumber;
@@ -55,17 +56,27 @@ public class Leg extends AbstractEntity {
 	private Date				scheduledArrival;
 
 	@Optional
+	//@Mandatory
+	@Valid
+	//@ManyToOne(optional = false)
 	private Airport				departureAirport;
 
 	@Optional
+	//@Mandatory
+	@Valid
+	//@ManyToOne(optional = false)
 	private Airport				arrivalAirport;
 
 	@Optional
+	//@Mandatory
+	@Valid
+	//@ManyToOne(optional = false)
 	private Aircraft			aircraft;
 
 	// Relationships
 
 	@Optional
+	//@Mandatory
 	@Valid
 	//@ManyToOne(optional = false)
 	private Flight				flight;
