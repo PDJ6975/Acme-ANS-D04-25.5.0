@@ -4,9 +4,9 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>720</x>
-      <y>9</y>
-      <w>612</w>
+      <x>504</x>
+      <y>0</y>
+      <w>486</w>
       <h>126</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
@@ -23,8 +23,8 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>801</x>
-      <y>198</y>
+      <x>585</x>
+      <y>189</y>
       <w>513</w>
       <h>162</h>
     </coordinates>
@@ -45,9 +45,9 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>81</x>
-      <y>477</y>
-      <w>612</w>
+      <x>9</x>
+      <y>459</y>
+      <w>432</w>
       <h>144</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
@@ -65,8 +65,8 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>720</x>
-      <y>441</y>
+      <x>504</x>
+      <y>432</y>
       <w>513</w>
       <h>162</h>
     </coordinates>
@@ -86,9 +86,9 @@ bg=GREEN</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>171</x>
-      <y>252</y>
-      <w>612</w>
+      <x>0</x>
+      <y>234</y>
+      <w>495</w>
       <h>144</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
@@ -97,10 +97,10 @@ Airline
 + name: String	{Mandatory, ValidString(max=50), Automapped}
 + iataCode : String	{Mandatory, ValidString(min=3, max=3), Unique}
 + website : String {Mandatory, ValidUrl, Automapped}
-+ type : Type {LUXURY, STANDARD, LOW-COST}
++ type : Type (Mandatory, Valid, Automapped}
 + foundationMoment : Date {Mandatory, ValidMoment(past=true), Automapped}
-+ emailAddress? : String {Optional, ValidEmail, Automapped}
-+ contactPhone? : String {Optional, ValidString(pattern = "^+?\d{6,15}$"), Automapped}
++ emailAddress : String {Optional, ValidEmail, Automapped}
++ contactPhone : String {Optional, ValidString(pattern = "^+?\d{6,15}$"), Automapped}
 bg=green</panel_attributes>
     <additional_attributes/>
   </element>
