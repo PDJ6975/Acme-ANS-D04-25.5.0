@@ -1,5 +1,5 @@
 
-package acme.entities.claims;
+package acme.realms;
 
 import java.util.Date;
 
@@ -9,63 +9,57 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
 
-import acme.client.components.basis.AbstractEntity;
+import acme.client.components.basis.AbstractRole;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidEmail;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidString;
-import acme.realms.Customer;
-import acme.realms.Passenger;
-import acme.realms.agents.AssistanceAgent;
+import acme.entities.bookings.Booking;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Claim extends AbstractEntity {
+public class Passenger extends AbstractRole {
+
+	// Serialisation version
 
 	private static final long	serialVersionUID	= 1L;
 
+	// Attributes
+
 	@Mandatory
-	@ValidMoment(past = true)
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date				resgistrationMoment;
+	@ValidString(max = 256)
+	@Automapped
+	private String				fullName;
 
 	@Mandatory
 	@ValidEmail
 	@Automapped
-	private String				passengerEmail;
+	private String				email;
 
 	@Mandatory
-	@ValidString(max = 255)
+	@ValidString(pattern = "^[A-Z0-9]{6,9}$")
 	@Automapped
-	private String				description;
+	private String				passportNumber;
 
 	@Mandatory
-	@Valid
+	@ValidMoment(past = true)
 	@Automapped
-	private Type				type;
-
-	@Mandatory
-	@Automapped
-	private boolean				indicator;
-
-	@Mandatory
-	@Valid
-	@ManyToOne
-	private AssistanceAgent		assistantAgent;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				dateOfBirth;
 
 	@Optional
-	@Valid
-	@ManyToOne
-	private Customer			customer;
+	@Automapped
+	@ValidString(max = 51)
+	private String				specialNeeds;
 
-	@Optional
+	@ManyToOne(optional = false)
+	@Automapped
 	@Valid
-	@ManyToOne
-	private Passenger			passenger;
+	private Booking				booking;
 
 }

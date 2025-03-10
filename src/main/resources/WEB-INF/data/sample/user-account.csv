@@ -5,8 +5,18 @@ user-account-consumer-03,true,"UserIdentity{name: 'Manolo', surname: '之乎路�
 user-account-provider-01,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",provider1,provider1
 user-account-provider-02,true,"UserIdentity{name: 'Martina', surname: 'коза თხა', email: 'martina@acme.com'}",provider2,provider2
 user-account-provider-03,true,"UserIdentity{name: 'Antonia', surname: 'אבטיח Æløzå', email: 'antonia@acme.com'}",provider3,provider3
+<<<<<<< HEAD
 user-account-member-01,true,"UserIdentity{name: 'John', surname: 'Smith', email: 'john@acme.com'}",member1,member1
 user-account-member-02,true,"UserIdentity{name: 'Alice', surname: 'Johnson', email: 'alice@acme.com'}",member2,member2
 user-account-member-03,true,"UserIdentity{name: 'Robert', surname: 'Brown', email: 'robert@acme.com'}",member3,member3
 user-account-member-04,true,"UserIdentity{name: 'Emily', surname: 'Davis', email: 'emily@acme.com'}",member4,member4
 user-account-member,true,"UserIdentity{name: 'New', surname: 'Member', email: 'newmember@acme.com'}",member,member
+user-account-manager-01,true, "UserIdentity{name: 'David', surname: 'Miller', email: 'david.miller@acme.com'},manager1,manager1"
+user-account-manager-02,true, "UserIdentity{name: 'Sophia', surname: 'Anderson', email: 'sophia.anderson@acme.com'},manager2,manager2"
+user-account-manager-03,true,"UserIdentity{name: 'James', surname: 'Wilson', email: 'james.wilson@acme.com'}",manager3,manager3
+administrator-01,true,"UserIdentity{name: 'Administrator1', surname: 'Acme', email: 'administrator1@acme.com'}",administrator1,administrator1
+administrator-02,true,"UserIdentity{name: 'Administrator2', surname: 'Acme', email: 'administrator2@acme.com'}",administrator2,administrator2
+=======
+user-account-administrator-01,true,"UserIdentity{name: 'Administrator1', surname: 'Acme', email: 'administrator1@acme.com'}",administrator1,administrator1
+user-account-administrator-02,false,"UserIdentity{name: 'Administrator2', surname: 'Acme', email: 'administrator2@acme.com'}",administrator2,administrator2
+>>>>>>> tarea-grupal-013

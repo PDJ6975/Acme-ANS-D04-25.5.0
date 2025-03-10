@@ -15,6 +15,7 @@ import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
+import acme.entities.weathers.Weather;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -46,6 +47,11 @@ public class Flight extends AbstractEntity {
 	@ValidString(max = 255, message = "La descripción no puede superar los 255 caracteres")
 	@Automapped
 	private String				description;
+
+	@Optional
+	//@OneToOne(mappedBy = "flight")
+	@Valid
+	private Weather				weather;
 
 	// Derived attributes from legs
 
