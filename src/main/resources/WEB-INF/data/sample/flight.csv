@@ -1,6 +1,6 @@
-key,tag,selfTransfer,cost,description,scheduledDeparture,scheduledArrival,originCity,destinationCity,layovers
-flight-01,Lorem ipsum dolor sit ame,true,EUR 1.005,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2026/01/05 10:00,2026/01/05 18:00,Madrid,Sevilla,3
-flight-02,L,true,EUR 010,L,2026/01/06 10:00,2026/01/06 16:00,Barcelona,Sevilla,2
-flight-03,Lo,true,EUR 010,Lo,2026/01/07 10:00,2026/01/07 16:00,Sevilla,New York,2
-flight-04,Lorem ipsum dolor sit amet, consectetur adipiscin,true,EUR 2.000,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor,2026/01/08 10:00,2026/01/08 14:00,London,Sevilla,1
-flight-05,Lorem ipsum dolor sit amet, consectetur adipiscing,false,EUR 2.000,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,2026/01/09 10:00,2026/01/09 12:00,New York,Madrid,0
+key,tag,selfTransfer,cost,description,key:weather,scheduledDeparture,scheduledArrival,originCity,destinationCity,layovers
+flight-01,Lorem ipsum dolor sit ame,true,EUR 1.005,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,,2026/01/05 10:00,2026/01/05 18:00,Madrid,Sevilla,3
+flight-02,L,true,EUR 010,L,,2026/01/06 10:00,2026/01/06 16:00,Barcelona,Sevilla,2
+flight-03,Lo,true,EUR 010,Lo,weather-02,2026/01/07 10:00,2026/01/07 16:00,Sevilla,New York,2
+flight-04,Lorem ipsum dolor sit amet, consectetur adipiscin,true,EUR 2.000,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor,,2026/01/08 10:00,2026/01/08 14:00,London,Sevilla,1
+flight-05,Lorem ipsum dolor sit amet, consectetur adipiscing,false,EUR 2.000,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,,2026/01/09 10:00,2026/01/09 12:00,New York,Madrid,0
