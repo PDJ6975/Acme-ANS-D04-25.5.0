@@ -13,3 +13,5 @@ user-account-member,true,"UserIdentity{name: 'New', surname: 'Member', email: 'n
 user-account-manager-01,true, "UserIdentity{name: 'David', surname: 'Miller', email: 'david.miller@acme.com'},manager1,manager1"
 user-account-manager-02,true, "UserIdentity{name: 'Sophia', surname: 'Anderson', email: 'sophia.anderson@acme.com'},manager2,manager2"
 user-account-manager-03,true,"UserIdentity{name: 'James', surname: 'Wilson', email: 'james.wilson@acme.com'}",manager3,manager3
+administrator-01,true,"UserIdentity{name: 'Administrator1', surname: 'Acme', email: 'administrator1@acme.com'}",administrator1,administrator1
+administrator-02,true,"UserIdentity{name: 'Administrator2', surname: 'Acme', email: 'administrator2@acme.com'}",administrator2,administrator2
