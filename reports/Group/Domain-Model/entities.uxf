@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>9</zoom_level>
+  <zoom_level>6</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>504</x>
-      <y>0</y>
-      <w>486</w>
-      <h>126</h>
+      <x>114</x>
+      <y>402</y>
+      <w>324</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Service
@@ -23,10 +23,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>585</x>
-      <y>189</y>
-      <w>513</w>
-      <h>162</h>
+      <x>102</x>
+      <y>156</y>
+      <w>342</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Airport        
@@ -45,10 +45,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>9</x>
-      <y>459</y>
-      <w>432</w>
-      <h>144</h>
+      <x>444</x>
+      <y>606</y>
+      <w>288</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Review
@@ -65,10 +65,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>504</x>
-      <y>432</y>
-      <w>513</w>
-      <h>162</h>
+      <x>744</x>
+      <y>390</y>
+      <w>342</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Aircraft        
@@ -86,10 +86,10 @@ bg=GREEN</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>234</y>
-      <w>495</w>
-      <h>144</h>
+      <x>750</x>
+      <y>174</y>
+      <w>330</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Airline        
@@ -103,5 +103,173 @@ Airline
 + contactPhone : String {Optional, ValidString(pattern = "^+?\d{6,15}$"), Automapped}
 bg=green</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>264</x>
+      <y>258</y>
+      <w>66</w>
+      <h>156</h>
+    </coordinates>
+    <panel_attributes>Offered by ^
+lt=&lt;-x
+m1=1
+m2=*
+
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;240.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>426</x>
+      <y>816</y>
+      <w>324</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+UserAccount
+--
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>912</x>
+      <y>264</y>
+      <w>72</w>
+      <h>138</h>
+    </coordinates>
+    <panel_attributes>Belongs To ^
+lt=&lt;-x
+m1=1
+m2=*
+
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1104</x>
+      <y>36</y>
+      <w>150</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Flight
+--
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1224</x>
+      <y>0</y>
+      <w>132</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>Esta entidad será desarrollada 
+por un compañero en su requisito
+individual
+bg=blue
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>438</x>
+      <y>210</y>
+      <w>126</w>
+      <h>408</h>
+    </coordinates>
+    <panel_attributes>&lt; Refers to
+lt=&lt;-x
+m1=0..1
+m2=*
+
+</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0;120.0;660.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>348</x>
+      <y>480</y>
+      <w>108</w>
+      <h>198</h>
+    </coordinates>
+    <panel_attributes>Refers to ^
+lt=&lt;-x
+m1=0..1
+m2=*
+
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;300.0;160.0;300.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>660</x>
+      <y>210</y>
+      <w>102</w>
+      <h>408</h>
+    </coordinates>
+    <panel_attributes>&lt; Refers to
+lt=&lt;-x
+m1=0..1
+m2=*
+
+</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;10.0;10.0;660.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>720</x>
+      <y>798</y>
+      <w>156</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Esta entidad es básica del framework
+bg=blue
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>726</x>
+      <y>90</y>
+      <w>516</w>
+      <h>588</h>
+    </coordinates>
+    <panel_attributes>&lt; Refers to
+lt=&lt;-x
+m1=0..1
+m2=*
+
+</panel_attributes>
+    <additional_attributes>760.0;10.0;770.0;950.0;10.0;950.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>582</x>
+      <y>696</y>
+      <w>72</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>Published by ▼
+lt=&lt;-x
+m1=1
+m2=*
+
+</panel_attributes>
+    <additional_attributes>10.0;200.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
