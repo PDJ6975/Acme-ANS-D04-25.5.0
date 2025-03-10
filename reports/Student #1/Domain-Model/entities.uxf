@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>868</x>
-      <y>441</y>
+      <x>882</x>
+      <y>455</y>
       <w>126</w>
       <h>49</h>
     </coordinates>
@@ -17,8 +17,8 @@ bg=pink</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>168</x>
-      <y>385</y>
+      <x>175</x>
+      <y>399</y>
       <w>476</w>
       <h>147</h>
     </coordinates>
@@ -40,8 +40,8 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>168</x>
-      <y>0</y>
+      <x>175</x>
+      <y>14</y>
       <w>476</w>
       <h>147</h>
     </coordinates>
@@ -63,8 +63,8 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>861</x>
-      <y>98</y>
+      <x>742</x>
+      <y>203</y>
       <w>476</w>
       <h>133</h>
     </coordinates>
@@ -76,7 +76,6 @@ Weather
 + temperature: Double {Optional}
 + humidity: Double {Optional}
 + windSpeed: Double {Optional}
-+ weatherDescription: String {ValidString(max=100), Optional}
 + location: String {Mandatory}
 + source: String {Mandatory}
 bg=green</panel_attributes>
@@ -85,22 +84,22 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>637</x>
-      <y>455</y>
-      <w>245</w>
+      <x>644</x>
+      <y>469</y>
+      <w>252</w>
       <h>35</h>
     </coordinates>
     <panel_attributes>assignedTo ▼
 lt=&lt;-x
 m1=*
 m2=1</panel_attributes>
-    <additional_attributes>10.0;20.0;330.0;20.0</additional_attributes>
+    <additional_attributes>10.0;20.0;340.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>203</x>
-      <y>686</y>
+      <x>210</x>
+      <y>700</y>
       <w>140</w>
       <h>70</h>
     </coordinates>
@@ -113,8 +112,8 @@ bg=green</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>322</x>
-      <y>658</y>
+      <x>329</x>
+      <y>672</y>
       <w>98</w>
       <h>49</h>
     </coordinates>
@@ -128,8 +127,8 @@ layer=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>511</x>
-      <y>686</y>
+      <x>518</x>
+      <y>700</y>
       <w>161</w>
       <h>63</h>
     </coordinates>
@@ -142,8 +141,8 @@ bg=green</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>651</x>
-      <y>658</y>
+      <x>658</x>
+      <y>672</y>
       <w>98</w>
       <h>49</h>
     </coordinates>
@@ -156,8 +155,8 @@ layer=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>266</x>
-      <y>525</y>
+      <x>273</x>
+      <y>539</y>
       <w>56</w>
       <h>175</h>
     </coordinates>
@@ -170,8 +169,8 @@ m2=*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>567</x>
-      <y>525</y>
+      <x>574</x>
+      <y>539</y>
       <w>84</w>
       <h>175</h>
     </coordinates>
@@ -184,8 +183,8 @@ m2=*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>392</x>
-      <y>140</y>
+      <x>399</x>
+      <y>154</y>
       <w>77</w>
       <h>259</h>
     </coordinates>
@@ -194,5 +193,19 @@ lt=&lt;-x
 m1=1
 m2=*</panel_attributes>
     <additional_attributes>10.0;350.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>567</x>
+      <y>259</y>
+      <w>189</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>belongsTo ▼
+lt=&lt;-x
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>30.0;200.0;30.0;20.0;250.0;20.0</additional_attributes>
   </element>
 </diagram>
