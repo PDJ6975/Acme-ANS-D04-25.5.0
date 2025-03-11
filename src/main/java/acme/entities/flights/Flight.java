@@ -4,6 +4,7 @@ package acme.entities.flights;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
@@ -15,7 +16,7 @@ import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
-import acme.entities.weathers.Weather;
+import acme.entities.airlines.Airline;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -48,11 +49,6 @@ public class Flight extends AbstractEntity {
 	@Automapped
 	private String				description;
 
-	@Optional
-	//@OneToOne(mappedBy = "flight")
-	@Valid
-	private Weather				weather;
-
 	// Derived attributes from legs
 
 	@Mandatory
@@ -72,6 +68,11 @@ public class Flight extends AbstractEntity {
 	private String				destinationCity; // Derivado del último leg
 
 	@Mandatory
-	@ValidNumber(min = 0, integer = 2, fraction = 0, message = "El número de escalas no puede ser negativo")
+	@ValidNumber(min = 0, message = "El número de escalas no puede ser negativo")
 	private Integer				layovers; // Derivado de los tramos
+
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private Airline				airline;
 }
