@@ -56,22 +56,22 @@ public class Leg extends AbstractEntity {
 	@ValidMoment(past = false, message = "La llegada programada debe ser en el futuro")
 	private Date				scheduledArrival;
 
-	@Mandatory
-	@ManyToOne(optional = false)
+	@Optional
+	@ManyToOne
 	private Airport				departureAirport;
 
-	@Mandatory
-	@ManyToOne(optional = false)
+	@Optional
+	@ManyToOne
 	private Airport				arrivalAirport;
 
-	@Mandatory
-	@ManyToOne(optional = false)
+	@Optional
+	@ManyToOne
 	private Aircraft			aircraft;
 
 	// Relationships
 
-	@Mandatory
-	@ManyToOne(optional = false)
+	@Optional
+	@ManyToOne
 	private Flight				flight;
 
 }
