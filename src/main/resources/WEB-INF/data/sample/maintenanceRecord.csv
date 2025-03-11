@@ -1,0 +1,11 @@
+key,moment,status,nextInspectionDue,estimatedCost,notes,key:technician,key:aircraft
+maintenance-record-01,2000/01/01 0:00,COMPLETED,2010/02/21 09:30,EUR 43492.6,Electrical system review,technician-01,aircraft-01
+maintenance-record-02,2000/03/16 13:00,COMPLETED,2024/10/31 14:00,EUR 0.00,Cabin interior refurbishment,technician-02,aircraft-02
+maintenance-record-03,2025/08/08 14:00,PENDING,2025/09/17 23:00,EUR 17283.81,Engine performance test,technician-01,aircraft-03
+maintenance-record-04,2025/04/24 06:00,IN_PROGRESS,2025/08/26 04:00,EUR 45296.49,,technician-02,aircraft-01
+maintenance-record-05,2026/11/06 05:00,PENDING,2027/05/17 04:00,EUR 16335.26,Engine performance test,technician-01,aircraft-03
+maintenance-record-06,2025/03/03 16:00,IN_PROGRESS,2025/04/14 00:00,EUR 23958.05,Landing gear maintenance,technician-02,aircraft-01
+maintenance-record-07,2025/11/12 00:00,PENDING,2025/12/31 23:59,EUR 26330.32,Landing gear maintenance,technician-01,aircraft-03
+maintenance-record-08,2025/03/14 16:50,PENDING,2025/09/29 21:45,EUR 39658.25,Landing gear maintenance,technician-01,aircraft-02
+maintenance-record-09,2011/01/25 20:00,COMPLETED,2015/01/14 15:00,EUR 20623.88,Electrical system review,technician-02,aircraft-01
+maintenance-record-10,2023/06/21 18:50,COMPLETED,2024/03/17 15:00,EUR 3830.52,Routine checkup,technician-02,aircraft-03
