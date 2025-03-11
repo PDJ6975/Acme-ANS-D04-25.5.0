@@ -5,12 +5,12 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
-import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
@@ -55,11 +55,9 @@ public class Weather extends AbstractEntity {
 	@ValidString
 	private String				source;
 
-	@Optional
-	//@Mandatory
-	//@JoinColumn(name = "flight_id", unique = true)
+	@Mandatory
 	@Valid
-	//@OneToOne(optional = false)
-	Flight						flight;
+	@OneToOne(optional = false) // Se guarda la referencia en Weather
+	private Flight				flight;
 
 }

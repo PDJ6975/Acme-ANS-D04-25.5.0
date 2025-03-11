@@ -1,0 +1,4 @@
+key,managerId,yearsOfExperience,birth,pictureUrl,key:flight
+manager-01,AB123456,14,2000/01/01 0:00,,flight-01
+manager-02,XYZ654321,25,2001/01/01 0:00,http://lorem.com/ipsum,flight-02
+manager-03,CD789012,1,2005/01/01 0:00,http://example.org/,flight-03
