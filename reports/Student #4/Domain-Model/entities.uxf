@@ -5,7 +5,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>156</x>
-      <y>516</y>
+      <y>414</y>
       <w>438</w>
       <h>102</h>
     </coordinates>
@@ -26,7 +26,7 @@ bg=pink</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>318</x>
-      <y>696</y>
+      <y>594</y>
       <w>114</w>
       <h>60</h>
     </coordinates>
@@ -40,7 +40,7 @@ bg=green</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>366</x>
-      <y>612</y>
+      <y>510</y>
       <w>66</w>
       <h>96</h>
     </coordinates>
@@ -54,7 +54,7 @@ m2=*</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>126</x>
-      <y>336</y>
+      <y>234</y>
       <w>456</w>
       <h>78</h>
     </coordinates>
@@ -74,7 +74,7 @@ bg=green</panel_attributes>
     <id>UMLNote</id>
     <coordinates>
       <x>426</x>
-      <y>666</y>
+      <y>564</y>
       <w>132</w>
       <h>42</h>
     </coordinates>
@@ -88,7 +88,7 @@ bg=blue</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>366</x>
-      <y>408</y>
+      <y>306</y>
       <w>78</w>
       <h>120</h>
     </coordinates>
@@ -102,20 +102,24 @@ m2=*</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>768</x>
-      <y>360</y>
+      <y>258</y>
       <w>114</w>
-      <h>36</h>
+      <h>48</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;Role&gt;&gt;
-	Customer
-bg=pink</panel_attributes>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+	UserAccount
+--
+
+
+
+bg=yellow</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>576</x>
-      <y>366</y>
+      <y>264</y>
       <w>204</w>
       <h>30</h>
     </coordinates>
@@ -129,7 +133,7 @@ m2=*</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>198</x>
-      <y>138</y>
+      <y>36</y>
       <w>402</w>
       <h>78</h>
     </coordinates>
@@ -150,7 +154,7 @@ bg=green</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>372</x>
-      <y>210</y>
+      <y>108</y>
       <w>66</w>
       <h>138</h>
     </coordinates>
@@ -161,24 +165,10 @@ m2=*</panel_attributes>
     <additional_attributes>10.0;210.0;10.0;10.0</additional_attributes>
   </element>
   <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>864</x>
-      <y>330</y>
-      <w>114</w>
-      <h>36</h>
-    </coordinates>
-    <panel_attributes>Entidad desarrollada por un 
-compañero en su requisito 
-individual
-bg=blue</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>UMLClass</id>
     <coordinates>
       <x>630</x>
-      <y>138</y>
+      <y>36</y>
       <w>366</w>
       <h>78</h>
     </coordinates>
@@ -195,11 +185,11 @@ bg=green</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>336</y>
+      <y>234</y>
       <w>102</w>
       <h>72</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;Datatype&gt;&gt;
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
 Type
 --
 + FLIGHT ISSUES
@@ -213,7 +203,7 @@ bg=LIGHT_GRAY</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>726</x>
-      <y>498</y>
+      <y>396</y>
       <w>318</w>
       <h>138</h>
     </coordinates>
