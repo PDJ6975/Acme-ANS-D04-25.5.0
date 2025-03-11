@@ -1,4 +1,4 @@
 key,licenseNumber,phoneNumber,specialisation,annualHealthTest,yearsOfExperience,certifications,key:user-account
-technician-01,AB511223,+750565726255576,Landing Gear,false,25,,user-account-technician-01
-technician-02,XYZ356261,+163246381587280,Fuel Systems,true,99,Safety Inspection License,user-account-technician-02
-technician-03,EF304173,+391696973598030,Engine Maintenance,true,0,Boeing Maintenance Training,user-account-technician-03
+technician-01,AB511223,+750565726255576,Lo,false,25,,user-account-technician-01
+technician-02,XYZ356261,+163246381587280,L,true,99,Safety Inspection License,user-account-technician-02
+technician-03,EF304173,+391696973598030,"Lorem ipsum dolor sit amet, consectetur adipiscing",true,0,Boeing Maintenance Training,user-account-technician-03
