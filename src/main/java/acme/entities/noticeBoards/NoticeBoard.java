@@ -83,7 +83,7 @@ public class NoticeBoard extends AbstractEntity {
 	private String				language;
 
 	@Mandatory
-	@ValidMoment(past = true)
+	@ValidMoment(past = true, message="La fecha de posteo debe de ser anterior al dia de hoy")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				postedDate;
 }

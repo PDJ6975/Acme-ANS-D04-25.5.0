@@ -40,7 +40,7 @@ public class Technician extends AbstractRole {
 	private Boolean				annualHealthTest;
 
 	@Mandatory
-	@ValidNumber(min = 0, integer = 2, fraction = 0)
+	@ValidNumber(min = 0, max = 99)
 	@Automapped
 	private Integer				yearsOfExperience;
 

@@ -33,7 +33,7 @@ public class Task extends AbstractEntity {
 	private String				description;
 
 	@Mandatory
-	@ValidNumber(min = 0, max = 10, integer = 2, fraction = 0, message = "Debe estar comprendido entre 0 y 10")
+	@ValidNumber(min = 0, max = 10, message = "Debe estar comprendido entre 0 y 10")
 	@Automapped
 	private Integer				priority;
 

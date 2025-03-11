@@ -1,0 +1,11 @@
+key,type,description,priority,estimatedDuration,key:maintenanceRecord,key:technician
+task-01,INSPECTION,INSPECTION of aircraft system,8,8,maintenance-record-01,technician-01
+task-02,INSPECTION,INSPECTION of aircraft system,10,4,maintenance-record-02,technician-02
+task-03,INSPECTION,INSPECTION of aircraft system,2,4,maintenance-record-03,technician-02
+task-04,REPAIR,REPAIR of aircraft system,7,2,maintenance-record-04,technician-01
+task-05,REPAIR,REPAIR of aircraft system,1,4,maintenance-record-05,technician-02
+task-06,SYSTEM_CHECK,SYSTEM_CHECK of aircraft system,7,16,maintenance-record-06,technician-01
+task-07,SYSTEM_CHECK,SYSTEM_CHECK of aircraft system,9,4,maintenance-record-07,technician-02
+task-08,MAINTENANCE,MAINTENANCE of aircraft system,1,16,maintenance-record-08,technician-01
+task-09,REPAIR,REPAIR of aircraft system,4,8,maintenance-record-09,technician-02
+task-10,INSPECTION,INSPECTION of aircraft system,7,4,maintenance-record-10,technician-01
