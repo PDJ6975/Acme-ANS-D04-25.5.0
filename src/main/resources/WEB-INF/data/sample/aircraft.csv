@@ -1,4 +1,4 @@
 key,model,registrationNumber,capacity,cargoWeight,aircraftStatus,details
 aircraft-01,Airbus A320,EC-MEA,180,25000,ACTIVE,Short-range airliner
-aircraft-02,Boeing 737,EC-LLU,200,30000,ACTIVE,
+aircraft-02,Boeing 737,EC-LLU,200,30000,ACTIVE,sdfsdfsdfsd
 aircraft-03,ATR 72,EC-ATD,72,2000,ACTIVE,Small turboprop
