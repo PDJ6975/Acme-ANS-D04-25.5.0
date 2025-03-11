@@ -1,0 +1,56 @@
+key,name,link,averageDwellTime,promotionCode,discountMoney
+service-01,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,4380,AAAA-00,EUR 500000.00
+service-02,L,http://lorem.com/ipsum,4380,AAAA-99,EUR 500000.00
+service-03,Lo,http://lorem.com/ipsum,4380,ZZZZ-00,EUR 500000.00
+service-04,"Lorem ipsum dolor sit amet, consectetur adipiscin",http://lorem.com/ipsum,4380,ZZZZ-99,EUR 500000.00
+service-05,"Lorem ipsum dolor sit amet, consectetur adipiscing",http://lorem.com/ipsum,4380,AAAA-01,EUR 500000.00
+service-06,โลเร็ม อิปซัม,http://lorem.com/ipsum,4380,AAAA-02,EUR 500000.00
+service-07,لوريم إيبسوم,http://lorem.com/ipsum,4380,AAAA-03,EUR 500000.00
+service-08,洛伦·伊普森,http://lorem.com/ipsum,4380,AAAA-04,EUR 500000.00
+service-09,<marquee>Hacked</marquee>,http://lorem.com/ipsum,4380,AAAA-05,EUR 500000.00
+service-10,<script>alert(‘Hacked!’);</script>,http://lorem.com/ipsum,4380,AAAA-06,EUR 500000.00
+service-11,' or 'A' = 'A ,http://lorem.com/ipsum,4380,AAAA-07,EUR 500000.00
+#
+# name comprobado
+#
+service-12,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,4380,AAAA-08,EUR 500000.00
+service-13,Lorem ipsum dolor sit ame,ftp://a,4380,AAAA-09,EUR 500000.00
+service-14,Lorem ipsum dolor sit ame,ftp://a.b,4380,AAAA-10,EUR 500000.00
+service-15,Lorem ipsum dolor sit ame,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/",4380,AAAA-11,EUR 500000.00
+service-16,Lorem ipsum dolor sit ame,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/X",4380,AAAA-12,EUR 500000.00
+service-17,Lorem ipsum dolor sit ame,https://www.lorem-ipsum.org,4380,AAAA-13,EUR 500000.00
+service-18,Lorem ipsum dolor sit ame,ftp://www.lorem-ipsum.org,4380,AAAA-14,EUR 500000.00
+service-19,Lorem ipsum dolor sit ame,http://www.lorem-ipsum.org/dolor/sit.html,4380,AAAA-15,EUR 500000.00
+service-20,Lorem ipsum dolor sit ame,http://www.lorem-ipsum.org/dolor/sit.html#dolor,4380,AAAA-16,EUR 500000.00
+service-21,Lorem ipsum dolor sit ame,http://example.org?a=1&b=2,4380,AAAA-17,EUR 500000.00
+service-22,Lorem ipsum dolor sit ame,http://example.org?,4380,AAAA-18,EUR 500000.00
+service-23,Lorem ipsum dolor sit ame,http://example.org?a,4380,AAAA-19,EUR 500000.00
+service-24,Lorem ipsum dolor sit ame,http://example.org?a&b,4380,AAAA-20,EUR 500000.00
+service-25,Lorem ipsum dolor sit ame,http://example.org/,4380,AAAA-21,EUR 500000.00
+service-26,Lorem ipsum dolor sit ame,http://example.org/a,4380,AAAA-22,EUR 500000.00
+service-27,Lorem ipsum dolor sit ame,http://example.org/a/b,4380,AAAA-23,EUR 500000.00
+service-28,Lorem ipsum dolor sit ame,http://example.org/a/b?,4380,AAAA-24,EUR 500000.00
+service-29,Lorem ipsum dolor sit ame,http://example.org/a/b?a&b,4380,AAAA-25,EUR 500000.00
+#
+# link comprobado
+#
+service-30,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,4380,AAAA-26,EUR 500000.00
+service-31,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,0,AAAA-27,EUR 500000.00
+service-32,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,1,AAAA-28,EUR 500000.00
+service-33,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,8759,AAAA-29,EUR 500000.00
+service-34,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,8760,AAAA-30,EUR 500000.00
+#
+# averageDwellTime comprobado
+#
+service-35,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,4380,YKNR-43,EUR 500000.00
+#
+# promotionCode comprobado (hecho con un valor aleatorio)
+#
+service-36,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,4380,AAAA-31,EUR 500000.00
+service-37,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,4380,AAAA-32,EUR 0.00
+service-38,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,4380,AAAA-33,EUR 0.01
+service-39,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,4380,AAAA-34,EUR 999999.99
+service-40,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,4380,AAAA-35,EUR 1000000.00
+#
+# discountMoney comprobado
+#

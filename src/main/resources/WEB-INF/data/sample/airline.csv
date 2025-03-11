@@ -1,6 +1,77 @@
 key,name,iataCode,website,type,foundationMoment,emailAddress,phoneNumber
-airline-01,Acme Airlines,ACM,https://www.acmeair.com,LUXURY,2000/05/15 10:00,example@gmail.com,+15551234567
-airline-02,Global Air,GLB,https://www.globalair.com,LUXURY,2000/05/15 10:00,example@gmail.com,+442071234567
-airline-03,Blue Sky Airlines,BSA,https://www.bluesky.com,LUXURY,2000/05/15 10:00,example@gmail.com,+33122334455
-airline-04,SwiftJet,SWT,https://www.swiftjet.com,LUXURY,2000/05/15 10:00,example@gmail.com,+498912345678
-airline-05,Air Freedom,AFR,https://www.airfreedom.com,LUXURY,2000/05/15 10:00,example@gmail.com,
+airline-01,"Lorem ipsum dolor sit ame",LOR,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+15551234567
+airline-02,"L",AAA,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+15551234567
+airline-03,"Lo",AAB,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+15551234567
+airline-04,"Lorem ipsum dolor sit amet, consectetur adipiscin",AAC,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+15551234567
+airline-05,"Lorem ipsum dolor sit amet, consectetur adipiscing",AAD,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+15551234567
+airline-06,"โลเร็ม อิปซัม",AAE,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+15551234567
+airline-07,"لوريم إيبسوم",AAF,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+15551234567
+airline-08,"洛伦·伊普森",AAG,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+15551234567
+airline-09,"<marquee>Hacked</marquee>",AAH,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+15551234567
+airline-10,"<script>alert(‘Hacked!’);</script>",AAI,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+15551234567
+airline-11,"' or 'A' = 'A ",AAJ,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+15551234567
+#
+# name probado
+#
+airline-12,"Lorem ipsum dolor sit ame",AAK,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+15551234567
+#
+# iataCode probado
+#
+airline-13,"Lorem ipsum dolor sit ame",AAL,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+15551234567
+airline-14,"Lorem ipsum dolor sit ame",AAM,ftp://a,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+15551234567
+airline-15,"Lorem ipsum dolor sit ame",AAN,ftp://a.b,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+15551234567
+airline-16,"Lorem ipsum dolor sit ame",AAO,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/",LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+15551234567
+airline-17,"Lorem ipsum dolor sit ame",AAP,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/X",LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+15551234567
+airline-18,"Lorem ipsum dolor sit ame",AAQ,https://www.lorem-ipsum.org,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+15551234567
+airline-19,"Lorem ipsum dolor sit ame",AAR,ftp://www.lorem-ipsum.org,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+15551234567
+airline-20,"Lorem ipsum dolor sit ame",AAS,http://www.lorem-ipsum.org/dolor/sit.html,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+15551234567
+airline-21,"Lorem ipsum dolor sit ame",AAT,http://www.lorem-ipsum.org/dolor/sit.html#dolor,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+15551234567
+airline-22,"Lorem ipsum dolor sit ame",AAU,http://example.org?a=1&b=2,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+15551234567
+airline-23,"Lorem ipsum dolor sit ame",AAV,http://example.org?,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+15551234567
+airline-24,"Lorem ipsum dolor sit ame",AAW,http://example.org?a,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+15551234567
+airline-25,"Lorem ipsum dolor sit ame",AAX,http://example.org?a&b,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+15551234567
+airline-26,"Lorem ipsum dolor sit ame",AAY,http://example.org/,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+15551234567
+airline-27,"Lorem ipsum dolor sit ame",AAZ,http://example.org/a,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+15551234567
+airline-28,"Lorem ipsum dolor sit ame",ABA,http://example.org/a/b,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+15551234567
+airline-29,"Lorem ipsum dolor sit ame",ABB,http://example.org/a/b?,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+15551234567
+airline-30,"Lorem ipsum dolor sit ame",ABC,http://example.org/a/b?a&b,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+15551234567
+#
+# website probado
+#
+airline-31,"Lorem ipsum dolor sit ame",ABD,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+15551234567
+airline-32,"Lorem ipsum dolor sit ame",ABE,http://lorem.com/ipsum,STANDARD,2012/07/02 0:00,acme@lorem-ipsum.org,+15551234567
+airline-33,"Lorem ipsum dolor sit ame",ABF,http://lorem.com/ipsum,LOW_COST,2012/07/02 0:00,acme@lorem-ipsum.org,+15551234567
+#
+# type probado
+#
+airline-34,"Lorem ipsum dolor sit ame",ABG,http://lorem.com/ipsum,LUXURY,2011/04/16 0:00,acme@lorem-ipsum.org,+15551234567
+airline-35,"Lorem ipsum dolor sit ame",ABH,http://lorem.com/ipsum,LUXURY,2000/01/01 0:00,acme@lorem-ipsum.org,+15551234567
+airline-36,"Lorem ipsum dolor sit ame",ABI,http://lorem.com/ipsum,LUXURY,2000/01/01 0:01,acme@lorem-ipsum.org,+15551234567
+airline-37,"Lorem ipsum dolor sit ame",ABJ,http://lorem.com/ipsum,LUXURY,2022/07/29 23:59,acme@lorem-ipsum.org,+15551234567
+airline-38,"Lorem ipsum dolor sit ame",ABK,http://lorem.com/ipsum,LUXURY,2022/07/30 0:00,acme@lorem-ipsum.org,+15551234567
+#
+# foundationMoment probado
+#
+airline-39,"Lorem ipsum dolor sit ame",ABL,http://lorem.com/ipsum,LUXURY,2011/04/16 0:00,acme@lorem-ipsum.org,+15551234567
+#airline-40,"Lorem ipsum dolor sit ame",ABM,http://lorem.com/ipsum,LUXURY,2011/04/16 0:00,"acme:password@lorem-ipsum.org",+15551234567
+airline-41,"Lorem ipsum dolor sit ame",ABN,http://lorem.com/ipsum,LUXURY,2011/04/16 0:00,a@b.e,+15551234567
+airline-42,"Lorem ipsum dolor sit ame",ABO,http://lorem.com/ipsum,LUXURY,2011/04/16 0:00,a@b.es,+15551234567
+airline-43,"Lorem ipsum dolor sit ame",ABP,http://lorem.com/ipsum,LUXURY,2011/04/16 0:00,a@b.esx,+15551234567
+airline-44,"Lorem ipsum dolor sit ame",ABQ,http://lorem.com/ipsum,LUXURY,2011/04/16 0:00,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.doloris.edu,+15551234567
+airline-45,"Lorem ipsum dolor sit ame",ABR,http://lorem.com/ipsum,LUXURY,2011/04/16 0:00,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolor.es.org,+15551234567
+#
+# emailAddress probado (falta descomentar la línea 56)
+#
+airline-46,"Lorem ipsum dolor sit ame",ABS,http://lorem.com/ipsum,LUXURY,2011/04/16 0:00,acme@lorem-ipsum.org,+123456
+airline-47,"Lorem ipsum dolor sit ame",ABT,http://lorem.com/ipsum,LUXURY,2011/04/16 0:00,acme@lorem-ipsum.org,+1234567
+airline-48,"Lorem ipsum dolor sit ame",ABU,http://lorem.com/ipsum,LUXURY,2011/04/16 0:00,acme@lorem-ipsum.org,+12345678
+airline-49,"Lorem ipsum dolor sit ame",ABV,http://lorem.com/ipsum,LUXURY,2011/04/16 0:00,acme@lorem-ipsum.org,+123456789
+airline-50,"Lorem ipsum dolor sit ame",ABW,http://lorem.com/ipsum,LUXURY,2011/04/16 0:00,acme@lorem-ipsum.org,+1234567890
+airline-51,"Lorem ipsum dolor sit ame",ABX,http://lorem.com/ipsum,LUXURY,2011/04/16 0:00,acme@lorem-ipsum.org,+12345678901
+airline-52,"Lorem ipsum dolor sit ame",ABY,http://lorem.com/ipsum,LUXURY,2011/04/16 0:00,acme@lorem-ipsum.org,+123456789012
+airline-53,"Lorem ipsum dolor sit ame",ABZ,http://lorem.com/ipsum,LUXURY,2011/04/16 0:00,acme@lorem-ipsum.org,+1234567890123
+airline-54,"Lorem ipsum dolor sit ame",ACA,http://lorem.com/ipsum,LUXURY,2011/04/16 0:00,acme@lorem-ipsum.org,+12345678901234
+airline-55,"Lorem ipsum dolor sit ame",ACB,http://lorem.com/ipsum,LUXURY,2011/04/16 0:00,acme@lorem-ipsum.org,+123456789012345
+#
+# phoneNumber probado
+#

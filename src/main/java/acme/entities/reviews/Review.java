@@ -49,6 +49,6 @@ public class Review extends AbstractEntity {
 
 	@Optional
 	@Automapped
-	private boolean				reacommended;
+	private boolean				recommended;
 
 }
