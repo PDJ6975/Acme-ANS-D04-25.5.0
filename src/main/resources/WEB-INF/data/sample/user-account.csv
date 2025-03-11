@@ -10,14 +10,15 @@ user-account-member-02,true,"UserIdentity{name: 'Alice', surname: 'Johnson', ema
 user-account-member-03,true,"UserIdentity{name: 'Robert', surname: 'Brown', email: 'robert@acme.com'}",member3,member3
 user-account-member-04,true,"UserIdentity{name: 'Emily', surname: 'Davis', email: 'emily@acme.com'}",member4,member4
 user-account-member,true,"UserIdentity{name: 'New', surname: 'Member', email: 'newmember@acme.com'}",member,member
-user-account-manager-01,true, "UserIdentity{name: 'David', surname: 'Miller', email: 'david.miller@acme.com'}",manager1,manager1
-user-account-manager-02,true, "UserIdentity{name: 'Sophia', surname: 'Anderson', email: 'sophia.anderson@acme.com'}",manager2,manager2
+user-account-manager-01,true,"UserIdentity{name: 'David', surname: 'Miller', email: 'david.miller@acme.com'}",manager1,manager1
+user-account-manager-02,true,"UserIdentity{name: 'Sophia', surname: 'Anderson', email: 'sophia.anderson@acme.com'}",manager2,manager2
 user-account-manager-03,true,"UserIdentity{name: 'James', surname: 'Wilson', email: 'james.wilson@acme.com'}",manager3,manager3
 user-account-manager-00,true,"UserIdentity{name: 'Manager', surname: 'Acme', email: 'manageracme@acme.com'}",manager,manager
 user-account-administrator-01,true,"UserIdentity{name: 'Administrator1', surname: 'Acme', email: 'administrator1@acme.com'}",administrator1,administrator1
 user-account-administrator-02,false,"UserIdentity{name: 'Administrator2', surname: 'Acme', email: 'administrator2@acme.com'}",administrator2,administrator2
 user-account-agent-01,true,"UserIdentity{name: 'Emily', surname: 'Thompson', email: 'emily@acme.com'}",agent1,agent1
 user-account-agent-02,true,"UserIdentity{name: 'Oliver', surname: 'Bennett', email: 'oliver@acme.com'}",agent2,agent2
+user-account-agent,true,"UserIdentity{name: 'Agent', surname: 'Acme', email: 'agentacme@acme.com'}",agent,agent
 user-account-technician-01,true,"UserIdentity{name: 'Marcus', surname: 'Pedrerol', email: 'pedrerol@acme.com'}",technician1,technician1
 user-account-technician-02,true,"UserIdentity{name: 'Rodolfo', surname: 'Suárez', email: 'suarez@acme.com'}",technician2,technician2
 user-account-technician-03,true,"UserIdentity{name: 'New', surname: 'Technician', email: 'newtechnician@acme.com'}",technician3,technician3
