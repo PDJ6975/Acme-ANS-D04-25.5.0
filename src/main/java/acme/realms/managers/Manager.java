@@ -33,7 +33,7 @@ public class Manager extends AbstractEntity {
 	private String				managerId;
 
 	@Mandatory
-	@ValidNumber(min = 0, message = "Los años de experiencia no pueden ser negativos")
+	@ValidNumber(min = 0, max = 100, message = "Los años de experiencia no pueden ser negativos y deben ser máximo 100")
 	@Automapped
 	private Integer				yearsOfExperience;
 

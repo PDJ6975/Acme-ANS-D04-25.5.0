@@ -1,14 +1,51 @@
-key,flightNumber,duration,legStatus,description,scheduledDeparture,scheduledArrival,key:departureAirport,key:arrivalAirport,key:aircraft
-leg-01,null,0.0,DELAYED,,2026/01/05 10:00,2026/01/05 12:00,null,null,null
-leg-02,null,0.5,DELAYED,Short flight,2026/02/10 15:00,2026/02/10 15:30,null,null,null
-leg-03,null,1.0,DELAYED,Completed flight stage,2026/03/01 10:00,2026/03/01 11:00,null,null,null
-leg-04,null,12.5,DELAYED,Long flight with delay,2026/03/15 22:00,2026/03/16 10:30,null,null,null
-leg-05,null,2.0,DELAYED,Cancelled flight,2026/04/01 06:00,2026/04/01 08:00,null,null,null
-leg-06,null,2.0,DELAYED,Cancelled flight,2026/04/01 06:00,2026/04/01 08:00,null,null,null
-leg-07,null,2.0,DELAYED,Cancelled flight,2026/04/01 06:00,2026/04/01 08:00,null,null,null
-leg-08,null,2.0,DELAYED,Cancelled flight,2026/04/01 06:00,2026/04/01 08:00,null,null,null
-leg-09,null,2.0,DELAYED,Cancelled flight,2026/04/01 06:00,2026/04/01 08:00,null,null,null
-leg-10,null,2.0,DELAYED,Cancelled flight,2026/04/01 06:00,2026/04/01 08:00,null,null,null
-leg-11,null,2.0,DELAYED,Cancelled flight,2026/04/01 06:00,2026/04/01 08:00,null,null,null
-leg-12,null,2.0,DELAYED,Cancelled flight,2026/04/01 06:00,2026/04/01 08:00,null,null,null
-leg-13,null,2.0,DELAYED,Cancelled flight,2026/04/01 06:00,2026/04/01 08:00,null,null,null
+key,flightNumber,duration,legStatus,description,scheduledDeparture,scheduledArrival,key:departureAirport,key:arrivalAirport,key:aircraft,key:flight
+leg-01,AAA1234,9.5,ON_TIME,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2022/09/01 10:00,2022/09/01 12:00,airport-01,airport-02,aircraft-01,flight-01
+leg-02,ZZZ1234,9.5,ON_TIME,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2022/09/01 10:00,2022/09/01 12:00,airport-01,airport-02,aircraft-01,flight-02
+#
+# flightNumber probado
+#
+leg-03,AAA1111,9.50,ON_TIME,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2022/09/01 10:00,2022/09/01 12:00,airport-01,airport-02,aircraft-01,flight-03
+leg-04,AAA1112,0.00,ON_TIME,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2022/09/01 10:00,2022/09/01 12:00,airport-01,airport-02,aircraft-01,flight-04
+leg-05,AAA1113,0.01,ON_TIME,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2022/09/01 10:00,2022/09/01 12:00,airport-01,airport-02,aircraft-01,flight-05
+leg-06,AAA1114,18.99,ON_TIME,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2022/09/01 10:00,2022/09/01 12:00,airport-01,airport-02,aircraft-01,flight-06
+leg-07,AAA1115,19.00,ON_TIME,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2022/09/01 10:00,2022/09/01 12:00,airport-01,airport-02,aircraft-01,flight-07
+#
+# duration probado
+#
+leg-08,AAA1116,9.50,ON_TIME,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2022/09/01 10:00,2022/09/01 12:00,airport-01,airport-02,aircraft-01,flight-08
+leg-09,AAA1117,9.50,DELAYED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2022/09/01 10:00,2022/09/01 12:00,airport-01,airport-02,aircraft-01,flight-09
+leg-10,AAA1118,9.50,CANCELLED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2022/09/01 10:00,2022/09/01 12:00,airport-01,airport-02,aircraft-01,flight-10
+leg-11,AAA1119,9.50,LANDED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2022/09/01 10:00,2022/09/01 12:00,airport-01,airport-02,aircraft-01,flight-11
+#
+# legStatus probado
+#
+leg-12,AAA1120,9.50,ON_TIME,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2022/09/01 10:00,2022/09/01 12:00,airport-01,airport-02,aircraft-01,flight-12
+leg-13,AAA1121,9.50,ON_TIME,"L",2022/09/01 10:00,2022/09/01 12:00,airport-01,airport-02,aircraft-01,flight-13
+leg-14,AAA1122,9.50,ON_TIME,"Lo",2022/09/01 10:00,2022/09/01 12:00,airport-01,airport-02,aircraft-01,flight-14
+leg-15,AAA1123,9.50,ON_TIME,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",2022/09/01 10:00,2022/09/01 12:00,airport-01,airport-02,aircraft-01,flight-15
+leg-16,AAA1124,9.50,ON_TIME,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",2022/09/01 10:00,2022/09/01 12:00,airport-01,airport-02,aircraft-01,flight-16
+leg-17,AAA1125,9.50,ON_TIME,"โลเร็ม อิปซัม",2022/09/01 10:00,2022/09/01 12:00,airport-01,airport-02,aircraft-01,flight-17
+leg-18,AAA1126,9.50,ON_TIME,"reemplazo texto arabe",2022/09/01 10:00,2022/09/01 12:00,airport-01,airport-02,aircraft-01,flight-18
+leg-19,AAA1127,9.50,ON_TIME,"洛伦·伊普森",2022/09/01 10:00,2022/09/01 12:00,airport-01,airport-02,aircraft-01,flight-19
+leg-20,AAA1128,9.50,ON_TIME,"<marquee>Hacked</marquee>",2022/09/01 10:00,2022/09/01 12:00,airport-01,airport-02,aircraft-01,flight-20
+leg-21,AAA1129,9.50,ON_TIME,"<script>alert(‘Hacked!’);</script>",2022/09/01 10:00,2022/09/01 12:00,airport-01,airport-02,aircraft-01,flight-21
+leg-22,AAA1130,9.50,ON_TIME,"' or 'A' = 'A ",2022/09/01 10:00,2022/09/01 12:00,airport-01,airport-02,aircraft-01,flight-22
+#
+# description probado
+#
+leg-23,AAA1131,9.50,ON_TIME,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2022/09/01 10:00,2022/09/01 12:00,airport-01,airport-02,aircraft-01,flight-23
+leg-24,AAA1132,9.50,ON_TIME,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2022/08/04 0:00,2022/08/04 0:00,airport-01,airport-02,aircraft-01,flight-24
+leg-25,AAA1133,9.50,ON_TIME,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2022/08/04 0:01,2022/08/04 0:01,airport-01,airport-02,aircraft-01,flight-25
+leg-26,AAA1134,9.50,ON_TIME,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2200/12/31 23:58,2200/12/31 23:58,airport-01,airport-02,aircraft-01,flight-26
+leg-27,AAA1135,9.50,ON_TIME,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2200/12/31 23:59,2200/12/31 23:59,airport-01,airport-02,aircraft-01,flight-27
+#
+# scheduledDeparture probado
+#
+leg-28,AAA1136,9.50,ON_TIME,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2022/09/01 10:00,2022/09/01 12:00,airport-01,airport-02,aircraft-01,flight-28
+leg-29,AAA1137,9.50,ON_TIME,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2022/08/04 0:00,2022/08/04 0:00,airport-01,airport-02,aircraft-01,flight-29
+leg-30,AAA1138,9.50,ON_TIME,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2022/08/04 0:01,2022/08/04 0:01,airport-01,airport-02,aircraft-01,flight-30
+leg-31,AAA1139,9.50,ON_TIME,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2200/12/31 23:58,2200/12/31 23:58,airport-01,airport-02,aircraft-01,flight-31
+leg-32,AAA1140,9.50,ON_TIME,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2200/12/31 23:59,2200/12/31 23:59,airport-01,airport-02,aircraft-01,flight-32
+#
+# scheduledArrival probado
+#

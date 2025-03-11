@@ -30,13 +30,12 @@ public class Leg extends AbstractEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	@Optional
-	//@Mandatory
 	@Column(unique = true)
-	@ValidString(pattern = "^[A-Z]{2}\\\\d{4}$", message = "El número de vuelo debe tener el siguiente patrón ^[A-Z]{2}\\\\d{4}$")
+	@ValidString(pattern = "^[A-Z]{3}\\d{4}$", message = "El número de vuelo debe tener el siguiente patrón ^[A-Z]{2}\\\\d{4}$")
 	private String				flightNumber;
 
 	@Mandatory
-	@ValidNumber(min = 0, message = "La duración del vuelo debe ser mayor que 0 horas")
+	@ValidNumber(min = 0, max = 19, message = "La duración del vuelo debe ser mayor que 0 horas")
 	private Double				duration;
 
 	@Mandatory
@@ -45,7 +44,7 @@ public class Leg extends AbstractEntity {
 	private LegStatus			legStatus;
 
 	@Optional
-	@ValidString(max = 255)
+	@ValidString(min = 1, max = 255, message = "La descripción debe tener mínimio 1 y máximo 255 caracteres.")
 	private String				description;
 
 	@Mandatory

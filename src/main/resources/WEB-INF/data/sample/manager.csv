@@ -1,4 +1,45 @@
 key,managerId,yearsOfExperience,birth,pictureUrl,key:flight
-manager-01,AB123456,14,2000/01/01 0:00,,flight-01
-manager-02,XYZ654321,25,2001/01/01 0:00,http://lorem.com/ipsum,flight-02
-manager-03,CD789012,1,2005/01/01 0:00,http://example.org/,flight-03
+manager-01,AA123456,50,2011/04/16 0:00,"http://lorem.com/ipsum",flight-01
+manager-02,ZZ123456,50,2011/04/16 0:00,"http://lorem.com/ipsum",flight-02
+manager-03,AAA123456,50,2011/04/16 0:00,"http://lorem.com/ipsum",flight-03
+manager-04,ZZZ123456,50,2011/04/16 0:00,"http://lorem.com/ipsum",flight-04
+#
+# managerId probado
+#
+manager-05,AA111111,50,2011/04/16 0:00,"http://lorem.com/ipsum",flight-05
+manager-06,AA111112,0,2011/04/16 0:00,"http://lorem.com/ipsum",flight-06
+manager-07,AA111113,1,2011/04/16 0:00,"http://lorem.com/ipsum",flight-07
+manager-08,AA111114,99,2011/04/16 0:00,"http://lorem.com/ipsum",flight-08
+manager-09,AA111115,100,2011/04/16 0:00,"http://lorem.com/ipsum",flight-09
+#
+# yearsOfExperience probado
+#
+manager-10,AA111116,50,2011/04/16 0:00,"http://lorem.com/ipsum",flight-10
+manager-11,AA111117,50,2000/01/01 0:00,"http://lorem.com/ipsum",flight-11
+manager-12,AA111118,50,2000/01/01 0:01,"http://lorem.com/ipsum",flight-12
+manager-13,AA111119,50,2022/07/29 23:58,"http://lorem.com/ipsum",flight-13
+manager-14,AA111120,50,2022/07/29 23:59,"http://lorem.com/ipsum",flight-14
+#
+# birth probado
+#
+manager-15,AA111121,50,2011/04/16 0:00,"http://lorem.com/ipsum",flight-15
+manager-16,AA111122,50,2011/04/16 0:00,"ftp://a",flight-16
+manager-17,AA111123,50,2011/04/16 0:00,"ftp://a.b",flight-17
+manager-18,AA111124,50,2011/04/16 0:00,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/",flight-18
+manager-19,AA111125,50,2011/04/16 0:00,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/X",flight-19
+manager-20,AA111126,50,2011/04/16 0:00,"https://www.lorem-ipsum.org",flight-20
+manager-21,AA111127,50,2011/04/16 0:00,"ftp://www.lorem-ipsum.org",flight-21
+manager-22,AA111128,50,2011/04/16 0:00,"http://www.lorem-ipsum.org/dolor/sit.html",flight-22
+manager-23,AA111129,50,2011/04/16 0:00,"http://www.lorem-ipsum.org/dolor/sit.html#dolor",flight-23
+manager-24,AA111130,50,2011/04/16 0:00,"http://example.org?a=1&b=2",flight-24
+manager-25,AA111131,50,2011/04/16 0:00,"http://example.org?",flight-25
+manager-26,AA111132,50,2011/04/16 0:00,"http://example.org?a",flight-26
+manager-27,AA111133,50,2011/04/16 0:00,"http://example.org?a&b",flight-27
+manager-28,AA111134,50,2011/04/16 0:00,"http://example.org/",flight-28
+manager-29,AA111135,50,2011/04/16 0:00,"http://example.org/a",flight-29
+manager-30,AA111136,50,2011/04/16 0:00,"http://example.org/a/b",flight-30
+manager-31,AA111137,50,2011/04/16 0:00,"http://example.org/a/b?",flight-31
+manager-32,AA111138,50,2011/04/16 0:00,"http://example.org/a/b?a&b",flight-32
+#
+# pictureUrl probado
+#
