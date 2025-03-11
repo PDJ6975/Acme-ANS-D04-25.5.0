@@ -31,7 +31,7 @@ public class Flight extends AbstractEntity {
 	// Attributes
 
 	@Mandatory
-	@ValidString(max = 50, message = "El tag no puede superar los 50 caracteres")
+	@ValidString(min = 1, max = 50, message = "El tag no puede superar los 50 caracteres")
 	@Automapped
 	private String				tag;
 
@@ -45,7 +45,7 @@ public class Flight extends AbstractEntity {
 	private Money				cost;
 
 	@Optional
-	@ValidString(max = 255, message = "La descripción no puede superar los 255 caracteres")
+	@ValidString(min = 1, max = 255, message = "La descripción no puede superar los 255 caracteres")
 	@Automapped
 	private String				description;
 
@@ -60,15 +60,15 @@ public class Flight extends AbstractEntity {
 	private Date				scheduledArrival; // Derivado del último leg
 
 	@Mandatory
-	@Valid
+	@ValidString(min = 1, max = 50, message = "El nombre de la ciudad debe tener mínimo 1 y máximo 50 caracteres")
 	private String				originCity; // Derivado del primer leg
 
 	@Mandatory
-	@Valid
+	@ValidString(min = 1, max = 50, message = "El nombre de la ciudad debe tener mínimo 1 y máximo 50 caracteres")
 	private String				destinationCity; // Derivado del último leg
 
 	@Mandatory
-	@ValidNumber(min = 0, message = "El número de escalas no puede ser negativo")
+	@ValidNumber(min = 0, max = 20, message = "El número de escalas no puede ser negativo y debe ser máximo de 20")
 	private Integer				layovers; // Derivado de los tramos
 
 	@Mandatory

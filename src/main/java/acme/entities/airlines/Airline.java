@@ -50,7 +50,7 @@ public class Airline extends AbstractEntity {
 	@Automapped
 	private Date				foundationMoment;
 
-	@Optional
+	@Mandatory
 	@ValidEmail
 	@Automapped
 	private String				emailAddress;
