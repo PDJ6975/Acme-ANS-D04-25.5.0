@@ -8,6 +8,7 @@ import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidString;
+import acme.client.components.validation.ValidUrl;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -27,32 +28,32 @@ public class VisaRequirement extends AbstractEntity {
 	// Attributes
 
 	@Mandatory
-	@ValidString
+	@ValidString(max = 50)
 	@Automapped
 	private String				passportCountry; // País del pasaporte
 
 	@Mandatory
-	@ValidString
+	@ValidString(max = 50)
 	@Automapped
 	private String				destinationCountry; // País de destino
 
 	@Mandatory
-	@ValidString
+	@ValidString(max = 50)
 	@Automapped
 	private String				continent;
 
 	@Mandatory
-	@ValidString
+	@ValidString(max = 50)
 	@Automapped
 	private String				capital;
 
 	@Mandatory
-	@ValidString
+	@ValidString(max = 50)
 	@Automapped
 	private String				currency;
 
 	@Optional
-	@ValidString(min = 2, max = 6, pattern = "^\\+\\d{1,5}$", message = "Código de teléfono inválido: Debe comenzar con '+' seguido de 1 a 5 dígitos.")
+	@ValidString(min = 6, max = 16, pattern = "^\\+?\\d{6,15}$", message = "Número de teléfono inválido: Debe contener entre 6 y 15 dígitos y puede incluir un '+' opcional.")
 	@Automapped
 	private String				phoneCode; // por ejemplo: "+971"
 
@@ -62,27 +63,37 @@ public class VisaRequirement extends AbstractEntity {
 	private String				timezone; // por ejemplo: "+04:00"
 
 	@Mandatory
-	@ValidString
+	@ValidString(max = 50)
 	@Automapped
 	private String				visaType; // por ejemplo: "Visa required"
 
-	@Optional
-	@ValidString
+	@Mandatory
+	@ValidString(max = 50)
 	@Automapped
 	private String				stayDuration; // duración de estancia permitida
 
-	@Optional
-	@ValidString
+	@Mandatory
+	@ValidString(max = 50)
 	@Automapped
 	private String				passportValidity; // por ejemplo: "6 months"
 
 	@Optional
-	@ValidString
+	@ValidString(min = 1)
 	@Automapped
 	private String				additionalInfo; // Texto adicional de excepciones sobre los requisitos de visa
 
-	@Optional
-	@ValidString
+	@Mandatory
+	@ValidUrl
 	@Automapped
 	private String				officialLink; // Enlace oficial para más detalles
+
+	// Evitamos cadenas vacías no nulas, pues optional no las convierte a null
+
+
+	public void setAdditionalInfo(String c) {
+		// Si c está vacío o son solo espacios, lo pongo a null
+		if (c != null && c.trim().isEmpty())
+			c = null;
+		this.additionalInfo = c;
+	}
 }
