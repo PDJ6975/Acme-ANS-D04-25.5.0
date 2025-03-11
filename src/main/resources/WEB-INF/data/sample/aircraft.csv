@@ -1,4 +1,65 @@
-key,model,registrationNumber,capacity,cargoWeight,aircraftStatus,details
-aircraft-01,Airbus A320,EC-MEA,180,25000,ACTIVE,Short-range airliner
-aircraft-02,Boeing 737,EC-LLU,200,30000,ACTIVE,
-aircraft-03,ATR 72,EC-ATD,72,2000,ACTIVE,Small turboprop
+key,model,registrationNumber,capacity,cargoWeight,aircraftStatus,details,key:airline
+aircraft-01,Lorem ipsum dolor sit ame,AAA,450,26000,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-01
+aircraft-02,L,AAB,450,26000,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-02
+aircraft-03,Lo,AAC,450,26000,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-03
+aircraft-04,"Lorem ipsum dolor sit amet, consectetur adipiscin",AAD,450,26000,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-04
+aircraft-05,"Lorem ipsum dolor sit amet, consectetur adipiscing",AAE,450,26000,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-05
+aircraft-06,โลเร็ม อิปซัม,AAF,450,26000,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-06
+aircraft-07,لوريم إيبسوم,AAG,450,26000,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-07
+aircraft-08,洛伦·伊普森,AAH,450,26000,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-08
+aircraft-09,<marquee>Hacked</marquee>,AAI,450,26000,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-09
+aircraft-10,<script>alert(‘Hacked!’);</script>,AAJ,450,26000,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-10
+aircraft-11,' or 'A' = 'A ,AAK,450,26000,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-11
+#
+# model probado
+#
+aircraft-12,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,450,26000,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-12
+aircraft-13,Lorem ipsum dolor sit ame,L,450,26000,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-13
+aircraft-14,Lorem ipsum dolor sit ame,Lo,450,26000,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-14
+aircraft-15,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscin",450,26000,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-15
+aircraft-16,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscing",450,26000,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-16
+aircraft-17,Lorem ipsum dolor sit ame,โลเร็ม อิปซัม,450,26000,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-17
+aircraft-18,Lorem ipsum dolor sit ame,reemplazo letras arabes,450,2600,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-18
+aircraft-19,Lorem ipsum dolor sit ame,洛伦·伊普森,450,26000,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-19
+aircraft-20,Lorem ipsum dolor sit ame,<marquee>Hacked</marquee>,450,26000,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-20
+aircraft-21,Lorem ipsum dolor sit ame,<script>alert(‘Hacked!’);</script>,450,26000,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-21
+aircraft-22,Lorem ipsum dolor sit ame,' or 'A' = 'A ,450,26000,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-22
+#
+# registrationNumber probado
+#
+aircraft-23,Lorem ipsum dolor sit ame,AAL,450,26000,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-23
+aircraft-24,Lorem ipsum dolor sit ame,AAM,1,26000,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-24
+aircraft-25,Lorem ipsum dolor sit ame,AAN,2,26000,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-25
+aircraft-26,Lorem ipsum dolor sit ame,AAO,899,26000,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-26
+aircraft-27,Lorem ipsum dolor sit ame,AAP,900,26000,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-27
+#
+# capacity probado
+#
+aircraft-28,Lorem ipsum dolor sit ame,AAQ,450,26000.00,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-28
+aircraft-29,Lorem ipsum dolor sit ame,AAR,450,2000.00,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-29
+aircraft-30,Lorem ipsum dolor sit ame,AAS,450,2000.01,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-30
+aircraft-31,Lorem ipsum dolor sit ame,AAT,450,49999.99,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-31
+aircraft-32,Lorem ipsum dolor sit ame,AAU,450,50000.00,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-32
+#
+# cargoWeight probado
+#
+aircraft-33,Lorem ipsum dolor sit ame,AAV,450,26000.00,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-33
+aircraft-34,Lorem ipsum dolor sit ame,AAW,450,26000.00,MAINTENANCE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-34
+#
+# aircraftStatus probado
+#
+aircraft-35,Lorem ipsum dolor sit ame,AAX,450,26000.00,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-35
+aircraft-36,Lorem ipsum dolor sit ame,AAY,450,26000.00,ACTIVE,L,airline-36
+aircraft-37,Lorem ipsum dolor sit ame,AAZ,450,26000.00,ACTIVE,Lo,airline-37
+aircraft-38,Lorem ipsum dolor sit ame,ABA,450,26000.00,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",airline-38
+aircraft-39,Lorem ipsum dolor sit ame,ABB,450,26000.00,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",airline-39
+aircraft-40,Lorem ipsum dolor sit ame,ABC,450,26000.00,ACTIVE,โลเร็ม อิปซัม,airline-46
+aircraft-41,Lorem ipsum dolor sit ame,ABD,450,26000.00,ACTIVE,لوريم إيبسوم,airline-41
+aircraft-42,Lorem ipsum dolor sit ame,ABE,450,26000.00,ACTIVE,洛伦·伊普森,airline-42
+aircraft-43,Lorem ipsum dolor sit ame,ABF,450,26000.00,ACTIVE,<marquee>Hacked</marquee>,airline-43
+aircraft-44,Lorem ipsum dolor sit ame,ABG,450,26000.00,ACTIVE,<script>alert(‘Hacked!’);</script>,airline-44
+aircraft-45,Lorem ipsum dolor sit ame,ABH,450,26000.00,ACTIVE,' or 'A' = 'A ,airline-45
+#
+# details probado
+# en la línea 56 se ha puesto el airline-46 en lugar del 40 por que ahora mismo el airline-46 está comentado en el airline.csv
+#

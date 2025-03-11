@@ -35,7 +35,7 @@ public class Aircraft extends AbstractEntity {
 	private String				registrationNumber;
 
 	@Mandatory
-	@ValidNumber(min = 1, message = "La capacidad mínima debe ser mayor que 0")
+	@ValidNumber(min = 1, max = 900, message = "La capacidad mínima debe ser mayor que 0")
 	@Automapped
 	private Integer				capacity;
 

@@ -41,7 +41,7 @@ public class Service extends AbstractEntity {
 	private String				link;
 
 	@Mandatory
-	@ValidNumber(min = 0)
+	@ValidNumber(min = 0, max = 8760)
 	@Automapped
 	private Double				averageDwellTime;
 
