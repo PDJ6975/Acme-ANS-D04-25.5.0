@@ -45,7 +45,7 @@ public class Technician extends AbstractRole {
 	private Integer				yearsOfExperience;
 
 	@Optional
-	@ValidString(max = 250, message = "La longitud maxima de este espacio es de 255 caracteres.")
+	@ValidString(max = 255, message = "La longitud maxima de este espacio es de 255 caracteres.")
 	@Automapped
 	private String				certifications;
 
