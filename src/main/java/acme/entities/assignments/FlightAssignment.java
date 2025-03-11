@@ -4,6 +4,8 @@ package acme.entities.assignments;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -27,7 +29,7 @@ import lombok.Setter;
 @Setter
 @Table(uniqueConstraints = {
 	@UniqueConstraint(columnNames = {
-		"crew_member_id", "leg_id"
+		"flight_crew_member_id", "leg_id"
 	})
 })
 public class FlightAssignment extends AbstractEntity {
@@ -41,7 +43,7 @@ public class FlightAssignment extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private FlightCrewMember	crewMember;
+	private FlightCrewMember	flightCrewMember;
 
 	@Mandatory
 	@Valid
@@ -49,7 +51,7 @@ public class FlightAssignment extends AbstractEntity {
 	private Leg					leg;
 
 	@Mandatory
-	@Valid
+	@Enumerated(EnumType.STRING)
 	@Automapped
 	private CrewRole			crewRole;
 
@@ -59,7 +61,7 @@ public class FlightAssignment extends AbstractEntity {
 	private Date				lastUpdated;
 
 	@Mandatory
-	@Valid
+	@Enumerated(EnumType.STRING)
 	@Automapped
 	private AssignmentStatus	assignmentStatus;
 

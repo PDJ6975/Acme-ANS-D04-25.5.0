@@ -1,4 +1,4 @@
-key,key:crewMember,key:leg,crewRole,lastUpdated,assignmentStatus,comments
+key,key:flightCrewMember,key:leg,crewRole,lastUpdated,assignmentStatus,comments
 #base entity -> unique restriction crewMember-leg
 flight-assignment-01,flight-crew-member-01,leg-01,PILOT,2011/04/16 0:00,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*"
 # comments - standart variations

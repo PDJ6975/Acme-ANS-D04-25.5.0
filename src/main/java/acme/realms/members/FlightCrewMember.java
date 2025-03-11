@@ -3,6 +3,8 @@ package acme.realms.members;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 
@@ -30,12 +32,12 @@ public class FlightCrewMember extends AbstractRole {
 	// Attributes
 
 	@Mandatory
-	@ValidString(min = 8, max = 9, pattern = "^[A-Z]{2,3}\\d{6}$", message = "Código de empleado inválido: Debe seguir el patrón ^[A-Z]{2,3}\\d{6}$")
+	@ValidString(pattern = "^[A-Z]{2,3}\\d{6}$", message = "Código de empleado inválido: Debe seguir el patrón ^[A-Z]{2,3}\\d{6}$")
 	@Column(unique = true)
 	private String				employeeCode;
 
 	@Mandatory
-	@ValidString(min = 6, max = 16, pattern = "^\\+?\\d{6,15}$", message = "Número de teléfono inválido: Debe contener entre 6 y 15 dígitos y puede incluir un '+' opcional.")
+	@ValidString(pattern = "^\\+?\\d{6,15}$", message = "Número de teléfono inválido: Debe contener entre 6 y 15 dígitos y puede incluir un '+' opcional.")
 	@Automapped
 	private String				phoneNumber;
 
@@ -45,7 +47,7 @@ public class FlightCrewMember extends AbstractRole {
 	private String				languageSkills;
 
 	@Mandatory
-	@Valid
+	@Enumerated(EnumType.STRING)
 	@Automapped
 	private AvailabilityStatus	availabilityStatus;
 

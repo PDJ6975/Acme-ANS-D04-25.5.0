@@ -1,5 +1,5 @@
 
-package acme.entities.incidents;
+package acme.entities.activityLogs;
 
 import java.util.Date;
 
@@ -15,15 +15,14 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
-import acme.entities.legs.Leg;
-import acme.realms.members.FlightCrewMember;
+import acme.entities.assignments.FlightAssignment;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class LogEntry extends AbstractEntity {
+public class ActivityLog extends AbstractEntity {
 
 	// Serialisation version
 
@@ -56,11 +55,5 @@ public class LogEntry extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Leg					leg;
-
-	@Mandatory
-	@Valid
-	@ManyToOne(optional = false)
-	private FlightCrewMember	reporter;
-
+	private FlightAssignment	flightAssignment;
 }

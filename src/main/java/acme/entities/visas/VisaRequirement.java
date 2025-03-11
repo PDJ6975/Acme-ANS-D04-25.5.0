@@ -53,12 +53,12 @@ public class VisaRequirement extends AbstractEntity {
 	private String				currency;
 
 	@Optional
-	@ValidString(min = 6, max = 16, pattern = "^\\+?\\d{6,15}$", message = "Número de teléfono inválido: Debe contener entre 6 y 15 dígitos y puede incluir un '+' opcional.")
+	@ValidString(pattern = "^\\+?\\d{6,15}$", message = "Número de teléfono inválido: Debe contener entre 6 y 15 dígitos y puede incluir un '+' opcional.")
 	@Automapped
 	private String				phoneCode; // por ejemplo: "+971"
 
 	@Optional
-	@ValidString(min = 3, max = 6, pattern = "^[+-]\\d{2}:\\d{2}$", message = "Zona horaria inválida: Debe seguir el formato ±HH:MM.")
+	@ValidString(pattern = "^[+-]\\d{2}:\\d{2}$", message = "Zona horaria inválida: Debe seguir el formato ±HH:MM.")
 	@Automapped
 	private String				timezone; // por ejemplo: "+04:00"
 
