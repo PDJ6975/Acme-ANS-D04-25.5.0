@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>156</x>
-      <y>414</y>
+      <x>144</x>
+      <y>462</y>
       <w>438</w>
       <h>102</h>
     </coordinates>
@@ -25,8 +25,8 @@ bg=pink</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>318</x>
-      <y>594</y>
+      <x>306</x>
+      <y>642</y>
       <w>114</w>
       <h>60</h>
     </coordinates>
@@ -39,8 +39,8 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>366</x>
-      <y>510</y>
+      <x>354</x>
+      <y>558</y>
       <w>66</w>
       <h>96</h>
     </coordinates>
@@ -53,8 +53,8 @@ m2=*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>126</x>
-      <y>234</y>
+      <x>114</x>
+      <y>282</y>
       <w>456</w>
       <h>78</h>
     </coordinates>
@@ -73,8 +73,8 @@ bg=green</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>426</x>
-      <y>564</y>
+      <x>414</x>
+      <y>612</y>
       <w>132</w>
       <h>42</h>
     </coordinates>
@@ -87,8 +87,8 @@ bg=blue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>366</x>
-      <y>306</y>
+      <x>354</x>
+      <y>354</y>
       <w>78</w>
       <h>120</h>
     </coordinates>
@@ -101,8 +101,8 @@ m2=*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>768</x>
-      <y>258</y>
+      <x>756</x>
+      <y>306</y>
       <w>114</w>
       <h>48</h>
     </coordinates>
@@ -118,8 +118,8 @@ bg=yellow</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>576</x>
-      <y>264</y>
+      <x>564</x>
+      <y>312</y>
       <w>204</w>
       <h>30</h>
     </coordinates>
@@ -132,13 +132,13 @@ m2=*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>198</x>
-      <y>36</y>
+      <x>186</x>
+      <y>84</y>
       <w>402</w>
       <h>78</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
-	TrackingLogs
+	TrackingLog
 --
 + lastUpdatedMoment: Date {Mandatory, ValidMoment(past=true), Temporal(temporalType.TIMESTAMP)}
 + step: String {Mandatory, ValidString(max=50), Automapped}
@@ -153,8 +153,8 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>372</x>
-      <y>108</y>
+      <x>360</x>
+      <y>156</y>
       <w>66</w>
       <h>138</h>
     </coordinates>
@@ -167,43 +167,48 @@ m2=*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>630</x>
-      <y>36</y>
-      <w>366</w>
-      <h>78</h>
+      <x>642</x>
+      <y>84</y>
+      <w>384</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
-	
+	flightDelay
 --
-
-
-
++ flightMoment: Date {Mandatory, ValidMoment(past=true), Temporal(temporalType.TIMESTAMP)}
++ departureAirportCode: String {Mandatory, ValidString(pattern="^[A-Z]{3}$"),Autommaped}
++ arrivalAirportCode: String {Mandatory, ValidString(pattern="^[A-Z]{3}$"),Autommaped}
++ departureDelay: Integer {Mandatory, ValidNumbre(min=0, max=1440),Autommaped}
++ arrivalDelay: Interger {Mandatory, ValidNumber(min=0, max=1440), Autommaped}
++ status: Status {Mandatory, Automapped}
 bg=green</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>234</y>
+      <x>1056</x>
+      <y>84</y>
       <w>102</w>
-      <h>72</h>
+      <h>90</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
-Type
+Status
 --
-+ FLIGHT ISSUES
-+ LUGGAGE ISSUES
-+ SECURITY INCIDENT
-+ OTHER ISSUES
++ scheduled
++ active
++ landed
++ cancelled
++ incident
++ diverted
 bg=LIGHT_GRAY</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>726</x>
-      <y>396</y>
+      <x>714</x>
+      <y>444</y>
       <w>318</w>
       <h>138</h>
     </coordinates>
@@ -222,6 +227,24 @@ AssistanceAgentDashboard
 + maxClaims: Integer {Mandatory, ValidNumber(min=0)}
 + standardDesviationClaims: Double {Mandatory, ValidNumber(min=0, fraction=2)}
 bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>288</y>
+      <w>102</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+Type
+--
++ FLIGHT ISSUES
++ LUGGAGE ISSUES
++ SECURITY INCIDENT
++ OTHER ISSUES
+bg=LIGHT_GRAY</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

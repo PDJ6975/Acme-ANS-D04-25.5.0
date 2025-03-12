@@ -1,2 +1,23 @@
 key,flightMoment,depatureAirportCode,arrivalAirportCode,depatureDelayMin,arrivalDelayMin,status
-flight-delay-01,2011/04/16 0:00,DFG,JHG,720,720,SCHEDULED
+flight-delay-01,2011/04/16 0:00,DFG,JHG,720,720,scheduled
+#flightMoment
+flight-delay-02,2000/01/01 0:00,DFG,JHG,720,720,scheduled
+flight-delay-03,2000/01/01 0:01,DFG,JHG,720,720,scheduled
+flight-delay-04,2022/07/29 23:59,DFG,JHG,720,720,scheduled
+flight-delay-05,2022/07/30 0:00,DFG,JHG,720,720,scheduled
+#depatureDelayMin
+flight-delay-06,2011/04/16 0:00,DFG,JHG,0,720,scheduled
+flight-delay-07,2011/04/16 0:00,DFG,JHG,1,720,scheduled
+flight-delay-08,2011/04/16 0:00,DFG,JHG,1439,720,scheduled
+flight-delay-09,2011/04/16 0:00,DFG,JHG,1440,720,scheduled
+#arrivalDelayMin
+flight-delay-10,2011/04/16 0:00,DFG,JHG,720,0,scheduled
+flight-delay-11,2011/04/16 0:00,DFG,JHG,720,1,scheduled
+flight-delay-12,2011/04/16 0:00,DFG,JHG,720,1439,scheduled
+flight-delay-13,2011/04/16 0:00,DFG,JHG,720,1440,scheduled
+#status
+flight-delay-14,2011/04/16 0:00,DFG,JHG,720,720,active
+flight-delay-15,2011/04/16 0:00,DFG,JHG,720,720,landed
+flight-delay-16,2011/04/16 0:00,DFG,JHG,720,720,cancelled
+flight-delay-17,2011/04/16 0:00,DFG,JHG,720,720,incident
+flight-delay-18,2011/04/16 0:00,DFG,JHG,720,720,diverted
