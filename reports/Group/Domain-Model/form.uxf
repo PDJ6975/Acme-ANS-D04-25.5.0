@@ -4,34 +4,20 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>308</x>
-      <y>187</y>
-      <w>154</w>
-      <h>110</h>
+      <x>66</x>
+      <y>88</y>
+      <w>396</w>
+      <h>143</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;Datatype&gt;&gt;
-LegStatus
+    <panel_attributes>&lt;&lt;Form&gt;&gt;
+MoneyExchange
 --
-+ ACTIVE
-+ MAINTENANCE
-bg=LIGHT_GRAY</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>583</x>
-      <y>187</y>
-      <w>154</w>
-      <h>110</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Datatype&gt;&gt;
-Type
---
-+ LUXURY
-+ STANDARD
-+ LOW_COST
-bg=LIGHT_GRAY</panel_attributes>
++ source: Money {Mandatory, ValidMoney}
++ targetCurrency: String {Mandatory, ValidCurrency}
++ moment: Date {Optional, ValidMoment(past=true)}
++ target: Money {Optional, ValidMoney}
++ oops: Throwable {Optional, Valid}
+bg=cyan</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
