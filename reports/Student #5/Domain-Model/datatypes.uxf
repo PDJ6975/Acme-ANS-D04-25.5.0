@@ -9,7 +9,7 @@
       <w>150</w>
       <h>100</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;Datatype&gt;&gt;
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
 StatusMaintenance
 --
 + PENDING
@@ -27,7 +27,7 @@ bg=LIGHT_GRAY
       <w>160</w>
       <h>120</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;Datatype&gt;&gt;
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
 TypeTask
 --
 + MAINTENANCE
