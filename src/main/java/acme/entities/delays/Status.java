@@ -1,5 +1,5 @@
 
-package acme.entities.Delays;
+package acme.entities.delays;
 
 public enum Status {
 
