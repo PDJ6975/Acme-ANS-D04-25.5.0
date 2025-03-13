@@ -40,7 +40,7 @@ public class Aircraft extends AbstractEntity {
 	private Integer				capacity;
 
 	@Mandatory
-	@ValidNumber(min = 2000, max = 50000, message = "La capacidad debe estar entre 2000 y 50000 kilos")
+	@ValidNumber(min = 2000, max = 50000, fraction = 2, message = "La capacidad debe estar entre 2000 y 50000 kilos")
 	@Automapped
 	private Double				cargoWeight;
 
