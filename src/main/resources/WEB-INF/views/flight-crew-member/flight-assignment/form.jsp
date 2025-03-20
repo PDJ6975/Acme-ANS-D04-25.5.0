@@ -1,0 +1,30 @@
+<%@page%>
+
+<%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="acme" uri="http://acme-framework.org/"%>
+
+<acme:form> 
+	<acme:input-textbox code="employer.job.form.label.ticker" path="ticker"/>
+	<acme:input-select code="employer.job.form.label.contractor" path="contractor" choices="${contractors}"/>	
+	<acme:input-textbox code="employer.job.form.label.title" path="title"/>
+	<acme:input-moment code="employer.job.form.label.deadline" path="deadline"/>
+	<acme:input-money code="employer.job.form.label.salary" path="salary"/>
+	<acme:input-double code="employer.job.form.label.score" path="score" placeholder="employer.job.form.placeholder.score"/>
+	<acme:input-url code="employer.job.form.label.moreInfo" path="moreInfo"/>
+	<acme:input-textarea code="employer.job.form.label.description" path="description"/>
+
+	<jstl:choose>	 
+		<jstl:when test="${_command == 'show' && draftMode == false}">
+			<acme:button code="employer.job.form.button.duties" action="/employer/duty/list?masterId=${id}"/>			
+		</jstl:when>
+		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
+			<acme:button code="employer.job.form.button.duties" action="/employer/duty/list?masterId=${id}"/>
+			<acme:submit code="employer.job.form.button.update" action="/employer/job/update"/>
+			<acme:submit code="employer.job.form.button.delete" action="/employer/job/delete"/>
+			<acme:submit code="employer.job.form.button.publish" action="/employer/job/publish"/>
+		</jstl:when>
+		<jstl:when test="${_command == 'create'}">
+			<acme:submit code="employer.job.form.button.create" action="/employer/job/create"/>
+		</jstl:when>		
+	</jstl:choose>
+</acme:form>

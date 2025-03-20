@@ -1,0 +1,9 @@
+crewMember.assignment.form.title = Detalles de asignaciones
+crewMember.assignment.list.title = Lista de asignaciones
+
+crewMember.assignment.list.completed.label.crewRole = Rol asignado
+crewMember.assignment.list.completed.label.flightNumber = Número de vuelo
+crewMember.assignment.list.completed.label.departureAirport = Aeropuerto de salida
+crewMember.assignment.list.completed.label.arrivalAirport = Aeropuerto de llegada
+crewMember.assignment.list.completed.label.lastUpdated = Última actualización
+crewMember.assignment.list.completed.label.comments = Algunos comentarios

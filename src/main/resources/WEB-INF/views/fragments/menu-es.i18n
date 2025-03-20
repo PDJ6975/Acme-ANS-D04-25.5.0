@@ -35,6 +35,11 @@ master.menu.provider.favourite-link = Enlace favorito
 master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
 
+# master.menu.crewMember ##########################################################
+master.menu.crewMember = Miembro de la tripulación
+master.menu.crewMember.list-my-completed-assignments = Asignaciones de vuelo completadas
+master.menu.crewMember.list-my-planned-assignments = Asignaciones de vuelo planeadas
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta

@@ -44,10 +44,7 @@ public class CrewMemberAssignmentListPlannedService extends AbstractGuiService<F
 	public void unbind(final FlightAssignment assignment) {
 		Dataset dataset;
 
-		dataset = super.unbindObject(assignment, "crewRole");
-		super.addPayload(dataset, assignment, //
-			"leg.flightNumber", "leg.departureAirport", "leg.arrivalAirport", //
-			"lastUpdated", "comments");
+		dataset = super.unbindObject(assignment, "leg.flightNumber", "crewRole", "leg.departureAirport", "leg.arrivalAirport");
 
 		super.getResponse().addData(dataset);
 	}
