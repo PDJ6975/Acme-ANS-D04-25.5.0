@@ -38,8 +38,8 @@ master.menu.consumer.favourite-link = Favourite link
 
 # master.menu.crewMember ##########################################################
 master.menu.crewMember = CrewMember
-master.menu.crewMember.list-my-completed-assignments = Completed Assignments
-master.menu.crewMember.list-my-planned-assignments = Planned Assignments
+master.menu.crewMember.list-my-completed-assignments = List completed flight assignments
+master.menu.crewMember.list-my-planned-assignments = List planned flight assignments
 
 # master.menu.user-account ####################################################
 

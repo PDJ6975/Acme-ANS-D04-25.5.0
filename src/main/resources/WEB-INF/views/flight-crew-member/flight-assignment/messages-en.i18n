@@ -1,9 +1,24 @@
-crewMember.assignment.form.title = Details of Assignments
-crewMember.assignment.list.title = List of Assignments
+flight-crew-member.flight-assignment.list.title = Assignment List
+flight-crew-member.flight-assignment.form.title = Assignment Form
 
-crewMember.assignment.list.completed.label.crewRole = Assigned rol
 crewMember.assignment.list.completed.label.flightNumber = Flight Number
-crewMember.assignment.list.completed.label.departureAirport = Departure Airport
-crewMember.assignment.list.completed.label.arrivalAirport = Arrival Airport
-crewMember.assignment.list.completed.label.lastUpdated = Last Update
+crewMember.assignment.list.completed.label.departureAirport.name = Departure Airport
+crewMember.assignment.list.completed.label.arrivalAirport.name = Arrival Airport
+crewMember.assignment.form.label.scheduledDeparture = Scheduled Departure
+crewMember.assignment.form.label.scheduledArrival = Scheduled Arrival
+crewMember.assignment.list.completed.label.crewRole = Assigned Role
+crewMember.assignment.list.completed.label.lastUpdated = Last Updated
 crewMember.assignment.list.completed.label.comments = Some Comments
+
+
+crewMember.assignment.list.label.flightNumber = Flight Number:
+crewMember.assignment.form.label.departureAirport = Departure Airport:
+crewMember.assignment.form.label.arrivalAirport = Arrival Airport:
+crewMember.assignment.form.label.scheduledDeparture = Scheduled Departure:
+crewMember.assignment.form.label.scheduledArrival = Scheduled Arrival:
+crewMember.assignment.list.label.employeeCode = Employee Code:
+crewMember.assignment.list.label.phoneNumber = Phone Number:
+crewMember.assignment.form.label.crewRole = Assigned Role:
+crewMember.assignment.form.label.assignmentStatus = Assignment Status:
+crewMember.assignment.form.label.lastUpdated = Last Updated:
+crewMember.assignment.form.label.comments = Some Comments:

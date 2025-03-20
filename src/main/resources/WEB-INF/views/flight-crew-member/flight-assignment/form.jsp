@@ -3,28 +3,63 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
-<acme:form> 
-	<acme:input-textbox code="employer.job.form.label.ticker" path="ticker"/>
-	<acme:input-select code="employer.job.form.label.contractor" path="contractor" choices="${contractors}"/>	
-	<acme:input-textbox code="employer.job.form.label.title" path="title"/>
-	<acme:input-moment code="employer.job.form.label.deadline" path="deadline"/>
-	<acme:input-money code="employer.job.form.label.salary" path="salary"/>
-	<acme:input-double code="employer.job.form.label.score" path="score" placeholder="employer.job.form.placeholder.score"/>
-	<acme:input-url code="employer.job.form.label.moreInfo" path="moreInfo"/>
-	<acme:input-textarea code="employer.job.form.label.description" path="description"/>
+<acme:form>
+    <!-- Campos del Leg -->
+    <acme:input-textbox 
+        code="crewMember.assignment.list.label.flightNumber" 
+        path="leg.flightNumber" 
+    />
 
-	<jstl:choose>	 
-		<jstl:when test="${_command == 'show' && draftMode == false}">
-			<acme:button code="employer.job.form.button.duties" action="/employer/duty/list?masterId=${id}"/>			
-		</jstl:when>
-		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
-			<acme:button code="employer.job.form.button.duties" action="/employer/duty/list?masterId=${id}"/>
-			<acme:submit code="employer.job.form.button.update" action="/employer/job/update"/>
-			<acme:submit code="employer.job.form.button.delete" action="/employer/job/delete"/>
-			<acme:submit code="employer.job.form.button.publish" action="/employer/job/publish"/>
-		</jstl:when>
-		<jstl:when test="${_command == 'create'}">
-			<acme:submit code="employer.job.form.button.create" action="/employer/job/create"/>
-		</jstl:when>		
-	</jstl:choose>
+    <acme:input-textbox 
+        code="crewMember.assignment.form.label.departureAirport" 
+        path="leg.departureAirport.name" 
+    />
+
+    <acme:input-textbox 
+        code="crewMember.assignment.form.label.arrivalAirport" 
+        path="leg.arrivalAirport.name" 
+    />
+
+    <acme:input-moment 
+        code="crewMember.assignment.form.label.scheduledDeparture" 
+        path="leg.scheduledDeparture"
+    />
+    <acme:input-moment 
+        code="crewMember.assignment.form.label.scheduledArrival" 
+        path="leg.scheduledArrival"
+    />
+    
+    <!-- Campos del FlightCrewMembers -->
+    <acme:input-textbox 
+        code="crewMember.assignment.list.label.employeeCode" 
+        path="flightCrewMember.employeeCode" 
+    />
+    
+     <acme:input-textbox 
+        code="crewMember.assignment.list.label.phoneNumber" 
+        path="flightCrewMember.phoneNumber" 
+    />
+
+    <!-- Campos del FlightAssignment -->
+    <acme:input-select
+        code="crewMember.assignment.form.label.crewRole"
+        path="crewRole"
+        choices="${crewRoles}" 
+    />
+    
+    <acme:input-select
+        code="crewMember.assignment.form.label.assignmentStatus"
+        path="crewRole"
+        choices="${assignmentStatuses}" 
+    />
+    
+    <acme:input-moment
+        code="crewMember.assignment.form.label.lastUpdated"
+        path="lastUpdated"
+    />
+
+    <acme:input-textarea
+        code="crewMember.assignment.form.label.comments"
+        path="comments"
+    />
 </acme:form>

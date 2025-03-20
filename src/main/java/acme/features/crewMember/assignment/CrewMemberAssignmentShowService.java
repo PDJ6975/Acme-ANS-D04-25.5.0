@@ -4,8 +4,11 @@ package acme.features.crewMember.assignment;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
+import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
+import acme.entities.assignments.AssignmentStatus;
+import acme.entities.assignments.CrewRole;
 import acme.entities.assignments.FlightAssignment;
 import acme.realms.members.FlightCrewMember;
 
@@ -52,13 +55,21 @@ public class CrewMemberAssignmentShowService extends AbstractGuiService<FlightCr
 	@Override
 	public void unbind(final FlightAssignment assignment) {
 
-		Dataset dataset = super.unbindObject(assignment, "crewRole", "lastUpdated", "assignmentStatus", "comments");
+		SelectChoices choicesCrewRol;
+		SelectChoices choicesAssignmentStatus;
+		Dataset dataset;
 
-		super.addPayload(dataset, assignment,
-			// Campos del Leg a mostrar
-			"leg.flightNumber", "leg.scheduledDeparture", "leg.scheduledArrival", "leg.legStatus", "leg.departureAirport", "leg.arrivalAirport",
-			// Campos de flightCrewMember a mostrar
-			"flightCrewMember.employeeCode", "flightCrewMember.phoneNumber", "flightCrewMember.languageSkills");
+		dataset = super.unbindObject(assignment, "crewRole", "lastUpdated", "assignmentStatus", "comments", "assignmentStatus",//
+			"leg.flightNumber", "leg.departureAirport.name", "leg.arrivalAirport.name", "leg.scheduledDeparture", "leg.scheduledArrival",//
+			"flightCrewMember.employeeCode", "flightCrewMember.phoneNumber");
+
+		// Tenemos que obtener las opciones de selección del rol de la asignación para el show
+
+		choicesCrewRol = SelectChoices.from(CrewRole.class, assignment.getCrewRole());
+		choicesAssignmentStatus = SelectChoices.from(AssignmentStatus.class, assignment.getAssignmentStatus());
+
+		dataset.put("crewRoles", choicesCrewRol);
+		dataset.put("assignmentStatuses", choicesAssignmentStatus);
 
 		super.getResponse().addData(dataset);
 	}
