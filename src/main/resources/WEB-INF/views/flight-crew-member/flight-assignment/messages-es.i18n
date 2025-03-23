@@ -1,12 +1,12 @@
 flight-crew-member.flight-assignment.list.title = Lista de Asignaciones
 flight-crew-member.flight-assignment.form.title = Formulario de Asignación
 
-crewMember.assignment.list.completed.label.crewRole = Rol asignado
-crewMember.assignment.list.completed.label.flightNumber = Número de vuelo
-crewMember.assignment.list.completed.label.departureAirport.name = Aeropuerto de salida
-crewMember.assignment.list.completed.label.arrivalAirport.name = Aeropuerto de llegada
-crewMember.assignment.list.completed.label.lastUpdated = Última actualización
-crewMember.assignment.list.completed.label.comments = Algunos comentarios
+crewMember.assignment.list.completed.label.crewRole = Rol Asignado
+crewMember.assignment.list.completed.label.flightNumber = Número de Vuelo
+crewMember.assignment.list.completed.label.departureAirport.name = Aeropuerto de Salida
+crewMember.assignment.list.completed.label.arrivalAirport.name = Aeropuerto de Llegada
+crewMember.assignment.list.completed.label.lastUpdated = Última Actualización
+crewMember.assignment.list.completed.label.comments = Algunos Comentarios
 
 crewMember.assignment.list.label.flightNumber = Número de vuelo:
 crewMember.assignment.form.label.departureAirport = Aeropuerto de salida:

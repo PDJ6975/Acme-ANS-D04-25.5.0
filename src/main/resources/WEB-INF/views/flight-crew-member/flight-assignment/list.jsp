@@ -5,7 +5,7 @@
 
 <acme:list>
 	<acme:list-column code="crewMember.assignment.list.completed.label.flightNumber" path="leg.flightNumber"/>
-	<acme:list-column code="crewMember.assignment.list.completed.label.crewRole" path="crewRole" width="10%"/>
+	<acme:list-column code="crewMember.assignment.list.completed.label.crewRole" path="crewRole"/>
 	<acme:list-column code="crewMember.assignment.list.completed.label.departureAirport.name" path="leg.departureAirport.name"/>
 	<acme:list-column code="crewMember.assignment.list.completed.label.arrivalAirport.name" path="leg.arrivalAirport.name"/>
 	<acme:list-payload path="payload"/>

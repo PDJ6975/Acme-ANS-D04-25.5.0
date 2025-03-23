@@ -29,7 +29,6 @@ public class CrewMemberAssignmentController extends AbstractGuiController<Flight
 
 	@PostConstruct
 	protected void initialise() {
-		//super.addBasicCommand("list", this.listCompletedService);
 		super.addCustomCommand("list-completed", "list", this.listCompletedService);
 		super.addCustomCommand("list-planned", "list", this.listPlannedService);
 		super.addBasicCommand("show", this.showService);
