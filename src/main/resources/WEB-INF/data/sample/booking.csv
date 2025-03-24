@@ -1,0 +1,3 @@
+key,locatorCode,purchaseMoment,travelClass,price,creditCardNibble,key:customer
+booking-01,AB123C,2024/12/15 10:00,BUSINESS,EUR 100.00,1234,customer-01
+booking-02,XY987Z,2024/11/10 08:30,ECONOMY,EUR 100.00,,customer-02

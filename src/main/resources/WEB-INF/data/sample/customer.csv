@@ -1,0 +1,4 @@
+key,identifier,phoneNumber,address,city,country,earnedPoints,key:userAccount
+customer-01,CU123456,+34611222333,Calle Falsa 123,Madrid,España,350,user-account-customer-01
+customer-02,CU654321,611222333,C/ Real 45,Barcelona,España,480,user-account-customer-02
+customer-03,CU111111,+34111222333,Avenida Siempre Viva 742,Sevilla,España,,user-account-customer-03

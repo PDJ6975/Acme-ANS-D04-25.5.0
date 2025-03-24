@@ -22,3 +22,6 @@ user-account-agent,true,"UserIdentity{name: 'Agent', surname: 'Acme', email: 'ag
 user-account-technician-01,true,"UserIdentity{name: 'Marcus', surname: 'Pedrerol', email: 'pedrerol@acme.com'}",technician1,technician1
 user-account-technician-02,true,"UserIdentity{name: 'Rodolfo', surname: 'Suárez', email: 'suarez@acme.com'}",technician2,technician2
 user-account-technician-03,true,"UserIdentity{name: 'New', surname: 'Technician', email: 'newtechnician@acme.com'}",technician3,technician3
+user-account-customer-01,true,"UserIdentity{name: 'New', surname: 'Customer1', email: 'newcustomer1@acme.com'}",customer1,customer1
+user-account-customer-02,true,"UserIdentity{name: 'New', surname: 'Customer2', email: 'newcustomer2@acme.com'}",customer2,customer2
+user-account-customer-03,true,"UserIdentity{name: 'New', surname: 'Customer3', email: 'newcustomer1@acme.com'}",customer3,customer3

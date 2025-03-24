@@ -1,0 +1,4 @@
+key,fullName,email,passportNumber,dateOfBirth,specialNeeds,key:booking
+passenger-01,Emma Johnson,emma@example.com,AB123456,2002/06/15 00:00,Wheelchair,booking-01
+passenger-02,Mark Lee,mark@example.com,CD789012,2001/09/10 00:00,,booking-01
+passenger-03,Laura Martínez,laura@example.com,EF456789,2000/03/25 00:00,Vegetarian meal,booking-02
