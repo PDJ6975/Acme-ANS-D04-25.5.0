@@ -34,13 +34,11 @@ public class Booking extends AbstractEntity {
 	// Attributes
 
 	@Mandatory
-	@Automapped
 	@Column(unique = true)
 	@ValidString(pattern = "^[A-Z0-9]{6,8}$")
 	private String				locatorCode;
 
 	@Mandatory
-	@Automapped
 	@ValidMoment
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				purchaseMoment;

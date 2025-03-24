@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>427</x>
+      <y>616</y>
+      <w>476</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Customer
+--
++ identifier: String {Mandatory, ValidString(pattern="^[A-Z]{2,3}\\d{6}$"), Unique}
++ phoneNumber: String {Mandatory, ValidString(min=6, max=15, pattern="^\\+?\\d{6,15}$"), Automapped}
++ address: String {Mandatory, ValidString(max=255), Automapped}
++ city: String {Mandatory, ValidString(max=50), Automapped}
++ country: String {Mandatory, ValidString(max=50), Automapped}
++ earnedPoints: Integer {Optional, ValidNumber(min=0, max=500), Automapped}
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>434</x>
+      <y>448</y>
+      <w>476</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Booking
+--
++ locatorCode: String {Mandatory, ValidString(pattern="^[A-Z0-9]{6,8}$"), Unique}
++ purchaseMoment: Date {Mandatory, ValidMoment, Temporal(TemporalType.TIMESTAMP)}
++ travelClass: TravelClass {Mandatory, Valid, Automapped}
++ price: Money {Mandatory, ValidMoney(min=0.00, max=10000.00), Automapped}
++ creditCardNibble: String {Optional, ValidString(min=4, max=4), Automapped}
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1036</x>
+      <y>448</y>
+      <w>476</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Passenger
+--
++ fullName: String {Mandatory, ValidString(max=256), Automapped}
++ email: String {Mandatory, ValidEmail, Automapped}
++ passportNumber: String {Mandatory, ValidString(pattern="^[A-Z0-9]{6,9}$"), Automapped}
++ dateOfBirth: Date {Mandatory, ValidMoment(past=true), Temporal(TemporalType.TIMESTAMP)}
++ specialNeeds: String {Optional, ValidString(max=51), Automapped}
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>427</x>
+      <y>791</y>
+      <w>427</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Form&gt;&gt;
+CustomerDashboard
+--
++ lastFiveDestinations: List&lt;String&gt; {Mandatory, Valid}
++ moneySpentLastYear: Double {Mandatory, ValidNumber(min=0)}
++ bookingsByTravelClass: Map&lt;String, Long&gt; {Mandatory, Valid}
++ bookingCostCount: Long {Mandatory, ValidNumber(min=0)}
++ bookingCostAverage: Double {Mandatory, ValidNumber(min=0)}
++ bookingCostMinimum: Double {Mandatory, ValidNumber(min=0)}
++ bookingCostMaximum: Double {Mandatory, ValidNumber(min=0)}
++ bookingCostStandardDeviation: Double {Mandatory, ValidNumber(min=0)}
++ passengerCount: Long {Mandatory, ValidNumber(min=0)}
++ passengerAverage: Double {Mandatory, ValidNumber(min=0)}
++ passengerMinimum: Double {Mandatory, ValidNumber(min=0)}
++ passengerMaximum: Double {Mandatory, ValidNumber(min=0)}
++ passengerStandardDeviation: Double {Mandatory, ValidNumber(min=0)}
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>308</x>
+      <y>448</y>
+      <w>112</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+TravelClass
+--
++ ECONOMY
++ PREMIUM_ECONOMY
++ BUSINESS
++ FIRST
+bg=LIGHT_GRAY</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>609</x>
+      <y>273</y>
+      <w>112</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Flight
+--
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>658</x>
+      <y>532</y>
+      <w>77</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>Belongs to ▶
+lt=&lt;-x
+m1=*
+m2=1</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>903</x>
+      <y>483</y>
+      <w>147</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>Belongs to ▶
+lt=&lt;-x
+m1=*
+m2=1</panel_attributes>
+    <additional_attributes>10.0;20.0;190.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>658</x>
+      <y>336</y>
+      <w>70</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>For Flight ▶
+lt=&lt;-x
+m1=*
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+</diagram>
