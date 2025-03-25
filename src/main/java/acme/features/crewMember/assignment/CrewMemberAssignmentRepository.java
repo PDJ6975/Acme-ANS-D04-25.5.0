@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
 import acme.entities.assignments.FlightAssignment;
+import acme.realms.members.FlightCrewMember;
 
 @Repository
 public interface CrewMemberAssignmentRepository extends AbstractRepository {
@@ -41,5 +42,19 @@ public interface CrewMemberAssignmentRepository extends AbstractRepository {
 		    WHERE fa.id = :assignmentId
 		""")
 	FlightAssignment findAssignmentById(int assignmentId);
+
+	@Query("""
+		    SELECT f
+		    FROM FlightCrewMember f
+		    WHERE f.availabilityStatus = 'AVAILABLE'
+		""")
+	Collection<FlightCrewMember> findAllAvailableCrewMembers();
+
+	@Query("""
+		    SELECT fcm
+		    FROM FlightCrewMember fcm
+		    WHERE fcm.employeeCode = :code
+		""")
+	FlightCrewMember findOneByEmployeeCode(String code);
 
 }

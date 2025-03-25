@@ -22,3 +22,5 @@ crewMember.assignment.form.label.crewRole = Assigned Role:
 crewMember.assignment.form.label.assignmentStatus = Assignment Status:
 crewMember.assignment.form.label.lastUpdated = Last Updated:
 crewMember.assignment.form.label.comments = Some Comments:
+
+crewMember.assignment.form.button.create = Create

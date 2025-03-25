@@ -62,4 +62,12 @@
         code="crewMember.assignment.form.label.comments"
         path="comments"
     />
+    
+	<jstl:choose>	 
+		<jstl:when test="${acme:anyOf(_command, 'show|create')}">
+			<acme:button code="employer.job.form.button.duties" action="/employer/duty/list?masterId=${id}"/>
+			<acme:submit code="crewMember.assignment.form.button.create" action="/flight-crew-member/flight-assignment/create?masterId=${id}"/>
+		</jstl:when>	
+	</jstl:choose>
+    
 </acme:form>

@@ -19,3 +19,5 @@ crewMember.assignment.form.label.crewRole = Rol Asignado:
 crewMember.assignment.form.label.assignmentStatus = Estado de la Asignación:
 crewMember.assignment.form.label.lastUpdated = Última actualización:
 crewMember.assignment.form.label.comments = Algunos comentarios:
+
+crewMember.assignment.form.button.create = Crear
