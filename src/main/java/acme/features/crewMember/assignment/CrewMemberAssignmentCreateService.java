@@ -2,11 +2,13 @@
 package acme.features.crewMember.assignment;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.assignments.AssignmentStatus;
@@ -53,6 +55,9 @@ public class CrewMemberAssignmentCreateService extends AbstractGuiService<Flight
 		int masterId;
 		FlightAssignment assignment;
 		Leg leg;
+		Date moment;
+
+		moment = MomentHelper.getCurrentMoment();
 
 		masterId = super.getRequest().getData("masterId", int.class);
 		assignment = this.repository.findAssignmentById(masterId);
@@ -65,6 +70,10 @@ public class CrewMemberAssignmentCreateService extends AbstractGuiService<Flight
 
 		FlightAssignment newAssignment = new FlightAssignment();
 		newAssignment.setLeg(leg);
+		newAssignment.setLastUpdated(moment);
+		newAssignment.setComments("");
+
+		super.getBuffer().addData(newAssignment);
 
 	}
 
@@ -74,12 +83,12 @@ public class CrewMemberAssignmentCreateService extends AbstractGuiService<Flight
 		String employeeCode;
 		FlightCrewMember crewMember;
 
-		employeeCode = super.getRequest().getData("flightCrewMember", String.class);
+		employeeCode = super.getRequest().getData("flightCrewMember.employeeCode", String.class);
 		crewMember = this.repository.findOneByEmployeeCode(employeeCode);
 
-		super.bindObject(assignment, "crewRole", "lastUpdated", "assignmentStatus", "comments", "assignmentStatus");
-
 		assignment.setFlightCrewMember(crewMember);
+
+		super.bindObject(assignment, "crewRole", "lastUpdated", "assignmentStatus", "comments");
 
 	}
 
@@ -109,7 +118,7 @@ public class CrewMemberAssignmentCreateService extends AbstractGuiService<Flight
 		choicesCrewRol = SelectChoices.from(CrewRole.class, assignment.getCrewRole());
 		choicesAssignmentStatus = SelectChoices.from(AssignmentStatus.class, assignment.getAssignmentStatus());
 
-		dataset = super.unbindObject(assignment, "crewRole", "lastUpdated", "assignmentStatus", "comments", "assignmentStatus");
+		dataset = super.unbindObject(assignment, "crewRole", "lastUpdated", "assignmentStatus", "comments", "leg.flightNumber", "leg.departureAirport.name", "leg.arrivalAirport.name", "leg.scheduledDeparture", "leg.scheduledArrival");
 
 		dataset.put("crewMembers", choicesMembers);
 		dataset.put("crewMember", choicesMembers.getSelected().getKey());

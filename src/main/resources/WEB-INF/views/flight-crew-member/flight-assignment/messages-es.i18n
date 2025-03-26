@@ -8,13 +8,12 @@ crewMember.assignment.list.completed.label.arrivalAirport.name = Aeropuerto de L
 crewMember.assignment.list.completed.label.lastUpdated = Última Actualización
 crewMember.assignment.list.completed.label.comments = Algunos Comentarios
 
-crewMember.assignment.list.label.flightNumber = Número de vuelo:
+crewMember.assignment.form.label.flightNumber = Número de vuelo:
 crewMember.assignment.form.label.departureAirport = Aeropuerto de salida:
 crewMember.assignment.form.label.arrivalAirport = Aeropuerto de llegada:
 crewMember.assignment.form.label.scheduledDeparture = Hora prevista de salida:
 crewMember.assignment.form.label.scheduledArrival = Hora prevista de llegada:
-crewMember.assignment.list.label.employeeCode = Código de Empleado:
-crewMember.assignment.list.label.phoneNumber = Número de Teléfono:
+crewMember.assignment.form.label.employeeCode = Código de Empleado:
 crewMember.assignment.form.label.crewRole = Rol Asignado:
 crewMember.assignment.form.label.assignmentStatus = Estado de la Asignación:
 crewMember.assignment.form.label.lastUpdated = Última actualización:

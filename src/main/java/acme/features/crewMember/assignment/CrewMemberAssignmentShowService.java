@@ -61,7 +61,7 @@ public class CrewMemberAssignmentShowService extends AbstractGuiService<FlightCr
 
 		dataset = super.unbindObject(assignment, "crewRole", "lastUpdated", "assignmentStatus", "comments", "assignmentStatus",//
 			"leg.flightNumber", "leg.departureAirport.name", "leg.arrivalAirport.name", "leg.scheduledDeparture", "leg.scheduledArrival",//
-			"flightCrewMember.employeeCode", "flightCrewMember.phoneNumber");
+			"flightCrewMember.employeeCode");
 
 		// Tenemos que obtener las opciones de selección del rol de la asignación para el show
 
@@ -70,6 +70,7 @@ public class CrewMemberAssignmentShowService extends AbstractGuiService<FlightCr
 
 		dataset.put("crewRoles", choicesCrewRol);
 		dataset.put("assignmentStatuses", choicesAssignmentStatus);
+		dataset.put("masterId", assignment.getId());
 
 		super.getResponse().addData(dataset);
 	}
