@@ -1,0 +1,21 @@
+manager.flight.list.title = Flight List
+manager.flight.form.title = Flight Form
+
+
+manager.flight.list.label.cost = Cost
+manager.flight.list.label.scheduledDeparture = Scheduled Departure
+manager.flight.list.label.scheduledArrival = Scheduled Arrival
+manager.flight.list.label.originCity = Origin City
+manager.flight.list.label.destinationCity = Destination City
+
+manager.flight.form.label.tag = Tag
+manager.flight.form.label.selfTransfer = selfTransfer
+manager.flight.form.label.cost = Cost
+manager.flight.form.label.description = Description
+manager.flight.form.label.scheduledDeparture = Scheduled Departure
+manager.flight.form.label.scheduledArrival = Scheduled Arrival
+manager.flight.form.label.originCity = Origin City
+manager.flight.form.label.destinationCity = Destination City
+manager.flight.form.label.layovers = Layovers
+manager.flight.form.label.name = Airline
+manager.flight.form.label.managerId = Manager Id
