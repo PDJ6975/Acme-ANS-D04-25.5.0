@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
@@ -37,6 +39,7 @@ public class Leg extends AbstractEntity {
 
 	@Mandatory
 	@ValidNumber(min = 0, max = 19, message = "La duración del vuelo debe ser mayor que 0 horas")
+	@Automapped
 	private Double				duration;
 
 	@Mandatory
@@ -46,14 +49,17 @@ public class Leg extends AbstractEntity {
 
 	@Optional
 	@ValidString(min = 1, max = 255, message = "La descripción debe tener mínimio 1 y máximo 255 caracteres.")
+	@Automapped
 	private String				description;
 
 	@Mandatory
-	@ValidMoment(past = false, message = "La salida programada debe ser en el futuro")
+	@ValidMoment(message = "La salida programada debe ser en el futuro")
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date				scheduledDeparture;
 
 	@Mandatory
-	@ValidMoment(past = false, message = "La llegada programada debe ser en el futuro")
+	@ValidMoment(message = "La llegada programada debe ser en el futuro")
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date				scheduledArrival;
 
 	@Optional
@@ -67,8 +73,6 @@ public class Leg extends AbstractEntity {
 	@Optional
 	@ManyToOne
 	private Aircraft			aircraft;
-
-	// Relationships
 
 	@Optional
 	@ManyToOne

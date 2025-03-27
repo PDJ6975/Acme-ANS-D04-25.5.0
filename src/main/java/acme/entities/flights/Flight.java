@@ -5,6 +5,7 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
@@ -17,6 +18,7 @@ import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
 import acme.entities.airlines.Airline;
+import acme.realms.managers.Manager;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -52,27 +54,37 @@ public class Flight extends AbstractEntity {
 	// Derived attributes from legs
 
 	@Mandatory
-	@ValidMoment(past = false, message = "La salida programada debe ser en el futuro")
+	@ValidMoment(message = "La salida programada debe ser en el futuro")
+	@Transient
 	private Date				scheduledDeparture; // Derivado del primer leg
 
 	@Mandatory
-	@ValidMoment(past = false, message = "La llegada programada debe ser en el futuro")
+	@ValidMoment(message = "La llegada programada debe ser en el futuro")
+	@Transient
 	private Date				scheduledArrival; // Derivado del último leg
 
 	@Mandatory
 	@ValidString(min = 1, max = 50, message = "El nombre de la ciudad debe tener mínimo 1 y máximo 50 caracteres")
+	@Automapped
 	private String				originCity; // Derivado del primer leg
 
 	@Mandatory
 	@ValidString(min = 1, max = 50, message = "El nombre de la ciudad debe tener mínimo 1 y máximo 50 caracteres")
+	@Automapped
 	private String				destinationCity; // Derivado del último leg
 
 	@Mandatory
 	@ValidNumber(min = 0, max = 20, message = "El número de escalas no puede ser negativo y debe ser máximo de 20")
+	@Automapped
 	private Integer				layovers; // Derivado de los tramos
 
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
 	private Airline				airline;
+
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private Manager				manager;
 }
