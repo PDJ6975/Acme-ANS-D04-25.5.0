@@ -2,11 +2,13 @@
 package acme.features.crewMember.assignment;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
+import acme.entities.assignments.CrewRole;
 import acme.entities.assignments.FlightAssignment;
 import acme.realms.members.FlightCrewMember;
 
@@ -50,11 +52,22 @@ public interface CrewMemberAssignmentRepository extends AbstractRepository {
 		""")
 	Collection<FlightCrewMember> findAllAvailableCrewMembers();
 
-	@Query("""
-		    SELECT fcm
-		    FROM FlightCrewMember fcm
-		    WHERE fcm.employeeCode = :code
-		""")
-	FlightCrewMember findOneByEmployeeCode(String code);
+	@Query("SELECT cm FROM FlightCrewMember cm WHERE cm.id = :id")
+	FlightCrewMember findCrewMemberById(int id);
 
+	@Query("SELECT COUNT(a) > 0 FROM FlightAssignment a WHERE a.leg.id = :legId AND a.flightCrewMember.id = :memberId")
+	boolean existsAssignmentForLegAndCrewMember(int legId, int memberId);
+
+	@Query("SELECT COUNT(a) > 0 FROM FlightAssignment a WHERE a.leg.id = :legId AND a.crewRole = :role")
+	boolean existsAssignmentForLegWithRole(int legId, CrewRole role);
+
+	@Query("""
+		    SELECT COUNT(a) > 0
+		    FROM FlightAssignment a
+		    WHERE a.flightCrewMember.id = :memberId
+		      AND (
+		          a.leg.scheduledDeparture < :end AND a.leg.scheduledArrival > :start
+		      )
+		""")
+	boolean existsOverlappingAssignment(int memberId, Date start, Date end);
 }

@@ -2,7 +2,6 @@
 package acme.features.crewMember.assignment;
 
 import java.util.Collection;
-import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -15,6 +14,8 @@ import acme.entities.assignments.AssignmentStatus;
 import acme.entities.assignments.CrewRole;
 import acme.entities.assignments.FlightAssignment;
 import acme.entities.legs.Leg;
+import acme.entities.legs.LegStatus;
+import acme.realms.members.AvailabilityStatus;
 import acme.realms.members.FlightCrewMember;
 
 @GuiService
@@ -55,9 +56,6 @@ public class CrewMemberAssignmentCreateService extends AbstractGuiService<Flight
 		int masterId;
 		FlightAssignment assignment;
 		Leg leg;
-		Date moment;
-
-		moment = MomentHelper.getCurrentMoment();
 
 		masterId = super.getRequest().getData("masterId", int.class);
 		assignment = this.repository.findAssignmentById(masterId);
@@ -70,8 +68,11 @@ public class CrewMemberAssignmentCreateService extends AbstractGuiService<Flight
 
 		FlightAssignment newAssignment = new FlightAssignment();
 		newAssignment.setLeg(leg);
-		newAssignment.setLastUpdated(moment);
-		newAssignment.setComments("");
+
+		// Ajustamos status y actualización por defecto
+
+		newAssignment.setAssignmentStatus(AssignmentStatus.PENDING);
+		newAssignment.setLastUpdated(MomentHelper.getCurrentMoment());
 
 		super.getBuffer().addData(newAssignment);
 
@@ -80,21 +81,51 @@ public class CrewMemberAssignmentCreateService extends AbstractGuiService<Flight
 	@Override
 	public void bind(final FlightAssignment assignment) {
 
-		String employeeCode;
+		int crewMemberId;
 		FlightCrewMember crewMember;
 
-		employeeCode = super.getRequest().getData("flightCrewMember.employeeCode", String.class);
-		crewMember = this.repository.findOneByEmployeeCode(employeeCode);
-
-		assignment.setFlightCrewMember(crewMember);
+		crewMemberId = super.getRequest().getData("employeeCode", int.class);
+		crewMember = this.repository.findCrewMemberById(crewMemberId);
 
 		super.bindObject(assignment, "crewRole", "lastUpdated", "assignmentStatus", "comments");
+
+		assignment.setFlightCrewMember(crewMember);
 
 	}
 
 	@Override
 	public void validate(final FlightAssignment assignment) {
-		;
+
+		Leg leg = assignment.getLeg();
+		FlightCrewMember member = assignment.getFlightCrewMember();
+		CrewRole role = assignment.getCrewRole();
+
+		super.state(member != null, "employeeCode", "crewMember.assignment.error.missing-member");
+
+		if (member != null) {
+
+			// 1. No se puede asignar a un miembro que ya tenga asignación en esa etapa -> ya se comprueba en la entidad, pero para reforzar
+			boolean duplicateAssignment = this.repository.existsAssignmentForLegAndCrewMember(leg.getId(), member.getId());
+			super.state(!duplicateAssignment, "employeeCode", "crewMember.assignment.error.duplicate-assignment");
+
+			// 2. Solo un piloto y un copiloto por etapa
+			if (role == CrewRole.PILOT || role == CrewRole.COPILOT) {
+				boolean roleAlreadyAssigned = this.repository.existsAssignmentForLegWithRole(leg.getId(), role);
+				super.state(!roleAlreadyAssigned, "crewRole", "crewMember.assignment.error.duplicate-role");
+			}
+
+			// 3. El miembro debe estar disponible
+			boolean isAvailable = member.getAvailabilityStatus() == AvailabilityStatus.AVAILABLE;
+			super.state(isAvailable, "employeeCode", "crewMember.assignment.error.not-available");
+
+			// 4. No se puede crear asignación en una etapa que ya ha ocurrido
+			boolean legNotOccurred = leg.getLegStatus() != LegStatus.LANDED && leg.getLegStatus() != LegStatus.CANCELLED;
+			super.state(legNotOccurred, "*", "crewMember.assignment.error.leg-occurred");
+
+			// 5. El miembro no puede estar asignado a otra etapa simultáneamente
+			boolean isOverlapping = this.repository.existsOverlappingAssignment(member.getId(), leg.getScheduledDeparture(), leg.getScheduledArrival());
+			super.state(!isOverlapping, "employeeCode", "crewMember.assignment.error.overlapping");
+		}
 	}
 
 	@Override
@@ -121,9 +152,10 @@ public class CrewMemberAssignmentCreateService extends AbstractGuiService<Flight
 		dataset = super.unbindObject(assignment, "crewRole", "lastUpdated", "assignmentStatus", "comments", "leg.flightNumber", "leg.departureAirport.name", "leg.arrivalAirport.name", "leg.scheduledDeparture", "leg.scheduledArrival");
 
 		dataset.put("crewMembers", choicesMembers);
-		dataset.put("crewMember", choicesMembers.getSelected().getKey());
+		dataset.put("employeeCode", choicesMembers.getSelected().getKey());
 		dataset.put("crewRoles", choicesCrewRol);
 		dataset.put("assignmentStatuses", choicesAssignmentStatus);
+		dataset.put("masterId", super.getRequest().getData("masterId", int.class));
 
 		super.getResponse().addData(dataset);
 	}

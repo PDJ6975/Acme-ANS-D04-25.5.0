@@ -10,6 +10,7 @@ import acme.client.services.GuiService;
 import acme.entities.assignments.AssignmentStatus;
 import acme.entities.assignments.CrewRole;
 import acme.entities.assignments.FlightAssignment;
+import acme.entities.legs.LegStatus;
 import acme.realms.members.FlightCrewMember;
 
 @GuiService
@@ -71,6 +72,11 @@ public class CrewMemberAssignmentShowService extends AbstractGuiService<FlightCr
 		dataset.put("crewRoles", choicesCrewRol);
 		dataset.put("assignmentStatuses", choicesAssignmentStatus);
 		dataset.put("masterId", assignment.getId());
+
+		boolean isLeadAttendant = assignment.getCrewRole().equals(CrewRole.LEADATTENDANT);
+		boolean legNotOccurred = !assignment.getLeg().getLegStatus().equals(LegStatus.LANDED) && !assignment.getLeg().getLegStatus().equals(LegStatus.CANCELLED);
+
+		dataset.put("canCreate", isLeadAttendant && legNotOccurred);
 
 		super.getResponse().addData(dataset);
 	}
