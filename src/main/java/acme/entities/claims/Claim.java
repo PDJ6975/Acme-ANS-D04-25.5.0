@@ -4,6 +4,8 @@ package acme.entities.claims;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -45,11 +47,13 @@ public class Claim extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@Automapped
+	@Enumerated(EnumType.STRING)
 	private Type				type;
 
 	@Mandatory
 	@Automapped
-	private boolean				indicator;
+	@Enumerated(EnumType.STRING)
+	private State				state;
 
 	@Mandatory
 	@Valid

@@ -42,6 +42,10 @@ master.menu.crewMember.list-my-completed-assignments = List completed flight ass
 master.menu.crewMember.list-my-planned-assignments = List planned flight assignments
 master.menu.crewMember.list-my-logs = List activity logs in my assignments
 
+# master.menu.crewMember ##########################################################
+master.menu.assistanceAgent = Assistant Agent
+master.menu.assistanceAgent.list = Completed claims List
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account

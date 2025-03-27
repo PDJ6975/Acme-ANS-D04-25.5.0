@@ -41,6 +41,10 @@ master.menu.crewMember.list-my-completed-assignments = Listar asignaciones de vu
 master.menu.crewMember.list-my-planned-assignments = Listar asignaciones de vuelo planeadas
 master.menu.crewMember.list-my-logs = Listar incidentes en mis asignaciones
 
+# master.menu.assistanceAgent ##########################################################
+master.menu.assistanceAgent = Miembro de asistencia
+master.menu.assistanceAgent.list = Listar reclamaciones completadas
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta
