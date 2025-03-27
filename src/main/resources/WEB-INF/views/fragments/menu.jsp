@@ -53,6 +53,12 @@
 			<acme:menu-suboption code="master.menu.manager.list-my-flights" action="/manager/flight/list" />	
 			<acme:menu-suboption code="master.menu.manager.list-my-legs" action="/manager/leg/list" />		
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.assistanceAgent" access="hasRealm('AssistanceAgent')">
+ 			<acme:menu-suboption code="master.menu.assistanceAgent.list-completed" action="/assistance-agent/claim/completed-list" />
+ 			<acme:menu-suboption code="master.menu.assistanceAgent.list-ongoing" action="/assistance-agent/claim/ongoing-list" />			
+ 
+ 		</acme:menu-option>
 	</acme:menu-left>
 
 	<acme:menu-right>		

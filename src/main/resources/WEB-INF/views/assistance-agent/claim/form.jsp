@@ -38,5 +38,9 @@
         code="assistanceAgents.claim.list.label.username" 
         path="userAccount.username" 
     />
+    <acme:input-textbox 
+        code="assistanceAgents.claim.list.label.flightNumber" 
+        path="leg.flightNumber" 
+    />
     
 </acme:form>

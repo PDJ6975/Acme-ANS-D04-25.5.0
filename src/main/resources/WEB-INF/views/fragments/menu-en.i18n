@@ -47,6 +47,12 @@ master.menu.manager = Manager
 master.menu.manager.list-my-flights = List Flights
 master.menu.manager.list-my-legs = List Legs
 
+# master.menu.crewMember ##########################################################
+ master.menu.assistanceAgent = Assistant Agent
+ master.menu.assistanceAgent.list-completed = Completed claims List
+ master.menu.assistanceAgent.list-ongoing = Ongoing claims List
+ 
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account

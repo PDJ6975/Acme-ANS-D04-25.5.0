@@ -39,7 +39,7 @@ public class AssistanceAgentClaimServiceShow extends AbstractGuiService<Assistan
 	@Override
 	public void unbind(final Claim claim) {
 		Dataset dataset;
-		dataset = super.unbindObject(claim, "resgistrationMoment", "passengerEmail", "description", "type", "state", "assistanceAgent.userAccount.username", "userAccount.username");
+		dataset = super.unbindObject(claim, "resgistrationMoment", "passengerEmail", "description", "type", "state", "assistanceAgent.userAccount.username", "userAccount.username", "leg.flightNumber");
 		super.getResponse().addData(dataset);
 	}
 

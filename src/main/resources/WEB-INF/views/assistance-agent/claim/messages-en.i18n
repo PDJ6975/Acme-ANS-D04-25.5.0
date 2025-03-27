@@ -9,3 +9,4 @@ assistanceAgent.claim.form.label.registrationMoment = Registration Moment
 assistanceAgent.claim.form.label.passengerEmail = Passenger Email
 assistanceAgent.claim.form.label.state = State
 assistanceAgents.claim.form.label.assistanceUsername = Agent
+assistanceAgents.claim.list.label.flightNumber = Etapa

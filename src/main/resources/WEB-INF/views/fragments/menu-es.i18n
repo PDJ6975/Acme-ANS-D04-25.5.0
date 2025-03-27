@@ -46,6 +46,11 @@ master.menu.manager = Manager
 master.menu.manager.list-my-flights = Listar Vuelos
 master.menu.manager.list-my-legs = Listar Etapas
 
+# master.menu.assistanceAgent ##########################################################
+ master.menu.assistanceAgent = Miembro de asistencia
+ master.menu.assistanceAgent.list-completed = Listar reclamaciones completadas
+ master.menu.assistanceAgent.list-ongoing = Listar reclamaciones en proceso
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta
