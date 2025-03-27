@@ -10,6 +10,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
@@ -61,6 +62,11 @@ public class Leg extends AbstractEntity {
 	@ValidMoment(message = "La llegada programada debe ser en el futuro")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				scheduledArrival;
+
+	@Mandatory
+	@Valid
+	@Automapped
+	private Boolean				draftMode;
 
 	@Optional
 	@ManyToOne
