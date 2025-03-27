@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>6</zoom_level>
+  <zoom_level>5</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>300</x>
-      <y>486</y>
-      <w>408</w>
-      <h>120</h>
+      <x>265</x>
+      <y>455</y>
+      <w>340</w>
+      <h>100</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Flight
@@ -27,10 +27,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>300</x>
-      <y>186</y>
-      <w>408</w>
-      <h>96</h>
+      <x>265</x>
+      <y>205</y>
+      <w>340</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Leg
@@ -48,10 +48,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>786</x>
-      <y>348</y>
-      <w>408</w>
-      <h>90</h>
+      <x>670</x>
+      <y>340</y>
+      <w>340</w>
+      <h>75</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Weather
@@ -68,10 +68,10 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>702</x>
-      <y>552</y>
-      <w>216</w>
-      <h>30</h>
+      <x>600</x>
+      <y>510</y>
+      <w>180</w>
+      <h>25</h>
     </coordinates>
     <panel_attributes>managedBy ▼
 lt=&lt;-x
@@ -82,10 +82,10 @@ m2=*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>330</x>
-      <y>744</y>
-      <w>120</w>
-      <h>60</h>
+      <x>290</x>
+      <y>670</y>
+      <w>100</w>
+      <h>50</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Passenger
@@ -96,10 +96,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>432</x>
-      <y>720</y>
-      <w>84</w>
-      <h>42</h>
+      <x>375</x>
+      <y>650</y>
+      <w>70</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>Esta entidad será desarrollada 
 por un compañero en su requisito
@@ -111,10 +111,10 @@ layer=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>594</x>
-      <y>744</y>
-      <w>138</w>
-      <h>54</h>
+      <x>510</x>
+      <y>670</y>
+      <w>115</w>
+      <h>45</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Airline
@@ -125,10 +125,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>714</x>
-      <y>720</y>
-      <w>84</w>
-      <h>42</h>
+      <x>610</x>
+      <y>650</y>
+      <w>70</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>Esta entidad será desarrollada 
 en los requisitos grupales
@@ -139,10 +139,10 @@ layer=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>384</x>
-      <y>600</y>
-      <w>48</w>
-      <h>156</h>
+      <x>335</x>
+      <y>550</y>
+      <w>40</w>
+      <h>130</h>
     </coordinates>
     <panel_attributes>partOf ▼
 lt=&lt;-x
@@ -153,10 +153,10 @@ m2=*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>642</x>
-      <y>600</y>
-      <w>72</w>
-      <h>156</h>
+      <x>550</x>
+      <y>550</y>
+      <w>60</w>
+      <h>130</h>
     </coordinates>
     <panel_attributes>operatedBy ▼
 lt=&lt;-x
@@ -167,10 +167,10 @@ m2=*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>492</x>
-      <y>276</y>
-      <w>66</w>
-      <h>222</h>
+      <x>425</x>
+      <y>280</y>
+      <w>55</w>
+      <h>185</h>
     </coordinates>
     <panel_attributes>belongsTo ▼
 lt=&lt;-x
@@ -181,10 +181,10 @@ m2=*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>648</x>
-      <y>396</y>
-      <w>150</w>
-      <h>102</h>
+      <x>555</x>
+      <y>380</y>
+      <w>125</w>
+      <h>85</h>
     </coordinates>
     <panel_attributes>belongsTo ▼
 lt=&lt;-x
@@ -195,10 +195,10 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>702</x>
-      <y>120</y>
-      <w>84</w>
-      <h>72</h>
+      <x>600</x>
+      <y>150</y>
+      <w>70</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Datatype&gt;&gt;
 LegStatus
@@ -213,10 +213,10 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>876</x>
-      <y>156</y>
-      <w>312</w>
-      <h>126</h>
+      <x>745</x>
+      <y>180</y>
+      <w>260</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Form&gt;&gt;
 ManagerDashboard
@@ -237,10 +237,10 @@ bg=cyan</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>906</x>
-      <y>522</y>
-      <w>318</w>
-      <h>72</h>
+      <x>770</x>
+      <y>485</y>
+      <w>265</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 Manager
@@ -255,10 +255,10 @@ bg=pink</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>444</x>
-      <y>36</y>
-      <w>126</w>
-      <h>42</h>
+      <x>385</x>
+      <y>80</y>
+      <w>105</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Airport
@@ -269,10 +269,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>564</x>
-      <y>0</y>
-      <w>84</w>
-      <h>42</h>
+      <x>485</x>
+      <y>50</y>
+      <w>70</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>Esta entidad será desarrollada 
 por un compañero en su requisito
@@ -284,10 +284,10 @@ layer=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>456</x>
-      <y>72</y>
-      <w>60</w>
-      <h>126</h>
+      <x>395</x>
+      <y>110</y>
+      <w>50</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>takesOff ▼
 lt=&lt;-x
@@ -298,10 +298,10 @@ m2=*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>546</x>
-      <y>72</y>
-      <w>60</w>
-      <h>126</h>
+      <x>470</x>
+      <y>110</y>
+      <w>50</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>landsOn ▼
 lt=&lt;-x
@@ -312,10 +312,10 @@ m2=*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>78</x>
-      <y>198</y>
-      <w>126</w>
-      <h>42</h>
+      <x>80</x>
+      <y>215</y>
+      <w>105</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>Aircraft
 --
@@ -325,10 +325,10 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>198</x>
-      <y>210</y>
-      <w>114</w>
-      <h>30</h>
+      <x>180</x>
+      <y>225</y>
+      <w>95</w>
+      <h>25</h>
     </coordinates>
     <panel_attributes>operatedBy ▼
 lt=&lt;-x
@@ -339,10 +339,10 @@ m2=*</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>0</x>
-      <y>162</y>
-      <w>84</w>
-      <h>42</h>
+      <x>15</x>
+      <y>185</y>
+      <w>70</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>Esta entidad será desarrollada 
 por un compañero en su requisito
