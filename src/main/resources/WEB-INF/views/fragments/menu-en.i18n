@@ -42,6 +42,11 @@ master.menu.crewMember.list-my-completed-assignments = List completed flight ass
 master.menu.crewMember.list-my-planned-assignments = List planned flight assignments
 master.menu.crewMember.list-my-logs = List activity logs in my assignments
 
+# master.menu.manager ##########################################################
+master.menu.manager = Manager
+master.menu.manager.list-my-flights = List Flights
+master.menu.manager.list-my-legs = List Legs
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account
