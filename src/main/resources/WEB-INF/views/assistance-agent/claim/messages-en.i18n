@@ -1,0 +1,11 @@
+assistance-agent.claim.list.title = Claim List
+assistance-agent.claim.form.title = Claim Form
+
+assistanceAgents.claim.list.label.type = Type
+assistanceAgents.claim.list.label.username = Username
+assistanceAgents.claim.list.label.description = Description
+
+assistanceAgent.claim.form.label.registrationMoment = Registration Moment
+assistanceAgent.claim.form.label.passengerEmail = Passenger Email
+assistanceAgent.claim.form.label.state = State
+assistanceAgents.claim.form.label.assistanceUsername = Agent

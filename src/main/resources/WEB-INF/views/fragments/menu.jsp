@@ -48,6 +48,11 @@
 			<acme:menu-suboption code="master.menu.crewMember.list-my-planned-assignments" action="/flight-crew-member/flight-assignment/list-planned" />
 			<acme:menu-suboption code="master.menu.crewMember.list-my-logs" action="/flight-crew-member/activity-log/list" />
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.assistanceAgent" access="hasRealm('AssistanceAgent')">
+			<acme:menu-suboption code="master.menu.assistanceAgent.list" action="/assistance-agent/claim/completed-list" />			
+
+		</acme:menu-option>
 	</acme:menu-left>
 
 	<acme:menu-right>		
