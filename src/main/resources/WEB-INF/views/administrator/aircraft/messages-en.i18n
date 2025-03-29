@@ -14,3 +14,8 @@ administrator.aircraft.form.label.aircraftStatus=Aircraft status
 administrator.aircraft.form.label.details=Details
 administrator.aircraft.form.label.airlineName=Airline name
 administrator.aircraft.form.label.airlineIataCode=Airline IATA code
+
+administrator.aircraft.list.button.create=Create Aircraft
+administrator.aircraft.form.button.create=Create
+
+administrator.aircraft.error.null-airline=You must select an airline

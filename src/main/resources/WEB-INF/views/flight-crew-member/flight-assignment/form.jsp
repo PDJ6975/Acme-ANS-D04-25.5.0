@@ -33,8 +33,6 @@
         path="leg.scheduledArrival"
         readonly="true"
     />
-
-    <!-- Campos del FlightAssignment -->
     
     <jstl:choose>
 	    <jstl:when test="${_command == 'show'}">

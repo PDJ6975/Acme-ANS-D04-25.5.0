@@ -10,6 +10,24 @@
 	<acme:input-select code="administrator.aircraft.form.label.aircraftStatus" path="aircraftStatus" choices="${aircraftStatuses}" />
 	<acme:input-textarea code="administrator.aircraft.form.label.details" path="details" />
 	
-	<acme:input-textbox code="administrator.aircraft.form.label.airlineName" path="airline.name" />
-	<acme:input-textbox code="administrator.aircraft.form.label.airlineIataCode" path="airline.iataCode" />
+	 <jstl:choose>
+	    <jstl:when test="${_command == 'show'}">
+	        <acme:input-textbox code="administrator.aircraft.form.label.airlineIataCode" path="airline.iataCode" />
+	    </jstl:when>
+	    <jstl:otherwise>
+	        <acme:input-select
+	            code="administrator.aircraft.form.label.airlineIataCode"
+	            path="iataCode"
+	            choices="${airlines}"
+	            readonly="false"
+	        />
+	    </jstl:otherwise>
+	</jstl:choose>
+	
+	<jstl:choose>
+	    <jstl:when test="${_command == 'create'}">
+	        <acme:submit code="administrator.aircraft.form.button.create" action="/administrator/aircraft/create"/>
+	    </jstl:when>
+	</jstl:choose>
+	
 </acme:form>

@@ -1,5 +1,5 @@
 administrator.aircraft.list.title = Lista de Aviones
-administrator.aircraft.form.title = Formulario de Avión
+administrator.aircraft.form.title = Formulario de Aeronave
 
 administrator.aircraft.list.label.model=Modelo
 administrator.aircraft.list.label.registrationNumber=Número de Registro
@@ -10,7 +10,13 @@ administrator.aircraft.form.label.registrationNumber=Número de registro
 administrator.aircraft.form.label.model=Modelo
 administrator.aircraft.form.label.capacity=Capacidad
 administrator.aircraft.form.label.cargoWeight=Capacidad de carga (kg)
-administrator.aircraft.form.label.aircraftStatus=Estado del avión
+administrator.aircraft.form.label.aircraftStatus=Estado de la aeronave
 administrator.aircraft.form.label.details=Detalles
 administrator.aircraft.form.label.airlineName=Nombre de la aerolínea
 administrator.aircraft.form.label.airlineIataCode=Código IATA de la aerolínea
+
+administrator.aircraft.list.button.create=Crear Aeronave
+administrator.aircraft.form.button.create=Crear
+
+administrator.aircraft.error.null-airline=Debe seleccionar una aerolínea
+
