@@ -5,3 +5,12 @@ administrator.aircraft.list.label.model=Modelo
 administrator.aircraft.list.label.registrationNumber=Número de Registro
 administrator.aircraft.list.label.aircraftStatus=Estado
 administrator.aircraft.list.label.airline=Aerolínea
+
+administrator.aircraft.form.label.registrationNumber=Número de registro
+administrator.aircraft.form.label.model=Modelo
+administrator.aircraft.form.label.capacity=Capacidad
+administrator.aircraft.form.label.cargoWeight=Capacidad de carga (kg)
+administrator.aircraft.form.label.aircraftStatus=Estado del avión
+administrator.aircraft.form.label.details=Detalles
+administrator.aircraft.form.label.airlineName=Nombre de la aerolínea
+administrator.aircraft.form.label.airlineIataCode=Código IATA de la aerolínea
