@@ -51,6 +51,7 @@ master.menu.manager.list-my-legs = Listar Etapas
  master.menu.assistanceAgent = Miembro de asistencia
  master.menu.assistanceAgent.list-completed = Listar reclamaciones completadas
  master.menu.assistanceAgent.list-ongoing = Listar reclamaciones en proceso
+ master.menu.assistanceAgent.list-tracking-log = Listar Logs de seguimiento
 
 # master.menu.user-account ####################################################
 
