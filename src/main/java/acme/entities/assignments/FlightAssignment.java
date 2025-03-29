@@ -80,4 +80,11 @@ public class FlightAssignment extends AbstractEntity {
 		this.comments = c;
 	}
 
+	// Atributo necesario para saber cuando una asignación está o no publicada
+
+
+	@Mandatory
+	@Automapped
+	private boolean draftMode;
+
 }

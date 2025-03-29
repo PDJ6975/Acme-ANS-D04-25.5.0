@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
+import acme.entities.activityLogs.ActivityLog;
 import acme.entities.assignments.CrewRole;
 import acme.entities.assignments.FlightAssignment;
 import acme.realms.members.FlightCrewMember;
@@ -44,6 +45,13 @@ public interface CrewMemberAssignmentRepository extends AbstractRepository {
 		    WHERE fa.id = :assignmentId
 		""")
 	FlightAssignment findAssignmentById(int assignmentId);
+
+	@Query("""
+		    SELECT log
+		    FROM ActivityLog log
+		    WHERE log.flightAssignment.id = :assignmentId
+		""")
+	Collection<ActivityLog> findLogsByAssignmentId(int assignmentId);
 
 	@Query("""
 		    SELECT f

@@ -67,6 +67,7 @@ public class CrewMemberAssignmentCreateService extends AbstractGuiService<Flight
 		// Creamos la nueva asignación a la que le asociamos la etapa
 
 		FlightAssignment newAssignment = new FlightAssignment();
+		newAssignment.setDraftMode(true); // por defecto establecemos la asignación como borrador
 		newAssignment.setLeg(leg);
 
 		// Ajustamos status y actualización por defecto

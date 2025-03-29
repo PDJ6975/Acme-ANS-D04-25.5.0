@@ -23,4 +23,7 @@ crewMember.assignment.form.label.lastUpdated = Last Updated:
 crewMember.assignment.form.label.comments = Some Comments:
 
 crewMember.assignment.form.button.create = Create
-crewMember.assignment.form.submit.create = Create Post
+crewMember.assignment.form.submit.create = Create
+crewMember.assignment.form.button.update = Update
+crewMember.assignment.form.button.publish = Publish
+crewMember.assignment.form.button.delete = Delete

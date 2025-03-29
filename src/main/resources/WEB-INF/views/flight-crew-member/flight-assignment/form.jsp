@@ -83,6 +83,7 @@
         <acme:input-moment 
             code="crewMember.assignment.form.label.lastUpdated"
             path="lastUpdated"
+            readonly="true"
         />
     </jstl:otherwise>
 	</jstl:choose>
@@ -93,13 +94,15 @@
     />
 	 
 	<jstl:choose>	
-		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish')}">
+		<jstl:when test="${acme:anyOf(_command, 'show|update|publish')}">
 			<jstl:if test="${canCreate}">
     			<acme:button code="crewMember.assignment.form.button.create" action="/flight-crew-member/flight-assignment/create?masterId=${masterId}"/>
 			</jstl:if>	
-			<acme:submit code="employer.job.form.button.update" action="/employer/job/update"/>
-			<acme:submit code="employer.job.form.button.delete" action="/employer/job/delete"/>
-			<acme:submit code="employer.job.form.button.publish" action="/employer/job/publish"/>
+			<jstl:if test="${canCreate && draftMode == true}">
+    			<acme:submit code="crewMember.assignment.form.button.update" action="/flight-crew-member/flight-assignment/update"/>
+    			<acme:submit code="crewMember.assignment.form.button.publish" action="/flight-crew-member/flight-assignment/publish"/>
+    			<acme:submit code="crewMember.assignment.form.button.delete" action="/flight-crew-member/flight-assignment/delete"/>
+			</jstl:if>	
 		</jstl:when>	
 		<jstl:when test="${_command == 'create'}">
 			<acme:submit code="crewMember.assignment.form.submit.create" action="/flight-crew-member/flight-assignment/create?masterId=${masterId}"/>
