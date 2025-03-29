@@ -10,13 +10,10 @@ import acme.entities.activityLogs.ActivityLog;
 import acme.realms.members.FlightCrewMember;
 
 @GuiService
-public class CrewMemberActivityLogShowService extends AbstractGuiService<FlightCrewMember, ActivityLog> {
+public class CrewMemberActivityLogPublishService extends AbstractGuiService<FlightCrewMember, ActivityLog> {
 
-	// Internal state ---------------------------------------------------------
 	@Autowired
-	private CrewMemberActivityLogRepository repository;
-
-	// AbstractGuiService interface -------------------------------------------
+	protected CrewMemberActivityLogRepository repository;
 
 
 	@Override
@@ -29,23 +26,38 @@ public class CrewMemberActivityLogShowService extends AbstractGuiService<FlightC
 		logId = super.getRequest().getData("id", int.class);
 		log = this.repository.findOneById(logId);
 
-		status = log != null && super.getRequest().getPrincipal().hasRealm(log.getFlightAssignment().getFlightCrewMember());
+		status = !log.getFlightAssignment().isDraftMode() && log.isDraftMode() && super.getRequest().getPrincipal().hasRealm(log.getFlightAssignment().getFlightCrewMember());
 
 		super.getResponse().setAuthorised(status);
-
 	}
 
 	@Override
 	public void load() {
 
 		ActivityLog log;
-		int logId;
+		int id;
 
-		logId = super.getRequest().getData("id", int.class);
-		log = this.repository.findOneById(logId);
+		id = super.getRequest().getData("id", int.class);
+		log = this.repository.findOneById(id);
 
 		super.getBuffer().addData(log);
 
+	}
+
+	@Override
+	public void bind(final ActivityLog log) {
+		super.bindObject(log, "typeOfIncident", "description", "severityLevel");
+	}
+
+	@Override
+	public void validate(final ActivityLog log) {
+		;
+	}
+
+	@Override
+	public void perform(final ActivityLog log) {
+		log.setDraftMode(false);
+		this.repository.save(log);
 	}
 
 	@Override
@@ -54,8 +66,7 @@ public class CrewMemberActivityLogShowService extends AbstractGuiService<FlightC
 
 		dataset = super.unbindObject(log, "registrationMoment", "typeOfIncident", "description", "severityLevel");
 		dataset.put("draftMode", log.getFlightAssignment().isDraftMode());
-		dataset.put("draftLeg", log.isDraftMode());
-		dataset.put("masterId", log.getFlightAssignment().getId());
+		dataset.put("masterId", super.getRequest().getData("masterId", int.class));
 
 		super.getResponse().addData(dataset);
 	}

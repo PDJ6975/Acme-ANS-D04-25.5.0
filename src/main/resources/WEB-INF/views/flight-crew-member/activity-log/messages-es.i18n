@@ -11,3 +11,8 @@ crewMember.log.form.label.typeOfIncident = Tipo de Incidente:
 crewMember.log.form.label.description = Descripción:
 crewMember.log.form.label.severityLevel = Nivel de Severidad:
 crewMember.log.form.placeholder.severityLevel = 0 - 10
+
+crewMember.log.list.button.create = Crear
+crewMember.log.list.button.update = Actualizar
+crewMember.log.list.button.delete = Borrar
+crewMember.log.list.button.publish = Publicar

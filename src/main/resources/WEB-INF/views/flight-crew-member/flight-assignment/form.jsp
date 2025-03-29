@@ -95,6 +95,7 @@
 	 
 	<jstl:choose>	
 		<jstl:when test="${acme:anyOf(_command, 'show|update|publish')}">
+			<acme:button code="crewMember.assignment.form.button.logs" action="/flight-crew-member/activity-log/list?masterId=${masterId}"/>
 			<jstl:if test="${canCreate}">
     			<acme:button code="crewMember.assignment.form.button.create" action="/flight-crew-member/flight-assignment/create?masterId=${masterId}"/>
 			</jstl:if>	

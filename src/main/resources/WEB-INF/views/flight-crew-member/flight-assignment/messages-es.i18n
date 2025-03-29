@@ -24,3 +24,4 @@ crewMember.assignment.form.submit.create = Crear
 crewMember.assignment.form.button.update = Actualizar
 crewMember.assignment.form.button.publish = Publicar
 crewMember.assignment.form.button.delete = Borrar
+crewMember.assignment.form.button.logs = Mostras Incidentes

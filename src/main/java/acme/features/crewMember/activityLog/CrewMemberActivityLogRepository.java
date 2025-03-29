@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
 import acme.entities.activityLogs.ActivityLog;
+import acme.entities.assignments.FlightAssignment;
 
 @Repository
 public interface CrewMemberActivityLogRepository extends AbstractRepository {
@@ -16,11 +17,13 @@ public interface CrewMemberActivityLogRepository extends AbstractRepository {
 	ActivityLog findOneById(int id);
 
 	@Query("""
-		    SELECT al
-		    FROM ActivityLog al
-		    WHERE al.flightAssignment.flightCrewMember.id = :crewMemberId
-		    ORDER BY al.registrationMoment DESC
+		    SELECT log
+		    FROM ActivityLog log
+		    WHERE log.flightAssignment.id = :masterId
 		""")
-	Collection<ActivityLog> findManyByCrewMemberId(int crewMemberId);
+	Collection<ActivityLog> findLogsByMasterId(int masterId);
+
+	@Query("SELECT a FROM FlightAssignment a WHERE a.id = :id")
+	FlightAssignment findAssignmentById(int id);
 
 }

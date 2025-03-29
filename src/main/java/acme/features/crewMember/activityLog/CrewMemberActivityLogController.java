@@ -20,6 +20,18 @@ public class CrewMemberActivityLogController extends AbstractGuiController<Fligh
 	@Autowired
 	private CrewMemberActivityLogShowService	showService;
 
+	@Autowired
+	private CrewMemberActivityLogCreateService	createService;
+
+	@Autowired
+	private CrewMemberActivityLogUpdateService	updateService;
+
+	@Autowired
+	private CrewMemberActivityLogDeleteService	deleteService;
+
+	@Autowired
+	private CrewMemberActivityLogPublishService	publishService;
+
 	// Constructors -----------------------------------------------------------
 
 
@@ -27,5 +39,9 @@ public class CrewMemberActivityLogController extends AbstractGuiController<Fligh
 	protected void initialise() {
 		super.addBasicCommand("list", this.listService);
 		super.addBasicCommand("show", this.showService);
+		super.addBasicCommand("create", this.createService);
+		super.addBasicCommand("update", this.updateService);
+		super.addBasicCommand("delete", this.deleteService);
+		super.addCustomCommand("publish", "update", this.publishService);
 	}
 }
