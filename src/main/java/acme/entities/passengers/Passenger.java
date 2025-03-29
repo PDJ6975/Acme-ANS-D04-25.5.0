@@ -32,7 +32,7 @@ public class Passenger extends AbstractEntity {
 	// Attributes
 
 	@Mandatory
-	@ValidString(max = 256)
+	@ValidString(max = 255)
 	@Automapped
 	private String				fullName;
 
@@ -53,7 +53,7 @@ public class Passenger extends AbstractEntity {
 
 	@Optional
 	@Automapped
-	@ValidString(max = 51)
+	@ValidString(max = 50)
 	private String				specialNeeds;
 
 	@ManyToOne(optional = false)
