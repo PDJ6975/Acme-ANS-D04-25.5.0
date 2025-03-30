@@ -26,7 +26,7 @@
 	
 	<jstl:choose>
 	    <jstl:when test="${_command == 'create'}">
-	        <acme:submit code="administrator.aircraft.form.button.create" action="/administrator/aircraft/create"/>
+	        <acme:submit code="administrator.aircraft.form.button.create" action="/administrator/aircraft/create" />
 	    </jstl:when>
 	</jstl:choose>
 	
