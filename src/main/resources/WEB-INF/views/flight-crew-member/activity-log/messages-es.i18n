@@ -1,0 +1,18 @@
+flight-crew-member.activity-log.list.title = Lista de Incidentes
+flight-crew-member.activity-log.form.title = Formulario de Incidente
+
+crewMember.log.list.label.flightNumber = Número de Vuelo
+crewMember.log.list.label.crewRole = Rol Asignado
+crewMember.log.list.label.typeOfIncident = Tipo de Incidente
+crewMember.log.list.label.severityLevel = Nivel de Severidad
+
+crewMember.log.form.label.registrationMoment = Momento de Registro:
+crewMember.log.form.label.typeOfIncident = Tipo de Incidente:
+crewMember.log.form.label.description = Descripción:
+crewMember.log.form.label.severityLevel = Nivel de Severidad:
+crewMember.log.form.placeholder.severityLevel = 0 - 10
+
+crewMember.log.list.button.create = Crear
+crewMember.log.list.button.update = Actualizar
+crewMember.log.list.button.delete = Borrar
+crewMember.log.list.button.publish = Publicar

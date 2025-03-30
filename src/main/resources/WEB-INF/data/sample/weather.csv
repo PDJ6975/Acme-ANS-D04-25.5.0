@@ -1,66 +1,66 @@
-key,weatherId,timestamp,temperature,humidity,windSpeed,location,source,key:flight
-weather-01,WH0000,2011/04/16 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,flight-01
-weather-02,WH9999,2011/04/16 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,flight-02
+key,timestamp,temperature,humidity,windSpeed,location,key:flight
+weather-01,2011/04/16 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,flight-01
+weather-02,2011/04/16 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,flight-02
 #
 # weatherId probado
 #
-weather-03,WH0001,2011/04/16 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,flight-03
-weather-04,WH0002,2000/01/01 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,flight-04
-weather-05,WH0003,2000/01/01 0:01,0.00,50.00,100.00,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,flight-05
-weather-06,WH0004,2022/07/29 23:58,0.00,50.00,100.00,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,flight-06
-weather-07,WH0005,2022/07/29 23:59,0.00,50.00,100.00,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,flight-07
+weather-03,2011/04/16 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,flight-03
+weather-04,2000/01/01 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,flight-04
+weather-05,2000/01/01 0:01,0.00,50.00,100.00,Lorem ipsum dolor sit ame,flight-05
+weather-06,2022/07/29 23:58,0.00,50.00,100.00,Lorem ipsum dolor sit ame,flight-06
+weather-07,2022/07/29 23:59,0.00,50.00,100.00,Lorem ipsum dolor sit ame,flight-07
 #
 # timestamp probado
 #
-weather-08,WH0006,2011/04/16 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,flight-08
-weather-09,WH0007,2011/04/16 0:00,-100.00,50.00,100.00,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,flight-09
-weather-10,WH0008,2011/04/16 0:00,-99.99,50.00,100.00,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,flight-10
-weather-11,WH0009,2011/04/16 0:00,99.99,50.00,100.00,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,flight-11
-weather-12,WH0010,2011/04/16 0:00,100.00,50.00,100.00,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,flight-12
+weather-08,2011/04/16 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,flight-08
+weather-09,2011/04/16 0:00,-100.00,50.00,100.00,Lorem ipsum dolor sit ame,flight-09
+weather-10,2011/04/16 0:00,-99.99,50.00,100.00,Lorem ipsum dolor sit ame,flight-10
+weather-11,2011/04/16 0:00,99.99,50.00,100.00,Lorem ipsum dolor sit ame,flight-11
+weather-12,2011/04/16 0:00,100.00,50.00,100.00,Lorem ipsum dolor sit ame,flight-12
 #
 # temperature probado
 #
-weather-13,WH0011,2011/04/16 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,flight-13
-weather-14,WH0012,2011/04/16 0:00,0.00,0.00,100.00,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,flight-14
-weather-15,WH0013,2011/04/16 0:00,0.00,0.01,100.00,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,flight-15
-weather-16,WH0014,2011/04/16 0:00,0.00,99.99,100.00,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,flight-16
-weather-17,WH0015,2011/04/16 0:00,0.00,100.00,100.00,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,flight-17
+weather-13,2011/04/16 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,flight-13
+weather-14,2011/04/16 0:00,0.00,0.00,100.00,Lorem ipsum dolor sit ame,flight-14
+weather-15,2011/04/16 0:00,0.00,0.01,100.00,Lorem ipsum dolor sit ame,flight-15
+weather-16,2011/04/16 0:00,0.00,99.99,100.00,Lorem ipsum dolor sit ame,flight-16
+weather-17,2011/04/16 0:00,0.00,100.00,100.00,Lorem ipsum dolor sit ame,flight-17
 #
 # humidity probado
 #
-weather-18,WH0016,2011/04/16 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,flight-18
-weather-19,WH0017,2011/04/16 0:00,0.00,50.00,0.00,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,flight-19
-weather-20,WH0018,2011/04/16 0:00,0.00,50.00,0.01,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,flight-20
-weather-21,WH0019,2011/04/16 0:00,0.00,50.00,199.99,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,flight-21
-weather-22,WH0020,2011/04/16 0:00,0.00,50.00,200.00,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,flight-22
+weather-18,2011/04/16 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,flight-18
+weather-19,2011/04/16 0:00,0.00,50.00,0.00,Lorem ipsum dolor sit ame,flight-19
+weather-20,2011/04/16 0:00,0.00,50.00,0.01,Lorem ipsum dolor sit ame,flight-20
+weather-21,2011/04/16 0:00,0.00,50.00,199.99,Lorem ipsum dolor sit ame,flight-21
+weather-22,2011/04/16 0:00,0.00,50.00,200.00,Lorem ipsum dolor sit ame,flight-22
 #
 # windSpeed probado
 #
-weather-23,WH0021,2011/04/16 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,flight-23
-weather-24,WH0022,2011/04/16 0:00,0.00,50.00,100.00,L,Lorem ipsum dolor sit ame,flight-24
-weather-25,WH0023,2011/04/16 0:00,0.00,50.00,100.00,Lo,Lorem ipsum dolor sit ame,flight-25
-weather-26,WH0024,2011/04/16 0:00,0.00,50.00,100.00,"Lorem ipsum dolor sit amet, consectetur adipiscin",Lorem ipsum dolor sit ame,flight-26
-weather-27,WH0025,2011/04/16 0:00,0.00,50.00,100.00,"Lorem ipsum dolor sit amet, consectetur adipiscing",Lorem ipsum dolor sit ame,flight-27
-weather-28,WH0026,2011/04/16 0:00,0.00,50.00,100.00,"โลเร็ม อิปซัม",Lorem ipsum dolor sit ame,flight-28
-weather-29,WH0027,2011/04/16 0:00,0.00,50.00,100.00,"لوريم إيبسوم",Lorem ipsum dolor sit ame,flight-29
-weather-30,WH0028,2011/04/16 0:00,0.00,50.00,100.00,"洛伦·伊普森",Lorem ipsum dolor sit ame,flight-30
-weather-31,WH0029,2011/04/16 0:00,0.00,50.00,100.00,"<marquee>Hacked</marquee>",Lorem ipsum dolor sit ame,flight-31
-weather-32,WH0030,2011/04/16 0:00,0.00,50.00,100.00,"<script>alert(‘Hacked!’);</script>",Lorem ipsum dolor sit ame,flight-32
-weather-33,WH0031,2011/04/16 0:00,0.00,50.00,100.00,"' or 'A' = 'A ",Lorem ipsum dolor sit ame,flight-33
+weather-23,2011/04/16 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,flight-23
+weather-24,2011/04/16 0:00,0.00,50.00,100.00,L,flight-24
+weather-25,2011/04/16 0:00,0.00,50.00,100.00,Lo,flight-25
+weather-26,2011/04/16 0:00,0.00,50.00,100.00,"Lorem ipsum dolor sit amet",flight-26
+weather-27,2011/04/16 0:00,0.00,50.00,100.00,"Lorem ipsum dolor sit amet, consectetur adipiscing",flight-27
+weather-28,2011/04/16 0:00,0.00,50.00,100.00,"โลเร็ม อิปซัม",flight-28
+weather-29,2011/04/16 0:00,0.00,50.00,100.00,"لوريم إيبسوم",flight-29
+weather-30,2011/04/16 0:00,0.00,50.00,100.00,"洛伦·伊普森",flight-30
+weather-31,2011/04/16 0:00,0.00,50.00,100.00,"<marquee>Hacked</marquee>",flight-31
+weather-32,2011/04/16 0:00,0.00,50.00,100.00,"<script>alert(‘Hacked!’);</script>",flight-32
+weather-33,2011/04/16 0:00,0.00,50.00,100.00,"' or 'A' = 'A ",flight-33
 #
 # location probado
 #
-weather-34,WH0032,2011/04/16 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,flight-34
-weather-35,WH0033,2011/04/16 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,L,flight-35
-weather-36,WH0034,2011/04/16 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,Lo,flight-36
-weather-37,WH0035,2011/04/16 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscin",flight-37
-weather-38,WH0036,2011/04/16 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscing",flight-38
-weather-39,WH0037,2011/04/16 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,"โลเร็ม อิปซัม",flight-39
-weather-40,WH0038,2011/04/16 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,"لوريم إيبسوم",flight-40
-weather-41,WH0039,2011/04/16 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,"洛伦·伊普森",flight-41
-weather-42,WH0040,2011/04/16 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,"<marquee>Hacked</marquee>",flight-42
-weather-43,WH0041,2011/04/16 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,"<script>alert(‘Hacked!’);</script>",flight-43
-weather-44,WH0042,2011/04/16 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,"' or 'A' = 'A ",flight-44
+weather-34,2011/04/16 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,flight-34
+weather-35,2011/04/16 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,flight-35
+weather-36,2011/04/16 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,flight-36
+weather-37,2011/04/16 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,flight-37
+weather-38,2011/04/16 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,flight-38
+weather-39,2011/04/16 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,flight-39
+weather-40,2011/04/16 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,flight-40
+weather-41,2011/04/16 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,flight-41
+weather-42,2011/04/16 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,flight-42
+weather-43,2011/04/16 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,flight-43
+weather-44,2011/04/16 0:00,0.00,50.00,100.00,Lorem ipsum dolor sit ame,flight-44
 #
 # source probado
 #

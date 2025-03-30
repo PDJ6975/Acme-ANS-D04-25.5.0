@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>Acme-ANS-D02-25.2.0</name>
+	<name>Acme-ANS-D03-25.3.0</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -34,14 +34,25 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>acme-framework-25.2.0</name>
+			<name>acme-framework-25.3.0</name>
 			<type>2</type>
-			<locationURI>WORKSPACE_LOC/Frameworks/Acme-Framework-25.2.0/target/classes</locationURI>
+			<locationURI>WORKSPACE_LOC/Frameworks/Acme-Framework-25.3.0/target/classes</locationURI>
 		</link>
 		<link>
 			<name>target/classes</name>
 			<type>2</type>
-			<locationURI>WORKSPACE_LOC/Projects/Acme-ANS-D02-25.2.0/target/classes</locationURI>
+			<locationURI>WORKSPACE_LOC/Projects/Acme-ANS-D03-25.3.0/target/classes</locationURI>
 		</link>
 	</linkedResources>
+	<filteredResources>
+		<filter>
+			<id>1743329033799</id>
+			<name></name>
+			<type>30</type>
+			<matcher>
+				<id>org.eclipse.core.resources.regexFilterMatcher</id>
+				<arguments>node_modules|\.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
+			</matcher>
+		</filter>
+	</filteredResources>
 </projectDescription>
