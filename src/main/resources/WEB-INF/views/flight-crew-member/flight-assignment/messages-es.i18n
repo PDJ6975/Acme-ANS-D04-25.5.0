@@ -25,3 +25,9 @@ crewMember.assignment.form.button.update = Actualizar
 crewMember.assignment.form.button.publish = Publicar
 crewMember.assignment.form.button.delete = Borrar
 crewMember.assignment.form.button.logs = Mostras Incidentes
+
+crewMember.assignment.error.null-crewRole=Debe seleccionar un rol de tripulación
+crewMember.assignment.error.null-assignmentStatus=Debe seleccionar un estado de asignación
+
+crewMember.assignment.error.duplicate-role = El rol ya ha sido asignado
+crewMember.assignment.error.missing-member = Debes elegir un miembro disponible

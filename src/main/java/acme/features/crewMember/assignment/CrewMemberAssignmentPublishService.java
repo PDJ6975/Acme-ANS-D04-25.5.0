@@ -100,10 +100,11 @@ public class CrewMemberAssignmentPublishService extends AbstractGuiService<Fligh
 		dataset.put("assignmentStatuses", choicesAssignmentStatus);
 		dataset.put("masterId", assignment.getId());
 
-		boolean isLeadAttendant = assignment.getCrewRole().equals(CrewRole.LEADATTENDANT);
+		boolean isLeadAttendant = assignment.getCrewRole() != null ? assignment.getCrewRole().equals(CrewRole.LEADATTENDANT) : true;
 		boolean legNotOccurred = !assignment.getLeg().getLegStatus().equals(LegStatus.LANDED) && !assignment.getLeg().getLegStatus().equals(LegStatus.CANCELLED);
 
 		dataset.put("canCreate", isLeadAttendant && legNotOccurred);
+		dataset.put("draftMode", assignment.isDraftMode());
 
 		super.getResponse().addData(dataset);
 	}

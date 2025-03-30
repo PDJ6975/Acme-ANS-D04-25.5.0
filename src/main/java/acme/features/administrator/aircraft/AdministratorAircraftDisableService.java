@@ -11,7 +11,7 @@ import acme.entities.aircrafts.Aircraft;
 import acme.entities.aircrafts.AircraftStatus;
 
 @GuiService
-public class AdministratorAircraftShowService extends AbstractGuiService<Administrator, Aircraft> {
+public class AdministratorAircraftDisableService extends AbstractGuiService<Administrator, Aircraft> {
 
 	@Autowired
 	protected AdministratorAircraftRepository repository;
@@ -38,11 +38,27 @@ public class AdministratorAircraftShowService extends AbstractGuiService<Adminis
 	}
 
 	@Override
+	public void bind(final Aircraft aircraft) {
+		;
+	}
+
+	@Override
+	public void validate(final Aircraft aircraft) {
+		boolean confirmation = super.getRequest().getData("confirmation", boolean.class);
+		super.state(confirmation, "confirmation", "administrator.aircraft.error.confirmation-required");
+	}
+
+	@Override
+	public void perform(final Aircraft aircraft) {
+		aircraft.setAircraftStatus(AircraftStatus.MAINTENANCE);
+		this.repository.save(aircraft);
+	}
+
+	@Override
 	public void unbind(final Aircraft aircraft) {
 		Dataset dataset;
 
 		dataset = super.unbindObject(aircraft, "model", "registrationNumber", "capacity", "cargoWeight", "aircraftStatus", "details", "airline.iataCode");
-		dataset.put("masterId", aircraft.getId());
 		dataset.put("disable", aircraft.getAircraftStatus().equals(AircraftStatus.MAINTENANCE));
 
 		super.getResponse().addData(dataset);

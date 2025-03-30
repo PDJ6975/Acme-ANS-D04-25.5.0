@@ -56,6 +56,9 @@ public class AdministratorAircraftCreateService extends AbstractGuiService<Admin
 			boolean exists = this.repository.existsByRegistrationNumber(aircraft.getRegistrationNumber());
 			super.state(!exists, "registrationNumber", "administrator.aircraft.error.duplicated-registration-number");
 		}
+
+		boolean confirmation = super.getRequest().getData("confirmation", boolean.class);
+		super.state(confirmation, "confirmation", "administrator.aircraft.error.confirmation-required");
 	}
 
 	@Override

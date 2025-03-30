@@ -65,7 +65,7 @@ public class CrewMemberActivityLogUpdateService extends AbstractGuiService<Fligh
 
 		dataset = super.unbindObject(log, "registrationMoment", "typeOfIncident", "description", "severityLevel");
 		dataset.put("draftMode", log.getFlightAssignment().isDraftMode());
-		dataset.put("masterId", super.getRequest().getData("masterId", int.class));
+		dataset.put("draftLeg", log.isDraftMode());
 
 		super.getResponse().addData(dataset);
 	}

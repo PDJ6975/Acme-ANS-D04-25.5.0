@@ -11,7 +11,7 @@ import acme.entities.aircrafts.Aircraft;
 import acme.entities.aircrafts.AircraftStatus;
 
 @GuiService
-public class AdministratorAircraftShowService extends AbstractGuiService<Administrator, Aircraft> {
+public class AdministratorAircraftUpdateService extends AbstractGuiService<Administrator, Aircraft> {
 
 	@Autowired
 	protected AdministratorAircraftRepository repository;
@@ -38,11 +38,33 @@ public class AdministratorAircraftShowService extends AbstractGuiService<Adminis
 	}
 
 	@Override
+	public void bind(final Aircraft aircraft) {
+		super.bindObject(aircraft, "model", "registrationNumber", "capacity", "cargoWeight", "aircraftStatus", "details");
+	}
+
+	@Override
+	public void validate(final Aircraft aircraft) {
+		if (aircraft.getRegistrationNumber() != null) {
+			Aircraft existing = this.repository.findAircraftByRegistrationNumber(aircraft.getRegistrationNumber());
+			boolean isDuplicate = existing != null && existing.getId() != aircraft.getId();
+
+			super.state(!isDuplicate, "registrationNumber", "administrator.aircraft.error.duplicated-registration-number");
+		}
+
+		boolean confirmation = super.getRequest().getData("confirmation", boolean.class);
+		super.state(confirmation, "confirmation", "administrator.aircraft.error.confirmation-required");
+	}
+
+	@Override
+	public void perform(final Aircraft aircraft) {
+		this.repository.save(aircraft);
+	}
+
+	@Override
 	public void unbind(final Aircraft aircraft) {
 		Dataset dataset;
 
 		dataset = super.unbindObject(aircraft, "model", "registrationNumber", "capacity", "cargoWeight", "aircraftStatus", "details", "airline.iataCode");
-		dataset.put("masterId", aircraft.getId());
 		dataset.put("disable", aircraft.getAircraftStatus().equals(AircraftStatus.MAINTENANCE));
 
 		super.getResponse().addData(dataset);

@@ -59,7 +59,6 @@ public class CrewMemberAssignmentUpdateService extends AbstractGuiService<Flight
 
 	@Override
 	public void validate(final FlightAssignment assignment) {
-
 		Leg leg = assignment.getLeg();
 		CrewRole role = assignment.getCrewRole();
 
@@ -70,7 +69,6 @@ public class CrewMemberAssignmentUpdateService extends AbstractGuiService<Flight
 		}
 
 		// El resto de validaciones no son necesarias porque la etapa y el miembro asociado en la asignación no se puede modificar
-
 	}
 
 	@Override
@@ -99,10 +97,11 @@ public class CrewMemberAssignmentUpdateService extends AbstractGuiService<Flight
 		dataset.put("assignmentStatuses", choicesAssignmentStatus);
 		dataset.put("masterId", assignment.getId());
 
-		boolean isLeadAttendant = assignment.getCrewRole().equals(CrewRole.LEADATTENDANT);
+		boolean isLeadAttendant = assignment.getCrewRole() != null ? assignment.getCrewRole().equals(CrewRole.LEADATTENDANT) : true;
 		boolean legNotOccurred = !assignment.getLeg().getLegStatus().equals(LegStatus.LANDED) && !assignment.getLeg().getLegStatus().equals(LegStatus.CANCELLED);
 
 		dataset.put("canCreate", isLeadAttendant && legNotOccurred);
+		dataset.put("draftMode", assignment.isDraftMode());
 
 		super.getResponse().addData(dataset);
 	}

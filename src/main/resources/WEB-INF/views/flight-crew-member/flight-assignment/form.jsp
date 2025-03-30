@@ -35,12 +35,17 @@
     />
     
     <jstl:choose>
-	    <jstl:when test="${_command == 'show'}">
+	    <jstl:when test="${acme:anyOf(_command, 'show|update|publish')}">
 	        <acme:input-textbox 
 	            code="crewMember.assignment.form.label.employeeCode" 
 	            path="flightCrewMember.employeeCode" 
 	            readonly="true"
 	        />
+	        <acme:input-select 
+	            code="crewMember.assignment.form.label.assignmentStatus"
+	            path="assignmentStatus"
+	            choices="${assignmentStatuses}"
+        	/>
 	    </jstl:when>
 	    <jstl:otherwise>
 	        <acme:input-select
@@ -49,6 +54,12 @@
 	            choices="${crewMembers}"
 	            readonly="false"
 	        />
+	        <acme:input-select 
+	            code="crewMember.assignment.form.label.assignmentStatus"
+	            path="assignmentStatus"
+	            choices="${assignmentStatuses}"
+	            readonly="true"
+        	/>
 	    </jstl:otherwise>
 	</jstl:choose>
     
@@ -57,34 +68,12 @@
         path="crewRole"
         choices="${crewRoles}" 
     />
-    
-    <jstl:choose>
-    <jstl:when test="${_command == 'create'}">
-        <acme:input-select 
-            code="crewMember.assignment.form.label.assignmentStatus"
-            path="assignmentStatus"
-            choices="${assignmentStatuses}"
-            readonly="true"
-        />
-        <acme:input-moment 
+	
+	<acme:input-moment 
             code="crewMember.assignment.form.label.lastUpdated"
             path="lastUpdated"
             readonly="true"
         />
-    </jstl:when>
-    <jstl:otherwise>
-        <acme:input-select 
-            code="crewMember.assignment.form.label.assignmentStatus"
-            path="assignmentStatus"
-            choices="${assignmentStatuses}"
-        />
-        <acme:input-moment 
-            code="crewMember.assignment.form.label.lastUpdated"
-            path="lastUpdated"
-            readonly="true"
-        />
-    </jstl:otherwise>
-	</jstl:choose>
 
     <acme:input-textarea
         code="crewMember.assignment.form.label.comments"

@@ -17,6 +17,11 @@ administrator.aircraft.form.label.airlineIataCode=Código IATA de la aerolínea
 
 administrator.aircraft.list.button.create=Crear Aeronave
 administrator.aircraft.form.button.create=Crear
+crewMember.log.list.button.update = Actualizar
+administrator.aircraft.form.button.disable = Deshabilitar
+administrator.aircraft.form.label.confirmation=Confirmo esta operación
 
 administrator.aircraft.error.null-airline=Debe seleccionar una aerolínea
+administrator.aircraft.error.duplicated-registration-number=El número de registro ya existe
+administrator.aircraft.error.confirmation-required=Debes confirmar esta operación
 

@@ -22,6 +22,9 @@ public interface AdministratorAircraftRepository extends AbstractRepository {
 	@Query("SELECT COUNT(a) > 0 FROM Aircraft a WHERE a.registrationNumber = :registrationNumber")
 	boolean existsByRegistrationNumber(String registrationNumber);
 
+	@Query("SELECT a from Aircraft a WHERE a.registrationNumber = :registrationNumber")
+	Aircraft findAircraftByRegistrationNumber(String registrationNumber);
+
 	@Query("SELECT a FROM Airline a")
 	Collection<Airline> findAllAirlines();
 
