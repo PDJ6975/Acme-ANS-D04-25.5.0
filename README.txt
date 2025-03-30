@@ -14,7 +14,7 @@ Tablero Grupal (para las tareas grupales): https://github.com/users/PDJ6975/proj
 
 Tablero Pablo Castrillón Mora (WYP8859): https://github.com/users/PDJ6975/projects/16/views/1
 
-Tablero Antonio Rodríguez Calderón (https://github.com/users/PDJ6975/projects/10/views/1):
+Tablero Antonio Rodríguez Calderón (https://github.com/users/PDJ6975/projects/19):
 
 Tablero Jianwu Hu (VXN8675): https://github.com/users/PDJ6975/projects/17/views/1
 
