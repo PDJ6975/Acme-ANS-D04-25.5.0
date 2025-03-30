@@ -61,6 +61,10 @@
  			<acme:menu-suboption code="master.menu.assistanceAgent.list-ongoing" action="/assistance-agent/claim/ongoing-list" />
  			<acme:menu-suboption code="master.menu.assistanceAgent.list-tracking-log" action="/assistance-agent/tracking-log/list" />				
  		</acme:menu-option>
+ 		
+ 		<acme:menu-option code="master.menu.customer" access="hasRealm('Customer')">
+			<acme:menu-suboption code="master.menu.customer.list-bookings" action="/customer/booking/list"/>
+		</acme:menu-option>
 	</acme:menu-left>
 
 	<acme:menu-right>		
