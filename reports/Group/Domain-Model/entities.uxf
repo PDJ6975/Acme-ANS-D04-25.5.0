@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>10</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>100</x>
-      <y>820</y>
-      <w>540</w>
-      <h>140</h>
+      <x>32</x>
+      <y>656</y>
+      <w>432</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Service
@@ -23,10 +23,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>80</x>
-      <y>410</y>
-      <w>570</w>
-      <h>180</h>
+      <x>16</x>
+      <y>328</y>
+      <w>456</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Airport        
@@ -45,10 +45,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>650</x>
-      <y>1160</y>
-      <w>480</w>
-      <h>160</h>
+      <x>472</x>
+      <y>928</y>
+      <w>384</w>
+      <h>128</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Review
@@ -65,10 +65,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1150</x>
-      <y>800</y>
-      <w>570</w>
-      <h>180</h>
+      <x>872</x>
+      <y>640</y>
+      <w>456</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Aircraft        
@@ -86,10 +86,10 @@ bg=GREEN</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1160</x>
-      <y>440</y>
-      <w>550</w>
-      <h>160</h>
+      <x>880</x>
+      <y>352</y>
+      <w>440</w>
+      <h>128</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Airline        
@@ -107,10 +107,10 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>350</x>
-      <y>580</y>
-      <w>110</w>
-      <h>260</h>
+      <x>232</x>
+      <y>464</y>
+      <w>88</w>
+      <h>208</h>
     </coordinates>
     <panel_attributes>Offered by ^
 lt=&lt;-x
@@ -123,10 +123,10 @@ m2=*
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>620</x>
-      <y>1510</y>
-      <w>540</w>
-      <h>80</h>
+      <x>448</x>
+      <y>1208</y>
+      <w>432</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 UserAccount
@@ -137,10 +137,10 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1430</x>
-      <y>590</y>
-      <w>120</w>
-      <h>230</h>
+      <x>1096</x>
+      <y>472</y>
+      <w>96</w>
+      <h>184</h>
     </coordinates>
     <panel_attributes>Belongs To ^
 lt=&lt;-x
@@ -153,10 +153,10 @@ m2=*
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>1110</x>
-      <y>1480</y>
-      <w>260</w>
-      <h>50</h>
+      <x>840</x>
+      <y>1184</y>
+      <w>208</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>Esta entidad es básica del framework
 bg=blue
@@ -166,10 +166,10 @@ layer=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>880</x>
-      <y>1310</y>
-      <w>120</w>
-      <h>220</h>
+      <x>656</x>
+      <y>1048</y>
+      <w>96</w>
+      <h>176</h>
     </coordinates>
     <panel_attributes>Published by ▼
 lt=&lt;-x
@@ -182,10 +182,10 @@ m2=*
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1380</x>
-      <y>1200</y>
-      <w>700</w>
-      <h>90</h>
+      <x>1056</x>
+      <y>960</y>
+      <w>560</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 SystemCurrency
@@ -198,10 +198,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1760</x>
-      <y>850</y>
-      <w>130</w>
-      <h>90</h>
+      <x>1360</x>
+      <y>680</y>
+      <w>104</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
 AircraftStatus
@@ -214,10 +214,10 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1750</x>
-      <y>480</y>
-      <w>120</w>
-      <h>100</h>
+      <x>1352</x>
+      <y>384</y>
+      <w>96</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
 Type
@@ -231,10 +231,10 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1420</x>
+      <x>1088</x>
       <y>0</y>
-      <w>350</w>
-      <h>140</h>
+      <w>280</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Form&gt;&gt;
 MoneyExchange
@@ -245,6 +245,54 @@ MoneyExchange
 + target: Money {Optional, ValidMoney}
 + oops: Throwable {Optional, Valid}
 bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1576</x>
+      <y>640</y>
+      <w>472</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+BannedPassenger
+--
++ fullName : String {Mandatory, ValidString(max=50), Automapped}
++ passportNumber : String {Mandatory, ValidString(pattern="^[A-Z0-9]{6,9}$"), Automapped}
++ dateOfBirth : Date {Mandatory, ValidMoment(past=true), Automapped}
++ nationality : String {Mandatory, ValidString(max=50), Automapped}
++ reason : String {Mandatory, ValidString(max=255), Automapped}
++ banDate : Date {Mandatory, ValidMoment(past=true)}
++ liftDate : Date {Optional, ValidMoment(past=true)}
+bg=green
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1088</x>
+      <y>128</y>
+      <w>400</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Form&gt;&gt;
+AdministrationDashboard
+--
++ airportsByOperationalScope : Map&lt;String, Long&gt; {Mandatory, Valid}
++ airlinesByType : Map&lt;String, Long&gt; {Mandatory, Valid}
++ ratioAirlinesWithEmailAndPhone : Double {Mandatory, ValidNumber(min=0)}
++ aircraftsActiveRatios : Map&lt;String, Double&gt; {Mandatory, Valid}
++ ratioReviewsAboveFive : Double {Mandatory, ValidNumber(min=0)}
++ reviewsCount : Long {Mandatory, ValidNumber(min=0)}
++ reviewsAverage : Double {Mandatory, ValidNumber(min=0)}
++ reviewsMinimum : Double {Mandatory, ValidNumber(min=0)}
++ reviewsMaximum : Double {Mandatory, ValidNumber(min=0)}
++ reviewsStandardDeviation : Double {Mandatory, ValidNumber(min=0)}
+bg=cyan
+
+</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

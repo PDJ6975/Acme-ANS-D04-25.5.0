@@ -1,51 +1,50 @@
 
-package acme.entities.airports;
+package acme.entities.recommendations;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.validation.Valid;
+import javax.persistence.ManyToOne;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
-import acme.client.components.validation.ValidEmail;
 import acme.client.components.validation.ValidString;
 import acme.client.components.validation.ValidUrl;
+import acme.entities.airports.Airport;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Airport extends AbstractEntity {
+public class Recommendation extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
+	// Utilizaremos la API de Foursquare Places
+	// API Key - fsq3WtAPVSp+JUxpyeTtv663CM9k6GAovwiFVbu2ldZ4faI=
+
 	@Mandatory
-	@ValidString(max = 50)
+	@ValidString(max = 255)
 	@Automapped
 	private String				name;
 
-	@Mandatory
-	@ValidString(min = 3, max = 3, pattern = "^[A-Z]{3}$")
-	@Column(unique = true)
-	private String				iataCode;
-
-	@Mandatory
-	@Enumerated(EnumType.STRING)
-	@Valid
+	@Optional
+	@ValidString(max = 255)
 	@Automapped
-	private OperationalScope	operationalScope;
+	private String				category;
 
-	@Mandatory
+	@Optional
+	@ValidString(max = 255)
+	@Automapped
+	private String				address;
+
+	@Optional
 	@ValidString(max = 50)
 	@Automapped
 	private String				city;
 
-	@Mandatory
+	@Optional
 	@ValidString(max = 50)
 	@Automapped
 	private String				country;
@@ -53,16 +52,23 @@ public class Airport extends AbstractEntity {
 	@Optional
 	@ValidUrl
 	@Automapped
-	private String				website;
+	private String				externalLink;
 
 	@Optional
-	@ValidEmail
+	@ValidUrl
 	@Automapped
-	private String				emailAddress;
+	private String				iconUrl;
 
 	@Optional
-	@ValidString(pattern = "^\\+?\\d{6,15}$")
 	@Automapped
-	private String				contactPhone;
+	private Double				latitude;
 
+	@Optional
+	@Automapped
+	private Double				longitude;
+
+	@Mandatory
+	@ManyToOne(optional = false)
+	@Automapped
+	private Airport				airport;
 }

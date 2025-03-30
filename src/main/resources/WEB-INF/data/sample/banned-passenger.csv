@@ -1,0 +1,11 @@
+key,fullName,passportNumber,dateOfBirth,nationality,reason,banDate,liftDate
+banned-passenger-01,Robert King,AB123456,2000/05/12 00:00,UK,Multiple flight disturbances and verbal aggression,2022/05/01 00:00,2022/07/01 00:00
+banned-passenger-02,Ana López,XY987654,2000/09/10 00:00,Spain,Refused to comply with safety instructions during landing,2021/12/01 00:00,
+banned-passenger-03,"Maximiliano Rodríguez de la Serna",PQ123456,2000/03/22 00:00,"Brasil (República Federativa)",Aggressive behavior with staff and passengers,2020/08/15 00:00,2021/09/01 00:00
+banned-passenger-04,Linda Cheng,A12345Z,2000/01/01 00:00,China,Attempted to board with a fake ID,2019/10/10 00:00,
+banned-passenger-05,John Doe,XY9876,2000/11/11 00:00,USA,Disrupted flight and endangered crew,2020/05/20 00:00,2021/05/20 00:00
+banned-passenger-06,Sara Müller,EFG12345,2000/07/07 00:00,Germany,Refused to turn off electronic devices during flight,2022/01/01 00:00,
+banned-passenger-07,Khaled Al-Fulan,ZXC123456,2000/10/30 00:00,Egypt,Assaulted another passenger mid-flight,2018/04/04 00:00,2019/06/06 00:00
+banned-passenger-08,Yuki Tanaka,JP765432,2000/01/01 00:00,Japan,Repeated intoxication on board,2022/07/29 00:00,
+banned-passenger-09,Lucas Martín,ES654321,2000/01/01 00:00,Argentina,Threatened crew and refused orders,2000/01/01 00:00,2022/07/29 23:59
+banned-passenger-10,Carla Núñez,FR123456,2000/03/03 00:00,France,"Passenger repeatedly caused major disruptions, engaged in physical altercations with crew, ignored multiple warnings, and attempted unauthorized access to the cockpit.",2022/06/01 00:00,
