@@ -37,6 +37,7 @@ Booking
 + travelClass: TravelClass {Mandatory, Valid, Automapped}
 + price: Money {Mandatory, ValidMoney(min=0.00, max=10000.00), Automapped}
 + creditCardNibble: String {Optional, ValidString(min=4, max=4), Automapped}
++ draftMode: boolean {Mandatory, Automapped)
 bg=green</panel_attributes>
     <additional_attributes/>
   </element>

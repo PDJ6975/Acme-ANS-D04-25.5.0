@@ -55,8 +55,12 @@ public class Booking extends AbstractEntity {
 
 	@Optional
 	@Automapped
-	@ValidString(min = 4, max = 4)
+	@ValidString(pattern = "^[0-9]{4}$", min = 4, max = 4)
 	private String				creditCardNibble;
+
+	@Mandatory
+	@Automapped
+	private boolean				draftMode;
 
 	@ManyToOne(optional = false)
 	@Automapped
