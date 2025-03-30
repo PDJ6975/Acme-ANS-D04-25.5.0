@@ -1,0 +1,57 @@
+key,identifier,phoneNumber,address,city,country,earnedPoints,key:userAccount
+#
+# Datos base
+#
+customer-01,CU123456,+34611222333,Calle Falsa 123,Madrid,España,350,user-account-customer-01
+customer-02,CU654321,611222333,C/ Real 45,Barcelona,España,480,user-account-customer-02
+customer-03,CU111111,+34111222333,Avenida Siempre Viva 742,Sevilla,España,,user-account-customer-03
+#
+# identifier probado (límites válidos)
+#
+customer-04,CU000000,+34100000001,Calle Uno,Cádiz,España,100,user-account-customer-04
+customer-05,CUX999999,+34100000002,Calle Dos,Málaga,España,200,user-account-customer-05
+#
+# phoneNumber probado (6 y 15 dígitos válidos)
+#
+customer-06,CU111112,123456,Calle Teléfono 6 dígitos,Granada,España,300,user-account-customer-06
+customer-07,CU111113,+34123456780123,Calle Teléfono 15 dígitos,Tarragona,España,400,user-account-customer-07
+#
+# address probado (máx 255)
+#
+customer-08,CU111114,+34100000003,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam?",León,España,150,user-account-customer-08
+#
+# city probado (máx 50)
+#
+customer-09,CU111115,+34100000004,Calle Compacta,"Ciudad de Ejemplo Número Veintisiete",España,250,user-account-customer-09
+#
+# country probado (máx 50)
+#
+customer-10,CU111116,+34100000005,Calle Nacional,Tudela,"República del ejemplo extendido",350,user-account-customer-10
+#
+# earnedPoints probado
+#
+customer-11,CU111117,+34100000006,Calle Puntos Min,Badajoz,España,0,user-account-customer-11
+customer-12,CU111118,+34100000007,Calle Puntos Adj Min,Badajoz,España,1,user-account-customer-12
+customer-13,CU111119,+34100000008,Calle Puntos Adj Max,Badajoz,España,499,user-account-customer-13
+customer-14,CU111120,+34100000009,Calle Puntos Max,Badajoz,España,500,user-account-customer-14
+customer-15,CU111121,+34100000010,Calle Puntos Nulo,Badajoz,España,,user-account-customer-15
+#
+# address con variantes de longitud
+#
+customer-16,CU111122,+34100000011,L,Mérida,España,120,user-account-customer-16
+customer-17,CU111123,+34100000012,Lo,Huelva,España,130,user-account-customer-17
+customer-18,CU111124,+34100000013,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",Cáceres,España,140,user-account-customer-18
+customer-19,CU111125,+34100000014,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam?",Albacete,España,150,user-account-customer-19
+customer-20,CU111126,+34100000015,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",Zamora,España,160,user-account-customer-20
+#
+# city con texto no latino (válido)
+#
+customer-21,CU111127,+34100000016,Calle del Dragón,โคโดโม อิปปง,España,170,user-account-customer-21
+customer-22,CU111128,+34100000017,Calle Oriental,洛伦·伊普森,España,180,user-account-customer-22
+customer-23,CU111129,+34100000018,Calle Árabe,لوريم إيبسوم,España,190,user-account-customer-23
+#
+# country con valores singulares no latinos
+#
+customer-24,CU111130,+34100000019,Calle Unicode,Valencia,कैलेंडर,200,user-account-customer-24
+customer-25,CU111131,+34100000020,Calle Japonesa,Granada,日本,210,user-account-customer-25
+customer-26,CU111132,+34100000021,Calle Árabe 2,Murcia,المملكة المتحدة,220,user-account-customer-26

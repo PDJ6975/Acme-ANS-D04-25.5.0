@@ -18,7 +18,7 @@ Tablero Antonio Rodríguez Calderón (https://github.com/users/PDJ6975/projects/
 
 Tablero Jianwu Hu (VXN8675): https://github.com/users/PDJ6975/projects/17/views/1
 
-Tablero Pablo Olivencia Moreno (): 
+Tablero Pablo Olivencia Moreno (pabolimor): https://github.com/users/PDJ6975/projects/18/views/1
 
 Tablero Adrián Ramírez Gil (VGL6718): https://github.com/users/PDJ6975/projects/14/views/1 
 
