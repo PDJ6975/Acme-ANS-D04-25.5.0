@@ -1,0 +1,13 @@
+customer.customer.form.title = Perfil de cliente
+
+customer.customer.form.label.identifier = Identificador
+customer.customer.form.label.phoneNumber = Número de teléfono
+customer.customer.form.label.address = Dirección
+customer.customer.form.label.city = Ciudad
+customer.customer.form.label.country = País
+customer.customer.form.label.earnedPoints = Puntos ganados
+
+customer.customer.form.button.update = Actualizar
+
+customer.customer.form.error.invalid-identifier = Formato de identificador inválido, use 2-3 letras mayúsculas seguidas de 6 dígitos
+customer.customer.form.error.invalid-phone = Número de teléfono inválido, use 6-15 dígitos con un '+' opcional al inicio

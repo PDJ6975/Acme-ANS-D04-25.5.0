@@ -1,0 +1,13 @@
+customer.customer.form.title = Customer profile
+
+customer.customer.form.label.identifier = Identifier
+customer.customer.form.label.phoneNumber = Phone number
+customer.customer.form.label.address = Address
+customer.customer.form.label.city = City
+customer.customer.form.label.country = Country
+customer.customer.form.label.earnedPoints = Earned points
+
+customer.customer.form.button.update = Update
+
+customer.customer.form.error.invalid-identifier = Invalid identifier format, use 2-3 uppercase letters followed by 6 digits
+customer.customer.form.error.invalid-phone = Invalid phone number, use 6-15 digits with optional leading '+'
