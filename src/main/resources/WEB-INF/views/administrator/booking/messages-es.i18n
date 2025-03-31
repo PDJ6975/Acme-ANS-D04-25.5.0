@@ -1,0 +1,23 @@
+administrator.booking.list.label.locator-code = Código Localizador
+administrator.booking.list.label.purchase-moment = Fecha de Compra
+administrator.booking.list.label.travel-class = Clase
+administrator.booking.list.label.price = Precio
+administrator.booking.list.label.customer = Cliente
+
+administrator.booking.form.label.locator-code = Código Localizador:
+administrator.booking.form.label.purchase-moment = Fecha de Compra:
+administrator.booking.form.label.travel-class = Clase:
+administrator.booking.form.label.price = Precio:
+administrator.booking.form.label.credit-card-nibble = Tarjeta de Crédito (últimos 4 dígitos):
+administrator.booking.form.label.customer = Cliente:
+administrator.booking.form.label.passengers = Pasajeros
+administrator.booking.form.button.passengers = Ver Pasajeros
+administrator.booking.form.no-passengers = Esta reserva no tiene pasajeros
+administrator.booking.list.title = Lista de Reservas
+administrator.booking.form.title = Detalles de Reserva
+administrator.booking.form.label.passengers = Pasajeros
+administrator.booking.form.no-passengers = Esta reserva no tiene pasajeros
+administrator.passenger.list.label.fullName = Nombre Completo
+administrator.passenger.list.label.passport = Número de Pasaporte
+administrator.passenger.list.label.email = Correo Electrónico
+administrator.passenger.list.label.dateOfBirth = Fecha de Nacimiento

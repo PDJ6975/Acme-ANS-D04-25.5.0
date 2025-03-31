@@ -1,0 +1,23 @@
+administrator.booking.list.label.locator-code = Locator Code
+administrator.booking.list.label.purchase-moment = Purchase Date
+administrator.booking.list.label.travel-class = Travel Class
+administrator.booking.list.label.price = Price
+administrator.booking.list.label.customer = Customer
+
+administrator.booking.form.label.locator-code = Locator Code:
+administrator.booking.form.label.purchase-moment = Purchase Date:
+administrator.booking.form.label.travel-class = Travel Class:
+administrator.booking.form.label.price = Price:
+administrator.booking.form.label.credit-card-nibble = Credit Card (last 4 digits):
+administrator.booking.form.label.customer = Customer:
+administrator.booking.form.label.passengers = Passengers
+administrator.booking.form.button.passengers = View Passengers
+administrator.booking.form.no-passengers = This booking has no passengers
+administrator.booking.list.title = Booking List
+administrator.booking.form.title = Booking Details
+administrator.booking.form.label.passengers = Passengers
+administrator.booking.form.no-passengers = This booking has no passengers
+administrator.passenger.list.label.fullName = Full Name
+administrator.passenger.list.label.passport = Passport Number
+administrator.passenger.list.label.email = Email
+administrator.passenger.list.label.dateOfBirth = Date of Birth
