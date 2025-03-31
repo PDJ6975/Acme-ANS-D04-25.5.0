@@ -68,4 +68,5 @@ master.menu.user-account.customer-profile = Perfil de cliente
 # master.menu.customer ##########################################################
 master.menu.customer = Cliente
 master.menu.customer.list-bookings = Listar Reservas
+master.menu.customer.user-account.update = Actualizar perfil
 

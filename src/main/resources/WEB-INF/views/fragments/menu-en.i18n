@@ -70,3 +70,4 @@ master.menu.user-account.customer-profile = Customer profile
 # master.menu.customer ##########################################################
 master.menu.customer = Customer
 master.menu.customer.list-bookings = List Bookings
+master.menu.customer.user-account.update = Update profile
