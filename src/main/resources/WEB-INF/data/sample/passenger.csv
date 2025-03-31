@@ -1,58 +1,58 @@
-key,fullName,email,passportNumber,dateOfBirth,specialNeeds,key:booking
+key,fullName,email,passportNumber,dateOfBirth,specialNeeds,draftMode,key:booking
 #
 # Datos base
 #
-passenger-01,Emma Johnson,emma@example.com,AB123456,2002/06/15 00:00,Wheelchair,booking-01
-passenger-02,Mark Lee,mark@example.com,CD789012,2001/09/10 00:00,,booking-01
-passenger-03,Laura Martínez,laura@example.com,EF456789,2000/03/25 00:00,Vegetarian meal,booking-02
+passenger-01,Emma Johnson,emma@example.com,AB123456,2002/06/15 00:00,Wheelchair,false,booking-01
+passenger-02,Mark Lee,mark@example.com,CD789012,2001/09/10 00:00,,false,booking-01
+passenger-03,Laura Martínez,laura@example.com,EF456789,2000/03/25 00:00,Vegetarian meal,false,booking-02
 #
 # fullName
 #
-passenger-04,"Nombre Larguísimo Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Non Risus. Suspendisse Lectus T.",elena@example.com,GH123456,2001/05/12 00:00,,booking-03
+passenger-04,"Nombre Larguísimo Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Non Risus. Suspendisse Lectus T.",elena@example.com,GH123456,2001/05/12 00:00,,false,booking-03
 #
 # email
 #
-passenger-05,Ana Ruiz,a@b.es,IJ654321,2000/02/02 00:00,,booking-03
-passenger-06,Carlos Gutiérrez,"nombre.muy.largo+alias@subdominio.ejemplo.com",KL765432,2002/11/19 00:00,,booking-04
+passenger-05,Ana Ruiz,a@b.es,IJ654321,2000/02/02 00:00,,false,booking-03
+passenger-06,Carlos Gutiérrez,"nombre.muy.largo+alias@subdominio.ejemplo.com",KL765432,2002/11/19 00:00,,false,booking-04
 #
 # passportNumber
 #
-passenger-07,Lucía Morales,lu@example.com,A12345Z,2001/04/04 00:00,,booking-04
-passenger-08,Javier Ortega,javi@example.com,BC1234,2000/01/01 00:00,,booking-05
-passenger-09,Sofía Herrera,sofia@example.com,DE123456,2001/07/23 00:00,,booking-05
-passenger-10,Tomás Blanco,tomas@example.com,FG1234567,2002/08/18 00:00,,booking-06
+passenger-07,Lucía Morales,lu@example.com,A12345Z,2001/04/04 00:00,,false,booking-04
+passenger-08,Javier Ortega,javi@example.com,BC1234,2000/01/01 00:00,,false,booking-05
+passenger-09,Sofía Herrera,sofia@example.com,DE123456,2001/07/23 00:00,,false,booking-05
+passenger-10,Tomás Blanco,tomas@example.com,FG1234567,2002/08/18 00:00,,false,booking-06
 #
 # dateOfBirth
 #
-passenger-11,Natalia Cruz,natalia@example.com,HI987654,2000/01/01 00:00,,booking-06
-passenger-12,Diego Torres,diego@example.com,IJ876543,2022/07/29 23:59,,booking-07
+passenger-11,Natalia Cruz,natalia@example.com,HI987654,2000/01/01 00:00,,false,booking-06
+passenger-12,Diego Torres,diego@example.com,IJ876543,2022/07/29 23:59,,false,booking-07
 #
 # specialNeeds
 #
-passenger-13,Aurora Fernández,aurora@example.com,JK543210,2001/03/03 00:00,"Acompañamiento y comida sin gluten",booking-07
-passenger-14,Victor Navarro,victor@example.com,LM654321,2001/06/10 00:00,,booking-08
-passenger-15,Daniela Rivas,daniela@example.com,MN765432,2002/01/20 00:00,"",booking-08
+passenger-13,Aurora Fernández,aurora@example.com,JK543210,2001/03/03 00:00,"Acompañamiento y comida sin gluten",false,booking-07
+passenger-14,Victor Navarro,victor@example.com,LM654321,2001/06/10 00:00,,false,booking-08
+passenger-15,Daniela Rivas,daniela@example.com,MN765432,2002/01/20 00:00,"",false,booking-08
 #
 # fullName probado (min, min+1, mid, max, non-latin)
 #
-passenger-16,L,a@b.e,AA123456,2001/01/01 00:00,,booking-09
-passenger-17,Lo,a@b.es,BB123456,2001/02/01 00:00,,booking-09
-passenger-18,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",cc@example.com,CC123456,2001/03/01 00:00,,booking-10
-passenger-19,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam?",dd@example.com,DD123456,2001/04/01 00:00,,booking-10
-passenger-20,"โคโดโม อิปปง",ee@example.com,EE123456,2000/12/31 00:00,,booking-11
+passenger-16,L,a@b.e,AA123456,2001/01/01 00:00,,false,booking-09
+passenger-17,Lo,a@b.es,BB123456,2001/02/01 00:00,,false,booking-09
+passenger-18,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",cc@example.com,CC123456,2001/03/01 00:00,,false,booking-10
+passenger-19,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam?",dd@example.com,DD123456,2001/04/01 00:00,,false,booking-10
+passenger-20,"โคโดโม อิปปง",ee@example.com,EE123456,2000/12/31 00:00,,false,booking-11
 #
 # email probado (válido mínimo, alias, subdominio)
 #
-passenger-21,Minimal Email,a@b.e,FF123456,2000/05/05 00:00,,booking-11
-passenger-22,Email Alias,"nombre.apellido+alias@subdominio.ejemplo.com",GG123456,2000/06/06 00:00,,booking-12
+passenger-21,Minimal Email,a@b.e,FF123456,2000/05/05 00:00,,false,booking-11
+passenger-22,Email Alias,"nombre.apellido+alias@subdominio.ejemplo.com",GG123456,2000/06/06 00:00,,false,booking-12
 #
 # passportNumber probado (longitudes válidas)
 #
-passenger-23,Pasaporte6,hugo@example.com,XY1234Z,2000/07/07 00:00,,booking-12
-passenger-24,Pasaporte7,ines@example.com,Z123456,2001/08/08 00:00,,booking-13
-passenger-25,Pasaporte8,lucas@example.com,XY123456,2002/01/01 00:00,,booking-13
-passenger-26,Pasaporte9,sofia@example.com,XA1234567,2000/03/03 00:00,,booking-14
+passenger-23,Pasaporte6,hugo@example.com,XY1234Z,2000/07/07 00:00,,false,booking-12
+passenger-24,Pasaporte7,ines@example.com,Z123456,2001/08/08 00:00,,false,booking-13
+passenger-25,Pasaporte8,lucas@example.com,XY123456,2002/01/01 00:00,,false,booking-13
+passenger-26,Pasaporte9,sofia@example.com,XA1234567,2000/03/03 00:00,,false,booking-14
 #
 # specialNeeds probado (longitud exacta 50)
 #
-passenger-27,Ayuda Total,jose@example.com,ZA123456,2000/06/01 00:00,"Necesita ayuda por movilidad reducida y visión",booking-14
+passenger-27,Ayuda Total,jose@example.com,ZA123456,2000/06/01 00:00,"Necesita ayuda por movilidad reducida y visión",false,booking-14

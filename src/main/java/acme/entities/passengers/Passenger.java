@@ -56,6 +56,10 @@ public class Passenger extends AbstractEntity {
 	@ValidString(max = 50)
 	private String				specialNeeds;
 
+	@Mandatory
+	@Automapped
+	boolean						draftMode;
+
 	@ManyToOne(optional = false)
 	@Automapped
 	@Valid
