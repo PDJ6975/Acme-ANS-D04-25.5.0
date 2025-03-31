@@ -1,0 +1,13 @@
+authenticated.customer.form.title = Customer details
+
+authenticated.customer.form.label.identifier = Identifier (format: AA123456)
+authenticated.customer.form.label.phoneNumber = Phone Number
+authenticated.customer.form.label.address = Address
+authenticated.customer.form.label.city = City
+authenticated.customer.form.label.country = Country
+
+authenticated.customer.form.button.create = Register
+authenticated.customer.form.button.update = Update
+
+authenticated.customer.form.error.invalid-identifier = Invalid identifier format, use 2-3 uppercase letters followed by 6 digits
+authenticated.customer.form.error.invalid-phone = Invalid phone number, use 6-15 digits with optional leading '+'
