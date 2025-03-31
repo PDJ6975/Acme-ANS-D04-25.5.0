@@ -52,7 +52,8 @@ public class CustomerBookingUpdateService extends AbstractGuiService<Customer, B
 	public void unbind(final Booking booking) {
 		Dataset dataset;
 		dataset = super.unbindObject(booking, "locatorCode", "purchaseMoment", "travelClass", "price", "creditCardNibble", "draftMode");
-		dataset.put("masterId", booking.getCustomer().getId());
+		dataset.put("masterId", booking.getId());
+
 		super.getResponse().addData(dataset);
 	}
 }

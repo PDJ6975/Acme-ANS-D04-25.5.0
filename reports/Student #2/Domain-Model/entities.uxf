@@ -27,7 +27,7 @@ bg=pink</panel_attributes>
       <x>434</x>
       <y>448</y>
       <w>476</w>
-      <h>91</h>
+      <h>105</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Booking
@@ -47,7 +47,7 @@ bg=green</panel_attributes>
       <x>1036</x>
       <y>448</y>
       <w>476</w>
-      <h>98</h>
+      <h>105</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Passenger
@@ -57,6 +57,7 @@ Passenger
 + passportNumber: String {Mandatory, ValidString(pattern="^[A-Z0-9]{6,9}$"), Automapped}
 + dateOfBirth: Date {Mandatory, ValidMoment(past=true), Temporal(TemporalType.TIMESTAMP)}
 + specialNeeds: String {Optional, ValidString(max=51), Automapped}
++ draftMode: boolean {Mandatory, Automapped)
 bg=green</panel_attributes>
     <additional_attributes/>
   </element>
@@ -165,15 +166,15 @@ bg=green</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>658</x>
-      <y>532</y>
+      <y>546</y>
       <w>77</w>
-      <h>98</h>
+      <h>84</h>
     </coordinates>
     <panel_attributes>Belongs to ▶
 lt=&lt;-x
 m1=*
 m2=1</panel_attributes>
-    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>

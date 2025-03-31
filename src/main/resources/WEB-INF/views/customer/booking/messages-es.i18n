@@ -23,3 +23,7 @@ customer.booking.form.button.publish = Publicar
 customer.booking.list.button.create = Crear
 
 customer.booking.form.error.empty-credit-card-nibble = El Nibble de la Tarjeta de Crédito no puede estar vacío
+
+customer.booking.form.button.passengers = Mostrar Pasajeros
+
+customer.booking.form.error.duplicate-locator = El código localizador ya está en uso
