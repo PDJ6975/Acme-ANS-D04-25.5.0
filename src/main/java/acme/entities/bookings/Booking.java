@@ -18,6 +18,7 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidString;
+import acme.entities.flights.Flight;
 import acme.realms.Customer;
 import lombok.Getter;
 import lombok.Setter;
@@ -66,5 +67,10 @@ public class Booking extends AbstractEntity {
 	@Automapped
 	@Valid
 	private Customer			customer;
+
+	@ManyToOne(optional = false)
+	@Automapped
+	@Valid
+	private Flight				flight;
 
 }

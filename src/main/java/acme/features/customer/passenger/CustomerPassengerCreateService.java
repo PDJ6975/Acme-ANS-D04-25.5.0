@@ -7,6 +7,7 @@ import acme.client.components.models.Dataset;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.bookings.Booking;
+import acme.entities.bookings.BookingRecord;
 import acme.entities.passengers.Passenger;
 import acme.realms.Customer;
 
@@ -28,8 +29,6 @@ public class CustomerPassengerCreateService extends AbstractGuiService<Customer,
 
 	@Override
 	public void load() {
-		int masterId = super.getRequest().getData("masterId", int.class);
-		Booking booking = this.repository.findBookingById(masterId);
 
 		Passenger passenger = new Passenger();
 		passenger.setFullName("");
@@ -38,7 +37,6 @@ public class CustomerPassengerCreateService extends AbstractGuiService<Customer,
 		passenger.setDateOfBirth(null);
 		passenger.setSpecialNeeds("");
 		passenger.setDraftMode(true);
-		passenger.setBooking(booking);
 
 		super.getBuffer().addData(passenger);
 	}
@@ -56,13 +54,24 @@ public class CustomerPassengerCreateService extends AbstractGuiService<Customer,
 
 	@Override
 	public void perform(final Passenger passenger) {
+
 		this.repository.save(passenger);
+
+		int bookingId = super.getRequest().getData("masterId", int.class);
+		Booking booking = this.repository.findBookingById(bookingId);
+
+		BookingRecord record = new BookingRecord();
+		record.setBooking(booking);
+		record.setPassenger(passenger);
+		this.repository.save(record);
 	}
 
 	@Override
 	public void unbind(final Passenger passenger) {
 		Dataset dataset = super.unbindObject(passenger, "fullName", "email", "passportNumber", "dateOfBirth", "specialNeeds", "draftMode");
-		dataset.put("masterId", passenger.getBooking().getId());
+
+		int masterId = super.getRequest().getData("masterId", int.class);
+		dataset.put("masterId", masterId);
 
 		super.getResponse().addData(dataset);
 	}
