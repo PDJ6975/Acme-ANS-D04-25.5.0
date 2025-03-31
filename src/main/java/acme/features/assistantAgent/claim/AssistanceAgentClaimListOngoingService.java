@@ -42,7 +42,7 @@ public class AssistanceAgentClaimListOngoingService extends AbstractGuiService<A
 		if (shortenedDescription.length() > maxLength)
 			shortenedDescription = shortenedDescription.substring(0, maxLength) + "...";
 
-		dataset = super.unbindObject(claim, "type", "userAccount.username");
+		dataset = super.unbindObject(claim, "type", "userAccount.username", "draftMode");
 
 		dataset.put("description", shortenedDescription);
 

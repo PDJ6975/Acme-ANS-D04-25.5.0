@@ -22,12 +22,16 @@ public class AssitanceAgentClaimController extends AbstractGuiController<Assista
 	@Autowired
 	private AssistanceAgentClaimServiceShow			showService;
 
+	@Autowired
+	private AssistanceAgentClaimCreateService		createService;
+
 
 	@PostConstruct
 	protected void initialise() {
 		super.addCustomCommand("completed-list", "list", this.listService);
 		super.addBasicCommand("show", this.showService);
 		super.addCustomCommand("ongoing-list", "list", this.listOngoingService);
+		super.addBasicCommand("create", this.createService);
 	}
 
 }
