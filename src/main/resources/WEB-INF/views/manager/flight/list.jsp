@@ -12,3 +12,5 @@
 	<acme:list-column code="manager.flight.list.label.destinationCity" path="destinationCity"/>
 	<acme:list-payload path="payload"/>
 </acme:list>
+
+<acme:button code="manager.flight.list.button.create" action="/manager/flight/create?masterId=${masterId}"/>

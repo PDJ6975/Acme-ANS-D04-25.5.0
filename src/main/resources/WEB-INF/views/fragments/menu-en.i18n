@@ -47,7 +47,6 @@ master.menu.crewMember.list-my-logs = List activity logs in my assignments
 # master.menu.manager ##########################################################
 master.menu.manager = Manager
 master.menu.manager.list-my-flights = List Flights
-master.menu.manager.list-my-legs = List Legs
 
 # master.menu.assistanceAgent ##########################################################
  master.menu.assistanceAgent = Assistant Agent

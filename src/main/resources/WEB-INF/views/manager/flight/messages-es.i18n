@@ -19,3 +19,4 @@ manager.flight.form.label.destinationCity = Ciudad de Destino
 manager.flight.form.label.layovers = Etapas
 manager.flight.form.label.name = Aerolínea
 manager.flight.form.label.managerId = Manager Id
+manager.flight.form.label.draftMode = Modo Borrador
