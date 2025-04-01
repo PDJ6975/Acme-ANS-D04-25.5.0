@@ -1,11 +1,11 @@
-key,moment,status,nextInspectionDue,estimatedCost,notes,key:technician,key:aircraft
-maintenance-record-01,2000/01/01 00:00,PENDING,2010/02/21 09:30,EUR 43492.60,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",technician-01,aircraft-01
-maintenance-record-02,2000/03/16 13:00,IN_PROGRESS,2024/10/31 14:00,EUR 0.00,Lo,technician-02,aircraft-02
-maintenance-record-03,2025/08/08 14:00,COMPLETED,2025/09/17 23:00,EUR 17283.81,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",technician-01,aircraft-03
-maintenance-record-04,2025/04/24 06:00,PENDING,2025/08/26 04:00,EUR 45296.49,Lo,technician-02,aircraft-01
-maintenance-record-05,2026/11/06 05:00,IN_PROGRESS,2027/05/17 04:00,EUR 16335.26,Lo,technician-01,aircraft-02
-maintenance-record-06,2025/03/03 16:00,COMPLETED,2025/04/14 00:00,EUR 23958.05,,technician-02,aircraft-03
-maintenance-record-07,2025/11/12 00:00,PENDING,2025/12/31 23:59,EUR 26330.32,,technician-01,aircraft-01
-maintenance-record-08,2025/03/14 16:50,IN_PROGRESS,2025/09/29 21:45,EUR 39658.25,,technician-02,aircraft-02
-maintenance-record-09,2011/01/25 20:00,COMPLETED,2015/01/14 15:00,EUR 20623.88,,technician-01,aircraft-03
-maintenance-record-10,2023/06/21 18:50,PENDING,2024/03/17 15:00,EUR 3830.52,,technician-02,aircraft-01
+key,moment,status,nextInspectionDue,estimatedCost,notes,key:technician,key:aircraft,draftMode
+maintenance-record-01,2000/01/01 00:00,PENDING,2010/02/21 09:30,EUR 43492.60,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",technician-01,aircraft-01, TRUE
+maintenance-record-02,2000/03/16 13:00,IN_PROGRESS,2024/10/31 14:00,EUR 0.00,Lo,technician-02,aircraft-02, TRUE
+maintenance-record-03,2025/08/08 14:00,COMPLETED,2025/09/17 23:00,EUR 17283.81,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",technician-01,aircraft-03, TRUE
+maintenance-record-04,2025/04/24 06:00,PENDING,2025/08/26 04:00,EUR 45296.49,Lo,technician-02,aircraft-01, TRUE
+maintenance-record-05,2026/11/06 05:00,IN_PROGRESS,2027/05/17 04:00,EUR 16335.26,Lo,technician-01,aircraft-02, TRUE
+maintenance-record-06,2025/03/03 16:00,COMPLETED,2025/04/14 00:00,EUR 23958.05,,technician-02,aircraft-03, TRUE
+maintenance-record-07,2025/11/12 00:00,PENDING,2025/12/31 23:59,EUR 26330.32,,technician-01,aircraft-01, TRUE
+maintenance-record-08,2025/03/14 16:50,IN_PROGRESS,2025/09/29 21:45,EUR 39658.25,,technician-02,aircraft-02, TRUE
+maintenance-record-09,2011/01/25 20:00,COMPLETED,2015/01/14 15:00,EUR 20623.88,,technician-01,aircraft-03, TRUE
+maintenance-record-10,2023/06/21 18:50,PENDING,2024/03/17 15:00,EUR 3830.52,,technician-02,aircraft-01, FALSE
