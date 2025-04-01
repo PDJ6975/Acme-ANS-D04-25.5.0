@@ -15,10 +15,10 @@ public interface ManagerLegRepository extends AbstractRepository {
 	@Query("""
 			SELECT l
 			FROM Leg l
-			WHERE l.flight.manager.id = :managerId
+			WHERE l.flight.id = :masterId
 			ORDER BY l.scheduledDeparture ASC
 		""")
-	Collection<Leg> findLegsSortedMomentByMemberId(int managerId);
+	Collection<Leg> findLegsSortedMomentByFlightId(int masterId);
 
 	@Query("""
 			SELECT l

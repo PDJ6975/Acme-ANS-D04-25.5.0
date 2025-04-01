@@ -4,43 +4,67 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:form>
-    <acme:input-moment
-        code="assistanceAgent.claim.form.label.registrationMoment" 
-        path="resgistrationMoment" 
-    />
+    <jstl:choose>
+	    <jstl:when test="${acme:anyOf(_command, 'show')}">
+			<acme:input-moment
+        	code="assistanceAgent.claim.form.label.registrationMoment" 
+       		path="resgistrationMoment" 
+        	readonly="true"
+    		/>
+	    </jstl:when>
+	</jstl:choose>
     
     <acme:input-textbox 
         code="assistanceAgent.claim.form.label.passengerEmail" 
         path="passengerEmail" 
+        readonly="false"
     />
     
     <acme:input-textarea
         code="assistanceAgents.claim.list.label.description" 
         path="description" 
+        readonly="false"
     />
     
-    <acme:input-textbox 
+    <acme:input-select
         code="assistanceAgents.claim.list.label.type" 
         path="type" 
+        choices="${claimType}"
+        readonly="false"
     />
-    
-    <acme:input-textbox 
-        code="assistanceAgent.claim.form.label.state" 
-        path="state" 
-    />
-    
-    <acme:input-textbox 
-        code="assistanceAgents.claim.form.label.assistanceUsername" 
-        path="assistanceAgent.userAccount.username" 
-    />
+    <jstl:choose>
+	    <jstl:when test="${acme:anyOf(_command, 'show|update|delete')}">
+			<acme:input-select
+        		code="assistanceAgent.claim.form.label.state" 
+        		path="state" 
+        		choices="${claimState}"
+        		readonly="false"
+    		/>
+	    </jstl:when>
+	</jstl:choose>
 
     <acme:input-textbox 
         code="assistanceAgents.claim.list.label.username" 
         path="userAccount.username" 
+        readonly="false"
     />
-    <acme:input-textbox 
-        code="assistanceAgents.claim.list.label.flightNumber" 
+    <acme:input-textbox
+        code="assistanceAgents.claim.list.label.legFlightNumber" 
         path="leg.flightNumber" 
+        readonly="false"
     />
+    
+    <jstl:choose>
+        <jstl:when test="${acme:anyOf(_command, 'show|delete|update')}">
+            <jstl:if test="${draftMode == true}">
+                <acme:submit code="assistance-agent.claim.form.submit.update" action="/assistance-agent/claim/update"/>
+                <acme:submit code="assistance-agent.claim.form.submit.delete" action="/assistance-agent/claim/delete"/>
+                <acme:submit code="assistance-agent.claim.form.submit.publish" action="/assistance-agent/claim/publish"/>
+            </jstl:if>
+        </jstl:when>
+        <jstl:when test="${_command == 'create'}">
+            <acme:submit code="assistance-agent.claim.form.submit.create" action="/assistance-agent/claim/create" />
+        </jstl:when>
+    </jstl:choose>
     
 </acme:form>

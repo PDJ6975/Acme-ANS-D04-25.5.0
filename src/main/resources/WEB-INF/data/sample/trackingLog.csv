@@ -34,3 +34,7 @@ tracking-log-27,2011/04/16 0:00,Lorem ipsum dolor sit ame,50.00,ONGOING,洛伦·
 tracking-log-28,2011/04/16 0:00,Lorem ipsum dolor sit ame,50.00,ONGOING,<marquee>Hacked</marquee>,claim-01
 tracking-log-29,2011/04/16 0:00,Lorem ipsum dolor sit ame,50.00,ONGOING,<script>alert(‘Hacked!’);</script>,claim-01
 tracking-log-30,2011/04/16 0:00,Lorem ipsum dolor sit ame,50.00,ONGOING,' or 'A' = 'A,claim-01
+#
+# trackingLog PRUEBA BORRADO FLIGHT
+#
+tracking-log-31,2011/04/16 0:00,prueba borrado,50.00,ONGOING,prueba borrado,claim-27

@@ -27,12 +27,12 @@ public class ManagerLegListService extends AbstractGuiService<Manager, Leg> {
 	public void load() {
 
 		Collection<Leg> legs;
-		int managerId;
+		int masterId = super.getRequest().getData("masterId", int.class);
 
-		managerId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		legs = this.repository.findLegsSortedMomentByMemberId(managerId);
-
+		legs = this.repository.findLegsSortedMomentByFlightId(masterId);
 		super.getBuffer().addData(legs);
+		super.getResponse().addGlobal("masterId", masterId);
+
 	}
 
 	@Override

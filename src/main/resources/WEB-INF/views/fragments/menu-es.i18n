@@ -48,7 +48,6 @@ master.menu.crewMember.list-my-logs = Listar incidentes en mis asignaciones
 # master.menu.manager ##########################################################
 master.menu.manager = Manager
 master.menu.manager.list-my-flights = Listar Vuelos
-master.menu.manager.list-my-legs = Listar Etapas
 
 # master.menu.assistanceAgent ##########################################################
  master.menu.assistanceAgent = Miembro de asistencia
