@@ -1,12 +1,24 @@
 assistance-agent.claim.list.title = Claim List
 assistance-agent.claim.form.title = Claim Form
 
+
 assistanceAgents.claim.list.label.type = Type
 assistanceAgents.claim.list.label.username = Username
 assistanceAgents.claim.list.label.description = Description
+assistanceAgents.claim.list.label.legFlightNumber = Leg Flight Number
 
 assistanceAgent.claim.form.label.registrationMoment = Registration Moment
-assistanceAgent.claim.form.label.passengerEmail = Passenger Email
+assistanceAgent.claim.form.label.passengerEmail = Passenger or Customer Email
 assistanceAgent.claim.form.label.state = State
 assistanceAgents.claim.form.label.assistanceUsername = Agent
-assistanceAgents.claim.list.label.flightNumber = Etapa
+
+assistanceAgents.claim.list.button = Create
+assistance-agent.claim.form.submit.create = Create
+assistance-agent.claim.form.submit.update = Update
+assistance-agent.claim.form.submit.delete = Delete
+assistance-agent.claim.form.submit.publish = Publish
+
+assistant-agent.create.user-not-passenger-or-customer = The user must be a passanger or a customer	
+assistant-agent.create.leg-not-exist = There is no Leg with the flight number
+assistant-agent.create.user-cant-be-null = The user cant be null
+
