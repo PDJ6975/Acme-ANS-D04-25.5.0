@@ -2,6 +2,7 @@
 package acme.features.manager.flight;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -11,39 +12,51 @@ import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.airlines.Airline;
 import acme.entities.flights.Flight;
+import acme.entities.legs.Leg;
 import acme.realms.managers.Manager;
 
 @GuiService
-public class ManagerFlightShowService extends AbstractGuiService<Manager, Flight> {
+public class ManagerFlightPublishService extends AbstractGuiService<Manager, Flight> {
 
 	@Autowired
-	private ManagerFlightRepository repository;
+	protected ManagerFlightRepository repository;
 
 
 	@Override
 	public void authorise() {
+		int flightId = super.getRequest().getData("id", int.class);
+		Flight flight = this.repository.findOneById(flightId);
 
-		boolean status;
-		int flightId;
-		Flight flight;
+		List<Leg> legs = this.repository.findLegsByFlightId(flightId);
+		boolean minimumLegs = legs.size() > 0;
+		boolean legsDraftMode = legs.stream().allMatch(leg -> !leg.isDraftMode());
 
-		flightId = super.getRequest().getData("id", int.class);
-		flight = this.repository.findOneById(flightId);
-
-		status = flight != null && super.getRequest().getPrincipal().hasRealm(flight.getManager());
+		boolean status = flight != null && minimumLegs && legsDraftMode && super.getRequest().getPrincipal().hasRealm(flight.getManager());
 
 		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
-		Flight flight;
-		int flightId;
+		int flightId = super.getRequest().getData("id", int.class);
+		Flight flight = this.repository.findOneById(flightId);
+		super.getBuffer().addData(flight);
+	}
 
-		flightId = super.getRequest().getData("id", int.class);
-		flight = this.repository.findOneById(flightId);
+	@Override
+	public void bind(final Flight flight) {
+		super.bindObject(flight);
+	}
 
-		super.getBuffer().addData("flight", flight);
+	@Override
+	public void validate(final Flight flight) {
+		;
+	}
+
+	@Override
+	public void perform(final Flight flight) {
+		flight.setDraftMode(false);
+		this.repository.save(flight);
 	}
 
 	@Override
@@ -51,7 +64,8 @@ public class ManagerFlightShowService extends AbstractGuiService<Manager, Flight
 		Dataset dataset;
 
 		dataset = super.unbindObject(flight, "tag", "selfTransfer", "cost", "description", "scheduledDeparture", "scheduledArrival", "originCity", "destinationCity", "layovers", "draftMode", "airline");
-		dataset.put("masterId", flight.getId());
+
+		dataset.put("manager.id", flight.getManager().getId());
 
 		Collection<Airline> availableAirlines = this.repository.findAllAirlines();
 		SelectChoices airlines = SelectChoices.from(availableAirlines, "name", flight.getAirline());

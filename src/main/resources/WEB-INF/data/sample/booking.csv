@@ -1,46 +1,50 @@
-key,locatorCode,purchaseMoment,travelClass,price,creditCardNibble,draftMode,key:customer
+key,locatorCode,purchaseMoment,travelClass,price,creditCardNibble,draftMode,key:customer,key:flight
 #
 # Datos base
 #
-booking-01,AB123C,2024/12/15 10:00,BUSINESS,EUR 100.00,1234,false,customer-01
-booking-02,XY987Z,2024/11/10 08:30,ECONOMY,EUR 100.00,,true,customer-02
+booking-01,AB123C,2024/12/15 10:00,BUSINESS,EUR 100.00,1234,false,customer-01,flight-01
+booking-02,XY987Z,2024/11/10 08:30,ECONOMY,EUR 100.00,,true,customer-02,flight-02
 #
 # locatorCode probado (longitud 6 y 8)
 #
-booking-03,ABC123,2024/12/20 15:00,ECONOMY,EUR 200.00,5678,false,customer-03
-booking-04,ZXCV1234,2024/12/21 12:00,BUSINESS,EUR 300.00,4321,false,customer-04
+booking-03,ABC123,2024/12/20 15:00,ECONOMY,EUR 200.00,5678,false,customer-03,flight-03
+booking-04,ZXCV1234,2024/12/21 12:00,BUSINESS,EUR 300.00,4321,false,customer-04,flight-04
 #
 # purchaseMoment probado (límites válidos)
 #
-booking-05,LOCMIN,2000/01/01 00:00,ECONOMY,EUR 150.00,1111,false,customer-05
-booking-06,LOCADJMN,2000/01/01 00:01,BUSINESS,EUR 250.00,2222,false,customer-06
-booking-07,LOCADJMX,2200/12/31 23:59,ECONOMY,EUR 350.00,3333,false,customer-07
-booking-08,LOCMAX,2200/01/01 00:00,BUSINESS,EUR 450.00,4444,false,customer-08
+booking-05,LOCMIN,2000/01/01 00:00,ECONOMY,EUR 150.00,1111,false,customer-05,flight-05
+booking-06,LOCADJMN,2000/01/01 00:01,BUSINESS,EUR 250.00,2222,false,customer-06,flight-06
+booking-07,LOCADJMX,2200/12/31 23:59,ECONOMY,EUR 350.00,3333,false,customer-07,flight-07
+booking-08,LOCMAX,2200/01/01 00:00,BUSINESS,EUR 450.00,4444,false,customer-08,flight-08
 #
 # price probado
 #
-booking-09,PRICE000,2024/11/01 10:00,ECONOMY,EUR 0.00,5555,false,customer-09
-booking-10,PRICE001,2024/11/02 11:00,ECONOMY,EUR 0.01,6666,false,customer-10
-booking-11,PRICE999,2024/11/03 12:00,ECONOMY,EUR 9999.99,7777,false,customer-11
-booking-12,PRICE100,2024/11/04 13:00,BUSINESS,EUR 10000.00,8888,false,customer-12
+booking-09,PRICE000,2024/11/01 10:00,ECONOMY,EUR 0.00,5555,false,customer-09,flight-09
+booking-10,PRICE001,2024/11/02 11:00,ECONOMY,EUR 0.01,6666,false,customer-10,flight-10
+booking-11,PRICE999,2024/11/03 12:00,ECONOMY,EUR 9999.99,7777,false,customer-11,flight-11
+booking-12,PRICE100,2024/11/04 13:00,BUSINESS,EUR 10000.00,8888,false,customer-12,flight-12
 #
 # creditCardNibble probado (válido de 4 caracteres)
 #
-booking-13,CCNIB1,2024/10/01 09:00,ECONOMY,EUR 100.00,0000,false,customer-13
-booking-14,CCNIB2,2024/10/02 09:00,ECONOMY,EUR 100.00,1111,false,customer-14
-booking-15,CCNIB3,2024/10/03 09:00,ECONOMY,EUR 100.00,,true,customer-15
+booking-13,CCNIB1,2024/10/01 09:00,ECONOMY,EUR 100.00,0000,false,customer-13,flight-13
+booking-14,CCNIB2,2024/10/02 09:00,ECONOMY,EUR 100.00,1111,false,customer-14,flight-14
+booking-15,CCNIB3,2024/10/03 09:00,ECONOMY,EUR 100.00,,true,customer-15,flight-15
 #
 # bookings para passengers adicionales
 #
-booking-16,FULLNM01,2022/01/01 09:00,ECONOMY,EUR 120.00,9999,false,customer-16
-booking-17,FULLNM02,2022/01/02 10:00,ECONOMY,EUR 130.00,8888,false,customer-17
-booking-18,FULLNM03,2022/01/03 11:00,BUSINESS,EUR 140.00,7777,false,customer-18
-booking-19,FULLNM04,2022/01/04 12:00,BUSINESS,EUR 150.00,6666,false,customer-19
-booking-20,FULLNM05,2022/01/05 13:00,ECONOMY,EUR 160.00,5555,false,customer-20
-booking-21,EMAILMIN,2022/01/06 14:00,BUSINESS,EUR 170.00,4444,false,customer-21
-booking-22,EMAILLNG,2022/01/07 15:00,BUSINESS,EUR 180.00,3333,false,customer-22
-booking-23,PASSRT6A,2022/01/08 16:00,ECONOMY,EUR 190.00,2222,false,customer-23
-booking-24,PASSRT7B,2022/01/09 17:00,ECONOMY,EUR 200.00,1111,false,customer-24
-booking-25,PASSRT8C,2022/01/10 18:00,BUSINESS,EUR 210.00,1234,false,customer-25
-booking-26,PASSRT9D,2022/01/11 19:00,BUSINESS,EUR 220.00,2345,false,customer-26
-booking-27,SPEC50X,2022/01/12 20:00,ECONOMY,EUR 230.00,3456,false,customer-01
+booking-16,FULLNM01,2022/01/01 09:00,ECONOMY,EUR 120.00,9999,false,customer-16,flight-16
+booking-17,FULLNM02,2022/01/02 10:00,ECONOMY,EUR 130.00,8888,false,customer-17,flight-17
+booking-18,FULLNM03,2022/01/03 11:00,BUSINESS,EUR 140.00,7777,false,customer-18,flight-18
+booking-19,FULLNM04,2022/01/04 12:00,BUSINESS,EUR 150.00,6666,false,customer-19,flight-19
+booking-20,FULLNM05,2022/01/05 13:00,ECONOMY,EUR 160.00,5555,false,customer-20,flight-20
+booking-21,EMAILMIN,2022/01/06 14:00,BUSINESS,EUR 170.00,4444,false,customer-21,flight-21
+booking-22,EMAILLNG,2022/01/07 15:00,BUSINESS,EUR 180.00,3333,false,customer-22,flight-22
+booking-23,PASSRT6A,2022/01/08 16:00,ECONOMY,EUR 190.00,2222,false,customer-23,flight-23
+booking-24,PASSRT7B,2022/01/09 17:00,ECONOMY,EUR 200.00,1111,false,customer-24,flight-24
+booking-25,PASSRT8C,2022/01/10 18:00,BUSINESS,EUR 210.00,1234,false,customer-25,flight-25
+booking-26,PASSRT9D,2022/01/11 19:00,BUSINESS,EUR 220.00,2345,false,customer-26,flight-26
+booking-27,SPEC50X,2022/01/12 20:00,ECONOMY,EUR 230.00,3456,false,customer-01,flight-27
+#
+# booking PRUEBA BORRADO FLIGHT
+#
+booking-28,SPAG6F,2022/01/12 20:00,ECONOMY,EUR 230.00,3456,true,customer-01,flight-67

@@ -53,8 +53,7 @@
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.manager" access="hasRealm('Manager')">
-			<acme:menu-suboption code="master.menu.manager.list-my-flights" action="/manager/flight/list" />	
-			<acme:menu-suboption code="master.menu.manager.list-my-legs" action="/manager/leg/list" />		
+			<acme:menu-suboption code="master.menu.manager.list-my-flights" action="/manager/flight/list" />
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.assistanceAgent" access="hasRealm('AssistanceAgent')">

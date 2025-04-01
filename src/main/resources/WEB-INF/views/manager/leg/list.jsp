@@ -12,3 +12,5 @@
 	<acme:list-column code="manager.leg.list.label.flight.tag" path="flight.tag"/>
 	<acme:list-payload path="payload"/>
 </acme:list>
+
+<acme:button code="manager.leg.list.button.create" action="/manager/leg/create?masterId=${masterId}"/>

@@ -56,3 +56,7 @@ passenger-26,Pasaporte9,sofia@example.com,XA1234567,2000/03/03 00:00,,false,book
 # specialNeeds probado (longitud exacta 50)
 #
 passenger-27,Ayuda Total,jose@example.com,ZA123456,2000/06/01 00:00,"Necesita ayuda por movilidad reducida y visión",false,booking-14
+#
+# passenger PRUEBA BORRADO FLIGHT
+#
+passenger-28,"prueba borrado","pruebaborrado@example.com",FD456789,2000/06/01 00:00,"prueba borrado",true,booking-28

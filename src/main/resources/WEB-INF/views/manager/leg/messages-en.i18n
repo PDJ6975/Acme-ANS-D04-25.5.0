@@ -23,3 +23,5 @@ manager.leg.form.label.departureAirport.name = Departure Airport
 manager.leg.form.label.arrivalAirport.name = Arrival Airport
 manager.leg.form.label.flight.airline.name = Airline Name
 
+
+manager.leg.list.button.create = Create

@@ -14,36 +14,46 @@ import acme.entities.flights.Flight;
 import acme.realms.managers.Manager;
 
 @GuiService
-public class ManagerFlightShowService extends AbstractGuiService<Manager, Flight> {
+public class ManagerFlightUpdateService extends AbstractGuiService<Manager, Flight> {
 
 	@Autowired
-	private ManagerFlightRepository repository;
+	protected ManagerFlightRepository repository;
 
 
 	@Override
 	public void authorise() {
+		int flightId = super.getRequest().getData("id", int.class);
+		Flight flight = this.repository.findOneById(flightId);
 
-		boolean status;
-		int flightId;
-		Flight flight;
-
-		flightId = super.getRequest().getData("id", int.class);
-		flight = this.repository.findOneById(flightId);
-
-		status = flight != null && super.getRequest().getPrincipal().hasRealm(flight.getManager());
-
+		boolean status = flight != null && flight.isDraftMode() && super.getRequest().getPrincipal().hasRealm(flight.getManager());
 		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
-		Flight flight;
-		int flightId;
-
-		flightId = super.getRequest().getData("id", int.class);
-		flight = this.repository.findOneById(flightId);
+		int flightId = super.getRequest().getData("id", int.class);
+		Flight flight = this.repository.findOneById(flightId);
 
 		super.getBuffer().addData("flight", flight);
+	}
+
+	@Override
+	public void bind(final Flight flight) {
+
+		super.bindObject(flight, "tag", "selfTransfer", "cost", "description", "scheduledDeparture", "scheduledArrival", "originCity", "destinationCity", "layovers", "airline");
+
+		Manager manager = (Manager) super.getRequest().getPrincipal().getActiveRealm();
+		flight.setManager(manager);
+	}
+
+	@Override
+	public void validate(final Flight flight) {
+		;
+	}
+
+	@Override
+	public void perform(final Flight flight) {
+		this.repository.save(flight);
 	}
 
 	@Override
@@ -51,7 +61,8 @@ public class ManagerFlightShowService extends AbstractGuiService<Manager, Flight
 		Dataset dataset;
 
 		dataset = super.unbindObject(flight, "tag", "selfTransfer", "cost", "description", "scheduledDeparture", "scheduledArrival", "originCity", "destinationCity", "layovers", "draftMode", "airline");
-		dataset.put("masterId", flight.getId());
+
+		dataset.put("manager.id", flight.getManager().getId());
 
 		Collection<Airline> availableAirlines = this.repository.findAllAirlines();
 		SelectChoices airlines = SelectChoices.from(availableAirlines, "name", flight.getAirline());

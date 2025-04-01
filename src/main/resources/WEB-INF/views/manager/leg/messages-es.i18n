@@ -21,3 +21,7 @@ manager.leg.form.label.aircraft.model = Modelo de Avión
 manager.leg.form.label.departureAirport.name = Aeropuerto de Salida
 manager.leg.form.label.arrivalAirport.name = Aeropuerto de Destino
 manager.leg.form.label.flight.airline.name = Nombre Aerolínea
+
+
+
+manager.leg.list.button.create = Crear
