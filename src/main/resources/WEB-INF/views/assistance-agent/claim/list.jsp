@@ -7,7 +7,7 @@
 	<acme:list-column code="assistanceAgents.claim.list.label.username" path="userAccount.username"/>
 	<acme:list-column code="assistanceAgents.claim.list.label.description" path="description"/>
 	<acme:list-column code="assistanceAgents.claim.list.label.type" path="type"/>
-	<acme:list-column code="assistanceAgents.claim.list.label.draftMode" path="draftMode"/>
+	<acme:list-column code="assistanceAgents.claim.list.label.legFlightNumber" path="leg.flightNumber"/>
 	<acme:list-payload path="payload"/>
 </acme:list>
 

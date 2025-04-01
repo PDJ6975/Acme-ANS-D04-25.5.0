@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import acme.client.components.models.Dataset;
 import acme.client.components.principals.UserAccount;
 import acme.client.components.views.SelectChoices;
-import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.claims.Claim;
@@ -17,39 +16,30 @@ import acme.realms.Customer;
 import acme.realms.agents.AssistanceAgent;
 
 @GuiService
-public class AssistanceAgentClaimCreateService extends AbstractGuiService<AssistanceAgent, Claim> {
+public class AssistanceAgentClaimUpdateService extends AbstractGuiService<AssistanceAgent, Claim> {
 
 	@Autowired
-	private AssistanceAgentClaimRepository repository;
+	protected AssistanceAgentClaimRepository repository;
 
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean auth;
+		int claimId;
+		Claim claim;
+		claimId = super.getRequest().getData("id", int.class);
+		claim = this.repository.findClaimById(claimId);
+		auth = claim.getDraftMode() && claim.getAssistanceAgent().getUserAccount().getId() == super.getRequest().getPrincipal().getAccountId();
+		super.getResponse().setAuthorised(auth);
 	}
 
 	@Override
 	public void load() {
-
 		Claim claim;
-		String agentName;
-		AssistanceAgent agent;
-
-		agentName = super.getRequest().getPrincipal().getUsername();
-		agent = this.repository.findAgentByUsername(agentName);
-
-		claim = new Claim();
-		claim.setResgistrationMoment(MomentHelper.getCurrentMoment());
-		claim.setPassengerEmail("");
-		claim.setDescription("");
-		claim.setType(Type.OTHER_ISSUES);
-		claim.setState(State.ONGOING);
-		claim.setUserAccount(null);
-		claim.setLeg(null);
-		claim.setDraftMode(true);
-		claim.setAssistanceAgent(agent);
+		int id;
+		id = super.getRequest().getData("id", int.class);
+		claim = this.repository.findClaimById(id);
 		super.getBuffer().addData(claim);
-
 	}
 
 	@Override
@@ -64,7 +54,7 @@ public class AssistanceAgentClaimCreateService extends AbstractGuiService<Assist
 		legflightNumber = super.getRequest().getData("leg.flightNumber", String.class);
 		leg = this.repository.findLegByFlightNumber(legflightNumber);
 
-		super.bindObject(claim, "passengerEmail", "description", "type");
+		super.bindObject(claim, "passengerEmail", "description", "type", "state");
 		claim.setLeg(leg);
 		claim.setUserAccount(user);
 
@@ -94,7 +84,6 @@ public class AssistanceAgentClaimCreateService extends AbstractGuiService<Assist
 			super.state(status, "*", "assistant-agent.create.leg-not-exist");
 		else
 			super.state(status, "*", "assistant-agent.create.user-cant-be-null");
-
 		;
 	}
 
@@ -106,7 +95,7 @@ public class AssistanceAgentClaimCreateService extends AbstractGuiService<Assist
 	@Override
 	public void unbind(final Claim claim) {
 		Dataset dataset;
-		dataset = super.unbindObject(claim, "passengerEmail", "description", "type", "userAccount.username", "leg.flightNumber");
+		dataset = super.unbindObject(claim, "passengerEmail", "description", "type", "state", "userAccount.username", "leg.flightNumber", "draftMode");
 		SelectChoices claimType = SelectChoices.from(Type.class, claim.getType());
 		SelectChoices claimState = SelectChoices.from(State.class, claim.getState());
 		dataset.put("claimType", claimType);

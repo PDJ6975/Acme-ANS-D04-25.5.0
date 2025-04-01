@@ -10,6 +10,7 @@ import acme.client.components.principals.UserAccount;
 import acme.client.repositories.AbstractRepository;
 import acme.entities.claims.Claim;
 import acme.entities.legs.Leg;
+import acme.entities.trackingLogs.TrackingLog;
 import acme.realms.agents.AssistanceAgent;
 
 @Repository
@@ -41,9 +42,9 @@ public interface AssistanceAgentClaimRepository extends AbstractRepository {
 	@Query("""
 		SELECT l
 		FROM Leg l
-		WHERE l.id = :id
+		WHERE l.flightNumber = :flightNumber
 		""")
-	Leg findLegById(int id);
+	Leg findLegByFlightNumber(String flightNumber);
 
 	@Query("""
 		SELECT u
@@ -58,5 +59,12 @@ public interface AssistanceAgentClaimRepository extends AbstractRepository {
 		WHERE a.userAccount.username = :username
 		""")
 	AssistanceAgent findAgentByUsername(String username);
+
+	@Query("""
+		SELECT l
+		from TrackingLog l
+		WHERE l.claim.id = :id
+		""")
+	Collection<TrackingLog> findTrackingLogsByClaimId(int id);
 
 }
