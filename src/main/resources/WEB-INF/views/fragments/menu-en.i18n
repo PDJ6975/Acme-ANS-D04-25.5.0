@@ -70,4 +70,17 @@ master.menu.user-account.customer-profile = Customer profile
 # master.menu.customer ##########################################################
 master.menu.customer = Customer
 master.menu.customer.list-bookings = List Bookings
+
 master.menu.customer.user-account.update = Update profile
+
+# master.menu.technician ##########################################################
+master.menu.technician = Technician
+master.menu.technician.list-my-maintenance-records= List my maintenance records
+master.menu.technician.list-my-tasks = List my tasks
+master.menu.technician.list-maintenance-record-catalogue = List maintenance record catalogue
+<<<<<<< Updated upstream
+master.menu.technician.list-task-catalogue = List task catalogue
+
+=======
+master.menu.technician.list-task-catalogue = List task catalogue
+>>>>>>> Stashed changes

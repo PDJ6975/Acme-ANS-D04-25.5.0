@@ -50,7 +50,7 @@ public class MaintenanceRecord extends AbstractEntity {
 	private Money				estimatedCost;
 
 	@Optional
-	@ValidString(max = 255)
+	@ValidString(max = 255, message = "Debe de tener maximo 255 caracteres")
 	@Automapped
 	private String				notes;
 
@@ -63,5 +63,9 @@ public class MaintenanceRecord extends AbstractEntity {
 	@Valid
 	@ManyToOne(optional = false)
 	private Aircraft			aircraft;
+
+	@Mandatory
+	@Automapped
+	private boolean				draftMode;
 
 }
