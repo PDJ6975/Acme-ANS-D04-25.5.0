@@ -27,3 +27,6 @@ customer.booking.form.error.empty-credit-card-nibble = Credit Card Nibble cannot
 customer.booking.form.button.passengers = Show Passengers
 
 customer.booking.form.error.duplicate-locator = The locator code is already in use
+
+customer.booking.form.label.flight = Flight:
+customer.booking.form.error.flight-required = You must select a flight
