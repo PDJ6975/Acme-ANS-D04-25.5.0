@@ -13,6 +13,9 @@ import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 import javax.validation.Valid;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
@@ -46,6 +49,7 @@ public class FlightAssignment extends AbstractEntity {
 	private FlightCrewMember	flightCrewMember;
 
 	@Mandatory
+	@OnDelete(action = OnDeleteAction.CASCADE)
 	@Valid
 	@ManyToOne(optional = false)
 	private Leg					leg;

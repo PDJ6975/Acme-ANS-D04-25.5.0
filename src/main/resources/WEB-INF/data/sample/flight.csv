@@ -31,7 +31,7 @@ flight-20,"Lorem ipsum dolor sit ame",true,EUR 5000.00,"L",2022/09/01 10:00,2022
 flight-21,"Lorem ipsum dolor sit ame",true,EUR 5000.00,"Lo",2022/09/01 10:00,2022/09/01 12:00,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,10,true,airline-21,manager-01
 flight-22,"Lorem ipsum dolor sit ame",true,EUR 5000.00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",2022/09/01 10:00,2022/09/01 12:00,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,10,true,airline-22,manager-02
 flight-23,"Lorem ipsum dolor sit ame",true,EUR 5000.00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",2022/09/01 10:00,2022/09/01 12:00,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,10,true,airline-23,manager-03
-flight-24,"Lorem ipsum dolor sit ame",true,EUR 5000.00,"โลเร็ม อิปซัม",2022/09/01 10:00,2022/09/01 12:00,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,10,true,airline-24,manager-01
+flight-24,"localizador",true,EUR 5000.00,"โลเร็ม อิปซัม",2022/09/01 10:00,2022/09/01 12:00,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,10,true,airline-24,manager-01
 flight-25,"Lorem ipsum dolor sit ame",true,EUR 5000.00,"reemplazo texto arabe",2022/09/01 10:00,2022/09/01 12:00,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,10,true,airline-25,manager-01
 flight-26,"Lorem ipsum dolor sit ame",true,EUR 5000.00,"洛伦·伊普森",2022/09/01 10:00,2022/09/01 12:00,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,10,true,airline-26,manager-02
 flight-27,"Lorem ipsum dolor sit ame",true,EUR 5000.00,"<marquee>Hacked</marquee>",2022/09/01 10:00,2022/09/01 12:00,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,10,true,airline-27,manager-03
@@ -56,17 +56,17 @@ flight-39,"Lorem ipsum dolor sit ame",true,EUR 5000.00,"Lorem ipsum dolor sit am
 #
 # scheduledArrival probado
 #
-flight-40,"Lorem ipsum dolor sit ame",true,EUR 5000.00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Utf*",2022/09/01 10:00,2022/09/01 12:00,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,10,false,airline-12,manager-01
-flight-41,"localizador",true,EUR 5000.00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Utf*",2022/09/01 10:00,2022/09/01 12:00,L,Lorem ipsum dolor sit ame,10,true,airline-41,manager-01
-flight-42,"Lorem ipsum dolor sit ame",true,EUR 5000.00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Utf*",2022/09/01 10:00,2022/09/01 12:00,Lo,Lorem ipsum dolor sit ame,10,false,airline-42,manager-02
-flight-43,"Lorem ipsum dolor sit ame",true,EUR 5000.00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Utf*",2022/09/01 10:00,2022/09/01 12:00,"Lorem ipsum dolor sit amet, consectetur adipiscin",Lorem ipsum dolor sit ame,10,false,airline-43,manager-03
-flight-44,"Lorem ipsum dolor sit ame",true,EUR 5000.00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Utf*",2022/09/01 10:00,2022/09/01 12:00,"Lorem ipsum dolor sit amet, consectetur adipiscing",Lorem ipsum dolor sit ame,10,false,airline-44,manager-01
-flight-45,"Lorem ipsum dolor sit ame",true,EUR 5000.00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Utf*",2022/09/01 10:00,2022/09/01 12:00,โลเร็ม อิปซัม,Lorem ipsum dolor sit ame,10,false,airline-45,manager-01
-flight-46,"Lorem ipsum dolor sit ame",true,EUR 5000.00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Utf*",2022/09/01 10:00,2022/09/01 12:00,"لوريم إيبسوم",Lorem ipsum dolor sit ame,10,false,airline-46,manager-02
-flight-47,"Lorem ipsum dolor sit ame",true,EUR 5000.00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Utf*",2022/09/01 10:00,2022/09/01 12:00,洛伦·伊普森,Lorem ipsum dolor sit ame,10,false,airline-47,manager-03
-flight-48,"Lorem ipsum dolor sit ame",true,EUR 5000.00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Utf*",2022/09/01 10:00,2022/09/01 12:00,<marquee>Hacked</marquee>,Lorem ipsum dolor sit ame,10,false,airline-48,manager-01
-flight-49,"Lorem ipsum dolor sit ame",true,EUR 5000.00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Utf*",2022/09/01 10:00,2022/09/01 12:00,<script>alert(‘Hacked!’);</script>,Lorem ipsum dolor sit ame,10,false,airline-49,manager-01
-flight-50,"Lorem ipsum dolor sit ame",true,EUR 5000.00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Utf*",2022/09/01 10:00,2022/09/01 12:00,' or 'A' = 'A ,Lorem ipsum dolor sit ame,10,false,airline-50,manager-02
+flight-40,"Lorem ipsum dolor sit ame",true,EUR 5000.00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Utf*",2022/09/01 10:00,2022/09/01 12:00,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,10,true,airline-12,manager-01
+flight-41,"Lorem ipsum dolor sit ame",true,EUR 5000.00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Utf*",2022/09/01 10:00,2022/09/01 12:00,L,Lorem ipsum dolor sit ame,10,true,airline-41,manager-01
+flight-42,"Lorem ipsum dolor sit ame",true,EUR 5000.00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Utf*",2022/09/01 10:00,2022/09/01 12:00,Lo,Lorem ipsum dolor sit ame,10,true,airline-42,manager-02
+flight-43,"Lorem ipsum dolor sit ame",true,EUR 5000.00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Utf*",2022/09/01 10:00,2022/09/01 12:00,"Lorem ipsum dolor sit amet, consectetur adipiscin",Lorem ipsum dolor sit ame,10,true,airline-43,manager-03
+flight-44,"Lorem ipsum dolor sit ame",true,EUR 5000.00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Utf*",2022/09/01 10:00,2022/09/01 12:00,"Lorem ipsum dolor sit amet, consectetur adipiscing",Lorem ipsum dolor sit ame,10,true,airline-44,manager-01
+flight-45,"Lorem ipsum dolor sit ame",true,EUR 5000.00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Utf*",2022/09/01 10:00,2022/09/01 12:00,โลเร็ม อิปซัม,Lorem ipsum dolor sit ame,10,true,airline-45,manager-01
+flight-46,"Lorem ipsum dolor sit ame",true,EUR 5000.00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Utf*",2022/09/01 10:00,2022/09/01 12:00,"لوريم إيبسوم",Lorem ipsum dolor sit ame,10,true,airline-46,manager-02
+flight-47,"Lorem ipsum dolor sit ame",true,EUR 5000.00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Utf*",2022/09/01 10:00,2022/09/01 12:00,洛伦·伊普森,Lorem ipsum dolor sit ame,10,true,airline-47,manager-03
+flight-48,"Lorem ipsum dolor sit ame",true,EUR 5000.00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Utf*",2022/09/01 10:00,2022/09/01 12:00,<marquee>Hacked</marquee>,Lorem ipsum dolor sit ame,10,true,airline-48,manager-01
+flight-49,"Lorem ipsum dolor sit ame",true,EUR 5000.00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Utf*",2022/09/01 10:00,2022/09/01 12:00,<script>alert(‘Hacked!’);</script>,Lorem ipsum dolor sit ame,10,true,airline-49,manager-01
+flight-50,"Lorem ipsum dolor sit ame",true,EUR 5000.00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Utf*",2022/09/01 10:00,2022/09/01 12:00,' or 'A' = 'A ,Lorem ipsum dolor sit ame,10,true,airline-50,manager-02
 #
 # originCity probado
 #
@@ -92,3 +92,7 @@ flight-66,"Lorem ipsum dolor sit ame",true,EUR 5000.00,"Lorem ipsum dolor sit am
 #
 # layovers probado
 #
+#
+# flight PRUEBA BORRADO
+#
+flight-67,"prueba borrado",true,EUR 1000.00,"prueba borrado",2022/09/01 10:00,2022/09/01 12:00,"ciudad borrado","ciudad borrado 2",2,true,airline-01,manager-01

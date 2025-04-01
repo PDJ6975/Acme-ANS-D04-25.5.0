@@ -65,3 +65,7 @@ incident-52,2011/04/16 0:00,Lorem ipsum dolor sit amet,"Lorem ipsum dolor sit am
 # draftMode - standard variations
 incident-53,2011/04/16 0:00,Lorem ipsum dolor sit amet,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",5,flight-assignment-25,FALSE
 # draftMode - no singular values
+#
+# activityLog PRUEBA BORRADO FLIGHT
+#
+incident-54,2011/04/16 0:00,prueba borrado,"prueba borrado",5,flight-assignment-26,TRUE

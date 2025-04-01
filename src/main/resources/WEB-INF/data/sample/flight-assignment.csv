@@ -35,3 +35,7 @@ flight-assignment-24,flight-crew-member-04,leg-01,PILOT,2011/04/16 0:00,CONFIRME
 # draftMode - standart variations
 flight-assignment-25,flight-crew-member-01,leg-14,PILOT,2011/04/16 0:00,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FALSE
 # draftMode - no singular values
+#
+# flightAssignment PRUEBA BORRADO FLIGHT
+#
+flight-assignment-26,flight-crew-member-01,leg-33,PILOT,2011/04/16 0:00,CONFIRMED,"prueba borrado",TRUE

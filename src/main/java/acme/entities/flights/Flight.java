@@ -82,9 +82,8 @@ public class Flight extends AbstractEntity {
 	private Integer				layovers; // Derivado de los tramos
 
 	@Mandatory
-	@Valid
 	@Automapped
-	private Boolean				draftMode;
+	private boolean				draftMode;
 
 	@Mandatory
 	@Valid

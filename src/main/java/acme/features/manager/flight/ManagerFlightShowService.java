@@ -1,11 +1,15 @@
 
 package acme.features.manager.flight;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
+import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
+import acme.entities.airlines.Airline;
 import acme.entities.flights.Flight;
 import acme.realms.managers.Manager;
 
@@ -39,15 +43,20 @@ public class ManagerFlightShowService extends AbstractGuiService<Manager, Flight
 		flightId = super.getRequest().getData("id", int.class);
 		flight = this.repository.findOneById(flightId);
 
-		super.getBuffer().addData(flight);
+		super.getBuffer().addData("flight", flight);
 	}
 
 	@Override
 	public void unbind(final Flight flight) {
 		Dataset dataset;
 
-		dataset = super.unbindObject(flight, "tag", "selfTransfer", "cost", "description", "scheduledDeparture", "scheduledArrival", "originCity", "destinationCity", "layovers", "airline.name", "manager.managerId", "draftMode");
+		dataset = super.unbindObject(flight, "tag", "selfTransfer", "cost", "description", "scheduledDeparture", "scheduledArrival", "originCity", "destinationCity", "layovers", "draftMode", "airline");
 		dataset.put("masterId", flight.getId());
+
+		Collection<Airline> availableAirlines = this.repository.findAllAirlines();
+		SelectChoices airlines = SelectChoices.from(availableAirlines, "name", flight.getAirline());
+		dataset.put("airlines", airlines);
+
 		super.getResponse().addData(dataset);
 	}
 

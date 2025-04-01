@@ -20,7 +20,7 @@ Tablero Jianwu Hu (VXN8675): https://github.com/users/PDJ6975/projects/17/views/
 
 Tablero Pablo Olivencia Moreno (pabolimor): https://github.com/users/PDJ6975/projects/22/views/1
 
-Tablero Adrián Ramírez Gil (VGL6718): https://github.com/users/PDJ6975/projects/14/views/1 
+Tablero Adrián Ramírez Gil (VGL6718): https://github.com/users/PDJ6975/projects/23/views/1
 
 
 Descripción del Proyecto

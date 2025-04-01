@@ -1,13 +1,18 @@
 
 package acme.features.manager.flight;
 
+import java.util.Collection;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
+import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.airlines.Airline;
 import acme.entities.flights.Flight;
+import acme.entities.legs.Leg;
 import acme.realms.managers.Manager;
 
 @GuiService
@@ -32,31 +37,39 @@ public class ManagerFlightCreateService extends AbstractGuiService<Manager, Flig
 		flight.setSelfTransfer(false);
 		flight.setCost(null);
 		flight.setDescription(null);
-		flight.setScheduledDeparture(null); //esto hay que cambiarlo para que lo coja de los legs
-		flight.setScheduledArrival(null); //esto hay que cambiarlo para que lo coja de los legs
-		flight.setOriginCity(null); //esto hay que cambiarlo para que lo coja de los legs
-		flight.setDestinationCity(null); //esto hay que cambiarlo para que lo coja de los legs
-		flight.setLayovers(null); //esto hay que cambiarlo para que lo coja de los legs
-		flight.setDraftMode(true); // cuando se crea un Flight se pone el draftMode por defecto a true
+		flight.setDraftMode(true);
 		flight.setAirline(null);
 		flight.setManager(manager);
 
-		super.getBuffer().addData("flight", flight);  // Pasar el vuelo al buffer
+		List<Leg> legs = this.repository.findLegsByFlightId(flight.getId());
+
+		if (!legs.isEmpty()) {
+			Leg firstLeg = legs.get(0);
+			Leg lastLeg = legs.get(legs.size() - 1);
+
+			flight.setScheduledDeparture(firstLeg.getScheduledDeparture());
+			flight.setScheduledArrival(lastLeg.getScheduledArrival());
+			flight.setOriginCity(firstLeg.getDepartureAirport().getCity());
+			flight.setDestinationCity(lastLeg.getArrivalAirport().getCity());
+
+			flight.setLayovers(legs.size() - 1);
+
+		} else {
+			flight.setScheduledDeparture(null);
+			flight.setScheduledArrival(null);
+			flight.setOriginCity(null);
+			flight.setDestinationCity(null);
+			flight.setLayovers(null);
+		}
+
+		super.getBuffer().addData("flight", flight);
 	}
 
 	@Override
 	public void bind(final Flight flight) {
 
-		String airlineName;
-		Airline airline;
-
-		airlineName = super.getRequest().getData("airline,name", String.class);
-		airline = this.repository.findAirlineByName(airlineName);
-
+		super.bindObject(flight, "tag", "selfTransfer", "cost", "description", "scheduledDeparture", "scheduledArrival", "originCity", "destinationCity", "layovers", "airline");
 		Manager manager = (Manager) super.getRequest().getPrincipal().getActiveRealm();
-
-		super.bindObject(flight, "tag", "selfTransfer", "cost", "description", "scheduledDeparture", "scheduledArrival", "originCity", "destinationCity", "layovers");
-		flight.setAirline(airline);
 		flight.setManager(manager);
 	}
 
@@ -75,13 +88,15 @@ public class ManagerFlightCreateService extends AbstractGuiService<Manager, Flig
 	public void unbind(final Flight flight) {
 
 		Dataset dataset;
-
-		dataset = super.unbindObject(flight, "tag", "selfTransfer", "cost", "description", "scheduledDeparture", "scheduledArrival", "originCity", "destinationCity", "layovers", "draftMode", "manager.id");
-
+		dataset = super.unbindObject(flight, "tag", "selfTransfer", "cost", "description", "scheduledDeparture", "scheduledArrival", "originCity", "destinationCity", "airline", "layovers", "draftMode");
 		dataset.put("manager.id", flight.getManager().getId());
 		dataset.put("masterId", flight.getId());
 
-		super.getResponse().addData(dataset);  // Pasa solo los datos relevantes del vuelo
+		Collection<Airline> availableAirlines = this.repository.findAllAirlines();
+		SelectChoices airlines = SelectChoices.from(availableAirlines, "name", flight.getAirline());
+		dataset.put("airlines", airlines);
+
+		super.getResponse().addData(dataset);
 	}
 
 }

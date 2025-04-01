@@ -7,7 +7,7 @@
       <x>350</x>
       <y>567</y>
       <w>476</w>
-      <h>140</h>
+      <h>154</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Flight
@@ -128,7 +128,7 @@ bg=green</panel_attributes>
     <coordinates>
       <x>833</x>
       <y>840</y>
-      <w>98</w>
+      <w>126</w>
       <h>49</h>
     </coordinates>
     <panel_attributes>Esta entidad será desarrollada 
@@ -141,29 +141,29 @@ layer=1</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>448</x>
-      <y>700</y>
+      <y>714</y>
       <w>56</w>
-      <h>182</h>
+      <h>168</h>
     </coordinates>
     <panel_attributes>partOf ▼
 lt=&lt;-x
 m1=1
 m2=*</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;240.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;220.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>749</x>
-      <y>700</y>
+      <y>714</y>
       <w>84</w>
-      <h>182</h>
+      <h>168</h>
     </coordinates>
     <panel_attributes>operatedBy ▼
 lt=&lt;-x
 m1=1
 m2=*</panel_attributes>
-    <additional_attributes>10.0;240.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;220.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>

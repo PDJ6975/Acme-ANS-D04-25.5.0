@@ -15,7 +15,8 @@ master.menu.anonymous.favourite-link-Antonio = 80225182D: Rodríguez Calderón, 
 master.menu.anonymous.favourite-link-PabloC = 32714847F: Castrillón Mora, Pablo
 master.menu.anonymous.favourite-link-Adrian = 49385745F: Ramírez Gil, Adrián
 master.menu.anonymous.favourite-link-Jianwu = Y0037268E: Hu, Jianwu
-	
+master.menu.anonymous.favourite-link-pabolimor = 53345421A: Olivencia Moreno, Pablo
+
 
 # master.menu.administrator ###################################################
 
@@ -26,6 +27,7 @@ master.menu.administrator.populate-db-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-system-down = Parar el sistema
 master.menu.administrator.list-aircrafts = Ver aviones existentes
 master.menu.administrator.list-airports = Ver Aeropuertos
+master.menu.administrator.list-bookings = Ver Reservas
 
 # master.menu.provider ########################################################
 
@@ -67,4 +69,11 @@ master.menu.user-account.customer-profile = Perfil de cliente
 # master.menu.customer ##########################################################
 master.menu.customer = Cliente
 master.menu.customer.list-bookings = Listar Reservas
+master.menu.customer.user-account.update = Actualizar perfil
 
+# master.menu.technician ##########################################################
+master.menu.technician = Técnico
+master.menu.technician.list-my-maintenance-records= Listar mis registros de mantenimiento
+master.menu.technician.list-my-tasks = Listar mis tareas
+master.menu.technician.list-maintenance-record-catalogue = Listar catálogo de registros de mantenimiento
+master.menu.technician.list-task-catalogue = Listar catálogo de tareas

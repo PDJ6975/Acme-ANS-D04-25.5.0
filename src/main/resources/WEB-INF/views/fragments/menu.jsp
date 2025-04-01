@@ -36,6 +36,7 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.list-aircrafts" action="/administrator/aircraft/list"/>
 			<acme:menu-suboption code="master.menu.administrator.list-airports" action="/administrator/airport/list"/>
+			<acme:menu-suboption code="master.menu.administrator.list-bookings" action="/administrator/booking/list"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRealm('Provider')">
@@ -55,6 +56,15 @@
 			<acme:menu-suboption code="master.menu.manager.list-my-flights" action="/manager/flight/list" />			
 		</acme:menu-option>
 		
+		<acme:menu-option code="master.menu.technician" access="hasRealm('Technician')">
+			<acme:menu-suboption code="master.menu.technician.list-my-maintenance-records" action="/technician/maintenance-record/list?mine=true" />			
+			<acme:menu-suboption code="master.menu.technician.list-my-tasks" action="/technician/task/list?mine=true" />
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.technician.list-maintenance-record-catalogue" action="/technician/maintenance-record/list" />
+			<acme:menu-suboption code="master.menu.technician.list-task-catalogue" action="/technician/task/list" />
+		</acme:menu-option>
+
+		
 		<acme:menu-option code="master.menu.assistanceAgent" access="hasRealm('AssistanceAgent')">
  			<acme:menu-suboption code="master.menu.assistanceAgent.list-completed" action="/assistance-agent/claim/completed-list" />
  			<acme:menu-suboption code="master.menu.assistanceAgent.list-ongoing" action="/assistance-agent/claim/ongoing-list" />
@@ -62,7 +72,9 @@
  		</acme:menu-option>
  		
  		<acme:menu-option code="master.menu.customer" access="hasRealm('Customer')">
-			<acme:menu-suboption code="master.menu.customer.list-bookings" action="/customer/booking/list"/>
+		    <acme:menu-suboption code="master.menu.customer.list-bookings" action="/customer/booking/list"/>
+		    <acme:menu-separator/>
+		    <acme:menu-suboption code="master.menu.customer.user-account.update" action="/customer/customer/update"/>
 		</acme:menu-option>
 	</acme:menu-left>
 
