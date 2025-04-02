@@ -53,9 +53,7 @@ master.menu.manager.list-my-flights = List Flights
 # master.menu.assistanceAgent ##########################################################
  master.menu.assistanceAgent = Assistant Agent
  master.menu.assistanceAgent.list-completed = Completed claims List
- master.menu.assistanceAgent.list-ongoing = Ongoing claims List
- master.menu.assistanceAgent.list-tracking-log = Tracking Logs List
- 
+ master.menu.assistanceAgent.list-ongoing = Ongoing claims List 
 
 # master.menu.user-account ####################################################
 

@@ -26,9 +26,10 @@ public class AssistanceAgentTrackingLogListService extends AbstractGuiService<As
 	@Override
 	public void load() {
 		Collection<TrackingLog> logs;
-		int id;
-		id = super.getRequest().getPrincipal().getActiveRealm().getId();
-		logs = this.repository.findTrackingLogsByAssistanceAgentId(id);
+		int masterId;
+		masterId = super.getRequest().getData("masterId", int.class);
+		logs = this.repository.findTrackingLogsByClaimId(masterId);
+		super.getResponse().addGlobal("masterId", masterId);
 		super.getBuffer().addData(logs);
 	}
 
@@ -36,7 +37,7 @@ public class AssistanceAgentTrackingLogListService extends AbstractGuiService<As
 	public void unbind(final TrackingLog log) {
 		Dataset dataset;
 
-		dataset = super.unbindObject(log, "id", "step", "resolutionPercentage");
+		dataset = super.unbindObject(log, "step", "resolutionPercentage", "indicator");
 
 		super.getResponse().addData(dataset);
 	}

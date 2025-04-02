@@ -4,8 +4,10 @@ package acme.features.assistantAgent.trackingLog;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
+import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
+import acme.entities.trackingLogs.Indicator;
 import acme.entities.trackingLogs.TrackingLog;
 import acme.realms.agents.AssistanceAgent;
 
@@ -23,7 +25,7 @@ public class AssistanceAgentTrackingLogServiceShow extends AbstractGuiService<As
 		TrackingLog trackingLog;
 		trackingLogId = super.getRequest().getData("id", int.class);
 		trackingLog = this.repository.findTrackingLogById(trackingLogId);
-		auth = trackingLog.getClaim().getAssistanceAgent().getUserAccount().getId() == super.getRequest().getPrincipal().getAccountId();
+		auth = trackingLog != null && trackingLog.getClaim().getAssistanceAgent().getUserAccount().getId() == super.getRequest().getPrincipal().getAccountId();
 		super.getResponse().setAuthorised(auth);
 	}
 
@@ -39,7 +41,10 @@ public class AssistanceAgentTrackingLogServiceShow extends AbstractGuiService<As
 	@Override
 	public void unbind(final TrackingLog trackingLog) {
 		Dataset dataset;
-		dataset = super.unbindObject(trackingLog, "lastUpdatedMoment", "step", "resolutionPercentage", "indicator", "resolution", "claim.id");
+		dataset = super.unbindObject(trackingLog, "lastUpdatedMoment", "step", "resolutionPercentage", "indicator", "resolution", "draftMode");
+		dataset.put("masterId", trackingLog.getClaim().getId());
+		SelectChoices logIndicator = SelectChoices.from(Indicator.class, trackingLog.getIndicator());
+		dataset.put("logIndicator", logIndicator);
 		super.getResponse().addData(dataset);
 	}
 

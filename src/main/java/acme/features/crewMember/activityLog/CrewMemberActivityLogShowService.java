@@ -53,7 +53,6 @@ public class CrewMemberActivityLogShowService extends AbstractGuiService<FlightC
 		dataset.put("draftMode", log.getFlightAssignment().isDraftMode());
 		dataset.put("draftLeg", log.isDraftMode());
 		dataset.put("masterId", log.getFlightAssignment().getId());
-
 		super.getResponse().addData(dataset);
 	}
 }

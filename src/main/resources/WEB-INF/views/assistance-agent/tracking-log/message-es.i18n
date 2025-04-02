@@ -1,11 +1,10 @@
 assistance-agent.tracking-log.list.title = Listado de seguimiento
 assistance-agent.tracking-log.form.title = Datos Seguimiento
 
-assistanceAgents.tracking-log.list.id = Id
+assistanceAgents.tracking-log.list.indicator = Indicador
 assistanceAgents.tracking-log.list.step = Paso
 assistanceAgents.tracking-log.list.resolutionPercentage = Porcentaje de Resolución
 
 assistanceAgent.tracking-log.form.label.lastUpdatedMoment=  Ultima Actualización
 assistanceAgent.tracking-log.form.label.indicator = Indicador
 assistanceAgent.tracking-log.form.label.resolution = Resolución
-assistanceAgent.tracking-log.form.label.claim-id = Id de la reclamación

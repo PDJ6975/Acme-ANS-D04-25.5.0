@@ -47,6 +47,7 @@ public class AssistanceAgentClaimServiceShow extends AbstractGuiService<Assistan
 		SelectChoices claimState = SelectChoices.from(State.class, claim.getState());
 		dataset.put("claimType", claimType);
 		dataset.put("claimState", claimState);
+		dataset.put("masterId", claim.getId());
 		super.getResponse().addData(dataset);
 	}
 

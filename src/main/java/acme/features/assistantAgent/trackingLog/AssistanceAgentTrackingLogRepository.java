@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
+import acme.entities.claims.Claim;
 import acme.entities.trackingLogs.TrackingLog;
 
 @Repository
@@ -15,9 +16,9 @@ public interface AssistanceAgentTrackingLogRepository extends AbstractRepository
 	@Query("""
 		SELECT t
 		FROM TrackingLog t
-		WHERE t.claim.assistanceAgent.id = :agentId
+		WHERE t.claim.id = :claimId
 		""")
-	Collection<TrackingLog> findTrackingLogsByAssistanceAgentId(int agentId);
+	Collection<TrackingLog> findTrackingLogsByClaimId(int claimId);
 
 	@Query("""
 		SELECT t
@@ -25,4 +26,11 @@ public interface AssistanceAgentTrackingLogRepository extends AbstractRepository
 		WHERE t.id = :id
 		""")
 	TrackingLog findTrackingLogById(int id);
+
+	@Query("""
+		SELECT c
+		FROM Claim c
+		WHERE c.id = :id
+		""")
+	Claim findClaimById(int id);
 }
