@@ -28,7 +28,7 @@ master.menu.administrator.shut-system-down = Shut system down
 master.menu.administrator.list-aircrafts = List aircrafts
 master.menu.administrator.list-airports = List Airports
 master.menu.administrator.list-bookings = List Bookings
-master.menu.administrator.list-bookings = List Airlines
+master.menu.administrator.list-airlines = List Airlines
 
 # master.menu.provider ########################################################
 
@@ -79,9 +79,4 @@ master.menu.technician = Technician
 master.menu.technician.list-my-maintenance-records= List my maintenance records
 master.menu.technician.list-my-tasks = List my tasks
 master.menu.technician.list-maintenance-record-catalogue = List maintenance record catalogue
-<<<<<<< Updated upstream
 master.menu.technician.list-task-catalogue = List task catalogue
-
-=======
-master.menu.technician.list-task-catalogue = List task catalogue
->>>>>>> Stashed changes

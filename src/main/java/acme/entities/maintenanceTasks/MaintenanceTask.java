@@ -1,7 +1,6 @@
 
 package acme.entities.maintenanceTasks;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
@@ -28,7 +27,7 @@ public class MaintenanceTask extends AbstractEntity {
 
 	@Mandatory
 	@Valid
-	@OneToOne(optional = false, cascade = CascadeType.REMOVE)
+	@OneToOne(optional = false)
 	private Task				task;
 
 }

@@ -23,7 +23,6 @@ technician.maintenance-record.form.placeholder.score = 0.00 - 100.00
 		
 technician.maintenance-record.form.button.tasks = Tareas
 technician.maintenance-record.form.button.update = Actualizar
-technician.maintenance-record.form.button.delete = Borrar
 technician.maintenance-record.form.button.publish = Publicar
 technician.maintenance-record.form.button.create = Crear
 
