@@ -21,6 +21,7 @@ Flight
 + originCity: String {Mandatory,ValidString(min=1,max=50),Automapped}
 + destinationCity: String {Mandatory,ValidString(min=1,max=50),Automapped}
 + layovers: Integer {Mandatory, ValidNumber(min=0, max=20),Automapped}
++ draftMode: boolean {Mandatory, Valid, Automapped}
 bg=green</panel_attributes>
     <additional_attributes/>
   </element>

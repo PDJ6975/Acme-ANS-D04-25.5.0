@@ -20,21 +20,13 @@ import acme.entities.legs.Leg;
 import acme.entities.passengers.Passenger;
 import acme.entities.trackingLogs.TrackingLog;
 import acme.entities.weathers.Weather;
-import acme.features.administrator.booking.AdminBookingRepository;
-import acme.features.manager.leg.ManagerLegRepository;
 import acme.realms.managers.Manager;
 
 @GuiService
 public class ManagerFlightDeleteService extends AbstractGuiService<Manager, Flight> {
 
 	@Autowired
-	protected ManagerFlightRepository	repository;
-
-	@Autowired
-	protected AdminBookingRepository	bookingRepository;
-
-	@Autowired
-	protected ManagerLegRepository		legRepository;
+	protected ManagerFlightRepository repository;
 
 
 	@Override

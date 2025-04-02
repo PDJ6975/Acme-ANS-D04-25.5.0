@@ -11,23 +11,27 @@ import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.aircrafts.Aircraft;
 import acme.entities.airports.Airport;
+import acme.entities.flights.Flight;
 import acme.entities.legs.Leg;
 import acme.entities.legs.LegStatus;
+import acme.features.manager.flight.ManagerFlightRepository;
 import acme.realms.managers.Manager;
 
 @GuiService
-public class ManagerLegShowService extends AbstractGuiService<Manager, Leg> {
+public class ManagerLegUpdateService extends AbstractGuiService<Manager, Leg> {
 
 	@Autowired
-	private ManagerLegRepository repository;
+	protected ManagerLegRepository		repository;
+
+	@Autowired
+	protected ManagerFlightRepository	flightRepository;
 
 
 	@Override
 	public void authorise() {
 		int legId = super.getRequest().getData("id", int.class);
 		Leg leg = this.repository.findLegById(legId);
-
-		boolean status = leg != null && super.getRequest().getPrincipal().hasRealm(leg.getFlight().getManager());
+		boolean status = leg != null && leg.isDraftMode() && super.getRequest().getPrincipal().hasRealm(leg.getFlight().getManager());
 		super.getResponse().setAuthorised(status);
 	}
 
@@ -39,17 +43,32 @@ public class ManagerLegShowService extends AbstractGuiService<Manager, Leg> {
 	}
 
 	@Override
+	public void bind(final Leg leg) {
+		super.bindObject(leg, "flightNumber", "duration", "legStatus", "description", "scheduledDeparture", "scheduledArrival", "draftMode", "departureAirport", "arrivalAirport", "aircraft");
+
+		int flightId = leg.getFlight().getId(); // No hace falta volver a cargar si ya viene cargado
+		Flight flight = this.flightRepository.findOneById(flightId);
+		leg.setFlight(flight);
+	}
+
+	@Override
+	public void validate(final Leg leg) {
+		;
+	}
+
+	@Override
+	public void perform(final Leg leg) {
+		this.repository.save(leg);
+	}
+
+	@Override
 	public void unbind(final Leg leg) {
-		Dataset dataset;
+		Dataset dataset = super.unbindObject(leg, "flightNumber", "duration", "legStatus", "description", "scheduledDeparture", "scheduledArrival", "draftMode", "departureAirport", "arrivalAirport", "aircraft");
 
-		dataset = super.unbindObject(leg, "flightNumber", "duration", "legStatus", "description", "scheduledDeparture", "scheduledArrival", "draftMode", "departureAirport", "arrivalAirport", "aircraft");
-
-		// Añadir masterId para coherencia con create/update
-		dataset.put("masterId", leg.getFlight().getId());
-
-		// Choices necesarios para que los <acme:input-select> funcionen en modo show
 		SelectChoices legStatuses = SelectChoices.from(LegStatus.class, leg.getLegStatus());
 		dataset.put("legStatuses", legStatuses);
+
+		dataset.put("masterId", leg.getFlight().getId());
 
 		Collection<Airport> availableAirports = this.repository.findAirports();
 		SelectChoices departureAirports = SelectChoices.from(availableAirports, "name", leg.getDepartureAirport());
