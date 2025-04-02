@@ -16,10 +16,10 @@ import acme.entities.legs.LegStatus;
 import acme.realms.managers.Manager;
 
 @GuiService
-public class ManagerLegShowService extends AbstractGuiService<Manager, Leg> {
+public class ManagerLegPublishService extends AbstractGuiService<Manager, Leg> {
 
 	@Autowired
-	private ManagerLegRepository repository;
+	protected ManagerLegRepository repository;
 
 
 	@Override
@@ -27,7 +27,10 @@ public class ManagerLegShowService extends AbstractGuiService<Manager, Leg> {
 		int legId = super.getRequest().getData("id", int.class);
 		Leg leg = this.repository.findLegById(legId);
 
-		boolean status = leg != null && super.getRequest().getPrincipal().hasRealm(leg.getFlight().getManager());
+		boolean draftMode = leg.isDraftMode();
+
+		boolean status = leg != null && draftMode;
+
 		super.getResponse().setAuthorised(status);
 	}
 
@@ -35,21 +38,33 @@ public class ManagerLegShowService extends AbstractGuiService<Manager, Leg> {
 	public void load() {
 		int legId = super.getRequest().getData("id", int.class);
 		Leg leg = this.repository.findLegById(legId);
-		super.getBuffer().addData("leg", leg);
+		super.getBuffer().addData(leg);
+	}
+
+	@Override
+	public void bind(final Leg leg) {
+		super.bindObject(leg);
+	}
+
+	@Override
+	public void validate(final Leg leg) {
+		;
+	}
+
+	@Override
+	public void perform(final Leg leg) {
+		leg.setDraftMode(false);
+		this.repository.save(leg);
 	}
 
 	@Override
 	public void unbind(final Leg leg) {
-		Dataset dataset;
+		Dataset dataset = super.unbindObject(leg, "flightNumber", "duration", "legStatus", "description", "scheduledDeparture", "scheduledArrival", "draftMode", "departureAirport", "arrivalAirport", "aircraft");
 
-		dataset = super.unbindObject(leg, "flightNumber", "duration", "legStatus", "description", "scheduledDeparture", "scheduledArrival", "draftMode", "departureAirport", "arrivalAirport", "aircraft");
-
-		// Añadir masterId para coherencia con create/update
-		dataset.put("masterId", leg.getFlight().getId());
-
-		// Choices necesarios para que los <acme:input-select> funcionen en modo show
 		SelectChoices legStatuses = SelectChoices.from(LegStatus.class, leg.getLegStatus());
 		dataset.put("legStatuses", legStatuses);
+
+		dataset.put("masterId", leg.getFlight().getId());
 
 		Collection<Airport> availableAirports = this.repository.findAirports();
 		SelectChoices departureAirports = SelectChoices.from(availableAirports, "name", leg.getDepartureAirport());

@@ -15,7 +15,8 @@ master.menu.anonymous.favourite-link-Antonio = 80225182D: Rodríguez Calderón, 
 master.menu.anonymous.favourite-link-PabloC = 32714847F: Castrillón Mora, Pablo
 master.menu.anonymous.favourite-link-Adrian = 49385745F: Ramírez Gil, Adrián
 master.menu.anonymous.favourite-link-Jianwu = Y0037268E: Hu, Jianwu
-	
+master.menu.anonymous.favourite-link-pabolimor = 53345421A: Olivencia Moreno, Pablo
+
 
 # master.menu.administrator ###################################################
 
@@ -46,7 +47,7 @@ master.menu.crewMember.list-my-planned-assignments = Listar asignaciones de vuel
 master.menu.crewMember.list-my-logs = Listar incidentes en mis asignaciones
 
 # master.menu.manager ##########################################################
-master.menu.manager = Manager
+master.menu.manager = Gestor
 master.menu.manager.list-my-flights = Listar Vuelos
 
 # master.menu.assistanceAgent ##########################################################
