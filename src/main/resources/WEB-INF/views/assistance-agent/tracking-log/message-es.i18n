@@ -20,3 +20,4 @@ assistant-agent.create.only-one-resolution-100 = No puede haber más de 2 datos 
 assistant-agent.create.indicator-resolution-problem = Cuando el porcentaje de resolución es del 100% no puede estar la resolución vacía ni el indicador puede ser ONGOING 
 assistant-agent.create.resolution-problem = Cuando el porcentaje de resolución no es del 100% debe estar la resolución vacía y indicador debe ser ONGOING 
 assistant-agent.create.cannot-change-indicator = No se puede cambiar el indicador de un dato de seguimiento cuando la reclamación ya esta finalizada
+assistant-agent.create.claim-draftMode = No se puede pubicar un seguimiento para una reclamación que no está publicada

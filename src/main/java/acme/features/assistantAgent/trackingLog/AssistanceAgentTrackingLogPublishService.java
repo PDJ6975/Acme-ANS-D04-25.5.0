@@ -12,6 +12,7 @@ import acme.client.components.views.SelectChoices;
 import acme.client.helpers.StringHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
+import acme.entities.claims.Claim;
 import acme.entities.trackingLogs.Indicator;
 import acme.entities.trackingLogs.TrackingLog;
 import acme.realms.agents.AssistanceAgent;
@@ -57,6 +58,9 @@ public class AssistanceAgentTrackingLogPublishService extends AbstractGuiService
 	public void validate(final TrackingLog log) {
 		Double resolutionCreate;
 		Collection<TrackingLog> logMaxResolution;
+		Claim claim;
+
+		claim = this.repository.findClaimById(log.getClaim().getId());
 
 		resolutionCreate = log.getResolutionPercentage();
 
@@ -91,6 +95,9 @@ public class AssistanceAgentTrackingLogPublishService extends AbstractGuiService
 			if (resolutionCreate != 100.00 && (!StringHelper.isBlank(log.getResolution()) || log.getIndicator() != Indicator.ONGOING))
 				super.state(false, "*", "assistant-agent.create.resolution-problem");
 		}
+
+		if (claim.getDraftMode() == true)
+			super.state(false, "*", "assistant-agent.create.claim-draftMode");
 	}
 
 	@Override

@@ -59,7 +59,6 @@ public class AssistanceAgentTrackingLogUpdateService extends AbstractGuiService<
 		Collection<TrackingLog> logMaxResolution;
 
 		resolutionCreate = log.getResolutionPercentage();
-		super.state(resolutionCreate != null, "resolutionPercentage", "javax.validation.constraints.NotNull");
 
 		logMaxResolution = this.repository.findHighestResolutionLogsByClaimId(log.getClaim().getId());
 
@@ -67,11 +66,11 @@ public class AssistanceAgentTrackingLogUpdateService extends AbstractGuiService<
 
 		Optional<TrackingLog> maxLog = logMaxResolution.stream().max(Comparator.comparing(TrackingLog::getResolutionPercentage));
 
-		if (resolutionCreate != null && !StringHelper.isBlank(log.getIndicator().toString())) {
+		if (resolutionCreate != null && log.getIndicator() != null) {
 			boolean isResolutionFull = resolutionCreate == 100.0;
 			// 1. No se permite un porcentaje menor o igual al ya existente, excepto si es el primero o es 100%
 			if (!isFirst && !isResolutionFull && maxLog.isPresent() && resolutionCreate <= maxLog.get().getResolutionPercentage())
-				super.state(false, "*", "assistant-agent.create.resolution-lower-than-previous");
+				super.state(false, "resolutionPercentage", "assistant-agent.create.resolution-lower-than-previous");
 
 			// 2. Solo se permite un segundo log con resolución al 100%
 			if (!isFirst && isResolutionFull && logMaxResolution.size() > 1)
@@ -92,6 +91,7 @@ public class AssistanceAgentTrackingLogUpdateService extends AbstractGuiService<
 			if (resolutionCreate != 100.00 && (!StringHelper.isBlank(log.getResolution()) || log.getIndicator() != Indicator.ONGOING))
 				super.state(false, "*", "assistant-agent.create.resolution-problem");
 		}
+
 	}
 
 	@Override
