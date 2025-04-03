@@ -33,4 +33,31 @@ public interface AssistanceAgentTrackingLogRepository extends AbstractRepository
 		WHERE c.id = :id
 		""")
 	Claim findClaimById(int id);
+
+	@Query("""
+		    SELECT tl
+		    FROM TrackingLog tl
+		    WHERE tl.claim.id = :claimId
+		      AND tl.draftMode = false
+		      AND tl.resolutionPercentage = (
+		          SELECT MAX(t2.resolutionPercentage)
+		          FROM TrackingLog t2
+		          WHERE t2.claim.id = :claimId AND t2.draftMode = false
+		      )
+		""")
+	TrackingLog findOneWithHighestResolutionByClaimId(int claimId);
+
+	@Query("""
+		    SELECT tl
+		    FROM TrackingLog tl
+		    WHERE tl.claim.id = :claimId
+		      AND tl.draftMode = false
+		      AND tl.resolutionPercentage = (
+		          SELECT MAX(t2.resolutionPercentage)
+		          FROM TrackingLog t2
+		          WHERE t2.claim.id = :claimId AND t2.draftMode = false
+		      )
+		""")
+	Collection<TrackingLog> findHighestResolutionLogsByClaimId(int claimId);
+
 }

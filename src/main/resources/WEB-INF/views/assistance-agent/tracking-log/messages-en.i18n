@@ -8,3 +8,15 @@ assistanceAgents.tracking-log.list.resolutionPercentage = Resolution Percentage
 assistanceAgent.tracking-log.form.label.lastUpdatedMoment=  Last Updated Moment
 assistanceAgent.tracking-log.form.label.indicator = Indicator
 assistanceAgent.tracking-log.form.label.resolution = Resolution
+
+assistance-agent.tracking-log.form.submit.create = Create
+assistanceAgents.tracking-log.list.button = Create
+assistance-agent.tracking-log.form.submit.update = Update
+assistance-agent.tracking-log.form.submit.delete = Delete
+assistance-agent.tracking-log.form.submit.publish = Publish
+
+assistant-agent.create.resolution-lower-than-previous = The resolution percentage must be greater than that of the last tracking entry
+assistant-agent.create.only-one-resolution-100 = There cannot be more than 2 tracking entries with the resolution percentage set to 100%
+assistant-agent.create.indicator-resolution-problem = When the resolution percentage is 100%, the resolution cannot be empty and the indicator must not be ONGOING
+assistant-agent.create.resolution-problem = When the resolution percentage is not 100%, the resolution must be empty and the indicator must be ONGOING
+assistant-agent.create.cannot-change-indicator = The indicator of a tracking log cannot be changed when the claim is already completed
