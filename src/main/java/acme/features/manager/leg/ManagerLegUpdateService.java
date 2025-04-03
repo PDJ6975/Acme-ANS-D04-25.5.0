@@ -31,7 +31,7 @@ public class ManagerLegUpdateService extends AbstractGuiService<Manager, Leg> {
 	public void authorise() {
 		int legId = super.getRequest().getData("id", int.class);
 		Leg leg = this.repository.findLegById(legId);
-		boolean status = leg != null && leg.isDraftMode() && super.getRequest().getPrincipal().hasRealm(leg.getFlight().getManager());
+		boolean status = leg != null && super.getRequest().getPrincipal().hasRealm(leg.getFlight().getManager());
 		super.getResponse().setAuthorised(status);
 	}
 
@@ -53,7 +53,8 @@ public class ManagerLegUpdateService extends AbstractGuiService<Manager, Leg> {
 
 	@Override
 	public void validate(final Leg leg) {
-		;
+		boolean draftMode = leg.isDraftMode();
+		super.state(draftMode, "draftMode", "manager.leg.error.draftMode");
 	}
 
 	@Override

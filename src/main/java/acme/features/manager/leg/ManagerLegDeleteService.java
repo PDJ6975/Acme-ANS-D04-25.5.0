@@ -38,27 +38,7 @@ public class ManagerLegDeleteService extends AbstractGuiService<Manager, Leg> {
 		int legId = super.getRequest().getData("id", int.class);
 		Leg leg = this.repository.findLegById(legId);
 
-		//OBTENER TODOS LOS OBJETOS RELACIONADOS CON EL LEG
-		List<FlightAssignment> flightAssignments = this.repository.findFlightAssignmentsByLegId(legId);
-
-		List<ActivityLog> activityLogs = this.flightRepository.findActivityLogsByFlightAssignments(flightAssignments);
-
-		List<Claim> claims = this.repository.findClaimsByLegId(legId);
-
-		List<TrackingLog> trackingLogs = this.flightRepository.findTrackingLogsByClaim(claims);
-
-		//COMPROBAR LOS DRAFTMODE DE CADA UNO DE LOS ATRIBUTOS
-		boolean legInDraftMode = leg.isDraftMode();
-
-		boolean allFlightAssignmentsInDraftMode = flightAssignments.stream().allMatch(FlightAssignment::isDraftMode);
-
-		boolean allActivityLogsInDraftMode = activityLogs.stream().allMatch(ActivityLog::isDraftMode);
-
-		//boolean allClaimsInDraftMode = claims.stream().allMatch(Claim::isDraftMode); COMENTADO POR QUE EL CLAIM TODAVÍA NO TIENE ATRIBUTO DRAFTMODE
-
-		//boolean allTrackingLogsInDraftMode = trackingLogs.stream().allMatch(TrackingLog::isDraftMode); COMENTADO POR QUE EL CLAIM TODAVÍA NO TIENE ATRIBUTO DRAFTMODE
-
-		boolean status = leg != null && legInDraftMode && allFlightAssignmentsInDraftMode && allActivityLogsInDraftMode && super.getRequest().getPrincipal().hasRealm(leg.getFlight().getManager());
+		boolean status = leg != null && super.getRequest().getPrincipal().hasRealm(leg.getFlight().getManager());
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -77,7 +57,35 @@ public class ManagerLegDeleteService extends AbstractGuiService<Manager, Leg> {
 
 	@Override
 	public void validate(final Leg leg) {
-		;
+		//OBTENER TODOS LOS OBJETOS RELACIONADOS CON EL LEG
+		List<FlightAssignment> flightAssignments = this.repository.findFlightAssignmentsByLegId(leg.getId());
+
+		List<ActivityLog> activityLogs = this.flightRepository.findActivityLogsByFlightAssignments(flightAssignments);
+
+		List<Claim> claims = this.repository.findClaimsByLegId(leg.getId());
+
+		List<TrackingLog> trackingLogs = this.flightRepository.findTrackingLogsByClaim(claims);
+
+		//COMPROBAR LOS DRAFTMODE DE CADA UNO DE LOS ATRIBUTOS
+		boolean legInDraftMode = leg.isDraftMode();
+
+		boolean allFlightAssignmentsInDraftMode = flightAssignments.stream().allMatch(FlightAssignment::isDraftMode);
+
+		boolean allActivityLogsInDraftMode = activityLogs.stream().allMatch(ActivityLog::isDraftMode);
+
+		boolean allClaimsInDraftMode = claims.stream().allMatch(claim -> Boolean.TRUE.equals(claim.getDraftMode()));
+
+		boolean allTrackingLogsInDraftMode = trackingLogs.stream().allMatch(log -> Boolean.TRUE.equals(log.isDraftMode()));
+
+		super.state(legInDraftMode, "*", "administrator.leg.error.legDraftMode-false");
+
+		super.state(allFlightAssignmentsInDraftMode, "*", "administrator.leg.error.flightAssignmentDraftMode-false");
+
+		super.state(allActivityLogsInDraftMode, "*", "administrator.leg.error.activityLogDraftMode-false");
+
+		super.state(allClaimsInDraftMode, "*", "administrator.flight.leg.claimDraftMode-false");
+
+		super.state(allTrackingLogsInDraftMode, "*", "administrator.flight.leg.trackingLogDraftMode-false");
 	}
 
 	@Override

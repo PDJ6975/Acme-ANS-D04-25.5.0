@@ -27,9 +27,7 @@ public class ManagerLegPublishService extends AbstractGuiService<Manager, Leg> {
 		int legId = super.getRequest().getData("id", int.class);
 		Leg leg = this.repository.findLegById(legId);
 
-		boolean draftMode = leg.isDraftMode();
-
-		boolean status = leg != null && draftMode;
+		boolean status = leg != null && super.getRequest().getPrincipal().hasRealm(leg.getFlight().getManager());
 
 		super.getResponse().setAuthorised(status);
 	}

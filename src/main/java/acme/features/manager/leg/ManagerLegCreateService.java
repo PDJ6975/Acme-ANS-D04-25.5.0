@@ -2,6 +2,7 @@
 package acme.features.manager.leg;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -65,7 +66,40 @@ public class ManagerLegCreateService extends AbstractGuiService<Manager, Leg> {
 
 	@Override
 	public void validate(final Leg leg) {
-		;
+		if (leg.getFlightNumber() != null) {
+			boolean exists = this.repository.existsLegByFlightNumber(leg.getFlightNumber());
+			super.state(!exists, "flightNumber", "manager.leg.error.duplicated-flightNumber");
+
+		}
+
+		super.state(leg.getDepartureAirport() != null, "departureAirport", "manager.leg.error.null-departureAirport");
+		super.state(leg.getArrivalAirport() != null, "arrivalAirport", "manager.leg.error.null-arrivalAirport");
+		super.state(leg.getAircraft() != null, "aircraft", "manager.leg.error.null-aircraft");
+		super.state(leg.getFlight() != null, "flight", "manager.leg.error.null-flight");
+
+		Flight flight = leg.getFlight();
+
+		List<Leg> legs = this.repository.findLegsSortedMomentByFlightId(flight.getId());
+
+		Leg firstLeg = legs.getFirst();
+		Leg lastLeg = legs.getLast();
+
+		if (legs.size() > 0) {
+			boolean dateAfter = lastLeg.getScheduledArrival().before(leg.getScheduledDeparture());
+			super.state(dateAfter, "scheduledDeparture", "manager.leg.error.scheduledDeparture");
+		}
+
+		boolean departureBeforeArrival = leg.getScheduledDeparture().before(leg.getScheduledArrival());
+		super.state(departureBeforeArrival, "scheduledDeparture", "manager.leg.error.departureBeforeArrival");
+
+		boolean arrivalAfterDeparture = leg.getScheduledArrival().after(leg.getScheduledDeparture());
+		super.state(arrivalAfterDeparture, "scheduledArrival", "manager.leg.error.arrivalAfterDeparture");
+
+		boolean equalAirport1 = leg.getDepartureAirport().equals(leg.getArrivalAirport());
+		super.state(!equalAirport1, "departureAirport", "manager.leg.error.equalAirport");
+
+		boolean equalAirport2 = leg.getDepartureAirport().equals(leg.getArrivalAirport());
+		super.state(!equalAirport2, "arrivalAirport", "manager.leg.error.equalAirport");
 	}
 
 	@Override

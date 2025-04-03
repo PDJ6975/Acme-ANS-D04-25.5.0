@@ -56,12 +56,12 @@ public class Leg extends AbstractEntity {
 	private String				description;
 
 	@Mandatory
-	@ValidMoment(message = "La salida programada debe ser en el futuro")
+	@ValidMoment
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				scheduledDeparture;
 
 	@Mandatory
-	@ValidMoment(message = "La llegada programada debe ser en el futuro")
+	@ValidMoment
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				scheduledArrival;
 

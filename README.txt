@@ -12,7 +12,7 @@ Enlaces a los Tableros de GitHub:
 
 Tablero Grupal (para las tareas grupales): https://github.com/users/PDJ6975/projects/24
 
-Tablero Pablo Castrillón Mora (WYP8859): https://github.com/users/PDJ6975/projects/16/views/1
+Tablero Pablo Castrillón Mora (WYP8859): https://github.com/users/PDJ6975/projects/21
 
 Tablero Antonio Rodríguez Calderón (PDJ6975): https://github.com/users/PDJ6975/projects/19
 
