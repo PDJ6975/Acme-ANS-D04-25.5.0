@@ -10,7 +10,7 @@
 
 Enlaces a los Tableros de GitHub:
 
-Tablero Grupal (para las tareas grupales): https://github.com/users/PDJ6975/projects/11/views/1?filterQuery=
+Tablero Grupal (para las tareas grupales): https://github.com/users/PDJ6975/projects/24
 
 Tablero Pablo Castrillón Mora (WYP8859): https://github.com/users/PDJ6975/projects/16/views/1
 
