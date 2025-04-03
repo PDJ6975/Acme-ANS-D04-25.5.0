@@ -2,6 +2,7 @@
 package acme.features.manager.flight;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -11,6 +12,7 @@ import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.airlines.Airline;
 import acme.entities.flights.Flight;
+import acme.entities.legs.Leg;
 import acme.realms.managers.Manager;
 
 @GuiService
@@ -42,6 +44,21 @@ public class ManagerFlightShowService extends AbstractGuiService<Manager, Flight
 
 		flightId = super.getRequest().getData("id", int.class);
 		flight = this.repository.findOneById(flightId);
+
+		List<Leg> legs = this.repository.findLegsByFlightId(flight.getId());
+		if (!legs.isEmpty()) {
+			flight.setScheduledDeparture(legs.getFirst().getScheduledDeparture());
+			flight.setScheduledArrival(legs.getLast().getScheduledArrival());
+			flight.setOriginCity(legs.getFirst().getDepartureAirport().getCity());
+			flight.setDestinationCity(legs.getLast().getArrivalAirport().getCity());
+			flight.setLayovers(legs.size() - 1);
+		} else {
+			flight.setScheduledDeparture(null);
+			flight.setScheduledArrival(null);
+			flight.setOriginCity("Este vuelo no tiene etapas");
+			flight.setDestinationCity("Este vuelo no tiene etapas");
+			flight.setLayovers(0);
+		}
 
 		super.getBuffer().addData("flight", flight);
 	}

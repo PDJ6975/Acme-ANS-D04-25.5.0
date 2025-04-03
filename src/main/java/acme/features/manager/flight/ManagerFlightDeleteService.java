@@ -36,14 +36,34 @@ public class ManagerFlightDeleteService extends AbstractGuiService<Manager, Flig
 		int flightId = super.getRequest().getData("id", int.class);
 		Flight flight = this.repository.findOneById(flightId);
 
+		boolean status = flight != null && super.getRequest().getPrincipal().hasRealm(flight.getManager());
+
+		super.getResponse().setAuthorised(status);
+	}
+
+	@Override
+	public void load() {
+		int flightId = super.getRequest().getData("id", int.class);
+		Flight flight = this.repository.findOneById(flightId);
+		super.getBuffer().addData(flight);
+	}
+
+	@Override
+	public void bind(final Flight flight) {
+		super.bindObject(flight);
+	}
+
+	@Override
+	public void validate(final Flight flight) {
+
 		//OBTENER TODOS LOS OBJETOS RELACIONADOS CON EL FLIGHT
-		List<Booking> bookings = this.repository.findBookingsByFlightId(flightId);
+		List<Booking> bookings = this.repository.findBookingsByFlightId(flight.getId());
 
 		List<Passenger> passengers = this.repository.findPassengersByBookings(bookings);
 
-		Weather weather = this.repository.findWeatherByFlightId(flightId);
+		Weather weather = this.repository.findWeatherByFlightId(flight.getId());
 
-		List<Leg> legs = this.repository.findLegsByFlightId(flightId);
+		List<Leg> legs = this.repository.findLegsByFlightId(flight.getId());
 
 		List<FlightAssignment> flightAssignments = this.repository.findFlightAssignmentsByLegs(legs);
 
@@ -67,36 +87,30 @@ public class ManagerFlightDeleteService extends AbstractGuiService<Manager, Flig
 
 		boolean allActivityLogsInDraftMode = activityLogs.stream().allMatch(ActivityLog::isDraftMode);
 
-		//boolean allClaimsInDraftMode = claims.stream().allMatch(Claim::isDraftMode); COMENTADO POR QUE EL CLAIM TODAVÍA NO TIENE ATRIBUTO DRAFTMODE
+		boolean allClaimsInDraftMode = claims.stream().allMatch(claim -> Boolean.TRUE.equals(claim.getDraftMode()));
 
-		//boolean allTrackingLogsInDraftMode = trackingLogs.stream().allMatch(TrackingLog::isDraftMode); COMENTADO POR QUE EL CLAIM TODAVÍA NO TIENE ATRIBUTO DRAFTMODE
+		boolean allTrackingLogsInDraftMode = trackingLogs.stream().allMatch(log -> Boolean.TRUE.equals(log.isDraftMode()));
 
-		boolean status = flight != null && flightInDraftMode && allBookingsInDraftMode && allPassengersInDraftMode && allLegsInDraftMode && allFlightAssignmentsInDraftMode && allActivityLogsInDraftMode
-			&& super.getRequest().getPrincipal().hasRealm(flight.getManager());
+		super.state(flightInDraftMode, "*", "administrator.flight.error.draftMode-false");
 
-		super.getResponse().setAuthorised(status);
-	}
+		super.state(allBookingsInDraftMode, "*", "administrator.flight.error.bookingDraftMode-false");
 
-	@Override
-	public void load() {
-		int flightId = super.getRequest().getData("id", int.class);
-		Flight flight = this.repository.findOneById(flightId);
-		super.getBuffer().addData(flight);
-	}
+		super.state(allPassengersInDraftMode, "*", "administrator.flight.error.passengersDraftMode-false");
 
-	@Override
-	public void bind(final Flight flight) {
-		super.bindObject(flight);
-	}
+		super.state(allLegsInDraftMode, "*", "administrator.flight.error.legDraftMode-false");
 
-	@Override
-	public void validate(final Flight flight) {
-		;
+		super.state(allFlightAssignmentsInDraftMode, "*", "administrator.flight.error.flightAssignmentDraftMode-false");
+
+		super.state(allActivityLogsInDraftMode, "*", "administrator.flight.error.activityLogDraftMode-false");
+
+		super.state(allClaimsInDraftMode, "*", "administrator.flight.error.claimDraftMode-false");
+
+		super.state(allTrackingLogsInDraftMode, "*", "administrator.flight.error.trackingLogDraftMode-false");
 	}
 
 	@Override
 	public void perform(final Flight flight) {
-		// Únicamente eliminando el Flight, siempre y cuando se cumpla el authorise(), se eliminarán todos los hijos directos o indirectos debido a los ondelete=cascade
+		// Únicamente eliminando el Flight, siempre y cuando se cumpla el validate(), se eliminarán todos los hijos directos o indirectos debido a los ondelete=cascade
 		this.repository.delete(flight);
 	}
 

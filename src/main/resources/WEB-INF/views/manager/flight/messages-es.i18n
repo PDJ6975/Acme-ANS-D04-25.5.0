@@ -33,3 +33,14 @@ manager.flight.form.button.view = Ver
 manager.flight.form.button.publish = Publicar
 
 manager.flight.form.button.legs = Mostrar Tramos
+
+manager.flight.error.null-airline = La aerolínea no puede ser nula
+administrator.flight.error.draftMode-false = El vuelo debe estar en modo borrador
+administrator.flight.error.bookingDraftMode-false = Existe una relación con un Booking publicado
+administrator.flight.error.passengersDraftMode-false = Existe una relación con un Passenger publicado
+administrator.flight.error.legDraftMode-false = Existe una relación con un Leg publicado
+administrator.flight.error.flightAssignmentDraftMode-false = Existe una relación con un FlightAssignment publicado
+administrator.flight.error.activityLogDraftMode-false = Existe una relación con un ActivityLog publicado
+administrator.flight.error.claimDraftMode-false = Existe una relación con un Claim publicado
+administrator.flight.error.trackingLogDraftMode-false = Existe una relación con un TrackingLog publicado
+administrator.flight.error.minimumLegs = El vuelo debe tener mínimo un tramo

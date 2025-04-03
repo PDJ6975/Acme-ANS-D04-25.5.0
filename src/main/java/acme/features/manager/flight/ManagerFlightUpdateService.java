@@ -25,7 +25,7 @@ public class ManagerFlightUpdateService extends AbstractGuiService<Manager, Flig
 		int flightId = super.getRequest().getData("id", int.class);
 		Flight flight = this.repository.findOneById(flightId);
 
-		boolean status = flight != null && flight.isDraftMode() && super.getRequest().getPrincipal().hasRealm(flight.getManager());
+		boolean status = super.getRequest().getPrincipal().hasRealm(flight.getManager());
 		super.getResponse().setAuthorised(status);
 	}
 
@@ -48,7 +48,8 @@ public class ManagerFlightUpdateService extends AbstractGuiService<Manager, Flig
 
 	@Override
 	public void validate(final Flight flight) {
-		;
+		boolean draftMode = super.getRequest().getData("draftMode", boolean.class);
+		super.state(draftMode, "draftMode", "administrator.flight.error.draftMode-false");
 	}
 
 	@Override

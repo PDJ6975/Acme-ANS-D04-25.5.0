@@ -24,6 +24,7 @@ public class ManagerFlightCreateService extends AbstractGuiService<Manager, Flig
 
 	@Override
 	public void authorise() {
+
 		super.getResponse().setAuthorised(true);
 	}
 
@@ -44,8 +45,8 @@ public class ManagerFlightCreateService extends AbstractGuiService<Manager, Flig
 		List<Leg> legs = this.repository.findLegsByFlightId(flight.getId());
 
 		if (!legs.isEmpty()) {
-			Leg firstLeg = legs.get(0);
-			Leg lastLeg = legs.get(legs.size() - 1);
+			Leg firstLeg = legs.getFirst();
+			Leg lastLeg = legs.getLast();
 
 			flight.setScheduledDeparture(firstLeg.getScheduledDeparture());
 			flight.setScheduledArrival(lastLeg.getScheduledArrival());
@@ -57,25 +58,25 @@ public class ManagerFlightCreateService extends AbstractGuiService<Manager, Flig
 		} else {
 			flight.setScheduledDeparture(null);
 			flight.setScheduledArrival(null);
-			flight.setOriginCity(null);
-			flight.setDestinationCity(null);
+			flight.setOriginCity("Este vuelo no tiene etapas");
+			flight.setDestinationCity("Este vuelo no tiene etapas");
 			flight.setLayovers(null);
 		}
 
-		super.getBuffer().addData("flight", flight);
+		super.getBuffer().addData(flight);
 	}
 
 	@Override
 	public void bind(final Flight flight) {
 
-		super.bindObject(flight, "tag", "selfTransfer", "cost", "description", "scheduledDeparture", "scheduledArrival", "originCity", "destinationCity", "layovers", "airline");
+		super.bindObject(flight, "tag", "selfTransfer", "cost", "description", "draftMode", "airline");
 		Manager manager = (Manager) super.getRequest().getPrincipal().getActiveRealm();
 		flight.setManager(manager);
 	}
 
 	@Override
 	public void validate(final Flight flight) {
-		;
+		super.state(flight.getAirline() != null, "iataCode", "administrator.flight.error.null-airline");
 	}
 
 	@Override
@@ -88,13 +89,14 @@ public class ManagerFlightCreateService extends AbstractGuiService<Manager, Flig
 	public void unbind(final Flight flight) {
 
 		Dataset dataset;
-		dataset = super.unbindObject(flight, "tag", "selfTransfer", "cost", "description", "scheduledDeparture", "scheduledArrival", "originCity", "destinationCity", "airline", "layovers", "draftMode");
+		dataset = super.unbindObject(flight, "tag", "selfTransfer", "cost", "description", "draftMode");
 		dataset.put("manager.id", flight.getManager().getId());
 		dataset.put("masterId", flight.getId());
 
 		Collection<Airline> availableAirlines = this.repository.findAllAirlines();
-		SelectChoices airlines = SelectChoices.from(availableAirlines, "name", flight.getAirline());
+		SelectChoices airlines = SelectChoices.from(availableAirlines, "iataCode", flight.getAirline());
 		dataset.put("airlines", airlines);
+		dataset.put("airline", airlines.getSelected().getKey());
 
 		super.getResponse().addData(dataset);
 	}
