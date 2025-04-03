@@ -27,11 +27,7 @@ public class ManagerFlightPublishService extends AbstractGuiService<Manager, Fli
 		int flightId = super.getRequest().getData("id", int.class);
 		Flight flight = this.repository.findOneById(flightId);
 
-		List<Leg> legs = this.repository.findLegsByFlightId(flightId);
-		boolean minimumLegs = legs.size() > 0;
-		boolean legsDraftMode = legs.stream().allMatch(leg -> !leg.isDraftMode());
-
-		boolean status = flight != null && minimumLegs && legsDraftMode && super.getRequest().getPrincipal().hasRealm(flight.getManager());
+		boolean status = flight != null && super.getRequest().getPrincipal().hasRealm(flight.getManager());
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -40,6 +36,22 @@ public class ManagerFlightPublishService extends AbstractGuiService<Manager, Fli
 	public void load() {
 		int flightId = super.getRequest().getData("id", int.class);
 		Flight flight = this.repository.findOneById(flightId);
+
+		List<Leg> legs = this.repository.findLegsByFlightId(flight.getId());
+		if (!legs.isEmpty()) {
+			flight.setScheduledDeparture(legs.getFirst().getScheduledDeparture());
+			flight.setScheduledArrival(legs.getLast().getScheduledArrival());
+			flight.setOriginCity(legs.getFirst().getDepartureAirport().getCity());
+			flight.setDestinationCity(legs.getLast().getArrivalAirport().getCity());
+			flight.setLayovers(legs.size() - 1);
+		} else {
+			flight.setScheduledDeparture(null);
+			flight.setScheduledArrival(null);
+			flight.setOriginCity("Este vuelo no tiene etapas");
+			flight.setDestinationCity("Este vuelo no tiene etapas");
+			flight.setLayovers(0);
+		}
+
 		super.getBuffer().addData(flight);
 	}
 
@@ -50,7 +62,13 @@ public class ManagerFlightPublishService extends AbstractGuiService<Manager, Fli
 
 	@Override
 	public void validate(final Flight flight) {
-		;
+
+		List<Leg> legs = this.repository.findLegsByFlightId(flight.getId());
+		boolean minimumLegs = legs.size() > 0;
+		boolean legsDraftMode = legs.stream().allMatch(leg -> !leg.isDraftMode());
+
+		super.state(minimumLegs, "*", "administrator.flight.error.minimumLegs");
+		super.state(legsDraftMode, "*", "administrator.flight.error.legDraftMode-false");
 	}
 
 	@Override

@@ -35,6 +35,12 @@ public interface ManagerFlightRepository extends AbstractRepository {
 	@Query("SELECT a FROM Airline a")
 	Collection<Airline> findAllAirlines();
 
+	@Query("SELECT COUNT(m) > 0 FROM Manager m WHERE m.id= :masterId")
+	boolean managerExistsWithMasterId(int masterId);
+
+	@Query("SELECT arl FROM Airline arl WHERE arl.id = :id")
+	Airline findAirlineById(int id);
+
 	//Querys para el delete de Flight
 
 	@Query("SELECT l FROM Leg l WHERE l.flight.id = :id ORDER BY l.scheduledDeparture ASC")
