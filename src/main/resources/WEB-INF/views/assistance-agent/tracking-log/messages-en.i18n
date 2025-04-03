@@ -20,3 +20,4 @@ assistant-agent.create.only-one-resolution-100 = There cannot be more than 2 tra
 assistant-agent.create.indicator-resolution-problem = When the resolution percentage is 100%, the resolution cannot be empty and the indicator must not be ONGOING
 assistant-agent.create.resolution-problem = When the resolution percentage is not 100%, the resolution must be empty and the indicator must be ONGOING
 assistant-agent.create.cannot-change-indicator = The indicator of a tracking log cannot be changed when the claim is already completed
+assistant-agent.create.claim-draftMode = A tracking log cannot be published for a claim that is not published

@@ -40,7 +40,7 @@
     />
     
     <jstl:choose>
-        <jstl:when test="${acme:anyOf(_command, 'show|delete|update')}">
+        <jstl:when test="${acme:anyOf(_command, 'show|delete|update|publish')}">
             <jstl:if test="${draftMode == true}">
                 <acme:submit code="assistance-agent.tracking-log.form.submit.update" action="/assistance-agent/tracking-log/update"/>
                 <acme:submit code="assistance-agent.tracking-log.form.submit.delete" action="/assistance-agent/tracking-log/delete"/>
