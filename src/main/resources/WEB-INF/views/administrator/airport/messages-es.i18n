@@ -2,10 +2,9 @@ administrator.airport.list.title = Listado Aeropuertos
 administrator.airport.form.title = Formulario de Aeropuerto
 
 administrator.airport.list.label.name=Nombre
+administrator.airport.list.label.iataCode= Código IATA
 administrator.airport.list.label.city=Ciudad
-administrator.airport.list.label.country=País
-administrator.airport.list.label.operationalScope=Alcance
-administrator.airport.list.label.iataCode = Código IATA
+
 
 administrator.airport.list.button.create = Crear
 
@@ -21,3 +20,6 @@ administrator.airport.form.label.confirmation = Confirmo esta operación
 
 administrator.airport.form.button.update = Actualizar
 administrator.airport.form.button.create = Crear
+
+administrator.airport.error.confirmation-required= Debes confirmar esta operación.
+administrator.airport.error.duplicated-iataCode = Este Código IATA ya existe.

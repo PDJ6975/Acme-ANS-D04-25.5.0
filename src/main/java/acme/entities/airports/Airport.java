@@ -25,12 +25,12 @@ public class Airport extends AbstractEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	@Mandatory
-	@ValidString(max = 50)
+	@ValidString(min = 1, max = 50, message = "El nombre puede tener máximo 50 caractéres")
 	@Automapped
 	private String				name;
 
 	@Mandatory
-	@ValidString(min = 3, max = 3, pattern = "^[A-Z]{3}$")
+	@ValidString(min = 3, max = 3, pattern = "^[A-Z]{3}$", message = "El código IATA debe seguir el siguiente patrón: ^[A-Z]{3}$")
 	@Column(unique = true)
 	private String				iataCode;
 
@@ -41,27 +41,27 @@ public class Airport extends AbstractEntity {
 	private OperationalScope	operationalScope;
 
 	@Mandatory
-	@ValidString(max = 50)
+	@ValidString(min = 1, max = 50, message = "La ciudad puede tener máximo 50 caractéres")
 	@Automapped
 	private String				city;
 
 	@Mandatory
-	@ValidString(max = 50)
+	@ValidString(min = 1, max = 50, message = "El país puede tener máximo 50 caractéres")
 	@Automapped
 	private String				country;
 
 	@Optional
-	@ValidUrl
+	@ValidUrl(message = "Formato de dirección web incorrecto")
 	@Automapped
 	private String				website;
 
 	@Optional
-	@ValidEmail
+	@ValidEmail(message = "Formato de dirección email incorrecto")
 	@Automapped
 	private String				emailAddress;
 
 	@Optional
-	@ValidString(pattern = "^\\+?\\d{6,15}$")
+	@ValidString(pattern = "^\\+?\\d{6,15}$", message = "El número de teléfono debe seguir el siguiente formato: ^\\\\+?\\\\d{6,15}$")
 	@Automapped
 	private String				contactPhone;
 

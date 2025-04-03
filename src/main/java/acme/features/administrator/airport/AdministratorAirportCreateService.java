@@ -46,6 +46,12 @@ public class AdministratorAirportCreateService extends AbstractGuiService<Admini
 
 	@Override
 	public void validate(final Airport airport) {
+		if (airport.getIataCode() != null) {
+			boolean exists = this.repository.existsByIataCode(airport.getIataCode());
+			super.state(!exists, "iataCode", "administrator.airport.error.duplicated-iataCode");
+
+		}
+
 		boolean confirmation = super.getRequest().getData("confirmation", boolean.class);
 		super.state(confirmation, "confirmation", "administrator.airport.error.confirmation-required");
 	}
