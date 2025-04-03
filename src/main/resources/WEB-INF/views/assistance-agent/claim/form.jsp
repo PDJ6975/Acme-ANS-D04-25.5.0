@@ -56,6 +56,7 @@
     
     <jstl:choose>
         <jstl:when test="${acme:anyOf(_command, 'show|delete|update')}">
+ 			<acme:button code="master.menu.assistanceAgent.list-tracking-log" action="/assistance-agent/tracking-log/list?masterId=${masterId}" />				
             <jstl:if test="${draftMode == true}">
                 <acme:submit code="assistance-agent.claim.form.submit.update" action="/assistance-agent/claim/update"/>
                 <acme:submit code="assistance-agent.claim.form.submit.delete" action="/assistance-agent/claim/delete"/>

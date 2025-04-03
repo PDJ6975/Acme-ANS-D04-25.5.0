@@ -4,6 +4,8 @@ package acme.entities.trackingLogs;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -47,6 +49,7 @@ public class TrackingLog extends AbstractEntity {
 
 	@Mandatory
 	@Automapped
+	@Enumerated(EnumType.STRING)
 	private Indicator			indicator;
 
 	@Optional
@@ -59,5 +62,9 @@ public class TrackingLog extends AbstractEntity {
 	@Valid
 	@ManyToOne
 	private Claim				claim;
+
+	@Mandatory
+	@Automapped
+	private boolean				draftMode;
 
 }
