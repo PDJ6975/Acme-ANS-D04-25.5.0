@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import acme.client.components.principals.UserAccount;
 import acme.client.repositories.AbstractRepository;
 import acme.entities.airlines.Airline;
+import acme.realms.members.FlightCrewMember;
 
 @Repository
 public interface AuthenticatedFlightCrewMemberRepository extends AbstractRepository {
@@ -24,5 +25,8 @@ public interface AuthenticatedFlightCrewMemberRepository extends AbstractReposit
 
 	@Query("SELECT a FROM Airline a")
 	Collection<Airline> findAllAirlines();
+
+	@Query("SELECT m FROM FlightCrewMember m WHERE m.userAccount.id = :userAccountId")
+	FlightCrewMember findOneFlightCrewMemberByUserAccountId(int userAccountId);
 
 }

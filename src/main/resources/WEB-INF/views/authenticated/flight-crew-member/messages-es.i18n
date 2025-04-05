@@ -13,3 +13,6 @@ authenticated.flight-crew-member.error.duplicate-code=El código de empleado ya 
 authenticated.flight-crew-member.error.null-airline = Debes seleccionar una aerolínea
 
 authenticated.flight-crew-member.form.button.create = Registrarse
+authenticated.flight-crew-member.form.button.update = Actualizar perfil
+
+

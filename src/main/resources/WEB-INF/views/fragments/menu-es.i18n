@@ -68,6 +68,7 @@ master.menu.user-account.customer-profile = Perfil de cliente
 master.menu.user-account.become-technician = Hazte técnico
 master.menu.user-account.technician-profile = Perfil del técnico
 master.menu.user-account.become-crewMember = Hazte miembro de la tripulación
+master.menu.user-account.crewMember-profile = Perfil de miembro de la tripulación
 
 # master.menu.customer ##########################################################
 master.menu.customer = Cliente

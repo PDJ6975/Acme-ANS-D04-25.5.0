@@ -40,11 +40,22 @@
         path="airlineId" 
         choices="${airlines}" 
     />
-
-    <acme:submit 
-        code="authenticated.flight-crew-member.form.button.create" 
-        action="/authenticated/flight-crew-member/create" 
-    />
+    
+    <jstl:choose>
+	<jstl:when test="${_command == 'update'}">
+		<acme:submit 
+			code="authenticated.flight-crew-member.form.button.update" 
+			action="/authenticated/flight-crew-member/update"
+		/>
+	</jstl:when>
+	<jstl:when test="${_command == 'create'}">
+		<acme:submit 
+			code="authenticated.flight-crew-member.form.button.create" 
+			action="/authenticated/flight-crew-member/create"
+		/>
+	</jstl:when>
+</jstl:choose>
+    
 
 </acme:form>
 
