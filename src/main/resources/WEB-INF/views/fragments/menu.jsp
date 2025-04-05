@@ -25,6 +25,10 @@
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-Jianwu" action="https://pomodoro-tracker.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-pabolimor" action="https://eloquentclicks.com/"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
+		    <acme:menu-suboption code="master.menu.authenticated.list-assignments" action="/any/flight-assignment/list" />
+		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRealm('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.list-user-accounts" action="/administrator/user-account/list"/>

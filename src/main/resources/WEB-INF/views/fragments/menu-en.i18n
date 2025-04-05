@@ -17,6 +17,10 @@ master.menu.anonymous.favourite-link-Adrian = 49385745F: Ramírez Gil, Adrián
 master.menu.anonymous.favourite-link-Jianwu = Y0037268E: Hu, Jianwu
 master.menu.anonymous.favourite-link-pabolimor = 53345421A: Olivencia Moreno, Pablo
 
+# master.menu.authenticated ###################################################
+
+master.menu.authenticated = Authenticated
+master.menu.authenticated.list-assignments = List Assignments
 
 # master.menu.administrator ###################################################
 
