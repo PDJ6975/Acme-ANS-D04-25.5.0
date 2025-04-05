@@ -1,5 +1,5 @@
 
-package acme.features.administrator.authenticated.crewMember;
+package acme.features.authenticated.crewMember;
 
 import java.util.Collection;
 
