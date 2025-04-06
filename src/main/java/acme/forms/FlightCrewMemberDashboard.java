@@ -17,7 +17,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class FlightCrewDashboard extends AbstractForm {
+public class FlightCrewMemberDashboard extends AbstractForm {
 
 	// Serialisation version
 

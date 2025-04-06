@@ -49,6 +49,7 @@ master.menu.crewMember = CrewMember
 master.menu.crewMember.list-my-completed-assignments = List completed flight assignments
 master.menu.crewMember.list-my-planned-assignments = List planned flight assignments
 master.menu.crewMember.list-my-logs = List activity logs in my assignments
+master.menu.crewMember.show-dashboard = Dashboard
 
 # master.menu.manager ##########################################################
 master.menu.manager = Manager
