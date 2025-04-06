@@ -1,0 +1,21 @@
+
+customer.dashboard.form.title.booking-costs=Booking Costs
+customer.dashboard.form.title.passenger-statistics=Passenger Statistics
+
+customer.dashboard.form.label.last-five-destinations=Last Five Destinations
+customer.dashboard.form.label.money-spent-last-year=Money Spent Last Year
+customer.dashboard.form.label.bookings-by-travel-class=Bookings by Travel Class
+
+customer.dashboard.form.label.booking-cost-count=Booking Count
+customer.dashboard.form.label.booking-cost-average=Average Booking Cost
+customer.dashboard.form.label.booking-cost-minimum=Minimum Booking Cost
+customer.dashboard.form.label.booking-cost-maximum=Maximum Booking Cost
+customer.dashboard.form.label.booking-cost-standard-deviation=Booking Cost Standard Deviation
+
+customer.dashboard.form.label.passenger-count=Passenger Count
+customer.dashboard.form.label.passenger-average=Average Passengers per Booking
+customer.dashboard.form.label.passenger-minimum=Minimum Passengers per Booking
+customer.dashboard.form.label.passenger-maximum=Maximum Passengers per Booking
+customer.dashboard.form.label.passenger-standard-deviation=Passenger Standard Deviation
+
+customer.customer-dashboard.form.title = Customer Dashboard

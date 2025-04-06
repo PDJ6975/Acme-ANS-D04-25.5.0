@@ -4,10 +4,8 @@ package acme.entities.passengers;
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.Valid;
 
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
@@ -19,7 +17,6 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidEmail;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidString;
-import acme.entities.bookings.Booking;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -62,11 +59,5 @@ public class Passenger extends AbstractEntity {
 	@Mandatory
 	@Automapped
 	boolean						draftMode;
-
-	@ManyToOne(optional = false)
-	@OnDelete(action = OnDeleteAction.CASCADE)
-	@Automapped
-	@Valid
-	private Booking				booking;
 
 }

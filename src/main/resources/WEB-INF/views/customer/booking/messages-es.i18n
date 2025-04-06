@@ -27,3 +27,6 @@ customer.booking.form.error.empty-credit-card-nibble = El Nibble de la Tarjeta d
 customer.booking.form.button.passengers = Mostrar Pasajeros
 
 customer.booking.form.error.duplicate-locator = El código localizador ya está en uso
+
+customer.booking.form.label.flight = Vuelo:
+customer.booking.form.error.flight-required = Debe seleccionar un vuelo

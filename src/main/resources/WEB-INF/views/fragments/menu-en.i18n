@@ -80,6 +80,8 @@ master.menu.customer = Customer
 master.menu.customer.list-bookings = List Bookings
 master.menu.customer.user-account.update = Update profile
 
+master.menu.customer.dashboard = Dashboard
+
 # master.menu.technician ##########################################################
 master.menu.technician = Technician
 master.menu.technician.list-my-maintenance-records= List my maintenance records
