@@ -15,6 +15,11 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+//@Table(uniqueConstraints = {
+//	@UniqueConstraint(columnNames = {
+//		"passportCountry", "destinationCountry"
+//	})
+//})
 public class VisaRequirement extends AbstractEntity {
 
 	/*

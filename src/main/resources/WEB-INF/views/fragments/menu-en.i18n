@@ -50,6 +50,7 @@ master.menu.crewMember.list-my-completed-assignments = List completed flight ass
 master.menu.crewMember.list-my-planned-assignments = List planned flight assignments
 master.menu.crewMember.list-my-logs = List activity logs in my assignments
 master.menu.crewMember.show-dashboard = Dashboard
+master.menu.crewMember.list-visa = List visa requirement
 
 # master.menu.manager ##########################################################
 master.menu.manager = Manager

@@ -51,6 +51,7 @@ master.menu.crewMember.list-my-completed-assignments = Listar asignaciones de vu
 master.menu.crewMember.list-my-planned-assignments = Listar asignaciones de vuelo planeadas
 master.menu.crewMember.list-my-logs = Listar incidentes en mis asignaciones
 master.menu.crewMember.show-dashboard = Mostrar dashboard
+master.menu.crewMember.list-visa = Listar requisitos de visado
 
 # master.menu.manager ##########################################################
 master.menu.manager = Gestor

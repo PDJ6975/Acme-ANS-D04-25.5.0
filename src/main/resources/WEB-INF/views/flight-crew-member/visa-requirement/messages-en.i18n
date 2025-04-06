@@ -1,0 +1,21 @@
+flight-crew-member.visa-requirement.list.title = Visa requirements you may be interested in
+flight-crew-member.visa-requirement.form.title = Detailed visa requirements
+
+crewMember.visa.list.label.passportCountry = Passport Country
+crewMember.visa.list.label.destinationCountry = Destination Country
+crewMember.visa.list.label.visaType = Visa Type
+crewMember.visa.list.label.stayDuration = Stay Duration
+crewMember.visa.list.label.passportValidity = Passport Validity
+
+crewMember.visa.form.label.destinationCountry = Destination Country
+crewMember.visa.form.label.passportCountry = Passport Country
+crewMember.visa.form.label.continent = Continent
+crewMember.visa.form.label.capital = Capital City
+crewMember.visa.form.label.currency = Currency
+crewMember.visa.form.label.phoneCode = Phone Code
+crewMember.visa.form.label.timezone = Time Zone
+crewMember.visa.form.label.visaType = Visa Type
+crewMember.visa.form.label.stayDuration = Stay Duration
+crewMember.visa.form.label.passportValidity = Passport Validity
+crewMember.visa.form.label.additionalInfo = Additional Information
+crewMember.visa.form.label.officialLink = Official Link
