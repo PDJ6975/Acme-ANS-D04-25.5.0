@@ -10,8 +10,8 @@ import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.bookings.Booking;
+import acme.entities.bookings.BookingRecord;
 import acme.entities.bookings.TravelClass;
-import acme.entities.passengers.Passenger;
 import acme.realms.Customer;
 
 @GuiService
@@ -54,10 +54,11 @@ public class CustomerBookingDeleteService extends AbstractGuiService<Customer, B
 	@Override
 	public void perform(final Booking booking) {
 
-		Collection<Passenger> passengers = this.passengerRepository.findPassengersByBookingId(booking.getId());
-		this.passengerRepository.deleteAll(passengers);
+		Collection<BookingRecord> records = this.repository.findBookingRecordsByBookingId(booking.getId());
+		this.repository.deleteAll(records);
 
 		this.repository.delete(booking);
+
 	}
 
 	@Override

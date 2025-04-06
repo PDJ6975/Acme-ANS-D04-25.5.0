@@ -11,4 +11,6 @@
     <acme:list-payload path="payload"/>
 </acme:list>
 
-<acme:button code="customer.passenger.list.button.create" action="/customer/passenger/create?masterId=${masterId}"/>
+<jstl:if test="${draftMode}">
+    <acme:button code="customer.passenger.list.button.create" action="/customer/passenger/create?masterId=${masterId}"/>
+</jstl:if>

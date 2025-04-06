@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import acme.client.components.models.Dataset;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
+import acme.entities.bookings.Booking;
 import acme.entities.passengers.Passenger;
 import acme.realms.Customer;
 
@@ -26,6 +27,13 @@ public class CustomerPassengerListService extends AbstractGuiService<Customer, P
 	@Override
 	public void load() {
 		int masterId = super.getRequest().getData("masterId", int.class);
+
+		Booking booking = this.repo.findBookingById(masterId);
+
+		boolean draftMode = booking != null && booking.isDraftMode();
+
+		super.getResponse().addGlobal("draftMode", draftMode);
+
 		Collection<Passenger> passengers = this.repo.findPassengersByBookingId(masterId);
 		super.getBuffer().addData(passengers);
 		super.getResponse().addGlobal("masterId", masterId);

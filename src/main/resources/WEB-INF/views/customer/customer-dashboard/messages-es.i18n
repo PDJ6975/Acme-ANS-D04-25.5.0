@@ -1,0 +1,22 @@
+
+customer.dashboard.form.title.general-indicators=Indicadores Generales del Dashboard del Customer
+customer.dashboard.form.title.booking-costs=Costos de Reservas
+customer.dashboard.form.title.passenger-statistics=Estadísticas de Pasajeros
+
+customer.dashboard.form.label.last-five-destinations=Últimos cinco destinos
+customer.dashboard.form.label.money-spent-last-year=Dinero gastado el año pasado
+customer.dashboard.form.label.bookings-by-travel-class=Reservas por clase de viaje
+
+customer.dashboard.form.label.booking-cost-count=Cantidad de reservas
+customer.dashboard.form.label.booking-cost-average=Costo promedio de reservas
+customer.dashboard.form.label.booking-cost-minimum=Costo mínimo de reserva
+customer.dashboard.form.label.booking-cost-maximum=Costo máximo de reserva
+customer.dashboard.form.label.booking-cost-standard-deviation=Desviación estándar del costo de reserva
+
+customer.dashboard.form.label.passenger-count=Cantidad de pasajeros
+customer.dashboard.form.label.passenger-average=Promedio de pasajeros por reserva
+customer.dashboard.form.label.passenger-minimum=Mínimo de pasajeros por reserva
+customer.dashboard.form.label.passenger-maximum=Máximo de pasajeros por reserva
+customer.dashboard.form.label.passenger-standard-deviation=Desviación estándar de pasajeros
+
+customer.customer-dashboard.form.title = Dashboard de Cliente

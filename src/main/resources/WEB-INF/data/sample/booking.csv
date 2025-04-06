@@ -44,7 +44,10 @@ booking-24,PASSRT7B,2022/01/09 17:00,ECONOMY,EUR 200.00,1111,false,customer-24,f
 booking-25,PASSRT8C,2022/01/10 18:00,BUSINESS,EUR 210.00,1234,false,customer-25,flight-25
 booking-26,PASSRT9D,2022/01/11 19:00,BUSINESS,EUR 220.00,2345,false,customer-26,flight-26
 booking-27,SPEC50X,2022/01/12 20:00,ECONOMY,EUR 230.00,3456,false,customer-01,flight-27
+
+
 #
 # booking PRUEBA BORRADO FLIGHT
 #
 booking-28,SPAG6F,2022/01/12 20:00,ECONOMY,EUR 230.00,3456,true,customer-01,flight-67
+

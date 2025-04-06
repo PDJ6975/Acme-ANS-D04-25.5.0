@@ -19,3 +19,4 @@ customer.passenger.form.button.delete = Eliminar
 
 customer.passenger.list.button.create = Crear Pasajero
 customer.passenger.form.button.publish = Publicar
+customer.passenger.error.booking-not-draft = No se pueden añadir pasajeros a una reserva publicada

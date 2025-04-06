@@ -13,6 +13,14 @@
         path="purchaseMoment" 
         readonly="true"/>
     
+    <!-- Ocultar el campo de vuelo en modo show -->
+    <jstl:if test="${_command != 'show'}">
+        <acme:input-select
+            code="customer.booking.form.label.flight"
+            path="flight"
+            choices="${flights}"/>
+    </jstl:if>
+    
     <acme:input-select 
         code="customer.booking.form.label.travelClass" 
         path="travelClass" 

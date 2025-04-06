@@ -4,6 +4,7 @@ package acme.forms;
 import java.util.List;
 import java.util.Map;
 
+import javax.persistence.Transient;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractForm;
@@ -32,33 +33,51 @@ public class CustomerDashboard extends AbstractForm {
 
 	@Mandatory
 	@ValidNumber(min = 0)
+	@Transient
 	private Long				bookingCostCount;
+
 	@Mandatory
 	@ValidNumber(min = 0)
+	@Transient
 	private Double				bookingCostAverage;
+
 	@Mandatory
 	@ValidNumber(min = 0)
+	@Transient
 	private Double				bookingCostMinimum;
+
 	@Mandatory
 	@ValidNumber(min = 0)
+	@Transient
 	private Double				bookingCostMaximum;
+
 	@Mandatory
 	@ValidNumber(min = 0)
+	@Transient
 	private Double				bookingCostStandardDeviation;
 
 	@Mandatory
 	@ValidNumber(min = 0)
+	@Transient
 	private Long				passengerCount;
+
 	@Mandatory
 	@ValidNumber(min = 0)
+	@Transient
 	private Double				passengerAverage;
+
 	@Mandatory
 	@ValidNumber(min = 0)
+	@Transient
 	private Double				passengerMinimum;
+
 	@Mandatory
 	@ValidNumber(min = 0)
+	@Transient
 	private Double				passengerMaximum;
+
 	@Mandatory
 	@ValidNumber(min = 0)
+	@Transient
 	private Double				passengerStandardDeviation;
 }
