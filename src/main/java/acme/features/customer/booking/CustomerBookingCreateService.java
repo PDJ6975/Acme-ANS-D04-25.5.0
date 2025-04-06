@@ -1,7 +1,9 @@
 
 package acme.features.customer.booking;
 
+import java.text.SimpleDateFormat;
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -57,6 +59,18 @@ public class CustomerBookingCreateService extends AbstractGuiService<Customer, B
 		Booking existing = this.repository.findBookingByLocatorCode(booking.getLocatorCode());
 		super.state(existing == null, "locatorCode", "customer.booking.form.error.duplicate-locator");
 		super.state(booking.getFlight() != null, "flight", "customer.booking.form.error.flight-required");
+
+		if (booking.getFlight() != null) {
+			Flight flight = booking.getFlight();
+
+			super.state(!flight.isDraftMode(), "flight", "customer.booking.form.error.flight-draft");
+
+			Date currentDate = MomentHelper.getCurrentMoment();
+			Collection<Flight> availableFlights = this.repository.findAvailableFlights(currentDate);
+
+			super.state(availableFlights.contains(flight), "flight", "customer.booking.form.error.flight-not-available");
+		}
+
 	}
 
 	@Override
@@ -73,10 +87,30 @@ public class CustomerBookingCreateService extends AbstractGuiService<Customer, B
 		dataset.put("travelClasses", travelClasses);
 		dataset.put("masterId", booking.getId());
 
-		Collection<Flight> availableFlights = this.repository.findAvailableFlights();
-		SelectChoices flights = SelectChoices.from(availableFlights, "tag", booking.getFlight());
-		dataset.put("flights", flights);
+		Date currentDate = MomentHelper.getCurrentMoment();
+		Collection<Flight> availableFlights = this.repository.findAvailableFlights(currentDate);
 
+		SelectChoices flights = new SelectChoices();
+		flights.add("0", "----", booking.getFlight() == null);
+
+		for (Flight flight : availableFlights) {
+
+			String tag = flight.getTag();
+			String shortTag = tag.length() > 20 ? tag.substring(0, 17) + "..." : tag;
+
+			String departureDateStr = "";
+			if (flight.getScheduledDeparture() != null) {
+				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+				departureDateStr = sdf.format(flight.getScheduledDeparture());
+			}
+
+			String destination = flight.getDestinationCity() != null ? flight.getDestinationCity() : "N/A";
+			String label = String.format("%s | %s | %s", shortTag, departureDateStr, destination);
+
+			flights.add(Integer.toString(flight.getId()), label, flight.equals(booking.getFlight()));
+		}
+
+		dataset.put("flights", flights);
 		super.getResponse().addData(dataset);
 	}
 

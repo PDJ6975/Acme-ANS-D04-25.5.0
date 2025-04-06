@@ -30,3 +30,6 @@ customer.booking.form.error.duplicate-locator = El código localizador ya está 
 
 customer.booking.form.label.flight = Vuelo:
 customer.booking.form.error.flight-required = Debe seleccionar un vuelo
+
+customer.booking.form.error.flight-draft = El vuelo seleccionado no está disponible para reservas
+customer.booking.form.error.flight-departed = El vuelo seleccionado ya ha partido
