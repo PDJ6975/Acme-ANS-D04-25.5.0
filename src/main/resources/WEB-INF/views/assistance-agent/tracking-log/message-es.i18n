@@ -1,11 +1,23 @@
 assistance-agent.tracking-log.list.title = Listado de seguimiento
 assistance-agent.tracking-log.form.title = Datos Seguimiento
 
-assistanceAgents.tracking-log.list.id = Id
+assistanceAgents.tracking-log.list.indicator = Indicador
 assistanceAgents.tracking-log.list.step = Paso
 assistanceAgents.tracking-log.list.resolutionPercentage = Porcentaje de Resolución
 
 assistanceAgent.tracking-log.form.label.lastUpdatedMoment=  Ultima Actualización
 assistanceAgent.tracking-log.form.label.indicator = Indicador
 assistanceAgent.tracking-log.form.label.resolution = Resolución
-assistanceAgent.tracking-log.form.label.claim-id = Id de la reclamación
+
+assistance-agent.tracking-log.form.submit.create = Crear
+assistanceAgents.tracking-log.list.button = Crear
+assistance-agent.tracking-log.form.submit.update = Actualizar
+assistance-agent.tracking-log.form.submit.delete = Eliminar
+assistance-agent.tracking-log.form.submit.publish = Publicar
+
+assistant-agent.create.resolution-lower-than-previous = El porcentage de resolución debe ser mayor que el del ultimo dato de seguimiento 
+assistant-agent.create.only-one-resolution-100 = No puede haber más de 2 datos de seguimiento con el porcentaje de resolución a 100% 
+assistant-agent.create.indicator-resolution-problem = Cuando el porcentaje de resolución es del 100% no puede estar la resolución vacía ni el indicador puede ser ONGOING 
+assistant-agent.create.resolution-problem = Cuando el porcentaje de resolución no es del 100% debe estar la resolución vacía y indicador debe ser ONGOING 
+assistant-agent.create.cannot-change-indicator = No se puede cambiar el indicador de un dato de seguimiento cuando la reclamación ya esta finalizada
+assistant-agent.create.claim-draftMode = No se puede pubicar un seguimiento para una reclamación que no está publicada

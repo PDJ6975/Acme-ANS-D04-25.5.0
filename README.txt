@@ -10,17 +10,17 @@
 
 Enlaces a los Tableros de GitHub:
 
-Tablero Grupal (para las tareas grupales): https://github.com/users/PDJ6975/projects/11/views/1?filterQuery=
+Tablero Grupal (para las tareas grupales): https://github.com/users/PDJ6975/projects/24
 
-Tablero Pablo Castrillón Mora (WYP8859): https://github.com/users/PDJ6975/projects/16/views/1
+Tablero Pablo Castrillón Mora (WYP8859): https://github.com/users/PDJ6975/projects/21
 
 Tablero Antonio Rodríguez Calderón (PDJ6975): https://github.com/users/PDJ6975/projects/19
 
-Tablero Jianwu Hu (VXN8675): https://github.com/users/PDJ6975/projects/17/views/1
+Tablero Jianwu Hu (VXN8675): https://github.com/users/PDJ6975/projects/20/views/1?visibleFields=%5B%22Title%22%2C%22Assignees%22%2C%22Status%22%2C%22Labels%22%5D
 
 Tablero Pablo Olivencia Moreno (pabolimor): https://github.com/users/PDJ6975/projects/22/views/1
 
-Tablero Adrián Ramírez Gil (VGL6718): https://github.com/users/PDJ6975/projects/14/views/1 
+Tablero Adrián Ramírez Gil (VGL6718): https://github.com/users/PDJ6975/projects/23/views/1
 
 
 Descripción del Proyecto

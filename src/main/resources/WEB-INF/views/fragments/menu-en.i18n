@@ -17,6 +17,10 @@ master.menu.anonymous.favourite-link-Adrian = 49385745F: Ramírez Gil, Adrián
 master.menu.anonymous.favourite-link-Jianwu = Y0037268E: Hu, Jianwu
 master.menu.anonymous.favourite-link-pabolimor = 53345421A: Olivencia Moreno, Pablo
 
+# master.menu.authenticated ###################################################
+
+master.menu.authenticated = Authenticated
+master.menu.authenticated.list-assignments = List Assignments
 
 # master.menu.administrator ###################################################
 
@@ -28,6 +32,7 @@ master.menu.administrator.shut-system-down = Shut system down
 master.menu.administrator.list-aircrafts = List aircrafts
 master.menu.administrator.list-airports = List Airports
 master.menu.administrator.list-bookings = List Bookings
+master.menu.administrator.list-airlines = List Airlines
 
 # master.menu.provider ########################################################
 
@@ -48,7 +53,6 @@ master.menu.crewMember.list-my-logs = List activity logs in my assignments
 # master.menu.manager ##########################################################
 master.menu.manager = Manager
 master.menu.manager.list-my-flights = List Flights
-master.menu.manager.list-my-legs = List Legs
 
 # master.menu.assistanceAgent ##########################################################
  master.menu.assistanceAgent = Assistant Agent
@@ -56,7 +60,6 @@ master.menu.manager.list-my-legs = List Legs
  master.menu.assistanceAgent.list-ongoing = Ongoing claims List
  master.menu.assistanceAgent.list-tracking-log = Tracking Logs List
  
-
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account
@@ -67,9 +70,21 @@ master.menu.user-account.become-consumer = Become a consumer
 master.menu.user-account.consumer-profile = Consumer profile
 master.menu.user-account.become-customer = Become a customer
 master.menu.user-account.customer-profile = Customer profile
+master.menu.user-account.become-technician = Become a technician
+master.menu.user-account.technician-profile = Technician profile
+master.menu.user-account.become-crewMember = Become a crew member
+master.menu.user-account.crewMember-profile = Crew Member profile
 
 # master.menu.customer ##########################################################
 master.menu.customer = Customer
 master.menu.customer.list-bookings = List Bookings
 master.menu.customer.user-account.update = Update profile
+
 master.menu.customer.dashboard = Dashboard
+
+# master.menu.technician ##########################################################
+master.menu.technician = Technician
+master.menu.technician.list-my-maintenance-records= List my maintenance records
+master.menu.technician.list-my-tasks = List my tasks
+master.menu.technician.list-maintenance-record-catalogue = List maintenance record catalogue
+master.menu.technician.list-task-catalogue = List task catalogue

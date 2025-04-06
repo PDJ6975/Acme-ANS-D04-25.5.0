@@ -4,10 +4,15 @@ package acme.entities.trackingLogs;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
+
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
@@ -44,6 +49,7 @@ public class TrackingLog extends AbstractEntity {
 
 	@Mandatory
 	@Automapped
+	@Enumerated(EnumType.STRING)
 	private Indicator			indicator;
 
 	@Optional
@@ -52,8 +58,13 @@ public class TrackingLog extends AbstractEntity {
 	private String				resolution;
 
 	@Mandatory
+	@OnDelete(action = OnDeleteAction.CASCADE)
 	@Valid
 	@ManyToOne
 	private Claim				claim;
+
+	@Mandatory
+	@Automapped
+	private boolean				draftMode;
 
 }

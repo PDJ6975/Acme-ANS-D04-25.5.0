@@ -25,6 +25,10 @@
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-Jianwu" action="https://pomodoro-tracker.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-pabolimor" action="https://eloquentclicks.com/"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
+		    <acme:menu-suboption code="master.menu.authenticated.list-assignments" action="/any/flight-assignment/list" />
+		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRealm('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.list-user-accounts" action="/administrator/user-account/list"/>
@@ -37,6 +41,7 @@
 			<acme:menu-suboption code="master.menu.administrator.list-aircrafts" action="/administrator/aircraft/list"/>
 			<acme:menu-suboption code="master.menu.administrator.list-airports" action="/administrator/airport/list"/>
 			<acme:menu-suboption code="master.menu.administrator.list-bookings" action="/administrator/booking/list"/>
+			<acme:menu-suboption code="master.menu.administrator.list-airlines" action="/administrator/airline/list"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRealm('Provider')">
@@ -53,14 +58,21 @@
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.manager" access="hasRealm('Manager')">
-			<acme:menu-suboption code="master.menu.manager.list-my-flights" action="/manager/flight/list" />	
-			<acme:menu-suboption code="master.menu.manager.list-my-legs" action="/manager/leg/list" />		
+			<acme:menu-suboption code="master.menu.manager.list-my-flights" action="/manager/flight/list" />			
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.technician" access="hasRealm('Technician')">
+			<acme:menu-suboption code="master.menu.technician.list-my-maintenance-records" action="/technician/maintenance-record/list?mine=true" />			
+			<acme:menu-suboption code="master.menu.technician.list-my-tasks" action="/technician/task/list?mine=true" />
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.technician.list-maintenance-record-catalogue" action="/technician/maintenance-record/list" />
+			<acme:menu-suboption code="master.menu.technician.list-task-catalogue" action="/technician/task/list" />
+		</acme:menu-option>
+
 		
 		<acme:menu-option code="master.menu.assistanceAgent" access="hasRealm('AssistanceAgent')">
  			<acme:menu-suboption code="master.menu.assistanceAgent.list-completed" action="/assistance-agent/claim/completed-list" />
  			<acme:menu-suboption code="master.menu.assistanceAgent.list-ongoing" action="/assistance-agent/claim/ongoing-list" />
- 			<acme:menu-suboption code="master.menu.assistanceAgent.list-tracking-log" action="/assistance-agent/tracking-log/list" />				
  		</acme:menu-option>
  		
  		<acme:menu-option code="master.menu.customer" access="hasRealm('Customer')">
@@ -78,6 +90,10 @@
 		    <acme:menu-suboption code="master.menu.user-account.consumer-profile" action="/authenticated/consumer/update" access="hasRealm('Consumer')"/>
 		    <acme:menu-suboption code="master.menu.user-account.become-customer" action="/authenticated/customer/create" access="!hasRealm('Customer')"/>
 		    <acme:menu-suboption code="master.menu.user-account.customer-profile" action="/authenticated/customer/update" access="hasRealm('Customer')"/>
+		    <acme:menu-suboption code="master.menu.user-account.become-technician" action="/authenticated/technician/create" access="!hasRealm('Technician')"/>
+		    <acme:menu-suboption code="master.menu.user-account.technician-profile" action="/authenticated/technician/update" access="hasRealm('Technician')"/>
+		    <acme:menu-suboption code="master.menu.user-account.become-crewMember" action="/authenticated/flight-crew-member/create" access="!hasRealm('FlightCrewMember')"/>
+		    <acme:menu-suboption code="master.menu.user-account.crewMember-profile" action="/authenticated/flight-crew-member/update" access="hasRealm('FlightCrewMember')"/>
 		</acme:menu-option>
 	</acme:menu-right>
 </acme:menu-bar>

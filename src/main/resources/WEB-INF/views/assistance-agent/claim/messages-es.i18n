@@ -4,9 +4,21 @@ assistance-agent.claim.form.title = Formulario de Reclamaciones
 assistanceAgents.claim.list.label.type = Tipo
 assistanceAgents.claim.list.label.username = Usuario
 assistanceAgents.claim.list.label.description = Descripción
+assistanceAgents.claim.list.label.legFlightNumber = Número de Vuelo
 
 assistanceAgent.claim.form.label.registrationMoment = 	Momento de Registro
-assistanceAgent.claim.form.label.passengerEmail = Email del Pasajero
+assistanceAgent.claim.form.label.passengerEmail = Email del Pasajero o Cliente
 assistanceAgent.claim.form.label.state = Estado
 assistanceAgents.claim.form.label.assistanceUsername = Agente
-assistanceAgents.claim.list.label.flightNumber = Etapa
+
+assistanceAgents.claim.list.button = Crear
+assistance-agent.claim.form.submit.create = Crear
+assistance-agent.claim.form.submit.update = Actualizar
+assistance-agent.claim.form.submit.delete = Eliminar
+assistance-agent.claim.form.submit.publish = Publicar
+ master.menu.assistanceAgent.list-tracking-log = Seguimientos
+
+
+assistant-agent.create.user-not-passenger-or-customer = El usuario debe ser un pasajero o un cliente
+assistant-agent.create.leg-not-exist = No exite ningún leg con ese numero de vuelo
+assistant-agent.create.user-cant-be-null = El usuario no puede ser nulo

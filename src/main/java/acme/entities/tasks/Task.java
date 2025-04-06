@@ -10,7 +10,6 @@ import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
-import acme.entities.maintenanceRecords.MaintenanceRecord;
 import acme.realms.technicians.Technician;
 import lombok.Getter;
 import lombok.Setter;
@@ -38,18 +37,17 @@ public class Task extends AbstractEntity {
 	private Integer				priority;
 
 	@Mandatory
-	@ValidNumber(min = 0, integer = 2, fraction = 1, message = "Debe estar expresado en horas, maximo un número fraccionario")
+	@ValidNumber(min = 0, max = 1000, integer = 4, fraction = 1, message = "Debe estar expresado en horas. Maximo 1000 horas.")
 	@Automapped
 	private Double				estimatedDuration;
 
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private MaintenanceRecord	maintenanceRecord;
+	private Technician			technician;
 
 	@Mandatory
-	@Valid
-	@ManyToOne(optional = false)
-	private Technician			technician;
+	@Automapped
+	private boolean				draftMode;
 
 }

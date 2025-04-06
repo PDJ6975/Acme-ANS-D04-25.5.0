@@ -10,7 +10,9 @@ import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.Valid;
+
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
@@ -54,19 +56,18 @@ public class Leg extends AbstractEntity {
 	private String				description;
 
 	@Mandatory
-	@ValidMoment(message = "La salida programada debe ser en el futuro")
+	@ValidMoment
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				scheduledDeparture;
 
 	@Mandatory
-	@ValidMoment(message = "La llegada programada debe ser en el futuro")
+	@ValidMoment
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				scheduledArrival;
 
 	@Mandatory
-	@Valid
 	@Automapped
-	private Boolean				draftMode;
+	private boolean				draftMode;
 
 	@Optional
 	@ManyToOne
@@ -81,6 +82,7 @@ public class Leg extends AbstractEntity {
 	private Aircraft			aircraft;
 
 	@Optional
+	@OnDelete(action = OnDeleteAction.CASCADE)
 	@ManyToOne
 	private Flight				flight;
 

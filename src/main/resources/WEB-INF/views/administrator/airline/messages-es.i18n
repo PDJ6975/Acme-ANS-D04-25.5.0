@@ -1,0 +1,23 @@
+administrator.airline.form.title = Formulario de Aerolínea
+administrator.airline.form.label.name = Nombre:
+administrator.airline.form.label.iataCode = Código IATA:
+administrator.airline.form.label.website = Sitio web:
+administrator.airline.form.label.type = Tipo:
+administrator.airline.form.label.foundationMoment = Fecha de fundación:
+administrator.airline.form.label.emailAddress = Correo electrónico:
+administrator.airline.form.label.phoneNumber = Teléfono:
+administrator.airline.form.label.confirm = Confirmación:
+
+administrator.airline.form.button.create = Crear
+administrator.airline.form.button.update = Actualizar
+
+administrator.airline.form.error.confirm = Debe confirmar para continuar
+administrator.airline.form.error.duplicated-iata = El código IATA debe ser único
+administrator.airline.list.label.name = Nombre
+administrator.airline.list.label.type = Tipo
+administrator.airline.list.label.emailAddress = Correo electrónico
+administrator.airline.list.label.iataCode = Código IATA
+administrator.airline.list.label.phoneNumber = Teléfono
+administrator.airline.list.title = Listado de aerolíneas
+
+administrator.airline.list.button.create=Crear Aerolinea

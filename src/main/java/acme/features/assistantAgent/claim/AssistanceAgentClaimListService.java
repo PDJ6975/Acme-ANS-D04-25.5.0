@@ -37,12 +37,12 @@ public class AssistanceAgentClaimListService extends AbstractGuiService<Assistan
 		Dataset dataset;
 
 		String shortenedDescription = claim.getDescription();
-		int maxLength = 120;
+		int maxLength = 100;
 
 		if (shortenedDescription.length() > maxLength)
 			shortenedDescription = shortenedDescription.substring(0, maxLength) + "...";
 
-		dataset = super.unbindObject(claim, "type", "userAccount.username");
+		dataset = super.unbindObject(claim, "type", "userAccount.username", "leg.flightNumber");
 
 		dataset.put("description", shortenedDescription);
 

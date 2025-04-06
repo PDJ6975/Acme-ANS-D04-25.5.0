@@ -5,6 +5,7 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
@@ -52,34 +53,29 @@ public class Flight extends AbstractEntity {
 
 	// Derived attributes from legs
 
-	@Mandatory
-	@ValidMoment(message = "La salida programada debe ser en el futuro")
-	//Se ha comentado el @Transient ya que se está a la espera de implementar la obtencion de dichos datos desde los Legs correspondientes
-	//@Transient
-	@Automapped
+	@ValidMoment
+	@Transient
 	private Date				scheduledDeparture; // Derivado del primer leg
 
-	@Mandatory
-	@ValidMoment(message = "La llegada programada debe ser en el futuro")
-	//Se ha comentado el @Transient ya que se está a la espera de implementar la obtencion de dichos datos desde los Legs correspondientes
-	//@Transient
-	@Automapped
+	@ValidMoment
+	@Transient
 	private Date				scheduledArrival; // Derivado del último leg
 
-	@Mandatory
 	@ValidString(min = 1, max = 50, message = "El nombre de la ciudad debe tener mínimo 1 y máximo 50 caracteres")
-	@Automapped
+	@Transient
 	private String				originCity; // Derivado del primer leg
 
-	@Mandatory
 	@ValidString(min = 1, max = 50, message = "El nombre de la ciudad debe tener mínimo 1 y máximo 50 caracteres")
-	@Automapped
+	@Transient
 	private String				destinationCity; // Derivado del último leg
 
-	@Mandatory
 	@ValidNumber(min = 0, max = 20, message = "El número de escalas no puede ser negativo y debe ser máximo de 20")
-	@Automapped
+	@Transient
 	private Integer				layovers; // Derivado de los tramos
+
+	@Mandatory
+	@Automapped
+	private boolean				draftMode;
 
 	@Mandatory
 	@Valid

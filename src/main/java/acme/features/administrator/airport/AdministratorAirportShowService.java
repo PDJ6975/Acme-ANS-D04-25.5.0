@@ -40,12 +40,12 @@ public class AdministratorAirportShowService extends AbstractGuiService<Administ
 
 	@Override
 	public void unbind(final Airport airport) {
-		SelectChoices choicesStatus;
+		SelectChoices operationalScopes;
 		Dataset dataset;
 
 		dataset = super.unbindObject(airport, "name", "iataCode", "operationalScope", "city", "country", "website", "emailAddress", "contactPhone");
-		choicesStatus = SelectChoices.from(OperationalScope.class, airport.getOperationalScope());
-		dataset.put("airportScopes", choicesStatus);
+		operationalScopes = SelectChoices.from(OperationalScope.class, airport.getOperationalScope());
+		dataset.put("operationalScopes", operationalScopes);
 		dataset.put("masterId", airport.getId());
 		super.getResponse().addData(dataset);
 	}

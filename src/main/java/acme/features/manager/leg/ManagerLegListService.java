@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import acme.client.components.models.Dataset;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
+import acme.entities.flights.Flight;
 import acme.entities.legs.Leg;
 import acme.realms.managers.Manager;
 
@@ -20,19 +21,27 @@ public class ManagerLegListService extends AbstractGuiService<Manager, Leg> {
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		int masterId = super.getRequest().getData("masterId", int.class);
+		Flight flight = this.repository.findFlightById(masterId);
+
+		int managerId = flight.getManager().getId();
+		int loggedId = super.getRequest().getPrincipal().getActiveRealm().getId();
+
+		boolean status = managerId == loggedId;
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
 
 		Collection<Leg> legs;
-		int managerId;
+		int masterId = super.getRequest().getData("masterId", int.class);
 
-		managerId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		legs = this.repository.findLegsSortedMomentByMemberId(managerId);
-
+		legs = this.repository.findLegsSortedMomentByFlightId(masterId);
 		super.getBuffer().addData(legs);
+		super.getResponse().addGlobal("masterId", masterId);
+
 	}
 
 	@Override

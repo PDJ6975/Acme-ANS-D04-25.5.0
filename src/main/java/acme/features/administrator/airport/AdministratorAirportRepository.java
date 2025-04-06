@@ -18,4 +18,10 @@ public interface AdministratorAirportRepository extends AbstractRepository {
 	@Query("SELECT ap FROM Airport ap WHERE ap.id = :id")
 	Airport findAirportById(int id);
 
+	@Query("SELECT COUNT(ap) > 0 FROM Airport ap WHERE ap.iataCode = :iataCode")
+	boolean existsByIataCode(String iataCode);
+
+	@Query("SELECT ap FROM Airport ap WHERE ap.iataCode = :iataCode")
+	Airport findAirportByIataCode(String iataCode);
+
 }

@@ -5,59 +5,89 @@
 
 <acme:form>
 
-    <acme:input-moment 
+    <acme:input-textbox
         code="manager.flight.form.label.tag" 
         path="tag"
     />
     
-    <acme:input-moment 
+    <acme:input-checkbox
         code="manager.flight.form.label.selfTransfer" 
         path="selfTransfer"
     />
     
-    <acme:input-moment 
+    <acme:input-money
         code="manager.flight.form.label.cost" 
         path="cost"
     />
     
-    <acme:input-moment 
+    <acme:input-textarea
         code="manager.flight.form.label.description" 
         path="description"
     />
     
-    <acme:input-moment 
-        code="manager.flight.form.label.scheduledDeparture" 
-        path="scheduledDeparture"
+    <jstl:if test="${acme:anyOf(_command, 'show|publish')}">
+	    <acme:input-moment 
+	        code="manager.flight.form.label.scheduledDeparture" 
+	        path="scheduledDeparture"
+	        readonly="true"
+	    />
+    </jstl:if>
+    
+    <jstl:if test="${acme:anyOf(_command, 'show|publish')}">
+	    <acme:input-moment 
+	        code="manager.flight.form.label.scheduledArrival" 
+	        path="scheduledArrival"
+	        readonly="true"
+	    />
+    </jstl:if>
+    
+    <jstl:if test="${acme:anyOf(_command, 'show|publish')}">
+	    <acme:input-textbox
+	        code="manager.flight.form.label.originCity" 
+	        path="originCity"
+	        readonly="true"
+	    />
+    </jstl:if>
+    
+    <jstl:if test="${acme:anyOf(_command, 'show|publish')}">
+	    <acme:input-textbox
+	        code="manager.flight.form.label.destinationCity" 
+	        path="destinationCity"
+	        readonly="true"
+	    />
+    </jstl:if>
+    
+    <jstl:if test="${acme:anyOf(_command, 'show|publish')}">
+	    <acme:input-textbox
+	        code="manager.flight.form.label.layovers" 
+	        path="layovers"
+	        readonly="true"
+	    />
+    </jstl:if>
+    
+    <acme:input-checkbox
+    	code="manager.flight.form.label.draftMode"
+    	path="draftMode"
+    	readonly="true"
+    />
+
+    <acme:input-select
+    	code="manager.flight.form.label.airline"
+    	path="airline"
+    	choices="${airlines}"
     />
     
-    <acme:input-moment 
-        code="manager.flight.form.label.scheduledArrival" 
-        path="scheduledArrival"
-    />
-    
-    <acme:input-moment 
-        code="manager.flight.form.label.originCity" 
-        path="originCity"
-    />
-    
-    <acme:input-moment 
-        code="manager.flight.form.label.destinationCity" 
-        path="destinationCity"
-    />
-    
-    <acme:input-moment 
-        code="manager.flight.form.label.layovers" 
-        path="layovers"
-    />
-    
-    <acme:input-moment 
-        code="manager.flight.form.label.name" 
-        path="airline.name"
-    />
-    
-    <acme:input-moment 
-        code="manager.flight.form.label.managerId" 
-        path="manager.managerId"
-    />
-    	
+    <jstl:choose>
+        <jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish')}">
+            <acme:button code="manager.flight.form.button.legs" action="/manager/leg/list?masterId=${masterId}"/>
+            <jstl:if test="${draftMode == true}">
+                <acme:submit code="manager.flight.form.button.update" action="/manager/flight/update"/>
+                <acme:submit code="manager.flight.form.button.delete" action="/manager/flight/delete"/>
+                <acme:submit code="manager.flight.form.button.publish" action="/manager/flight/publish"/>
+            </jstl:if>
+        </jstl:when>
+        <jstl:when test="${_command == 'create'}">
+            <acme:submit code="manager.flight.form.button.create" action="/manager/flight/create"/>
+        </jstl:when>
+    </jstl:choose>
 </acme:form>

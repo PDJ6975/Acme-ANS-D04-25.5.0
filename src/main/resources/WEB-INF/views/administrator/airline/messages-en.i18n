@@ -1,0 +1,23 @@
+administrator.airline.form.title = Airline Form
+administrator.airline.form.label.name = Name:
+administrator.airline.form.label.iataCode = IATA Code:
+administrator.airline.form.label.website = Website:
+administrator.airline.form.label.type = Type:
+administrator.airline.form.label.foundationMoment = Foundation Date:
+administrator.airline.form.label.emailAddress = Email Address:
+administrator.airline.form.label.phoneNumber = Phone Number:
+administrator.airline.form.label.confirm = Confirmation:
+
+administrator.airline.form.button.create = Create
+administrator.airline.form.button.update = Update
+
+administrator.airline.form.error.confirm = You must confirm to proceed
+administrator.airline.form.error.duplicated-iata = IATA code must be unique
+administrator.airline.list.label.name = Name
+administrator.airline.list.label.type = Type
+administrator.airline.list.label.iataCode = IATA Code
+administrator.airline.list.label.emailAddress = Email Address
+administrator.airline.list.label.phoneNumber = Phone Number
+administrator.airline.list.title = List of Airlines
+
+administrator.airline.list.button.create=Create Airline

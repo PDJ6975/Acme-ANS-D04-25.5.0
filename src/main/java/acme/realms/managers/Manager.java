@@ -27,10 +27,10 @@ public class Manager extends AbstractRole {
 	@Mandatory
 	@ValidString(pattern = "^[A-Z]{2,3}\\d{6}$", message = "El identificador debe seguir el patrón ^[A-Z]{2-3}\\d{6}$")
 	@Column(unique = true)
-	private String				managerId;
+	private String				identifier;
 
 	@Mandatory
-	@ValidNumber(min = 0, max = 100, message = "Los años de experiencia no pueden ser negativos y deben ser máximo 100")
+	@ValidNumber(min = 0, max = 100, message = "Los años de experiencia deben estar entre 0 y 100")
 	@Automapped
 	private Integer				yearsOfExperience;
 
