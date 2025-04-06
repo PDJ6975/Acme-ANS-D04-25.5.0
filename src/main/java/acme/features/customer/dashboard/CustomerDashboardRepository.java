@@ -15,13 +15,14 @@ public interface CustomerDashboardRepository extends AbstractRepository {
 	@Query("select c from Customer c where c.userAccount.id = :userAccountId")
 	Customer findCustomerByUserAccountId(int userAccountId);
 
-	@Query("select f.destinationCity from Booking b join b.flight f where b.customer.id = :customerId AND b.draftMode = false order by b.purchaseMoment desc")
+	// Destinos obtenidos desde las legs asociadas al vuelo
+	@Query("select l.arrivalAirport.city from Booking b join b.flight f join Leg l on l.flight.id = f.id " + "where b.customer.id = :customerId AND b.draftMode = false " + "group by l.arrivalAirport.city " + "order by max(b.purchaseMoment) desc")
 	List<String> findLastFiveDestinations(int customerId);
 
-	@Query("select sum(b.price.amount) from Booking b where b.customer.id = :customerId AND b.draftMode = false and year(b.purchaseMoment) = year(current_date)-1")
+	@Query("select sum(b.price.amount) from Booking b where b.customer.id = :customerId AND b.draftMode = false " + "and year(b.purchaseMoment) = year(current_date)-1")
 	Double totalMoneySpentLastYear(int customerId);
 
-	@Query("select b.travelClass, count(b) from Booking b where b.customer.id = :customerId AND b.draftMode = false group by b.travelClass")
+	@Query("select b.travelClass, count(b) from Booking b where b.customer.id = :customerId AND b.draftMode = false " + "group by b.travelClass")
 	List<Object[]> bookingsByTravelClass(int customerId);
 
 	@Query("select count(b) from Booking b where b.customer.id = :customerId AND b.draftMode = false")
@@ -39,26 +40,22 @@ public interface CustomerDashboardRepository extends AbstractRepository {
 	@Query("select stddev(b.price.amount) from Booking b where b.customer.id = :customerId AND b.draftMode = false")
 	Double bookingCostStandardDeviation(int customerId);
 
-	@Query("select count(br.passenger) from BookingRecord br where br.booking.customer.id = :customerId AND br.booking.draftMode = false")
+	@Query("select count(br.passenger) from BookingRecord br join br.booking b " + "where b.customer.id = :customerId AND b.draftMode = false")
 	Long passengerCount(int customerId);
 
-	@Query(
-		value = "SELECT AVG(passenger_count) FROM (SELECT COUNT(br.passenger_id) as passenger_count FROM booking_record br JOIN booking b ON br.booking_id = b.id WHERE b.customer_id = :customerId AND b.draft_mode = false GROUP BY br.booking_id) AS counts",
-		nativeQuery = true)
+	@Query(value = "SELECT AVG(passenger_count) FROM (" + "SELECT COUNT(br.passenger_id) as passenger_count FROM booking_record br " + "JOIN booking b ON br.booking_id = b.id " + "WHERE b.customer_id = :customerId AND b.draft_mode = false "
+		+ "GROUP BY br.booking_id) AS counts", nativeQuery = true)
 	Double passengerAverage(int customerId);
 
-	@Query(
-		value = "SELECT MIN(passenger_count) FROM (SELECT COUNT(br.passenger_id) as passenger_count FROM booking_record br JOIN booking b ON br.booking_id = b.id WHERE b.customer_id = :customerId AND b.draft_mode = false GROUP BY br.booking_id) AS counts",
-		nativeQuery = true)
+	@Query(value = "SELECT MIN(passenger_count) FROM (" + "SELECT COUNT(br.passenger_id) as passenger_count FROM booking_record br " + "JOIN booking b ON br.booking_id = b.id " + "WHERE b.customer_id = :customerId AND b.draft_mode = false "
+		+ "GROUP BY br.booking_id) AS counts", nativeQuery = true)
 	Long passengerMinimum(int customerId);
 
-	@Query(
-		value = "SELECT MAX(passenger_count) FROM (SELECT COUNT(br.passenger_id) as passenger_count FROM booking_record br JOIN booking b ON br.booking_id = b.id WHERE b.customer_id = :customerId AND b.draft_mode = false GROUP BY br.booking_id) AS counts",
-		nativeQuery = true)
+	@Query(value = "SELECT MAX(passenger_count) FROM (" + "SELECT COUNT(br.passenger_id) as passenger_count FROM booking_record br " + "JOIN booking b ON br.booking_id = b.id " + "WHERE b.customer_id = :customerId AND b.draft_mode = false "
+		+ "GROUP BY br.booking_id) AS counts", nativeQuery = true)
 	Long passengerMaximum(int customerId);
 
-	@Query(
-		value = "SELECT STDDEV(passenger_count) FROM (SELECT COUNT(br.passenger_id) as passenger_count FROM booking_record br JOIN booking b ON br.booking_id = b.id WHERE b.customer_id = :customerId AND b.draft_mode = false GROUP BY br.booking_id) AS counts",
-		nativeQuery = true)
+	@Query(value = "SELECT STDDEV(passenger_count) FROM (" + "SELECT COUNT(br.passenger_id) as passenger_count FROM booking_record br " + "JOIN booking b ON br.booking_id = b.id " + "WHERE b.customer_id = :customerId AND b.draft_mode = false "
+		+ "GROUP BY br.booking_id) AS counts", nativeQuery = true)
 	Double passengerStandardDeviation(int customerId);
 }

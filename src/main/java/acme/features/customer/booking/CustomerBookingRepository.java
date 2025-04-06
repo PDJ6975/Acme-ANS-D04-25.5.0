@@ -2,6 +2,7 @@
 package acme.features.customer.booking;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -30,6 +31,6 @@ public interface CustomerBookingRepository extends AbstractRepository {
 	@Query("SELECT br FROM BookingRecord br WHERE br.booking.id = :bookingId")
 	Collection<BookingRecord> findBookingRecordsByBookingId(int bookingId);
 
-	@Query("select f from Flight f where f.scheduledDeparture > CURRENT_TIMESTAMP")
-	Collection<Flight> findAvailableFlights();
+	@Query("SELECT DISTINCT f FROM Flight f JOIN Leg l ON l.flight = f " + "WHERE f.draftMode = false " + "AND l.scheduledDeparture = (SELECT MIN(l2.scheduledDeparture) FROM Leg l2 WHERE l2.flight = f) " + "AND l.scheduledDeparture > :currentDate")
+	Collection<Flight> findAvailableFlights(Date currentDate);
 }

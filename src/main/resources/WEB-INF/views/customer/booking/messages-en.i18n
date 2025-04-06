@@ -30,3 +30,6 @@ customer.booking.form.error.duplicate-locator = The locator code is already in u
 
 customer.booking.form.label.flight = Flight:
 customer.booking.form.error.flight-required = You must select a flight
+
+customer.booking.form.error.flight-draft = The selected flight is not available for booking
+customer.booking.form.error.flight-departed = The selected flight has already departed
