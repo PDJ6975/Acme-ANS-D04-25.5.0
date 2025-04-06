@@ -1,6 +1,7 @@
 
 package acme.features.customer.dashboard;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,33 +32,56 @@ public class CustomerDashboardShowService extends AbstractGuiService<Customer, C
 		CustomerDashboard dashboard = new CustomerDashboard();
 
 		List<String> lastFive = this.repository.findLastFiveDestinations(customerId);
-		if (lastFive.size() > 5)
-			lastFive = lastFive.subList(0, 5);
+		if (lastFive != null) {
+			if (lastFive.size() > 5)
+				lastFive = lastFive.subList(0, 5);
+		} else {
+			lastFive = new ArrayList<>();
+		}
 		dashboard.setLastFiveDestinations(lastFive);
 
-		dashboard.setMoneySpentLastYear(this.repository.totalMoneySpentLastYear(customerId));
+		Double moneySpent = this.repository.totalMoneySpentLastYear(customerId);
+		dashboard.setMoneySpentLastYear(moneySpent != null ? moneySpent : 0.0);
 
-		List<Object[]> bookingsResult = this.repository.bookingsByTravelClass(customerId);
 		Map<String, Long> bookingsByTravelClass = new HashMap<>();
-		for (Object[] row : bookingsResult)
-			bookingsByTravelClass.put(row[0].toString(), (Long) row[1]);
+		List<Object[]> results = this.repository.bookingsByTravelClass(customerId);
+		if (results != null) {
+			for (Object[] row : results) {
+				bookingsByTravelClass.put(row[0] != null ? row[0].toString() : "N/A", 
+									row[1] != null ? (Long)row[1] : 0L);
+			}
+		}
 		dashboard.setBookingsByTravelClass(bookingsByTravelClass);
 
-		dashboard.setBookingCostCount(this.repository.bookingCostCount(customerId));
-		dashboard.setBookingCostAverage(this.repository.bookingCostAverage(customerId));
-		dashboard.setBookingCostMinimum(this.repository.bookingCostMinimum(customerId));
-		dashboard.setBookingCostMaximum(this.repository.bookingCostMaximum(customerId));
-		dashboard.setBookingCostStandardDeviation(this.repository.bookingCostStandardDeviation(customerId));
+		Long bookingCostCount = this.repository.bookingCostCount(customerId);
+		dashboard.setBookingCostCount(bookingCostCount != null ? bookingCostCount : 0L);
+		
+		Double bookingCostAverage = this.repository.bookingCostAverage(customerId);
+		dashboard.setBookingCostAverage(bookingCostAverage != null ? bookingCostAverage : 0.0);
+		
+		Double bookingCostMinimum = this.repository.bookingCostMinimum(customerId);
+		dashboard.setBookingCostMinimum(bookingCostMinimum != null ? bookingCostMinimum : 0.0);
+		
+		Double bookingCostMaximum = this.repository.bookingCostMaximum(customerId);
+		dashboard.setBookingCostMaximum(bookingCostMaximum != null ? bookingCostMaximum : 0.0);
+		
+		Double bookingCostStdDev = this.repository.bookingCostStandardDeviation(customerId);
+		dashboard.setBookingCostStandardDeviation(bookingCostStdDev != null ? bookingCostStdDev : 0.0);
 
-		dashboard.setPassengerCount(this.repository.passengerCount(customerId));
-		dashboard.setPassengerAverage(this.repository.passengerAverage(customerId));
+		Long passengerCount = this.repository.passengerCount(customerId);
+		dashboard.setPassengerCount(passengerCount != null ? passengerCount : 0L);
+
+		Double passengerAverage = this.repository.passengerAverage(customerId);
+		dashboard.setPassengerAverage(passengerAverage != null ? passengerAverage : 0.0);
 
 		Long minPassengers = this.repository.passengerMinimum(customerId);
-		dashboard.setPassengerMinimum(minPassengers != null ? minPassengers.doubleValue() : null);
+		dashboard.setPassengerMinimum(minPassengers != null ? minPassengers.doubleValue() : 0.0);
 
 		Long maxPassengers = this.repository.passengerMaximum(customerId);
-		dashboard.setPassengerMaximum(maxPassengers != null ? maxPassengers.doubleValue() : null);
-		dashboard.setPassengerStandardDeviation(this.repository.passengerStandardDeviation(customerId));
+		dashboard.setPassengerMaximum(maxPassengers != null ? maxPassengers.doubleValue() : 0.0);
+
+		Double passengerStdDev = this.repository.passengerStandardDeviation(customerId);
+		dashboard.setPassengerStandardDeviation(passengerStdDev != null ? passengerStdDev : 0.0);
 
 		super.getBuffer().addData(dashboard);
 	}

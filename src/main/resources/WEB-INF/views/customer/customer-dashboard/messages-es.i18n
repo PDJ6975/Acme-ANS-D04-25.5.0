@@ -18,3 +18,5 @@ customer.dashboard.form.label.passenger-average=Promedio de pasajeros por reserv
 customer.dashboard.form.label.passenger-minimum=Mínimo de pasajeros por reserva
 customer.dashboard.form.label.passenger-maximum=Máximo de pasajeros por reserva
 customer.dashboard.form.label.passenger-standard-deviation=Desviación estándar de pasajeros
+
+customer.customer-dashboard.form.title = Dashboard de Cliente

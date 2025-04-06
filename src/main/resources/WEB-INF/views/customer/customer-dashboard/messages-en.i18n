@@ -1,4 +1,4 @@
-customer.dashboard.form.title.general-indicators=General Indicators of the Customer Dashboard
+
 customer.dashboard.form.title.booking-costs=Booking Costs
 customer.dashboard.form.title.passenger-statistics=Passenger Statistics
 
@@ -17,3 +17,5 @@ customer.dashboard.form.label.passenger-average=Average Passengers per Booking
 customer.dashboard.form.label.passenger-minimum=Minimum Passengers per Booking
 customer.dashboard.form.label.passenger-maximum=Maximum Passengers per Booking
 customer.dashboard.form.label.passenger-standard-deviation=Passenger Standard Deviation
+
+customer.customer-dashboard.form.title = Customer Dashboard
