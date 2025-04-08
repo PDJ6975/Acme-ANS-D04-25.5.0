@@ -62,3 +62,24 @@ review-45,Lorem ipsum dolor sit ame,2011/04/16 0:00,Lorem ipsum dolor sit ame,"L
 #
 # recommended comprobado
 #
+review-46,Review dentro de rango 01,2021/08/01 09:30,Servicio,"Buena atención",4.80,true,user-account-consumer-01
+review-47,Review dentro de rango 02,2021/08/15 14:20,Producto,"Todo perfecto",5.00,true,user-account-consumer-02
+review-48,Review dentro de rango 03,2021/09/10 16:00,Calidad,"Muy recomendable",4.90,true,user-account-provider-01
+review-49,Review dentro de rango 04,2021/10/05 08:45,Compra,"Servicio ágil",4.70,true,user-account-provider-02
+review-50,Review dentro de rango 05,2021/11/01 13:15,Entrega,"Rápida entrega",5.00,true,user-account-provider-03
+review-51,Review dentro de rango 06,2021/11/25 18:10,Atención,"Excelente trato",5.00,true,user-account-member-01
+review-52,Review dentro de rango 07,2021/12/31 23:59,Fin de Año,"Muy satisfecho",5.00,true,user-account-member-02
+review-53,Review dentro de rango 08,2022/01/15 11:00,Inicio,"Buen comienzo de año",4.85,true,user-account-member-03
+review-54,Review dentro de rango 09,2022/02/10 17:30,Ayuda,"Resolvieron mi duda",5.00,true,user-account-member-04
+review-55,Review dentro de rango 10,2022/03/05 20:45,Soporte,"Excelente soporte técnico",4.95,true,user-account-agent-01
+review-56,Review dentro de rango 11,2022/04/12 07:55,Mantenimiento,"Muy atentos",4.60,true,user-account-agent-02
+review-57,Review dentro de rango 12,2022/05/20 10:10,Actualización,"Mejoras notables",4.90,true,user-account-agent
+review-58,Review dentro de rango 13,2022/06/01 12:00,Renovación,"Satisfecho con el servicio",5.00,true,user-account-technician-01
+review-59,Review dentro de rango 14,2022/06/15 15:30,Evaluación,"Todo correcto",4.80,true,user-account-technician-02
+review-60,Review dentro de rango 15,2022/06/25 19:00,Consulta,"Buena respuesta",5.00,true,user-account-technician-03
+review-61,Review dentro de rango 16,2022/07/01 10:00,Facturación,"Gestión clara",4.75,true,user-account-manager-01
+review-62,Review dentro de rango 17,2022/07/10 16:15,Pregunta,"Respuesta rápida",4.95,true,user-account-manager-02
+review-63,Review dentro de rango 18,2022/07/20 13:45,Valoración,"Muy buena experiencia",5.00,true,user-account-manager-03
+review-64,Review dentro de rango 19,2022/07/25 21:30,Compra,"Sin incidencias",5.00,true,user-account-manager-00
+review-65,Review dentro de rango 20,2022/07/29 23:59,Cierre,"Todo perfecto hasta el final",5.00,true,user-account-administrator-01
+
