@@ -1,5 +1,5 @@
 
-package acme.features.any.review;
+package acme.features.authenticated.review;
 
 import java.util.Collection;
 import java.util.Date;

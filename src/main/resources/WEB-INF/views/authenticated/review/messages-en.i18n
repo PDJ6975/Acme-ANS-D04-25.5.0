@@ -1,0 +1,42 @@
+# List view
+any.review.list.title = Reviews from the last year
+any.review.list.label.name = Name
+any.review.list.label.subject = Subject
+any.review.list.label.moment = Date
+any.review.list.label.score = Score
+any.review.list.label.recommended = Recommended
+any.review.list.label.explanation = Showing reviews posted in the last year.
+
+# Form view
+any.review.form.title = Review Details
+any.review.form.label.name = Name
+any.review.form.label.subject = Subject
+any.review.form.label.moment = Date
+any.review.form.label.text = Content
+any.review.form.label.score = Score
+any.review.form.label.recommended = Recommended
+any.review.form.label.username = Posted by
+any.review.form.button.return = Return
+
+# Pagination
+any.review.list.page-info = Page {0} of {1}
+any.review.list.total-elements = Total: {0} reviews
+
+# Create view
+any.review.form.label.name = Review title
+any.review.form.label.subject = Subject
+any.review.form.label.text = Content
+any.review.form.label.score = Score (0-10)
+any.review.form.label.recommended = Do you recommend it?
+any.review.form.label.confirmation = I confirm this review cannot be updated or deleted once submitted
+any.review.form.label.warning = IMPORTANT: Once submitted, reviews cannot be modified or deleted.
+any.review.form.button.create = Post review
+
+# Validation errors
+any.review.error.empty-name = The title cannot be empty
+any.review.error.empty-subject = The subject cannot be empty
+any.review.error.empty-text = The content cannot be empty
+any.review.error.invalid-score = The score must be between 0 and 10
+any.review.error.confirmation-required = You must confirm that you understand this review cannot be modified or deleted
+any.review.list.button.create = Post a Review
+authenticated.review.error.confirmation-required = Confirmation is required
