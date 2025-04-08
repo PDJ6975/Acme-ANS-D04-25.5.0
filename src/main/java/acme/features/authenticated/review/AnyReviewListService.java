@@ -1,5 +1,5 @@
 
-package acme.features.any.review;
+package acme.features.authenticated.review;
 
 import java.time.temporal.ChronoUnit;
 import java.util.Collection;
@@ -8,14 +8,14 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
-import acme.client.components.principals.Any;
+import acme.client.components.principals.Authenticated;
 import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.reviews.Review;
 
 @GuiService
-public class AnyReviewListService extends AbstractGuiService<Any, Review> {
+public class AnyReviewListService extends AbstractGuiService<Authenticated, Review> {
 
 	@Autowired
 	protected AnyReviewRepository repository;

@@ -1,0 +1,42 @@
+# Vista de lista
+any.review.list.title = Reseñas del último año
+any.review.list.label.name = Nombre
+any.review.list.label.subject = Asunto
+any.review.list.label.moment = Fecha
+any.review.list.label.score = Puntuación
+any.review.list.label.recommended = Recomendado
+any.review.list.label.explanation = Mostrando reseñas publicadas en el último año.
+
+# Vista de formulario
+any.review.form.title = Detalles de la Reseña
+any.review.form.label.name = Nombre
+any.review.form.label.subject = Asunto
+any.review.form.label.moment = Fecha
+any.review.form.label.text = Contenido
+any.review.form.label.score = Puntuación
+any.review.form.label.recommended = Recomendado
+any.review.form.label.username = Publicado por
+any.review.form.button.return = Volver
+
+# Paginación
+any.review.list.page-info = Página {0} de {1}
+any.review.list.total-elements = Total: {0} reseñas
+
+# Vista de creación
+any.review.form.label.name = Título de la reseña
+any.review.form.label.subject = Asunto
+any.review.form.label.text = Contenido
+any.review.form.label.score = Puntuación (0-10)
+any.review.form.label.recommended = ¿Lo recomiendas?
+any.review.form.label.confirmation = Confirmo que esta reseña no puede ser actualizada ni eliminada una vez enviada
+any.review.form.label.warning = IMPORTANTE: Una vez enviada, las reseñas no pueden ser modificadas ni eliminadas.
+any.review.form.button.create = Publicar reseña
+
+# Errores de validación
+any.review.error.empty-name = El título no puede estar vacío
+any.review.error.empty-subject = El asunto no puede estar vacío
+any.review.error.empty-text = El contenido no puede estar vacío
+any.review.error.invalid-score = La puntuación debe estar entre 0 y 10
+any.review.error.confirmation-required = Debes confirmar que entiendes que esta reseña no puede ser modificada ni eliminada
+any.review.list.button.create = Publicar una Reseña
+authenticated.review.error.confirmation-required = Se requiere confirmación

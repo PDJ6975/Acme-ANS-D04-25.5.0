@@ -10,6 +10,8 @@
     <acme:list-column code="any.review.list.label.recommended" path="recommended" width="10%"/>
 </acme:list>
 
+    <acme:button code="any.review.list.button.create" action="/authenticated/review/create"/>
+
 <div class="panel panel-default">
     <div class="panel-body">
         <acme:print code="any.review.list.label.explanation"/>
