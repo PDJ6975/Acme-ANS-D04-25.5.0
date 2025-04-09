@@ -1,0 +1,4 @@
+administrator.service.list.title = Listado de Servicios
+administrator.service.list.label.name = Nombre del Servicio
+administrator.service.list.label.averageDwellTime = Tiempo Promedio de Permanencia (horas)
+administrator.service.list.label.airport = Aeropuerto

@@ -7,6 +7,7 @@
 	<acme:list-column code="administrator.aircraft.list.label.model" path="model" />
 	<acme:list-column code="administrator.aircraft.list.label.aircraftStatus" path="aircraftStatus" />
 	<acme:list-column code="administrator.aircraft.list.label.airline" path="airline.name" />
+	<acme:list-payload path="payload"/>
 </acme:list>
 
 <acme:button code="administrator.aircraft.list.button.create" action="/administrator/aircraft/create"/>

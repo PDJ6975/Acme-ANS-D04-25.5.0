@@ -1,0 +1,4 @@
+administrator.service.list.title = Services List
+administrator.service.list.label.name = Service Name
+administrator.service.list.label.averageDwellTime = Average Dwell Time (hours)
+administrator.service.list.label.airport = Airport
