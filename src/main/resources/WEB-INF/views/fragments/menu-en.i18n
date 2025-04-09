@@ -33,6 +33,7 @@ master.menu.administrator.list-aircrafts = List aircrafts
 master.menu.administrator.list-airports = List Airports
 master.menu.administrator.list-bookings = List Bookings
 master.menu.administrator.list-airlines = List Airlines
+administrator.menu.populate-visa = Populate DB (Visa Requirements)
 
 # master.menu.provider ########################################################
 
