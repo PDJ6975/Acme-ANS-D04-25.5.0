@@ -96,3 +96,4 @@ master.menu.technician.list-task-catalogue = List task catalogue
 master.menu.authenticated.list-reviews = List Reviews
 
 master.menu.customer.recommendations = Recommendations
+master.menu.administrator.populate-recommendation = Populate recommendations
