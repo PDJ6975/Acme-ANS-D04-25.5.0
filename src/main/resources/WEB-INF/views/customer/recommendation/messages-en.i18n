@@ -8,3 +8,16 @@ customer.recommendation.list.explanation = These recommendations are based on de
 
 # Menu
 master.menu.customer.recommendations = Recommendations
+
+customer.recommendation.form.title = Recommendation Details
+customer.recommendation.form.label.name = Place name
+customer.recommendation.form.label.category = Category
+customer.recommendation.form.label.address = Address
+customer.recommendation.form.label.city = City
+customer.recommendation.form.label.country = Country
+customer.recommendation.form.label.externalLink = More information
+customer.recommendation.form.label.airport = Destination
+customer.recommendation.form.label.iconUrl = Category icon
+customer.recommendation.form.label.latitude = Latitude
+customer.recommendation.form.label.longitude = Longitude
+customer.recommendation.form.label.description = Description

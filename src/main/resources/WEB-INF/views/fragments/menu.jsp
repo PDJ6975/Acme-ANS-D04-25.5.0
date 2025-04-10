@@ -38,6 +38,7 @@
 			<acme:menu-suboption code="master.menu.administrator.populate-db-sample" action="/administrator/system/populate-sample"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="administrator.menu.populate-visa" action="/administrator/system/populate-visa"/>
+			<acme:menu-suboption code="master.menu.administrator.populate-recommendation" action="/administrator/system/populate-recommendation"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-system-down" action="/administrator/system/shut-down"/>
 			<acme:menu-separator/>

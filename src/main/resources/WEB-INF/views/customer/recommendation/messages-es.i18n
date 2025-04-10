@@ -8,3 +8,16 @@ customer.recommendation.list.explanation = Estas recomendaciones están basadas 
 
 # Menú
 master.menu.customer.recommendations = Recomendaciones
+
+customer.recommendation.form.title = Detalles de la recomendación
+customer.recommendation.form.label.name = Nombre del lugar
+customer.recommendation.form.label.category = Categoría
+customer.recommendation.form.label.address = Dirección
+customer.recommendation.form.label.city = Ciudad
+customer.recommendation.form.label.country = País
+customer.recommendation.form.label.externalLink = Más información
+customer.recommendation.form.label.airport = Destino
+customer.recommendation.form.label.iconUrl = Icono de categoría
+customer.recommendation.form.label.latitude = Latitud
+customer.recommendation.form.label.longitude = Longitud
+customer.recommendation.form.label.description = Descripción
