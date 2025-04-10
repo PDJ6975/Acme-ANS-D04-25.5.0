@@ -1,0 +1,10 @@
+# List view
+customer.recommendation.list.title = Recommendations for your destinations
+customer.recommendation.list.label.name = Place name
+customer.recommendation.list.label.category = Category
+customer.recommendation.list.label.city = City
+customer.recommendation.list.label.externalLink = More info
+customer.recommendation.list.explanation = These recommendations are based on destinations from your bookings.
+
+# Menu
+master.menu.customer.recommendations = Recommendations

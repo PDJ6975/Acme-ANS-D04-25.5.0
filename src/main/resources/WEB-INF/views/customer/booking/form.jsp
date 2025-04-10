@@ -6,14 +6,13 @@
     <acme:input-textbox 
         code="customer.booking.form.label.locatorCode" 
         path="locatorCode" 
-        readonly="false"/>
+        readonly="${_command == 'show' && draftMode == false}"/>
     
     <acme:input-moment 
         code="customer.booking.form.label.purchaseMoment" 
         path="purchaseMoment" 
         readonly="true"/>
     
-    <!-- Ocultar el campo de vuelo en modo show -->
     <jstl:if test="${_command != 'show'}">
         <acme:input-select
             code="customer.booking.form.label.flight"
@@ -24,17 +23,28 @@
     <acme:input-select 
         code="customer.booking.form.label.travelClass" 
         path="travelClass" 
-        choices="${travelClasses}"/>
+        choices="${travelClasses}"
+        readonly="${_command == 'show' && draftMode == false}"/>
     
     <acme:input-money 
         code="customer.booking.form.label.price" 
-        path="price"/>
+        path="price"
+        readonly="${_command == 'show' && draftMode == false}"/>
     
     <acme:input-textbox 
         code="customer.booking.form.label.creditCardNibble" 
-        path="creditCardNibble"/>
+        path="creditCardNibble"
+        readonly="${_command == 'show' && draftMode == false}"/>
     
     <jstl:choose>
+        <jstl:when test="${_command == 'publish' || _errors.hasErrors()}">
+            <!-- Si estamos en publish o hay errores, mantener los botones de edición -->
+            <acme:button code="customer.booking.form.button.passengers" action="/customer/passenger/list?masterId=${masterId}"/>
+            <acme:submit code="customer.booking.form.button.update" action="/customer/booking/update"/>
+            <jstl:if test="${!empty creditCardNibble}">
+                <acme:submit code="customer.booking.form.button.publish" action="/customer/booking/publish"/>
+            </jstl:if>
+        </jstl:when>
         <jstl:when test="${acme:anyOf(_command, 'show|update|delete')}">
             <acme:button code="customer.booking.form.button.passengers" action="/customer/passenger/list?masterId=${masterId}"/>
             <jstl:if test="${draftMode == true}">

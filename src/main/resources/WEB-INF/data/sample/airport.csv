@@ -1,6 +1,6 @@
 key,name,iataCode,operationalScope,city,country,website,emailAddress,contactPhone
 airport-01,Lorem ipsum dolor sit ame,AAA,INTERNATIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,acme@lorem-ipsum.org,+12345678901
-airport-02,L,AAB,INTERNATIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,acme@lorem-ipsum.org,+12345678901
+airport-02,L,AAB,INTERNATIONAL,Sevilla,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,acme@lorem-ipsum.org,+12345678901
 airport-03,Lo,AAC,INTERNATIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,acme@lorem-ipsum.org,+12345678901
 airport-04,"Lorem ipsum dolor sit amet, consectetur adipiscin",AAD,INTERNATIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,acme@lorem-ipsum.org,+12345678901
 airport-05,"Lorem ipsum dolor sit amet, consectetur adipiscing",AAE,INTERNATIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,acme@lorem-ipsum.org,+12345678901

@@ -1,0 +1,10 @@
+# Vista de lista
+customer.recommendation.list.title = Recomendaciones para tus destinos
+customer.recommendation.list.label.name = Nombre del lugar
+customer.recommendation.list.label.category = Categoría
+customer.recommendation.list.label.city = Ciudad
+customer.recommendation.list.label.externalLink = Más información
+customer.recommendation.list.explanation = Estas recomendaciones están basadas en los destinos de tus reservas.
+
+# Menú
+master.menu.customer.recommendations = Recomendaciones

@@ -33,4 +33,7 @@ public interface CustomerBookingRepository extends AbstractRepository {
 
 	@Query("SELECT DISTINCT f FROM Flight f JOIN Leg l ON l.flight = f " + "WHERE f.draftMode = false " + "AND l.scheduledDeparture = (SELECT MIN(l2.scheduledDeparture) FROM Leg l2 WHERE l2.flight = f) " + "AND l.scheduledDeparture > :currentDate")
 	Collection<Flight> findAvailableFlights(Date currentDate);
+
+	@Query("SELECT COUNT(p) FROM BookingRecord br JOIN br.passenger p WHERE br.booking.id = :bookingId AND p.draftMode = false")
+	int countPublishedPassengersByBookingId(int bookingId);
 }
