@@ -1,0 +1,5 @@
+key,name,category,address,city,country,externalLink,iconUrl,latitude,longitude,key:airport
+recommendation-01,Gardens of Murillo,Garden,"41003 Sevilla Andalucía",Sevilla,ES,https://foursquare.com/v/4bc9e5e3b6c49c741f318f91,https://ss3.4sqi.net/img/categories_v2/parks_outdoors/garden_64.png,37.384195,-5.985712,airport-02
+recommendation-02,Jester,Café,"Calle Prta de la Carne, 7A",Sevilla,ES,https://foursquare.com/v/5880e9618f0be46d232b60e7,https://ss3.4sqi.net/img/categories_v2/food/cafe_64.png,37.385877,-5.986344,airport-02
+recommendation-03,Vinería San Telmo,Modern European Restaurant,"Paseo Catalina de Ribera, 4",Sevilla,ES,https://foursquare.com/v/4b659628f964a52069f52ae3,https://ss3.4sqi.net/img/categories_v2/food/default_64.png,37.385476,-5.986567,airport-02
+recommendation-04,Prado de San Sebastián Gardens,Park,"Av. del Cid, 41001 Sevilla Andalucía",Sevilla,ES,https://foursquare.com/v/4b4c11fbf964a520e3ad26e3,https://ss3.4sqi.net/img/categories_v2/parks_outdoors/park_64.png,37.379714,-5.986934,airport-02
