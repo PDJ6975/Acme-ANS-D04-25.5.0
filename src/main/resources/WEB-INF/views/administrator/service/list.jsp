@@ -5,6 +5,11 @@
 <acme:list>
 	<acme:list-column code="administrator.service.list.label.name" path="name"/>
 	<acme:list-column code="administrator.service.list.label.averageDwellTime" path="averageDwellTime"/>
-	<acme:list-column code="administrator.service.list.label.airport" path="airport.name"/>
+	<acme:list-column code="administrator.service.list.label.airport" path="airport.iataCode"/>
 	<acme:list-payload path="payload"/>
 </acme:list>
+
+<jstl:if test="${_command == 'list'}">
+    <acme:button code="administrator.service.list.button.create" 
+                 action="/administrator/service/create"/>
+</jstl:if>

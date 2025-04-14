@@ -32,7 +32,7 @@ public class AdministratorServiceListService extends AbstractGuiService<Administ
 
 	@Override
 	public void unbind(final Service service) {
-		Dataset dataset = super.unbindObject(service, "name", "averageDwellTime", "airport.name");
+		Dataset dataset = super.unbindObject(service, "name", "averageDwellTime", "airport.iataCode");
 		super.getResponse().addData(dataset);
 	}
 }
