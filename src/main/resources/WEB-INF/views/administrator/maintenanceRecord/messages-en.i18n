@@ -1,0 +1,21 @@
+administrator.maintenanceRecord.list.label.moment = Moment
+administrator.maintenanceRecord.list.label.status = Status
+administrator.maintenanceRecord.list.label.nextInspectionDue = Next Inspection
+administrator.maintenanceRecord.list.label.estimatedCost = Estimated Cost
+administrator.maintenanceRecord.list.label.technician = Tehcnician
+
+administrator.maintenanceRecord.form.label.moment = Moment:
+administrator.maintenanceRecord.form.label.status = Status:
+administrator.maintenanceRecord.form.label.nextInspectionDue = Next Inspection:
+administrator.maintenanceRecord.form.label.estimatedCost = Estimated Cost:
+administrator.maintenanceRecord.form.label.notes = Notes:
+administrator.maintenanceRecord.form.label.technician = Technician:
+administrator.maintenanceRecord.form.label.tasks = Tasks
+administrator.maintenanceRecord.form.button.tasks = View Tasks
+administrator.maintenanceRecord.list.title = Maintenance Record List
+administrator.maintenanceRecord.form.title = Maintenance Record Details
+administrator.maintenanceRecord.form.label.tasks = Tasks
+administrator.task.list.label.type = Type
+administrator.task.list.label.priority = Priority
+administrator.task.list.label.description = Description
+administrator.task.list.label.estimatedDuration = Estimated Duration
