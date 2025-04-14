@@ -33,3 +33,5 @@ customer.booking.form.error.flight-required = Debe seleccionar un vuelo
 
 customer.booking.form.error.flight-draft = El vuelo seleccionado no está disponible para reservas
 customer.booking.form.error.flight-departed = El vuelo seleccionado ya ha partido
+
+customer.booking.form.error.no-passengers = No se puede publicar la reserva: se requiere al menos un pasajero

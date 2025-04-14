@@ -38,6 +38,7 @@
 			<acme:menu-suboption code="master.menu.administrator.populate-db-sample" action="/administrator/system/populate-sample"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="administrator.menu.populate-visa" action="/administrator/system/populate-visa"/>
+			<acme:menu-suboption code="master.menu.administrator.populate-recommendation" action="/administrator/system/populate-recommendation"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-system-down" action="/administrator/system/shut-down"/>
 			<acme:menu-separator/>
@@ -86,6 +87,7 @@
  		<acme:menu-option code="master.menu.customer" access="hasRealm('Customer')">
 		    <acme:menu-suboption code="master.menu.customer.dashboard" action="/customer/customer-dashboard/show"/>
 		    <acme:menu-suboption code="master.menu.customer.list-bookings" action="/customer/booking/list"/>
+		    <acme:menu-suboption code="master.menu.customer.recommendations" action="/customer/recommendation/list"/>
 		</acme:menu-option>
 	</acme:menu-left>
 

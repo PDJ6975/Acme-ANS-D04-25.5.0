@@ -96,3 +96,7 @@ flight-66,"Lorem ipsum dolor sit ame",true,EUR 5000.00,"Lorem ipsum dolor sit am
 # flight PRUEBA BORRADO
 #
 flight-67,"prueba borrado",true,EUR 1000.00,"prueba borrado",2022/09/01 10:00,2022/09/01 12:00,"ciudad borrado","ciudad borrado 2",2,true,airline-01,manager-01
+#
+# flight prueba recommendations
+#
+flight-sevilla,FLSV-001,false,EUR 150.00,"Vuelo con destino final Sevilla",2025/05/10 08:00,2025/05/10 09:30,Madrid,Sevilla,0,false,airline-01,manager-01

@@ -42,6 +42,9 @@ public class CustomerBookingPublishService extends AbstractGuiService<Customer, 
 	public void validate(final Booking booking) {
 		if (!super.getBuffer().getErrors().hasErrors("creditCardNibble"))
 			super.state(booking.getCreditCardNibble() != null && !booking.getCreditCardNibble().isEmpty(), "creditCardNibble", "customer.booking.form.error.empty-credit-card-nibble");
+
+		int passengerCount = this.repository.countPublishedPassengersByBookingId(booking.getId());
+		super.state(passengerCount > 0, "*", "customer.booking.form.error.no-passengers");
 	}
 
 	@Override

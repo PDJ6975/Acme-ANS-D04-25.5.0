@@ -33,3 +33,5 @@ customer.booking.form.error.flight-required = You must select a flight
 
 customer.booking.form.error.flight-draft = The selected flight is not available for booking
 customer.booking.form.error.flight-departed = The selected flight has already departed
+
+customer.booking.form.error.no-passengers = Cannot publish booking: at least one passenger is required
