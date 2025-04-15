@@ -10,3 +10,10 @@
 	<acme:list-column code="crewMember.assignment.list.completed.label.arrivalAirport.name" path="leg.arrivalAirport.name"/>
 	<acme:list-payload path="payload"/>
 </acme:list>
+
+<jstl:if test="${canCreate}">
+    <acme:button 
+        code="crewMember.assignment.list.button.create" 
+        action="/flight-crew-member/flight-assignment/create"
+    />
+</jstl:if>

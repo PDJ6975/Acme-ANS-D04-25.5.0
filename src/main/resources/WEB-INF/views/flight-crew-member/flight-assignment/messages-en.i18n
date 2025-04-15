@@ -22,7 +22,7 @@ crewMember.assignment.form.label.assignmentStatus = Assignment Status:
 crewMember.assignment.form.label.lastUpdated = Last Updated:
 crewMember.assignment.form.label.comments = Some Comments:
 
-crewMember.assignment.form.button.create = Create
+crewMember.assignment.list.button.create = Create
 crewMember.assignment.form.submit.create = Create
 crewMember.assignment.form.button.update = Update
 crewMember.assignment.form.button.publish = Publish
@@ -31,6 +31,13 @@ crewMember.assignment.form.button.logs = Show Incidents
 
 crewMember.assignment.error.null-crewRole=Crew role must be selected
 crewMember.assignment.error.null-assignmentStatus=Assignment status must be selected
-
 crewMember.assignment.error.duplicate-role = This role is already assigned
 crewMember.assignment.error.missing-member = You must select an available member
+crewMember.assignment.error.missing-leg = You must select a leg
+crewMember.assignment.error.not-available = The member must be available!
+crewMember.assignment.error.duplicate-assignment = The member already has an assignment for that leg!
+crewMember.assignment.error.leg-occurred = The stage has already occurred or is not yet published
+crewMember.assignment.error.overlapping = The member already has assignments on the dates when this leg occurs
+crewMember.assignment.error.not-editable=This assignment has already been published and cannot be modified
+crewMember.assignment.error.not-deletable=This assignment has already been published and cannot be deleted
+crewMember.assignment.error.already-published=This assignment has already been published and cannot be published again

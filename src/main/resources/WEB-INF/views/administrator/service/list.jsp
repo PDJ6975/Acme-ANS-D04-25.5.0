@@ -9,7 +9,4 @@
 	<acme:list-payload path="payload"/>
 </acme:list>
 
-<jstl:if test="${_command == 'list'}">
-    <acme:button code="administrator.service.list.button.create" 
-                 action="/administrator/service/create"/>
-</jstl:if>
+<acme:button code="administrator.service.list.button.create" action="/administrator/service/create"/>

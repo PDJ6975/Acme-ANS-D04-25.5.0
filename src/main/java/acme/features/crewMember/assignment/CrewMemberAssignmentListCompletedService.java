@@ -2,10 +2,12 @@
 package acme.features.crewMember.assignment;
 
 import java.util.Collection;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.assignments.FlightAssignment;
@@ -36,7 +38,9 @@ public class CrewMemberAssignmentListCompletedService extends AbstractGuiService
 		flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
 		assignments = this.repository.findAssignmentsCompletedByMemberId(flightCrewMemberId);
 
-		super.getBuffer().addData(assignments);
+		Collection<FlightAssignment> completed = assignments.stream().filter(fa -> fa.getLeg().getScheduledArrival().before(MomentHelper.getCurrentMoment())).collect(Collectors.toList());
+
+		super.getBuffer().addData(completed);
 
 	}
 
