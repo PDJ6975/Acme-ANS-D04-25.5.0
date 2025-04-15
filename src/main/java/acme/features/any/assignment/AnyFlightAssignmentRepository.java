@@ -12,7 +12,12 @@ import acme.entities.assignments.FlightAssignment;
 @Repository
 public interface AnyFlightAssignmentRepository extends AbstractRepository {
 
-	@Query("SELECT a FROM FlightAssignment a WHERE a.draftMode = FALSE")
+	@Query("""
+			SELECT a
+			FROM FlightAssignment a
+			WHERE a.draftMode = false
+			  AND a.leg.draftMode = false
+		""")
 	Collection<FlightAssignment> findAllPublishedAssignments();
 
 	@Query("SELECT a FROM FlightAssignment a WHERE a.id = :id")

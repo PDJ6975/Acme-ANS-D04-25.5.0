@@ -20,8 +20,7 @@ public class AnyFlightAssignmentListService extends AbstractGuiService<Any, Flig
 
 	@Override
 	public void authorise() {
-		boolean status = super.getRequest().getPrincipal().isAuthenticated();
-		super.getResponse().setAuthorised(status);
+		super.getResponse().setAuthorised(true);
 	}
 
 	@Override
