@@ -16,3 +16,15 @@ crewMember.log.list.button.create = Crear
 crewMember.log.list.button.update = Actualizar
 crewMember.log.list.button.delete = Borrar
 crewMember.log.list.button.publish = Publicar
+
+crewMember.log.error.typeOfIncident.required=Se requiere el tipo de incidente
+crewMember.log.error.description.required=Se requiere una descripción
+crewMember.log.error.severityLevel.required=Se requiere el nivel de severidad
+crewMember.log.error.severityLevel.range=El nivel de severidad debe estar entre 0 y 10
+crewMember.log.error.registrationMoment.required=Se requiere la fecha de registro
+crewMember.log.error.registrationMoment.past=La fecha de registro debe estar en el pasado
+
+crewMember.log.error.already-published=Este incidente ya ha sido publicado
+crewMember.log.error.assignment.not-confirmed=No se puede publicar un log para una asignación no confirmada
+crewMember.log.error.assignment.not-published=No se puede publicar un log para una asignación no publicada
+crewMember.log.error.leg.not-published=No se puede publicar un log si la etapa no está publicada

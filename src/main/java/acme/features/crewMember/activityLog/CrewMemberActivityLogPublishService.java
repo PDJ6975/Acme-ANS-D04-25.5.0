@@ -7,6 +7,7 @@ import acme.client.components.models.Dataset;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.activityLogs.ActivityLog;
+import acme.entities.assignments.AssignmentStatus;
 import acme.realms.members.FlightCrewMember;
 
 @GuiService
@@ -18,17 +19,19 @@ public class CrewMemberActivityLogPublishService extends AbstractGuiService<Flig
 
 	@Override
 	public void authorise() {
-
-		boolean status;
+		boolean authorised = false;
 		int logId;
 		ActivityLog log;
 
-		logId = super.getRequest().getData("id", int.class);
-		log = this.repository.findOneById(logId);
+		if (super.getRequest().hasData("id", int.class)) {
+			logId = super.getRequest().getData("id", int.class);
+			log = this.repository.findOneById(logId);
 
-		status = !log.getFlightAssignment().isDraftMode() && log.isDraftMode() && super.getRequest().getPrincipal().hasRealm(log.getFlightAssignment().getFlightCrewMember());
+			authorised = log != null && log.isDraftMode() && super.getRequest().getPrincipal().hasRealm(log.getFlightAssignment().getFlightCrewMember()) && log.getFlightAssignment().getAssignmentStatus() == AssignmentStatus.CONFIRMED
+				&& !log.getFlightAssignment().isDraftMode() && !log.getFlightAssignment().getLeg().isDraftMode();
+		}
 
-		super.getResponse().setAuthorised(status);
+		super.getResponse().setAuthorised(authorised);
 	}
 
 	@Override
@@ -51,7 +54,12 @@ public class CrewMemberActivityLogPublishService extends AbstractGuiService<Flig
 
 	@Override
 	public void validate(final ActivityLog log) {
-		;
+
+		// Protección adicional contra inconsistencias (duplicado defensivo con authorise)
+		super.state(log.isDraftMode(), "*", "crewMember.log.error.already-published");
+		super.state(log.getFlightAssignment().getAssignmentStatus() == AssignmentStatus.CONFIRMED, "*", "crewMember.log.error.assignment.not-confirmed");
+		super.state(!log.getFlightAssignment().isDraftMode(), "*", "crewMember.log.error.assignment.not-published");
+		super.state(!log.getFlightAssignment().getLeg().isDraftMode(), "*", "crewMember.log.error.leg.not-published");
 	}
 
 	@Override
@@ -65,7 +73,7 @@ public class CrewMemberActivityLogPublishService extends AbstractGuiService<Flig
 		Dataset dataset;
 
 		dataset = super.unbindObject(log, "registrationMoment", "typeOfIncident", "description", "severityLevel");
-		dataset.put("draftMode", log.getFlightAssignment().isDraftMode());
+		dataset.put("validDraft", log.isDraftMode() && !log.getFlightAssignment().isDraftMode() && !log.getFlightAssignment().getLeg().isDraftMode());
 		dataset.put("masterId", super.getRequest().getData("masterId", int.class));
 
 		super.getResponse().addData(dataset);

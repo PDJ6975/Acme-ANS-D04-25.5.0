@@ -66,6 +66,11 @@ public class CrewMemberAssignmentShowService extends AbstractGuiService<FlightCr
 
 		dataset.put("draftMode", assignment.isDraftMode());
 
+		// ¿puede ver logs esta asignación?
+		boolean hasLog = assignment.getAssignmentStatus() == AssignmentStatus.CONFIRMED && !assignment.isDraftMode() && !assignment.getLeg().isDraftMode();
+
+		dataset.put("hasLog", hasLog);
+
 		super.getResponse().addData(dataset);
 	}
 }
