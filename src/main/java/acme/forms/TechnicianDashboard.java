@@ -1,7 +1,6 @@
 
 package acme.forms;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -10,9 +9,9 @@ import javax.validation.Valid;
 import acme.client.components.basis.AbstractForm;
 import acme.client.components.datatypes.Money;
 import acme.client.components.validation.Mandatory;
-import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidNumber;
+import acme.entities.maintenanceRecords.MaintenanceRecord;
 import acme.entities.maintenanceRecords.StatusMaintenance;
 import lombok.Getter;
 import lombok.Setter;
@@ -28,8 +27,8 @@ public class TechnicianDashboard extends AbstractForm {
 	private Map<StatusMaintenance, Integer>	numMaintenanceRecordsByStatus;
 
 	@Mandatory
-	@ValidMoment
-	private Date							nearestInspectionDue;
+	@Valid
+	private MaintenanceRecord				nearestInspectionDue;
 
 	@Mandatory
 	@Valid
