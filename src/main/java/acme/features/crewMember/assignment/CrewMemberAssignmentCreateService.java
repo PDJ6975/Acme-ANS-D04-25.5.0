@@ -28,11 +28,12 @@ public class CrewMemberAssignmentCreateService extends AbstractGuiService<Flight
 	public void authorise() {
 		boolean isAuthorised = super.getRequest().getPrincipal().hasRealmOfType(FlightCrewMember.class);
 
-		if (super.getRequest().hasData("leg", int.class)) {
-			int legId = super.getRequest().getData("leg", int.class);
+		// Recuperar el legId de forma segura
+		Integer legId = super.getRequest().getData("leg", int.class, null);
+
+		if (legId != null && legId != 0) {
 			Collection<Leg> availableLegs = this.repository.findAllLegsAvailableForAssignment(MomentHelper.getCurrentMoment());
 			boolean legIsAvailable = availableLegs.stream().anyMatch(l -> l.getId() == legId);
-
 			isAuthorised = isAuthorised && legIsAvailable;
 		}
 
