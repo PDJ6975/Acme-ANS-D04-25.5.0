@@ -13,6 +13,8 @@
 package acme.features.crewMember.dashboard;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,6 +24,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 
 import acme.client.components.models.Dataset;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.assignments.AssignmentStatus;
@@ -64,10 +67,12 @@ public class FlightCrewMemberDashboardShowService extends AbstractGuiService<Fli
 		dashboard.setActivityLogCounts(activityLogCounts);
 
 		// Última leg
-		List<Integer> lastLegs = this.repository.findLastLegIdByCrewMember(crewMemberId);
+		Date now = MomentHelper.getCurrentMoment();
+
+		List<Integer> lastLegs = this.repository.findLastLegIdByCrewMember(crewMemberId, now);
 		Integer lastLegId = lastLegs.isEmpty() ? null : lastLegs.get(0);
 		// Compañeros de etapa
-		List<FlightCrewMember> colleagues = lastLegId != null ? this.repository.findColleaguesByLegId(lastLegId, crewMemberId) : List.of();
+		List<FlightCrewMember> colleagues = lastLegId != null ? this.repository.findColleaguesByLegId(lastLegId, crewMemberId, now) : List.of();
 		dashboard.setColleaguesInLastStage(colleagues);
 
 		// Asignaciones agrupadas por status
@@ -82,7 +87,12 @@ public class FlightCrewMemberDashboardShowService extends AbstractGuiService<Fli
 
 		// Estadísticas
 
-		List<Object[]> rawData = this.repository.findAssignmentsCountPerDayInLastMonth(crewMemberId);
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(now);
+		cal.add(Calendar.DAY_OF_YEAR, -30);
+		Date start = cal.getTime();
+
+		List<Object[]> rawData = this.repository.findAssignmentsCountPerDayInLastMonth(crewMemberId, start, now);
 
 		// Extraigo los conteos
 		List<Long> counts = new ArrayList<>();
@@ -91,39 +101,45 @@ public class FlightCrewMemberDashboardShowService extends AbstractGuiService<Fli
 			Long count = (Long) row[1];
 			counts.add(count);
 		}
+		if (counts.isEmpty()) {
+			dashboard.setAverage(0.0);
+			dashboard.setMinimum(0.0);
+			dashboard.setMaximum(0.0);
+			dashboard.setStandardDesviation(0.0);
+		} else {
+			// Calculo average, min, max, std dev de "counts"
+			long min = Long.MAX_VALUE;
+			long max = Long.MIN_VALUE;
+			long sum = 0;
+			for (Long c : counts) {
+				if (c < min)
+					min = c;
+				if (c > max)
+					max = c;
+				sum += c;
+			}
+			double average = counts.isEmpty() ? 0 : (double) sum / counts.size();
 
-		// Calculo average, min, max, std dev de "counts"
-		long min = Long.MAX_VALUE;
-		long max = Long.MIN_VALUE;
-		long sum = 0;
-		for (Long c : counts) {
-			if (c < min)
-				min = c;
-			if (c > max)
-				max = c;
-			sum += c;
+			// std dev
+			double variance = 0;
+			for (Long c : counts) {
+				double diff = c - average;
+				variance += diff * diff;
+			}
+			double std = counts.size() > 1 ? Math.sqrt(variance / (counts.size() - 1)) : 0.0;
+
+			dashboard.setAverage(average);
+			dashboard.setMinimum((double) min);
+			dashboard.setMaximum((double) max);
+			dashboard.setStandardDesviation(std);
 		}
-		double average = counts.isEmpty() ? 0 : (double) sum / counts.size();
-
-		// std dev
-		double variance = 0;
-		for (Long c : counts) {
-			double diff = c - average;
-			variance += diff * diff;
-		}
-		double std = counts.size() > 1 ? Math.sqrt(variance / (counts.size() - 1)) : 0.0;
-
-		dashboard.setAverage(average);
-		dashboard.setMinimum((double) min);
-		dashboard.setMaximum((double) max);
-		dashboard.setStandardDesviation(std);
 
 		super.getBuffer().addData(dashboard);
 	}
 
 	@Override
 	public void unbind(final FlightCrewMemberDashboard dashboard) {
-		Dataset dataset = super.unbindObject(dashboard, "lastFiveDestinations", "activityLogCounts", "colleaguesInLastStage", "member", "assignmentsByStatus", "average", "minimum", "maximum", "standardDesviation");
+		Dataset dataset = super.unbindObject(dashboard, "lastFiveDestinations", "activityLogCounts", "colleaguesInLastStage", "assignmentsByStatus", "average", "minimum", "maximum", "standardDesviation");
 
 		super.getResponse().addData(dataset);
 	}

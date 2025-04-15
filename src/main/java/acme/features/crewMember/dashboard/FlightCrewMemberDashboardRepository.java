@@ -1,6 +1,7 @@
 
 package acme.features.crewMember.dashboard;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.domain.Page;
@@ -40,8 +41,6 @@ public interface FlightCrewMemberDashboardRepository extends AbstractRepository 
 		          AND l.flightAssignment.draftMode = false
 		          AND l.flightAssignment.assignmentStatus = 'CONFIRMED'
 		          AND l.flightAssignment.leg.draftMode = false
-		          AND l.flightAssignment.leg.legStatus = 'LANDED'
-		          AND l.flightAssignment.leg.scheduledArrival < CURRENT_TIMESTAMP
 		    GROUP BY
 		        CASE
 		            WHEN l.severityLevel <= 3 THEN '0-3'
@@ -58,11 +57,10 @@ public interface FlightCrewMemberDashboardRepository extends AbstractRepository 
 		      AND a.draftMode = false
 		      AND a.assignmentStatus = 'CONFIRMED'
 		      AND a.leg.draftMode = false
-		      AND a.leg.legStatus = 'LANDED'
-		      AND a.leg.scheduledArrival < CURRENT_TIMESTAMP
+		      AND a.leg.scheduledArrival < :moment
 		    ORDER BY a.leg.scheduledArrival DESC
 		""")
-	List<Integer> findLastLegIdByCrewMember(int id);
+	List<Integer> findLastLegIdByCrewMember(int id, Date moment);
 
 	@Query("""
 		    SELECT DISTINCT fa.flightCrewMember
@@ -72,10 +70,9 @@ public interface FlightCrewMemberDashboardRepository extends AbstractRepository 
 		      AND fa.draftMode = false
 		      AND fa.assignmentStatus = 'CONFIRMED'
 		      AND fa.leg.draftMode = false
-		      AND fa.leg.legStatus = 'LANDED'
-		      AND fa.leg.scheduledArrival < CURRENT_TIMESTAMP
+		      AND fa.leg.scheduledArrival < :moment
 		""")
-	List<FlightCrewMember> findColleaguesByLegId(int legId, int crewMemberId);
+	List<FlightCrewMember> findColleaguesByLegId(int legId, int crewMemberId, Date moment);
 
 	@Query("""
 		    SELECT a.assignmentStatus, a
@@ -83,22 +80,23 @@ public interface FlightCrewMemberDashboardRepository extends AbstractRepository 
 		    WHERE a.flightCrewMember.id = :id
 		      AND a.draftMode = false
 		      AND a.leg.draftMode = false
-		      AND a.leg.legStatus != 'CANCELLED'
-		      AND a.leg.scheduledArrival < CURRENT_TIMESTAMP
 		""")
 	List<Object[]> findAssignmentsByStatus(int id);
 
 	@Query("""
-		    SELECT FUNCTION('DATE', a.lastUpdated) AS day, COUNT(a)
+		    SELECT FUNCTION('DATE', a.leg.scheduledDeparture) AS day, COUNT(a)
 		    FROM FlightAssignment a
 		    WHERE a.flightCrewMember.id = :id
 		      AND a.draftMode = false
 		      AND a.assignmentStatus = 'CONFIRMED'
-		      AND a.lastUpdated >= CURRENT_DATE - 30
 		      AND a.leg.draftMode = false
-		    GROUP BY FUNCTION('DATE', a.lastUpdated)
-		    ORDER BY FUNCTION('DATE', a.lastUpdated)
+		      AND (
+		        a.leg.scheduledDeparture BETWEEN :start AND :now
+		        OR a.leg.scheduledArrival BETWEEN :start AND :now
+		      )
+		    GROUP BY FUNCTION('DATE', a.leg.scheduledDeparture)
+		    ORDER BY FUNCTION('DATE', a.leg.scheduledDeparture)
 		""")
-	List<Object[]> findAssignmentsCountPerDayInLastMonth(int id);
+	List<Object[]> findAssignmentsCountPerDayInLastMonth(int id, Date start, Date now);
 
 }
