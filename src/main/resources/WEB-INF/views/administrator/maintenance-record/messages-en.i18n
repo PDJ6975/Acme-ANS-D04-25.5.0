@@ -1,9 +1,11 @@
+administrator.maintenance-record.list.title=Maintenances Records
 administrator.maintenanceRecord.list.label.moment = Moment
 administrator.maintenanceRecord.list.label.status = Status
 administrator.maintenanceRecord.list.label.nextInspectionDue = Next Inspection
 administrator.maintenanceRecord.list.label.estimatedCost = Estimated Cost
 administrator.maintenanceRecord.list.label.technician = Tehcnician
 
+administrator.maintenance-record.form.title= Maintenance Record
 administrator.maintenanceRecord.form.label.moment = Moment:
 administrator.maintenanceRecord.form.label.status = Status:
 administrator.maintenanceRecord.form.label.nextInspectionDue = Next Inspection:
