@@ -1,0 +1,10 @@
+any.service.list.title = Lista de Servicios
+any.service.form.title = Datos del Servicio
+
+any.service.list.completed.label.name = Nombre
+any.service.list.completed.label.link = Enlace
+any.service.list.completed.label.averageDwellTime = Tiempo de espera promedio
+any.service.list.completed.label.flightNumber = Nombre del aeropuerto
+
+any.service.list.completed.label.promotionCode = Codigo promocional
+any.service.list.completed.label.discountMoney = Decuento
