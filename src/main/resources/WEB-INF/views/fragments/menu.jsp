@@ -24,11 +24,14 @@
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-Adrian" action="https://www.youtube.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-Jianwu" action="https://pomodoro-tracker.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-pabolimor" action="https://eloquentclicks.com/"/>
+			<acme:menu-suboption code="master.menu.authenticated.list-service" action="/any/service/list" />
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
 		    <acme:menu-suboption code="master.menu.authenticated.list-assignments" action="/any/flight-assignment/list" />
 		    <acme:menu-suboption code="master.menu.authenticated.list-reviews" action="/authenticated/review/list" />
+		    <acme:menu-suboption code="master.menu.authenticated.list-service" action="/any/service/list" />
+		    
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRealm('Administrator')">
