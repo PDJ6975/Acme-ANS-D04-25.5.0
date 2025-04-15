@@ -97,7 +97,7 @@ master.menu.technician.list-my-tasks = Listar mis tareas
 master.menu.technician.list-maintenance-record-catalogue = Listar catálogo de registros de mantenimiento
 master.menu.technician.list-task-catalogue = Listar catálogo de tareas
 master.menu.technician.show-dashboard=Mostrar Dashboard
-
+master.menu.technician.list-notice-board=Listar cursos de técnico
 
 master.menu.authenticated.list-reviews = Listar Reseñas
 

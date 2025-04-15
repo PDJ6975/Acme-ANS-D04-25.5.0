@@ -1,0 +1,23 @@
+# Títulos de las vistas
+technician.notice-board.list.title = Cursos disponibles
+technician.notice-board.form.title = Información detallada del curso
+# Etiquetas para el listado
+technician.notice.list.label.title = Título
+technician.notice.list.label.headline = Titular
+technician.notice.list.label.url = URL
+technician.notice.list.label.isPaid = ¿Es de pago?
+technician.notice.list.label.postedDate = Fecha de publicación
+
+# Etiquetas para el formulario/detalle
+technician.notice.form.label.title = Título
+technician.notice.form.label.headline = Titular
+technician.notice.form.label.url = URL del curso
+technician.notice.form.label.isPaid = ¿Es de pago?
+technician.notice.form.label.price = Precio
+technician.notice.form.label.currency = Moneda
+technician.notice.form.label.instructorName = Nombre del Instructor
+technician.notice.form.label.instructorUrl = URL del Instructor
+technician.notice.form.label.instructorImage = Imagen del Instructor
+technician.notice.form.label.imageUrl = Imagen del Curso
+technician.notice.form.label.language = Idioma
+technician.notice.form.label.postedDate = Fecha de publicación

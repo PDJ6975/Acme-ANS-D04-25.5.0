@@ -96,7 +96,7 @@ master.menu.technician.list-my-tasks = List my tasks
 master.menu.technician.show-dashboard=Dashboard
 master.menu.technician.list-maintenance-record-catalogue = List maintenance record catalogue
 master.menu.technician.list-task-catalogue = List task catalogue
-
+master.menu.technician.list-notice-board=List Courses
 master.menu.authenticated.list-reviews = List Reviews
 
 master.menu.customer.recommendations = Recommendations
