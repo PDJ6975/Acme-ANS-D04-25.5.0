@@ -40,6 +40,7 @@ master.menu.administrator.list-services = List Services
 master.menu.administrator.list-maintenanceRecord = List Maintenances Records
 master.menu.administrator.show-dashboard=Dashboard
 master.menu.administrator.list-banned-passanger = Banned Passangers
+master.menu.administrator.show-systemConfiguration=System Configuration
 
 
 # master.menu.provider ########################################################

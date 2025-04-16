@@ -56,7 +56,7 @@
 			<acme:menu-suboption code="master.menu.administrator.list-maintenanceRecord" action="/administrator/maintenance-record/list"/>
 			<acme:menu-suboption code="master.menu.administrator.show-dashboard" action="/administrator/administrator-dashboard/show" />
 			<acme:menu-suboption code="master.menu.administrator.list-banned-passanger" action="/administrator/banned-passenger/current-list"/>
-			
+			<acme:menu-suboption code="master.menu.administrator.show-systemConfiguration" action="/administrator/system-configuration/show" />
 			
 		</acme:menu-option>
 
