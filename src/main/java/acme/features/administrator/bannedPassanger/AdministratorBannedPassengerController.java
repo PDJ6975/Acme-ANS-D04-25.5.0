@@ -14,16 +14,24 @@ import acme.entities.passengers.BannedPassenger;
 public class AdministratorBannedPassengerController extends AbstractGuiController<Administrator, BannedPassenger> {
 
 	@Autowired
-	private AdministratorBannedPassengerCurrentListService	listCurrentService;
+	private AdministratorBannedPassengerCurrentListService		listCurrentService;
 
 	@Autowired
-	private AdministratorBannedPassengerShowService			showService;
+	private AdministratorBannedPassengerShowService				showService;
+
+	@Autowired
+	private AdministratorBannedPassengerPastListService			listPastService;
+
+	@Autowired
+	private AdministratorBannedPassengerLastMonthListService	listLastMonthService;
 
 
 	@PostConstruct
 	protected void initialise() {
 		super.addCustomCommand("current-list", "list", this.listCurrentService);
 		super.addBasicCommand("show", this.showService);
+		super.addCustomCommand("past-list", "list", this.listPastService);
+		super.addCustomCommand("last-month-list", "list", this.listLastMonthService);
 
 	}
 

@@ -42,6 +42,9 @@ master.menu.administrator.list-maintenanceRecord = Ver Registros de Mantenimient
 master.menu.administrator.show-dashboard=Mostrar Dashboard
 master.menu.administrator.list-banned-passanger = Pasajeros Baneados
 master.menu.administrator.show-systemConfiguration=Configuración del Sistema
+master.menu.administrator.list-past-banned-passanger = Pasajeros Baneados Anteriormente
+master.menu.administrator.list-last-month-banned-passanger = Pasajeros Baneados Ultimo Mes
+
 
 
 # master.menu.provider ########################################################

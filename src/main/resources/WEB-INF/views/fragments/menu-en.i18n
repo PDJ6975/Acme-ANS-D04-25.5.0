@@ -41,6 +41,8 @@ master.menu.administrator.list-maintenanceRecord = List Maintenances Records
 master.menu.administrator.show-dashboard=Dashboard
 master.menu.administrator.list-banned-passanger = Banned Passangers
 master.menu.administrator.show-systemConfiguration=System Configuration
+master.menu.administrator.list-past-banned-passanger = Past Banned Passanger
+master.menu.administrator.list-last-month-banned-passanger = Last Month Banned Passangers
 
 
 # master.menu.provider ########################################################
