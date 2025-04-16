@@ -39,6 +39,7 @@ master.menu.administrator.list-airlines = Ver Aerolíneas
 administrator.menu.populate-visa = Poblar BD (Requisitos de visa)
 master.menu.administrator.list-services = List Services
 master.menu.administrator.list-maintenanceRecord = Ver Registros de Mantenimiento
+master.menu.administrator.show-dashboard=Mostrar Dashboard
 
 
 # master.menu.provider ########################################################
