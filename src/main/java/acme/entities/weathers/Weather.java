@@ -68,7 +68,7 @@ public class Weather extends AbstractEntity {
 	private String				location;
 
 	@Mandatory
-	@OnDelete(action = OnDeleteAction.CASCADE)
+	//@OnDelete(action = OnDeleteAction.CASCADE)
 	@Valid
 	@OneToOne(optional = false)
 	private Flight				flight;

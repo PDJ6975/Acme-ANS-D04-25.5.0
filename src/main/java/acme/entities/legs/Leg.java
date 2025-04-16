@@ -82,7 +82,7 @@ public class Leg extends AbstractEntity {
 	private Aircraft			aircraft;
 
 	@Optional
-	@OnDelete(action = OnDeleteAction.CASCADE)
+	//@OnDelete(action = OnDeleteAction.CASCADE)
 	@ManyToOne
 	private Flight				flight;
 

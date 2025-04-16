@@ -1,0 +1,32 @@
+# Título del formulario
+administrator.administrator-dashboard.form.title = Dashboard de Administrador
+
+# 1. Aeropuertos por Alcance Operativo
+administrator.dashboard.title.airports-by-scope = Aeropuertos por Alcance Operativo
+administrator.dashboard.label.operational-scope = Alcance Operativo
+administrator.dashboard.label.count = Cantidad
+
+# 2. Aerolíneas por Tipo
+administrator.dashboard.title.airlines-by-type = Aerolíneas por Tipo
+administrator.dashboard.label.airline-type = Tipo de Aerolínea
+
+# 3. Ratio de Aerolíneas con Email y Teléfono
+administrator.dashboard.title.ratio-airlines-contact = Ratio de Aerolíneas con Información de Contacto
+administrator.dashboard.label.ratio-airlines-contact = Ratio de Aerolíneas con Email y Teléfono
+
+# 4. Ratios de Estado de Aeronaves
+administrator.dashboard.title.aircraft-status = Ratios de Estado de Aeronaves
+administrator.dashboard.label.aircraft-status = Estado
+administrator.dashboard.label.ratio = Ratio
+
+# 5. Ratio de Reseñas con Puntuación Superior a 5.00
+administrator.dashboard.title.ratio-reviews-above-five = Ratio de Reseñas con Puntuación Superior a 5.00
+administrator.dashboard.label.ratio-reviews-above-five = Ratio de Reseñas > 5.00
+
+# 6. Estadísticas de Reseñas (Últimas 10 Semanas)
+administrator.dashboard.title.review-statistics = Estadísticas de Reseñas (Últimas 10 Semanas)
+administrator.dashboard.label.review-count = Cantidad de Reseñas
+administrator.dashboard.label.review-average = Puntuación Promedio
+administrator.dashboard.label.review-minimum = Puntuación Mínima
+administrator.dashboard.label.review-maximum = Puntuación Máxima
+administrator.dashboard.label.review-stddev = Desviación Estándar de la Puntuación

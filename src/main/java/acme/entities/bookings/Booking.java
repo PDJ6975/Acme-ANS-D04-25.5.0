@@ -72,7 +72,7 @@ public class Booking extends AbstractEntity {
 	private Customer			customer;
 
 	@ManyToOne(optional = false)
-	@OnDelete(action = OnDeleteAction.CASCADE)
+	//@OnDelete(action = OnDeleteAction.CASCADE)
 	@Automapped
 	@Valid
 	private Flight				flight;

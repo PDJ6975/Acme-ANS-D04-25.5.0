@@ -14,6 +14,7 @@ import acme.entities.activityLogs.ActivityLog;
 import acme.entities.airlines.Airline;
 import acme.entities.assignments.FlightAssignment;
 import acme.entities.bookings.Booking;
+import acme.entities.bookings.BookingRecord;
 import acme.entities.claims.Claim;
 import acme.entities.flights.Flight;
 import acme.entities.legs.Leg;
@@ -59,7 +60,9 @@ public class ManagerFlightDeleteService extends AbstractGuiService<Manager, Flig
 		//OBTENER TODOS LOS OBJETOS RELACIONADOS CON EL FLIGHT
 		List<Booking> bookings = this.repository.findBookingsByFlightId(flight.getId());
 
-		List<Passenger> passengers = this.repository.findPassengersByBookings(bookings);
+		List<BookingRecord> bookingRecords = this.repository.findBookingRecordsByBookings(bookings);
+
+		List<Passenger> passengers = this.repository.findDistinctPassengersByBookings(bookings);
 
 		Weather weather = this.repository.findWeatherByFlightId(flight.getId());
 
@@ -110,9 +113,32 @@ public class ManagerFlightDeleteService extends AbstractGuiService<Manager, Flig
 
 	@Override
 	public void perform(final Flight flight) {
-		// Únicamente eliminando el Flight, siempre y cuando se cumpla el validate(), se eliminarán todos los hijos directos o indirectos debido a los ondelete=cascade
+		// Obtener relaciones
+		List<Booking> bookings = this.repository.findBookingsByFlightId(flight.getId());
+		List<BookingRecord> bookingRecords = this.repository.findBookingRecordsByBookings(bookings);
+		List<Leg> legs = this.repository.findLegsByFlightId(flight.getId());
+		List<FlightAssignment> flightAssignments = this.repository.findFlightAssignmentsByLegs(legs);
+		List<ActivityLog> activityLogs = this.repository.findActivityLogsByFlightAssignments(flightAssignments);
+		List<Claim> claims = this.repository.findClaimByLegs(legs);
+		List<TrackingLog> trackingLogs = this.repository.findTrackingLogsByClaim(claims);
+		Weather weather = this.repository.findWeatherByFlightId(flight.getId());
+
+		// Eliminar todo de hijos a padres
+		this.repository.deleteAll(trackingLogs);
+		this.repository.deleteAll(claims);
+		this.repository.deleteAll(activityLogs);
+		this.repository.deleteAll(flightAssignments);
+		this.repository.deleteAll(legs);
+		this.repository.deleteAll(bookingRecords);
+		this.repository.deleteAll(bookings);
+		if (weather != null) {
+			this.repository.delete(weather);
+		}
+
+		// Finalmente, eliminar el vuelo
 		this.repository.delete(flight);
 	}
+
 
 	@Override
 	public void unbind(final Flight flight) {

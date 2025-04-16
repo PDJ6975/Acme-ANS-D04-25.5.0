@@ -50,5 +50,9 @@ public interface ManagerLegRepository extends AbstractRepository {
 
 	@Query("SELECT COUNT(l) > 0 FROM Leg l WHERE l.flightNumber = :flightNumber")
 	boolean existsLegByFlightNumber(String flightNumber);
+	
+	@Query("SELECT COUNT(l) > 0 FROM Leg l WHERE l.flightNumber = :flightNumber AND l.id != :legId")
+	boolean existsOtherLegByFlightNumber(String flightNumber, int legId);
+
 
 }

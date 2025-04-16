@@ -26,11 +26,15 @@
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-pabolimor" action="https://eloquentclicks.com/"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.authenticated.list-assignments" action="/any/flight-assignment/list" />
+			<acme:menu-suboption code="master.menu.authenticated.list-service" action="/any/service/list" />
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
+			<acme:menu-suboption code="master.menu.authenticated.list-airports" action="/any/airport/list" />
 		    <acme:menu-suboption code="master.menu.authenticated.list-assignments" action="/any/flight-assignment/list" />
 		    <acme:menu-suboption code="master.menu.authenticated.list-reviews" action="/authenticated/review/list" />
+		    <acme:menu-suboption code="master.menu.authenticated.list-service" action="/any/service/list" />
+		    
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRealm('Administrator')">
@@ -49,6 +53,9 @@
 			<acme:menu-suboption code="master.menu.administrator.list-bookings" action="/administrator/booking/list"/>
 			<acme:menu-suboption code="master.menu.administrator.list-airlines" action="/administrator/airline/list"/>
 			<acme:menu-suboption code="master.menu.administrator.list-services" action="/administrator/service/list"/>
+			<acme:menu-suboption code="master.menu.administrator.list-maintenanceRecord" action="/administrator/maintenance-record/list"/>
+			<acme:menu-suboption code="master.menu.administrator.show-dashboard" action="/administrator/administrator-dashboard/show" />
+			
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRealm('Provider')">
@@ -76,8 +83,12 @@
 			<acme:menu-suboption code="master.menu.technician.list-my-maintenance-records" action="/technician/maintenance-record/list?mine=true" />			
 			<acme:menu-suboption code="master.menu.technician.list-my-tasks" action="/technician/task/list?mine=true" />
 			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.technician.show-dashboard" action="/technician/technician-dashboard/show" />
+			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.technician.list-maintenance-record-catalogue" action="/technician/maintenance-record/list" />
 			<acme:menu-suboption code="master.menu.technician.list-task-catalogue" action="/technician/task/list" />
+			<acme:menu-separator />
+			<acme:menu-suboption code="master.menu.technician.list-notice-board" action="/technician/notice-board/list" />
 		</acme:menu-option>
 
 		
