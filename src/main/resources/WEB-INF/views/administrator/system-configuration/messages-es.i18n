@@ -1,0 +1,8 @@
+administrator.system-configuration.form.title = Configuración del Sistema
+
+administrator.system-configuration.form.label.actualCurrency = Moneda Actual:
+administrator.system-configuration.form.label.validCurrencies = Monedas Disponibles:
+
+administrator.system-configuration.form.button.update = Actualizar
+
+administrator.system-configuration.error.invalid-currency = Moneda Inválida

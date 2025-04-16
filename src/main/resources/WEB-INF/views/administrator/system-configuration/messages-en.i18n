@@ -1,0 +1,10 @@
+administrator.system-configuration.form.title = System Configuration
+
+administrator.system-configuration.form.label.actualCurrency = Actual Currency:
+administrator.system-configuration.form.label.validCurrencies = Valid Currencies:
+
+administrator.system-configuration.form.button.update = Update
+
+administrator.system-configuration.error.invalid-currency = Invalid Currency
+
+
