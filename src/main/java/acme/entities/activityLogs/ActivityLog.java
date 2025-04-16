@@ -56,7 +56,7 @@ public class ActivityLog extends AbstractEntity {
 	// Relationships
 
 	@Mandatory
-	@OnDelete(action = OnDeleteAction.CASCADE)
+	//@OnDelete(action = OnDeleteAction.CASCADE)
 	@Valid
 	@ManyToOne(optional = false)
 	private FlightAssignment	flightAssignment;

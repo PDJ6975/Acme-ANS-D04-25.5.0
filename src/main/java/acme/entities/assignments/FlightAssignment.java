@@ -49,7 +49,7 @@ public class FlightAssignment extends AbstractEntity {
 	private FlightCrewMember	flightCrewMember;
 
 	@Mandatory
-	@OnDelete(action = OnDeleteAction.CASCADE)
+	//@OnDelete(action = OnDeleteAction.CASCADE)
 	@Valid
 	@ManyToOne(optional = false)
 	private Leg					leg;

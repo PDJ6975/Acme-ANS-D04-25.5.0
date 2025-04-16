@@ -58,7 +58,7 @@ public class TrackingLog extends AbstractEntity {
 	private String				resolution;
 
 	@Mandatory
-	@OnDelete(action = OnDeleteAction.CASCADE)
+	//@OnDelete(action = OnDeleteAction.CASCADE)
 	@Valid
 	@ManyToOne
 	private Claim				claim;

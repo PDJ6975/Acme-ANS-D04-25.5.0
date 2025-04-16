@@ -44,6 +44,7 @@ manager.leg.error.departureBeforeArrival = La salida debe ser antes que la llega
 manager.leg.error.arrivalAfterDeparture = La llegada debe ser después que la salida
 manager.leg.error.equalAirport = Los aeropuertos deben ser diferentes
 manager.leg.error.draftMode = Este Leg está publicado
+manager.leg.error.airportConexion = El aeropuerto de salida de este leg debe ser el mismo que el de llegada del leg anterior
 
 administrator.leg.error.legDraftMode-false = El Leg está publicado
 administrator.leg.error.flightAssignmentDraftMode-false = Existe una relación con un FlightAssignment publicado
