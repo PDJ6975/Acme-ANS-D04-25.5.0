@@ -70,7 +70,7 @@ public class Claim extends AbstractEntity {
 	private UserAccount			userAccount;
 
 	@Mandatory
-	@OnDelete(action = OnDeleteAction.CASCADE)
+	//@OnDelete(action = OnDeleteAction.CASCADE)
 	@Valid
 	@ManyToOne(optional = false)
 	private Leg					leg;

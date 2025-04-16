@@ -90,9 +90,22 @@ public class ManagerLegDeleteService extends AbstractGuiService<Manager, Leg> {
 
 	@Override
 	public void perform(final Leg leg) {
-		// Únicamente eliminando el Leg, siempre y cuando se cumpla el authorise(), se eliminarán todos los hijos directos o indirectos debido a los ondelete=cascade
+		// Obtener relaciones
+		List<FlightAssignment> flightAssignments = this.repository.findFlightAssignmentsByLegId(leg.getId());
+		List<ActivityLog> activityLogs = this.flightRepository.findActivityLogsByFlightAssignments(flightAssignments);
+		List<Claim> claims = this.repository.findClaimsByLegId(leg.getId());
+		List<TrackingLog> trackingLogs = this.flightRepository.findTrackingLogsByClaim(claims);
+
+		// Eliminar todo en orden correcto (de hijos a padres)
+		this.repository.deleteAll(trackingLogs);
+		this.repository.deleteAll(claims);
+		this.repository.deleteAll(activityLogs);
+		this.repository.deleteAll(flightAssignments);
+
+		// Finalmente, eliminar el Leg
 		this.repository.delete(leg);
 	}
+
 
 	@Override
 	public void unbind(final Leg leg) {
