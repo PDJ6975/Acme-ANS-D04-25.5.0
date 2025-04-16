@@ -28,6 +28,7 @@
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
+			<acme:menu-suboption code="master.menu.authenticated.list-airports" action="/any/airport/list" />
 		    <acme:menu-suboption code="master.menu.authenticated.list-assignments" action="/any/flight-assignment/list" />
 		    <acme:menu-suboption code="master.menu.authenticated.list-reviews" action="/authenticated/review/list" />
 		    <acme:menu-suboption code="master.menu.authenticated.list-service" action="/any/service/list" />

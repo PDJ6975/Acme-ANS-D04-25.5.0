@@ -22,6 +22,7 @@ master.menu.anonymous.favourite-link-pabolimor = 53345421A: Olivencia Moreno, Pa
 master.menu.authenticated = Autenticado
 master.menu.authenticated.list-assignments = Ver asignaciones
 master.menu.authenticated.list-service = Lista de Servicios
+master.menu.authenticated.list-airports=Listar Aeropuertos
 
 
 # master.menu.administrator ###################################################

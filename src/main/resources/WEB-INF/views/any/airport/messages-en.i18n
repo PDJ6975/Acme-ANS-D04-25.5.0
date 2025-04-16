@@ -1,0 +1,16 @@
+any.airport.list.title = Airport List
+any.airport.form.title = Airport Form
+
+any.airport.list.label.name=Name
+any.airport.list.label.iataCode= IATA Code
+any.airport.list.label.city=City
+
+
+any.airport.form.label.name=Name
+any.airport.form.label.iataCode=IATA Code
+any.airport.form.label.operationalScope=Operational Scope
+any.airport.form.label.city=City
+any.airport.form.label.country=Country
+any.airport.form.label.website=Website
+any.airport.form.label.emailAddress=Email Address
+any.airport.form.label.contactPhone=Contact Phone
