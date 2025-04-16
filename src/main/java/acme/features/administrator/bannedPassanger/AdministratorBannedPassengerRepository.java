@@ -19,4 +19,10 @@ public interface AdministratorBannedPassengerRepository extends AbstractReposito
 	@Query("SELECT bp FROM BannedPassenger bp WHERE bp.id = :id")
 	BannedPassenger findBannedPassenger(int id);
 
+	@Query("SELECT bp FROM BannedPassenger bp WHERE bp.liftDate < :date")
+	Collection<BannedPassenger> findAllPastBannedPassanger(Date date);
+
+	@Query("SELECT bp FROM BannedPassenger bp WHERE bp.banDate >= :date")
+	Collection<BannedPassenger> findAllLastMonthBannedPassanger(Date date);
+
 }
