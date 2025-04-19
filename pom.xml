@@ -31,5 +31,13 @@
 		<version>25.3.0</version>
 		<relativePath>../../pom-25.3.0.xml</relativePath>
 	</parent>
+
+<dependencies>
+  <dependency>
+    <groupId>com.acme.spam</groupId>
+    <artifactId>spam-detector-library</artifactId>
+    <version>1.0.0</version>
+  </dependency>
+</dependencies>
 	
 </project>
