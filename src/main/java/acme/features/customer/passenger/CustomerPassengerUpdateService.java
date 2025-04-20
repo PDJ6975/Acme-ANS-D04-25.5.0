@@ -5,6 +5,8 @@ import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.acme.spam.detection.SpamDetector;
+
 import acme.client.components.models.Dataset;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
@@ -16,7 +18,10 @@ import acme.realms.Customer;
 public class CustomerPassengerUpdateService extends AbstractGuiService<Customer, Passenger> {
 
 	@Autowired
-	protected CustomerPassengerRepository repository;
+	protected CustomerPassengerRepository	repository;
+
+	@Autowired
+	private SpamDetector					spamDetector;
 
 
 	@Override
@@ -46,6 +51,21 @@ public class CustomerPassengerUpdateService extends AbstractGuiService<Customer,
 	public void validate(final Passenger passenger) {
 		if (!super.getBuffer().getErrors().hasErrors("passportNumber"))
 			super.state(passenger.getPassportNumber().matches("^[A-Z0-9]{6,9}$"), "passportNumber", "customer.passenger.error.invalid-passport");
+
+		if (!super.getBuffer().getErrors().hasErrors("fullName")) {
+			boolean isSpamFn = this.spamDetector.isSpam(passenger.getFullName());
+			super.state(!isSpamFn, "fullName", "customer.passenger.error.spam");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("specialNeeds")) {
+			boolean isSpamSn = this.spamDetector.isSpam(passenger.getSpecialNeeds());
+			super.state(!isSpamSn, "specialNeeds", "customer.passenger.error.spam");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("email")) {
+			boolean isSpamEmail = this.spamDetector.isSpam(passenger.getEmail());
+			super.state(!isSpamEmail, "email", "customer.passenger.error.spam");
+		}
 	}
 
 	@Override
