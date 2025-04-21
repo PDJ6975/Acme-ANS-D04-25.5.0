@@ -9,3 +9,6 @@ banned-passenger-07,Khaled Al-Fulan,ZXC123456,2000/10/30 00:00,Egypt,Assaulted a
 banned-passenger-08,Yuki Tanaka,JP765432,2000/01/01 00:00,Japan,Repeated intoxication on board,2022/07/29 00:00,
 banned-passenger-09,Lucas Martín,ES654321,2000/01/01 00:00,Argentina,Threatened crew and refused orders,2000/01/01 00:00,2022/07/29 23:59
 banned-passenger-10,Carla Núñez,FR123456,2000/03/03 00:00,France,"Passenger repeatedly caused major disruptions, engaged in physical altercations with crew, ignored multiple warnings, and attempted unauthorized access to the cockpit.",2022/06/01 00:00,
+banned-passenger-11,Injection Reason,AB987654,2001/06/06 00:00,Spain,"<script>alert('Hacked!')</script>",2021/06/06 00:00,
+banned-passenger-12,NonLatin Reason,CD876543,2001/07/07 00:00,Japan,"لوريم إيبسوم",2021/07/07 00:00,
+banned-passenger-13,Logic Injection,EF765432,2001/08/08 00:00,France,"' or 'A' = 'A",2021/08/08 00:00,
