@@ -7,10 +7,10 @@ import acme.client.components.models.Dataset;
 import acme.client.components.principals.Administrator;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
-import acme.entities.systemConfigurations.SystemConfiguration;
+import acme.entities.systemConfigurations.SystemCurrency;
 
 @GuiService
-public class AdministratorSystemConfigurationUpdateService extends AbstractGuiService<Administrator, SystemConfiguration> {
+public class AdministratorSystemConfigurationUpdateService extends AbstractGuiService<Administrator, SystemCurrency> {
 
 	@Autowired
 	protected AdministratorSystemConfigurationRepository repository;
@@ -24,17 +24,17 @@ public class AdministratorSystemConfigurationUpdateService extends AbstractGuiSe
 
 	@Override
 	public void load() {
-		SystemConfiguration systemConfiguration = this.repository.findSystemConfiguration();
+		SystemCurrency systemConfiguration = this.repository.findSystemConfiguration();
 		super.getBuffer().addData(systemConfiguration);
 	}
 
 	@Override
-	public void bind(final SystemConfiguration systemConfiguration) {
+	public void bind(final SystemCurrency systemConfiguration) {
 		super.bindObject(systemConfiguration, "actualCurrency", "validCurrencies");
 	}
 
 	@Override
-	public void validate(final SystemConfiguration systemConfiguration) {
+	public void validate(final SystemCurrency systemConfiguration) {
 
 		String actualCurrency = systemConfiguration.getActualCurrency();
 
@@ -46,12 +46,12 @@ public class AdministratorSystemConfigurationUpdateService extends AbstractGuiSe
 	}
 
 	@Override
-	public void perform(final SystemConfiguration systemConfiguration) {
+	public void perform(final SystemCurrency systemConfiguration) {
 		this.repository.save(systemConfiguration);
 	}
 
 	@Override
-	public void unbind(final SystemConfiguration systemConfiguration) {
+	public void unbind(final SystemCurrency systemConfiguration) {
 		Dataset dataset = super.unbindObject(systemConfiguration, "actualCurrency", "validCurrencies");
 
 		super.getResponse().addData(dataset);

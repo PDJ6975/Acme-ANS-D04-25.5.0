@@ -13,7 +13,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class SystemConfiguration extends AbstractEntity {
+public class SystemCurrency extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
 

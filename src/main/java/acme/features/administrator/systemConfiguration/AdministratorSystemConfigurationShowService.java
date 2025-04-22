@@ -7,10 +7,10 @@ import acme.client.components.models.Dataset;
 import acme.client.components.principals.Administrator;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
-import acme.entities.systemConfigurations.SystemConfiguration;
+import acme.entities.systemConfigurations.SystemCurrency;
 
 @GuiService
-public class AdministratorSystemConfigurationShowService extends AbstractGuiService<Administrator, SystemConfiguration> {
+public class AdministratorSystemConfigurationShowService extends AbstractGuiService<Administrator, SystemCurrency> {
 
 	@Autowired
 	protected AdministratorSystemConfigurationRepository repository;
@@ -24,12 +24,12 @@ public class AdministratorSystemConfigurationShowService extends AbstractGuiServ
 
 	@Override
 	public void load() {
-		SystemConfiguration systemCurrency = this.repository.findSystemConfiguration();
+		SystemCurrency systemCurrency = this.repository.findSystemConfiguration();
 		super.getBuffer().addData(systemCurrency);
 	}
 
 	@Override
-	public void unbind(final SystemConfiguration systemCurrency) {
+	public void unbind(final SystemCurrency systemCurrency) {
 		Dataset dataset = super.unbindObject(systemCurrency, "actualCurrency", "validCurrencies");
 		dataset.put("masterId", systemCurrency.getId());
 		super.getResponse().addData(dataset);
