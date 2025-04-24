@@ -4,9 +4,11 @@ package acme.features.customer.booking;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
+import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.bookings.Booking;
+import acme.entities.bookings.TravelClass;
 import acme.realms.Customer;
 
 @GuiService
@@ -35,12 +37,24 @@ public class CustomerBookingUpdateService extends AbstractGuiService<Customer, B
 	@Override
 	public void bind(final Booking booking) {
 
-		super.bindObject(booking, "locatorCode", "purchaseMoment", "travelClass", "price", "creditCardNibble");
+		super.bindObject(booking, "locatorCode", "travelClass", "price", "creditCardNibble");
 	}
 
 	@Override
 	public void validate(final Booking booking) {
-		;
+		assert booking != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("locatorCode")) {
+
+			super.state(booking.getLocatorCode().matches("^[A-Z0-9]{6,8}$"), "locatorCode", "customer.booking.form.error.invalid-locator");
+
+			boolean isUnique = !this.repository.existsByLocatorCodeAndNotId(booking.getLocatorCode(), booking.getId());
+			super.state(isUnique, "locatorCode", "customer.booking.form.error.duplicate-locator");
+		}
+
+		// Validar formato del creditCardNibble si está presente
+		if (!super.getBuffer().getErrors().hasErrors("creditCardNibble") && booking.getCreditCardNibble() != null && !booking.getCreditCardNibble().isEmpty())
+			super.state(booking.getCreditCardNibble().matches("^\\d{4}$"), "creditCardNibble", "customer.booking.form.error.invalid-credit-card");
 	}
 
 	@Override
@@ -53,6 +67,8 @@ public class CustomerBookingUpdateService extends AbstractGuiService<Customer, B
 		Dataset dataset;
 		dataset = super.unbindObject(booking, "locatorCode", "purchaseMoment", "travelClass", "price", "creditCardNibble", "draftMode");
 		dataset.put("masterId", booking.getId());
+		SelectChoices travelClasses = SelectChoices.from(TravelClass.class, booking.getTravelClass());
+		dataset.put("travelClasses", travelClasses);
 
 		super.getResponse().addData(dataset);
 	}

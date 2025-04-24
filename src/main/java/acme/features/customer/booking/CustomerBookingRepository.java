@@ -36,4 +36,7 @@ public interface CustomerBookingRepository extends AbstractRepository {
 
 	@Query("SELECT COUNT(p) FROM BookingRecord br JOIN br.passenger p WHERE br.booking.id = :bookingId AND p.draftMode = false")
 	int countPublishedPassengersByBookingId(int bookingId);
+
+	@Query("SELECT COUNT(b) > 0 FROM Booking b WHERE b.locatorCode = :locatorCode AND b.id != :id")
+	boolean existsByLocatorCodeAndNotId(String locatorCode, int id);
 }

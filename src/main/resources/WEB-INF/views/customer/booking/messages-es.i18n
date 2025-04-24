@@ -35,3 +35,9 @@ customer.booking.form.error.flight-draft = El vuelo seleccionado no está dispon
 customer.booking.form.error.flight-departed = El vuelo seleccionado ya ha partido
 
 customer.booking.form.error.no-passengers = No se puede publicar la reserva: se requiere al menos un pasajero
+
+customer.booking.form.error.duplicate-locator = Este código localizador ya está en uso por otra reserva
+customer.booking.form.error.invalid-locator = El código localizador debe tener entre 6 y 8 letras mayúsculas y números
+customer.booking.form.error.invalid-credit-card = El fragmento de tarjeta de crédito debe tener exactamente 4 dígitos
+
+customer.booking.form.label.flightInfo = Vuelo:

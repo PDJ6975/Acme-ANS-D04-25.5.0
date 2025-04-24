@@ -11,3 +11,6 @@ authenticated.customer.form.button.update = Actualizar
 
 authenticated.customer.form.error.invalid-identifier = Formato de identificador inválido, use 2-3 letras mayúsculas seguidas de 6 dígitos
 authenticated.customer.form.error.invalid-phone = Número de teléfono inválido, use 6-15 dígitos con un '+' inicial opcional
+
+acme.validation.length = La longitud excede los límites permitidos
+authenticated.customer.form.error.duplicate-identifier = Ya existe un customer con ese identificador

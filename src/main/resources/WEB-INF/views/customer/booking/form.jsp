@@ -13,11 +13,18 @@
         path="purchaseMoment" 
         readonly="true"/>
     
-    <jstl:if test="${_command != 'show'}">
+    <jstl:if test="${_command == 'create'}">
         <acme:input-select
             code="customer.booking.form.label.flight"
             path="flight"
             choices="${flights}"/>
+    </jstl:if>
+    
+    <jstl:if test="${_command != 'create'}">
+        <acme:input-textbox 
+            code="customer.booking.form.label.flightInfo" 
+            path="flightInfo" 
+            readonly="true"/>
     </jstl:if>
     
     <acme:input-select 
@@ -37,8 +44,7 @@
         readonly="${_command == 'show' && draftMode == false}"/>
     
     <jstl:choose>
-        <jstl:when test="${_command == 'publish' || _errors.hasErrors()}">
-            <!-- Si estamos en publish o hay errores, mantener los botones de edición -->
+        <jstl:when test="${_command == 'publish'}">
             <acme:button code="customer.booking.form.button.passengers" action="/customer/passenger/list?masterId=${masterId}"/>
             <acme:submit code="customer.booking.form.button.update" action="/customer/booking/update"/>
             <jstl:if test="${!empty creditCardNibble}">
