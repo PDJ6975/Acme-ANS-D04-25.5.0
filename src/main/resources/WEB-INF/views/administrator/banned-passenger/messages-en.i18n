@@ -9,3 +9,8 @@ administrator.banned.passenger.show.label.dateOfBirth = Date Of Birth
 administrator.banned.passenger.show.label.nationality = Nationality
 administrator.banned.passenger.show.label.banDate = Ban Date
 administrator.banned.passenger.show.label.liftDate = Lift Date
+
+administrator.update.lift-date-cant-be-before = The lift date must be after the ban date
+
+administrator.banned.passenger.form.submit.create = Create
+administrator.banned.passenger.form.submit.update = Update

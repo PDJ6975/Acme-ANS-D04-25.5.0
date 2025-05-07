@@ -12,4 +12,13 @@
     <acme:input-moment code="administrator.banned.passenger.show.label.banDate" path="banDate" />
     <acme:input-moment code="administrator.banned.passenger.show.label.liftDate" path="liftDate" />
     
+    <jstl:choose>
+        <jstl:when test="${acme:anyOf(_command, 'show|update')}">
+                <acme:submit code="administrator.banned.passenger.form.submit.update" action="/administrator/banned-passenger/update"/>
+        </jstl:when>
+        <jstl:when test="${_command == 'create'}">
+            <acme:submit code="administrator.banned.passenger.form.submit.create" action="/administrator/banned-passenger/create" />
+        </jstl:when>
+    </jstl:choose>
+    
 </acme:form>

@@ -25,6 +25,12 @@ public class AdministratorBannedPassengerController extends AbstractGuiControlle
 	@Autowired
 	private AdministratorBannedPassengerLastMonthListService	listLastMonthService;
 
+	@Autowired
+	private AdministratorBannedPassengerCreateService			createService;
+
+	@Autowired
+	private AdministratorBannedPassengerUpdateService			updateService;
+
 
 	@PostConstruct
 	protected void initialise() {
@@ -32,6 +38,8 @@ public class AdministratorBannedPassengerController extends AbstractGuiControlle
 		super.addBasicCommand("show", this.showService);
 		super.addCustomCommand("past-list", "list", this.listPastService);
 		super.addCustomCommand("last-month-list", "list", this.listLastMonthService);
+		super.addBasicCommand("create", this.createService);
+		super.addBasicCommand("update", this.updateService);
 
 	}
 
