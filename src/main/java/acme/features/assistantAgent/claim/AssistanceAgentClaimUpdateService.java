@@ -3,6 +3,8 @@ package acme.features.assistantAgent.claim;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.acme.spam.detection.SpamDetector;
+
 import acme.client.components.models.Dataset;
 import acme.client.components.principals.UserAccount;
 import acme.client.components.views.SelectChoices;
@@ -19,7 +21,10 @@ import acme.realms.agents.AssistanceAgent;
 public class AssistanceAgentClaimUpdateService extends AbstractGuiService<AssistanceAgent, Claim> {
 
 	@Autowired
-	protected AssistanceAgentClaimRepository repository;
+	protected AssistanceAgentClaimRepository	repository;
+
+	@Autowired
+	private SpamDetector						spamDetector;
 
 
 	@Override
@@ -96,6 +101,16 @@ public class AssistanceAgentClaimUpdateService extends AbstractGuiService<Assist
 				super.state(!leg.isDraftMode(), "*", "assistant-agent.create.leg-is-not-published");
 			else
 				super.state(false, "*", "assistant-agent.create.leg-not-exist");
+
+		if (!super.getBuffer().getErrors().hasErrors("description")) {
+			boolean isSpamFn = this.spamDetector.isSpam(claim.getDescription());
+			super.state(!isSpamFn, "description", "customer.passenger.error.spam");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("passengerEmail")) {
+			boolean isSpamSn = this.spamDetector.isSpam(claim.getPassengerEmail());
+			super.state(!isSpamSn, "passengerEmail", "customer.passenger.error.spam");
+		}
 		;
 	}
 
