@@ -13,6 +13,7 @@ import acme.client.helpers.StringHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.claims.Claim;
+import acme.entities.claims.State;
 import acme.entities.trackingLogs.Indicator;
 import acme.entities.trackingLogs.TrackingLog;
 import acme.realms.agents.AssistanceAgent;
@@ -103,6 +104,12 @@ public class AssistanceAgentTrackingLogPublishService extends AbstractGuiService
 	@Override
 	public void perform(final TrackingLog log) {
 		log.setDraftMode(false);
+		Claim c;
+		if (log.getResolutionPercentage() == 100.0) {
+			c = log.getClaim();
+			c.setState(State.valueOf(log.getIndicator().toString()));
+			this.repository.save(c);
+		}
 		this.repository.save(log);
 	}
 

@@ -25,7 +25,8 @@ public class AssistanceAgentClaimCreateService extends AbstractGuiService<Assist
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean auth = true;
+		super.getResponse().setAuthorised(auth);
 	}
 
 	@Override
@@ -72,10 +73,10 @@ public class AssistanceAgentClaimCreateService extends AbstractGuiService<Assist
 
 	@Override
 	public void validate(final Claim claim) {
-		boolean status;
 		String legFlightNumber;
 		String username;
 		UserAccount user;
+		Type t;
 
 		legFlightNumber = super.getRequest().getData("leg.flightNumber", String.class);
 		Leg leg = this.repository.findLegByFlightNumber(legFlightNumber);
@@ -83,17 +84,26 @@ public class AssistanceAgentClaimCreateService extends AbstractGuiService<Assist
 		username = super.getRequest().getData("userAccount.username", String.class);
 		user = this.repository.findUserAccountByUsername(username);
 
-		if (user != null)
-			status = leg != null && user.hasRealmOfType(Customer.class);
-		else
-			status = leg != null;
+		if (!(claim.getType() == null))
+			t = super.getRequest().getData("type", Type.class);
 
-		if (user != null && !user.hasRealmOfType(Customer.class))
-			super.state(status, "*", "assistant-agent.create.user-not-passenger-or-customer");
-		else if (leg == null)
-			super.state(status, "*", "assistant-agent.create.leg-not-exist");
-		else
-			super.state(status, "*", "assistant-agent.create.user-cant-be-null");
+		if (username == null || username.trim().isEmpty())
+			super.state(false, "*", "assistant-agent.create.user-cant-be-null");
+
+		if (!(username == null || username.trim().isEmpty()))
+			if (user != null)
+				super.state(user.hasRealmOfType(Customer.class), "*", "assistant-agent.create.user-not-passenger-or-customer");
+			else
+				super.state(false, "*", "assistant-agent.create.user-not-exist");
+
+		if (legFlightNumber == null || legFlightNumber.trim().isEmpty())
+			super.state(false, "*", "assistant-agent.create.leg-cant-be-null");
+
+		if (!(legFlightNumber == null || legFlightNumber.trim().isEmpty()))
+			if (leg != null)
+				super.state(!leg.isDraftMode(), "*", "assistant-agent.create.leg-is-not-published");
+			else
+				super.state(false, "*", "assistant-agent.create.leg-not-exist");
 
 		;
 	}

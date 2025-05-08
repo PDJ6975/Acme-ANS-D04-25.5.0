@@ -33,12 +33,12 @@
         readonly="false"
     />
     <jstl:choose>
-	    <jstl:when test="${acme:anyOf(_command, 'show|update|delete')}">
+	    <jstl:when test="${acme:anyOf(_command, 'show|delete')}">
 			<acme:input-select
         		code="assistanceAgent.claim.form.label.state" 
         		path="state" 
         		choices="${claimState}"
-        		readonly="false"
+        		readonly="true"
     		/>
 	    </jstl:when>
 	</jstl:choose>

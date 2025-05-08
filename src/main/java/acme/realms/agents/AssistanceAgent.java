@@ -36,7 +36,7 @@ public class AssistanceAgent extends AbstractRole {
 	private String				employeeCode;
 
 	@Mandatory
-	@ValidString(max = 255)
+	@ValidString(max = 255, pattern = "^([A-Za-z]+)(,[A-Za-z]+)*$")
 	@Automapped
 	private String				spokenLanguages;
 
