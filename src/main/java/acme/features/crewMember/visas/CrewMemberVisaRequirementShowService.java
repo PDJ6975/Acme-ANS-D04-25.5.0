@@ -1,6 +1,8 @@
 
 package acme.features.crewMember.visas;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
@@ -18,13 +20,20 @@ public class CrewMemberVisaRequirementShowService extends AbstractGuiService<Fli
 
 	@Override
 	public void authorise() {
+		boolean authorised = false;
 
-		int requirementId = super.getRequest().getData("id", int.class);
-		VisaRequirement requirement = this.repository.findOneById(requirementId);
+		if (super.getRequest().hasData("id", int.class)) {
+			int id = super.getRequest().getData("id", int.class);
+			VisaRequirement vr = this.repository.findOneById(id);
 
-		boolean status = requirement != null && super.getRequest().getPrincipal().hasRealmOfType(FlightCrewMember.class);
+			if (vr != null && super.getRequest().getPrincipal().hasRealmOfType(FlightCrewMember.class)) {
+				int crewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
+				List<String> countries = this.repository.findDestinationCountriesByCrewMemberId(crewMemberId);
+				authorised = countries.contains(vr.getDestinationCountry());
+			}
+		}
 
-		super.getResponse().setAuthorised(status);
+		super.getResponse().setAuthorised(authorised);
 	}
 
 	@Override

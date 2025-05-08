@@ -89,7 +89,7 @@ public class VisaRequirement extends AbstractEntity {
 	@Automapped
 	private String				additionalInfo; // Texto adicional de excepciones sobre los requisitos de visa
 
-	@Mandatory
+	@Optional
 	@ValidUrl
 	@Automapped
 	private String				officialLink; // Enlace oficial para más detalles
@@ -102,5 +102,12 @@ public class VisaRequirement extends AbstractEntity {
 		if (c != null && c.trim().isEmpty())
 			c = null;
 		this.additionalInfo = c;
+	}
+
+	public void setOfficialLink(String l) {
+		// Si l está vacío o son solo espacios, lo pongo a null
+		if (l != null && l.trim().isEmpty())
+			l = null;
+		this.officialLink = l;
 	}
 }

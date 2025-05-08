@@ -1,0 +1,34 @@
+# Título del formulario del dashboard
+technician.technician-dashboard.form.title = Technician Dashboard
+
+# 1. Maintenance Records by Status
+technician.dashboard.title.maintenance-records-by-status = Maintenance Records by Status
+technician.dashboard.label.maintenance-records-by-status = Maintenance Records by Status
+technician.dashboard.label.count = Count
+
+# 2. Nearest Inspection Due
+technician.dashboard.title.nearest-inspection-due = Nearest Inspection Due
+technician.dashboard.label.nearest-inspection-due = Inspection Due Date
+technician.dashboard.label.moment=Moment
+# 3. Top 5 Aircrafts with Most Tasks
+technician.dashboard.title.top-aircrafts = Top 5 Aircraft with Most Tasks
+technician.dashboard.label.top-aircrafts = Aircraft
+
+# 4. Maintenance Cost Statistics
+technician.dashboard.title.cost-statistics = Maintenance Cost Statistics
+technician.dashboard.label.avg-cost = Average Cost
+technician.dashboard.label.min-cost = Minimum Cost
+technician.dashboard.label.max-cost = Maximum Cost
+technician.dashboard.label.stddev-cost = Cost Standard Deviation
+
+# 5. Task Duration Statistics
+technician.dashboard.title.task-duration-statistics = Task Duration Statistics
+technician.dashboard.label.avg-duration = Average Duration
+technician.dashboard.label.min-duration = Minimum Duration
+technician.dashboard.label.max-duration = Maximum Duration
+technician.dashboard.label.stddev-duration = Duration Standard Deviation
+
+# Mensaje para indicar que no hay registro
+technician.dashboard.label.no-record = No maintenance record available
+technician.dashboard.label.estimatedCost=Estimated Cost
+technician.dashboard.label.aircraft=Aircraft

@@ -1,0 +1,16 @@
+any.airport.list.title = Listado Aeropuertos
+any.airport.form.title = Formulario de Aeropuerto
+
+any.airport.list.label.name=Nombre
+any.airport.list.label.iataCode= Código IATA
+any.airport.list.label.city=Ciudad
+
+
+any.airport.form.label.name=Nombre
+any.airport.form.label.iataCode=Código IATA
+any.airport.form.label.operationalScope=Alcance
+any.airport.form.label.city=Ciudad
+any.airport.form.label.country=País
+any.airport.form.label.website=Web
+any.airport.form.label.emailAddress=Correo Electrónico
+any.airport.form.label.contactPhone=Teléfono de Contacto

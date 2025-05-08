@@ -1,4 +1,26 @@
 administrator.service.list.title = Listado de Servicios
+administrator.service.form.title = Formulario de Servicio
+
 administrator.service.list.label.name = Nombre del Servicio
 administrator.service.list.label.averageDwellTime = Tiempo Promedio de Permanencia (horas)
 administrator.service.list.label.airport = Aeropuerto
+
+administrator.service.form.label.name = Nombre:
+administrator.service.form.label.link = Enlace:
+administrator.service.form.label.averageDwellTime = Tiempo Promedio de Permanencia (horas):
+administrator.service.form.label.promotionCode = Código de Promoción:
+administrator.service.form.label.discountMoney = Descuento:
+administrator.service.form.label.airport.name = Nombre del Aeropuerto:
+administrator.service.form.label.airport.iata = IATA del Aeropuerto:
+
+administrator.service.form.button.create = Crear
+administrator.service.form.button.update = Actualizar
+administrator.service.form.button.delete = Borrar
+
+administrator.service.list.button.create = Crear nuevo servicio
+
+administrator.service.error.airport-required= Debes seleccionar un aeropuerto
+administrator.service.error.duplicate-promotion-code=El código de promoción ya está en uso
+administrator.service.error.discount-required= Se debe especificar una cantidad a descontar cuando se añade un código de descuento
+administrator.service.error.promotion-code-required= Si se añade una cantidad a descontar se debe añadir un código de promoción
+administrator.service.error.year-mismatch= El código de promoción debe terminar con el año actual

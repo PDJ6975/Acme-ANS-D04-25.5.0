@@ -10,7 +10,6 @@ import acme.client.services.GuiService;
 import acme.entities.assignments.AssignmentStatus;
 import acme.entities.assignments.CrewRole;
 import acme.entities.assignments.FlightAssignment;
-import acme.entities.legs.LegStatus;
 import acme.realms.members.FlightCrewMember;
 
 @GuiService
@@ -55,29 +54,22 @@ public class CrewMemberAssignmentShowService extends AbstractGuiService<FlightCr
 
 	@Override
 	public void unbind(final FlightAssignment assignment) {
-
-		SelectChoices choicesCrewRol;
-		SelectChoices choicesAssignmentStatus;
 		Dataset dataset;
+		SelectChoices choicesCrewRole = SelectChoices.from(CrewRole.class, assignment.getCrewRole());
+		SelectChoices choicesAssignmentStatus = SelectChoices.from(AssignmentStatus.class, assignment.getAssignmentStatus());
 
-		dataset = super.unbindObject(assignment, "crewRole", "lastUpdated", "assignmentStatus", "comments", "assignmentStatus",//
-			"leg.flightNumber", "leg.departureAirport.name", "leg.arrivalAirport.name", "leg.scheduledDeparture", "leg.scheduledArrival",//
-			"flightCrewMember.employeeCode");
+		dataset = super.unbindObject(assignment, "crewRole", "lastUpdated", "assignmentStatus", "comments", "leg.flightNumber", "flightCrewMember.employeeCode");
 
-		// Tenemos que obtener las opciones de selección del rol de la asignación para el show
-
-		choicesCrewRol = SelectChoices.from(CrewRole.class, assignment.getCrewRole());
-		choicesAssignmentStatus = SelectChoices.from(AssignmentStatus.class, assignment.getAssignmentStatus());
-
-		dataset.put("crewRoles", choicesCrewRol);
+		dataset.put("crewRoles", choicesCrewRole);
 		dataset.put("assignmentStatuses", choicesAssignmentStatus);
 		dataset.put("masterId", assignment.getId());
 
-		boolean isLeadAttendant = assignment.getCrewRole().equals(CrewRole.LEADATTENDANT);
-		boolean legNotOccurred = !assignment.getLeg().getLegStatus().equals(LegStatus.LANDED) && !assignment.getLeg().getLegStatus().equals(LegStatus.CANCELLED);
-
-		dataset.put("canCreate", isLeadAttendant && legNotOccurred);
 		dataset.put("draftMode", assignment.isDraftMode());
+
+		// ¿puede ver logs esta asignación?
+		boolean hasLog = assignment.getAssignmentStatus() == AssignmentStatus.CONFIRMED && !assignment.isDraftMode() && !assignment.getLeg().isDraftMode();
+
+		dataset.put("hasLog", hasLog);
 
 		super.getResponse().addData(dataset);
 	}

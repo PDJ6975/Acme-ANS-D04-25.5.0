@@ -53,8 +53,12 @@ public class AuthenticatedCustomerUpdateService extends AbstractGuiService<Authe
 	public void validate(final Customer object) {
 		assert object != null;
 
-		if (!super.getBuffer().getErrors().hasErrors("identifier"))
+		if (!super.getBuffer().getErrors().hasErrors("identifier")) {
 			super.state(object.getIdentifier().matches("^[A-Z]{2,3}\\d{6}$"), "identifier", "authenticated.customer.form.error.invalid-identifier");
+
+			boolean isUnique = !this.repository.existsByIdentifierAndNotId(object.getIdentifier(), object.getId());
+			super.state(isUnique, "identifier", "authenticated.customer.form.error.duplicate-identifier");
+		}
 
 		if (!super.getBuffer().getErrors().hasErrors("phoneNumber"))
 			super.state(object.getPhoneNumber().matches("^\\+?\\d{6,15}$"), "phoneNumber", "authenticated.customer.form.error.invalid-phone");
@@ -63,15 +67,16 @@ public class AuthenticatedCustomerUpdateService extends AbstractGuiService<Authe
 			boolean spamAddr = this.spamDetector.isSpam(object.getAddress());
 			super.state(!spamAddr, "address", "authenticated.customer.form.error.spam");
 		}
+
 		if (!super.getBuffer().getErrors().hasErrors("city")) {
 			boolean spamCity = this.spamDetector.isSpam(object.getCity());
 			super.state(!spamCity, "city", "authenticated.customer.form.error.spam");
 		}
+
 		if (!super.getBuffer().getErrors().hasErrors("country")) {
 			boolean spamCountry = this.spamDetector.isSpam(object.getCountry());
 			super.state(!spamCountry, "country", "authenticated.customer.form.error.spam");
 		}
-
 	}
 
 	@Override

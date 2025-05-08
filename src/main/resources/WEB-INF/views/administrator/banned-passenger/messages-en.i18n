@@ -1,0 +1,16 @@
+administrator.banned-passenger.list.title = Banned Passenger List
+administrator.banned-passenger.form.title = Banned Passenger Form
+
+administrator.banned.passenger.list.label.fullName = Full Name
+administrator.banned.passenger.list.label.passportNumber = Passport Number
+administrator.banned.passenger.list.label.reason = Reason
+
+administrator.banned.passenger.show.label.dateOfBirth = Date Of Birth
+administrator.banned.passenger.show.label.nationality = Nationality
+administrator.banned.passenger.show.label.banDate = Ban Date
+administrator.banned.passenger.show.label.liftDate = Lift Date
+
+administrator.update.lift-date-cant-be-before = The lift date must be after the ban date
+
+administrator.banned.passenger.form.submit.create = Create
+administrator.banned.passenger.form.submit.update = Update

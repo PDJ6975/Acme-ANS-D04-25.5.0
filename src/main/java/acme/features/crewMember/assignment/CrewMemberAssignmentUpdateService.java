@@ -12,7 +12,6 @@ import acme.entities.assignments.AssignmentStatus;
 import acme.entities.assignments.CrewRole;
 import acme.entities.assignments.FlightAssignment;
 import acme.entities.legs.Leg;
-import acme.entities.legs.LegStatus;
 import acme.realms.members.FlightCrewMember;
 
 @GuiService
@@ -24,18 +23,13 @@ public class CrewMemberAssignmentUpdateService extends AbstractGuiService<Flight
 
 	@Override
 	public void authorise() {
+		int id = super.getRequest().getData("id", int.class);
+		FlightAssignment assignment = this.repository.findAssignmentById(id);
 
-		boolean status;
-		int id;
-		FlightAssignment assignment;
+		boolean isOwner = assignment != null && super.getRequest().getPrincipal().hasRealm(assignment.getFlightCrewMember());
+		boolean isDraft = assignment != null && assignment.isDraftMode();
 
-		id = super.getRequest().getData("id", int.class);
-		assignment = this.repository.findAssignmentById(id);
-
-		status = assignment != null && assignment.isDraftMode() && assignment.getCrewRole().equals(CrewRole.LEADATTENDANT) && super.getRequest().getPrincipal().hasRealm(assignment.getFlightCrewMember());
-
-		super.getResponse().setAuthorised(status);
-
+		super.getResponse().setAuthorised(isOwner && isDraft);
 	}
 
 	@Override
@@ -60,15 +54,21 @@ public class CrewMemberAssignmentUpdateService extends AbstractGuiService<Flight
 	@Override
 	public void validate(final FlightAssignment assignment) {
 		Leg leg = assignment.getLeg();
+		FlightCrewMember member = assignment.getFlightCrewMember();
 		CrewRole role = assignment.getCrewRole();
 
-		// 1. Solo un piloto y un copiloto por etapa
-		if (role == CrewRole.PILOT || role == CrewRole.COPILOT) {
-			boolean roleAlreadyAssigned = this.repository.existsAssignmentForLegWithRole(leg.getId(), role);
-			super.state(!roleAlreadyAssigned, "crewRole", "crewMember.assignment.error.duplicate-role");
-		}
+		super.state(assignment.isDraftMode(), "*", "crewMember.assignment.error.not-editable");
+		super.state(leg != null, "leg", "crewMember.assignment.error.missing-leg");
+		super.state(member != null, "*", "crewMember.assignment.error.missing-member");
 
-		// El resto de validaciones no son necesarias porque la etapa y el miembro asociado en la asignación no se puede modificar
+		if (leg != null && member != null)
+
+			if (role == CrewRole.PILOT || role == CrewRole.COPILOT || role == CrewRole.LEADATTENDANT) {
+				boolean roleAlreadyAssigned = this.repository.existsPublishedAssignmentForLegWithRole(leg.getId(), role);
+				boolean isSame = roleAlreadyAssigned && this.repository.findAssignmentById(assignment.getId()).getCrewRole() == role;
+				super.state(!roleAlreadyAssigned || isSame, "crewRole", "crewMember.assignment.error.duplicate-role");
+			}
+
 	}
 
 	@Override
@@ -84,11 +84,7 @@ public class CrewMemberAssignmentUpdateService extends AbstractGuiService<Flight
 		SelectChoices choicesAssignmentStatus;
 		Dataset dataset;
 
-		dataset = super.unbindObject(assignment, "crewRole", "lastUpdated", "assignmentStatus", "comments", "assignmentStatus",//
-			"leg.flightNumber", "leg.departureAirport.name", "leg.arrivalAirport.name", "leg.scheduledDeparture", "leg.scheduledArrival",//
-			"flightCrewMember.employeeCode");
-
-		// Tenemos que obtener las opciones de selección del rol de la asignación para el show
+		dataset = super.unbindObject(assignment, "crewRole", "lastUpdated", "assignmentStatus", "comments", "leg.flightNumber", "flightCrewMember.employeeCode");
 
 		choicesCrewRol = SelectChoices.from(CrewRole.class, assignment.getCrewRole());
 		choicesAssignmentStatus = SelectChoices.from(AssignmentStatus.class, assignment.getAssignmentStatus());
@@ -97,10 +93,6 @@ public class CrewMemberAssignmentUpdateService extends AbstractGuiService<Flight
 		dataset.put("assignmentStatuses", choicesAssignmentStatus);
 		dataset.put("masterId", assignment.getId());
 
-		boolean isLeadAttendant = assignment.getCrewRole() != null ? assignment.getCrewRole().equals(CrewRole.LEADATTENDANT) : true;
-		boolean legNotOccurred = !assignment.getLeg().getLegStatus().equals(LegStatus.LANDED) && !assignment.getLeg().getLegStatus().equals(LegStatus.CANCELLED);
-
-		dataset.put("canCreate", isLeadAttendant && legNotOccurred);
 		dataset.put("draftMode", assignment.isDraftMode());
 
 		super.getResponse().addData(dataset);

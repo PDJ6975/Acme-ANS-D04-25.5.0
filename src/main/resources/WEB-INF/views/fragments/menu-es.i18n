@@ -21,6 +21,8 @@ master.menu.anonymous.favourite-link-pabolimor = 53345421A: Olivencia Moreno, Pa
 
 master.menu.authenticated = Autenticado
 master.menu.authenticated.list-assignments = Ver asignaciones
+master.menu.authenticated.list-service = Lista de Servicios
+master.menu.authenticated.list-airports=Listar Aeropuertos
 
 
 # master.menu.administrator ###################################################
@@ -36,6 +38,15 @@ master.menu.administrator.list-bookings = Ver Reservas
 master.menu.administrator.list-airlines = Ver Aerolíneas
 administrator.menu.populate-visa = Poblar BD (Requisitos de visa)
 master.menu.administrator.list-services = List Services
+master.menu.administrator.list-maintenanceRecord = Ver Registros de Mantenimiento
+master.menu.administrator.show-dashboard=Mostrar Dashboard
+master.menu.administrator.banned-passengers= Pasajeros Baneados
+master.menu.administrator.list-banned-passanger = Pasajeros Baneados Actualmente
+master.menu.administrator.show-systemConfiguration=Configuración del Sistema
+master.menu.administrator.list-past-banned-passanger = Pasajeros Baneados Anteriormente
+master.menu.administrator.list-last-month-banned-passanger = Pasajeros Baneados Ultimo Mes
+
+
 
 # master.menu.provider ########################################################
 
@@ -93,6 +104,8 @@ master.menu.technician.list-my-maintenance-records= Listar mis registros de mant
 master.menu.technician.list-my-tasks = Listar mis tareas
 master.menu.technician.list-maintenance-record-catalogue = Listar catálogo de registros de mantenimiento
 master.menu.technician.list-task-catalogue = Listar catálogo de tareas
+master.menu.technician.show-dashboard=Mostrar Dashboard
+master.menu.technician.list-notice-board=Listar cursos de técnico
 
 master.menu.authenticated.list-reviews = Listar Reseñas
 

@@ -8,6 +8,7 @@ import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.activityLogs.ActivityLog;
+import acme.entities.assignments.AssignmentStatus;
 import acme.entities.assignments.FlightAssignment;
 import acme.realms.members.FlightCrewMember;
 
@@ -20,19 +21,19 @@ public class CrewMemberActivityLogCreateService extends AbstractGuiService<Fligh
 
 	@Override
 	public void authorise() {
+		boolean authorised = false;
 
-		int masterId;
-		FlightAssignment assignment;
-		FlightCrewMember crewMember;
-		boolean status;
+		if (super.getRequest().hasData("masterId", int.class)) {
+			int assignmentId = super.getRequest().getData("masterId", int.class);
+			FlightAssignment assignment = this.repository.findAssignmentById(assignmentId);
 
-		masterId = super.getRequest().getData("masterId", int.class);
-		assignment = this.repository.findAssignmentById(masterId);
-		crewMember = assignment.getFlightCrewMember();
+			// Entendemos que una asignación solo puede tener logs si: ella y la etapa son públicas y si la asignación está confirmada (para evitar incongruencias)
 
-		status = super.getRequest().getPrincipal().hasRealm(crewMember);
+			authorised = assignment != null && super.getRequest().getPrincipal().hasRealm(assignment.getFlightCrewMember()) && assignment.getAssignmentStatus() == AssignmentStatus.CONFIRMED && !assignment.isDraftMode()
+				&& !assignment.getLeg().isDraftMode();
+		}
 
-		super.getResponse().setAuthorised(status);
+		super.getResponse().setAuthorised(authorised);
 	}
 
 	@Override
@@ -47,9 +48,6 @@ public class CrewMemberActivityLogCreateService extends AbstractGuiService<Fligh
 
 		log = new ActivityLog();
 		log.setRegistrationMoment(MomentHelper.getCurrentMoment());
-		log.setTypeOfIncident("New Incident");
-		log.setDescription("Turbulence");
-		log.setSeverityLevel(0);
 		log.setDraftMode(true);
 		log.setFlightAssignment(assignment);
 
@@ -64,7 +62,11 @@ public class CrewMemberActivityLogCreateService extends AbstractGuiService<Fligh
 
 	@Override
 	public void validate(final ActivityLog log) {
-		;
+
+		// Protección adicional contra inconsistencias (duplicado defensivo con authorise)
+		super.state(log.getFlightAssignment().getAssignmentStatus() == AssignmentStatus.CONFIRMED, "*", "crewMember.log.error.assignment.not-confirmed");
+		super.state(!log.getFlightAssignment().isDraftMode(), "*", "crewMember.log.error.assignment.not-published");
+		super.state(!log.getFlightAssignment().getLeg().isDraftMode(), "*", "crewMember.log.error.leg.not-published");
 	}
 
 	@Override
@@ -77,8 +79,7 @@ public class CrewMemberActivityLogCreateService extends AbstractGuiService<Fligh
 		Dataset dataset;
 
 		dataset = super.unbindObject(log, "registrationMoment", "typeOfIncident", "description", "severityLevel");
-		dataset.put("draftMode", log.getFlightAssignment().isDraftMode());
-		dataset.put("draftLeg", true);
+		dataset.put("validDraft", !log.getFlightAssignment().isDraftMode() && !log.getFlightAssignment().getLeg().isDraftMode());
 		dataset.put("masterId", super.getRequest().getData("masterId", int.class));
 
 		super.getResponse().addData(dataset);

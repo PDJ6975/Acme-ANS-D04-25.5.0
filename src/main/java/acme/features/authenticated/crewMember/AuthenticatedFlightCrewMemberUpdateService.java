@@ -24,8 +24,16 @@ public class AuthenticatedFlightCrewMemberUpdateService extends AbstractGuiServi
 
 	@Override
 	public void authorise() {
-		boolean status = super.getRequest().getPrincipal().hasRealmOfType(FlightCrewMember.class);
-		super.getResponse().setAuthorised(status);
+		boolean isAuthorised = super.getRequest().getPrincipal().hasRealmOfType(FlightCrewMember.class);
+
+		Integer airlineId = super.getRequest().getData("airlineId", int.class, null);
+		if (airlineId != null && airlineId != 0) {
+			Collection<Airline> availableAirlines = this.repository.findAllAirlines();
+			boolean airlineIsAvailable = availableAirlines.stream().anyMatch(a -> a.getId() == airlineId);
+			isAuthorised = isAuthorised && airlineIsAvailable;
+		}
+
+		super.getResponse().setAuthorised(isAuthorised);
 	}
 
 	@Override

@@ -7,14 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.UniqueConstraint;
 import javax.validation.Valid;
-
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
@@ -30,11 +25,6 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(uniqueConstraints = {
-	@UniqueConstraint(columnNames = {
-		"flight_crew_member_id", "leg_id"
-	})
-})
 public class FlightAssignment extends AbstractEntity {
 
 	// Serialisation version
@@ -49,7 +39,6 @@ public class FlightAssignment extends AbstractEntity {
 	private FlightCrewMember	flightCrewMember;
 
 	@Mandatory
-	@OnDelete(action = OnDeleteAction.CASCADE)
 	@Valid
 	@ManyToOne(optional = false)
 	private Leg					leg;

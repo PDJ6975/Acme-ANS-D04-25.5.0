@@ -16,3 +16,15 @@ crewMember.log.list.button.create = Create
 crewMember.log.list.button.update = Update
 crewMember.log.list.button.delete = Delete
 crewMember.log.list.button.publish = Publish
+
+crewMember.log.error.already-published=This activity log has already been published
+crewMember.log.error.assignment.not-confirmed=Cannot publish a log for an unconfirmed assignment
+crewMember.log.error.assignment.not-published=Cannot publish a log for a draft assignment
+crewMember.log.error.leg.not-published=Cannot publish a log for a draft leg
+
+crewMember.log.error.typeOfIncident.required=Type of incident is required
+crewMember.log.error.description.required=Description is required
+crewMember.log.error.severityLevel.required=Severity level is required
+crewMember.log.error.severityLevel.range=Severity must be between 0 and 10
+crewMember.log.error.registrationMoment.required=Registration moment is required
+crewMember.log.error.registrationMoment.past=Registration moment must be in the past

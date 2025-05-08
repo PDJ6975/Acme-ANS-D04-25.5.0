@@ -12,58 +12,55 @@ import acme.entities.activityLogs.ActivityLog;
 import acme.entities.airlines.Airline;
 import acme.entities.assignments.FlightAssignment;
 import acme.entities.bookings.Booking;
+import acme.entities.bookings.BookingRecord;
 import acme.entities.claims.Claim;
 import acme.entities.flights.Flight;
 import acme.entities.legs.Leg;
 import acme.entities.passengers.Passenger;
 import acme.entities.trackingLogs.TrackingLog;
 import acme.entities.weathers.Weather;
-import acme.realms.managers.Manager;
 
 @Repository
 public interface ManagerFlightRepository extends AbstractRepository {
 
-	@Query("SELECT f FROM Flight f WHERE f.id = :id")
+	// --------------------
+	// Lectura principal
+	// --------------------
 	Flight findOneById(int id);
 
-	@Query("SELECT f FROM Flight f WHERE f.manager.id = :managerId")
+	@Query("select f from Flight f where f.manager.id = :managerId")
 	Collection<Flight> findManyByManagerId(int managerId);
 
-	@Query("SELECT m FROM Manager m WHERE m.id = :id")
-	Manager findManagerById(int id);
-
-	@Query("SELECT a FROM Airline a")
+	@Query("select a from Airline a")
 	Collection<Airline> findAllAirlines();
 
-	@Query("SELECT COUNT(m) > 0 FROM Manager m WHERE m.id= :masterId")
-	boolean managerExistsWithMasterId(int masterId);
-
-	@Query("SELECT arl FROM Airline arl WHERE arl.id = :id")
-	Airline findAirlineById(int id);
-
-	//Querys para el delete de Flight
-
-	@Query("SELECT l FROM Leg l WHERE l.flight.id = :id ORDER BY l.scheduledDeparture ASC")
-	List<Leg> findLegsByFlightId(int id);
-
-	@Query("SELECT b FROM Booking b WHERE b.flight.id = :flightId")
+	// --------------------
+	// Entidades relacionadas
+	// --------------------
+	@Query("select b from Booking b where b.flight.id = :flightId")
 	List<Booking> findBookingsByFlightId(int flightId);
 
-	@Query("SELECT p FROM Passenger p JOIN BookingRecord br ON p = br.passenger WHERE br.booking IN :bookings")
-	List<Passenger> findPassengersByBookings(List<Booking> bookings);
+	@Query("select br from BookingRecord br where br.booking in :bookings")
+	List<BookingRecord> findBookingRecordsByBookings(List<Booking> bookings);
 
-	@Query("SELECT w FROM Weather w WHERE w.flight.id = :flightId")
+	@Query("select distinct br.passenger from BookingRecord br where br.booking in :bookings")
+	List<Passenger> findDistinctPassengersByBookings(List<Booking> bookings);
+
+	@Query("select w from Weather w where w.flight.id = :flightId")
 	Weather findWeatherByFlightId(int flightId);
 
-	@Query("SELECT fa FROM FlightAssignment fa WHERE fa.leg IN :legs")
+	@Query("select l from Leg l where l.flight.id = :flightId")
+	List<Leg> findLegsByFlightId(int flightId);
+
+	@Query("select fa from FlightAssignment fa where fa.leg in :legs")
 	List<FlightAssignment> findFlightAssignmentsByLegs(List<Leg> legs);
 
-	@Query("SELECT al FROM ActivityLog al WHERE al.flightAssignment IN :flightAssignments")
-	List<ActivityLog> findActivityLogsByFlightAssignments(List<FlightAssignment> flightAssignments);
+	@Query("select al from ActivityLog al where al.flightAssignment in :assignments")
+	List<ActivityLog> findActivityLogsByFlightAssignments(List<FlightAssignment> assignments);
 
-	@Query("SELECT clm FROM Claim clm WHERE clm.leg IN :legs")
+	@Query("select c from Claim c where c.leg in :legs")
 	List<Claim> findClaimByLegs(List<Leg> legs);
 
-	@Query("SELECT tl FROM TrackingLog tl WHERE tl.claim IN :claims")
+	@Query("select tl from TrackingLog tl where tl.claim in :claims")
 	List<TrackingLog> findTrackingLogsByClaim(List<Claim> claims);
 }

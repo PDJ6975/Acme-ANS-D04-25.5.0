@@ -13,7 +13,7 @@ import acme.entities.visas.VisaRequirement;
 @Repository
 public interface CrewMemberVisaRequirementRepository extends AbstractRepository {
 
-	// Devuelve la lista de países a donde ha volado un FlightCrewMember
+	// Devuelve la lista de países a donde ha volado/va a volar un FlightCrewMember
 	@Query("""
 		    SELECT DISTINCT a.leg.arrivalAirport.country
 		    FROM FlightAssignment a

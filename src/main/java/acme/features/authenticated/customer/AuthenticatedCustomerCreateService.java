@@ -59,8 +59,14 @@ public class AuthenticatedCustomerCreateService extends AbstractGuiService<Authe
 	public void validate(final Customer object) {
 		assert object != null;
 
-		if (!super.getBuffer().getErrors().hasErrors("identifier"))
+		if (!super.getBuffer().getErrors().hasErrors("identifier")) {
 			super.state(object.getIdentifier().matches("^[A-Z]{2,3}\\d{6}$"), "identifier", "authenticated.customer.form.error.invalid-identifier");
+
+			if (!super.getBuffer().getErrors().hasErrors("identifier")) {
+				boolean isUnique = !this.repository.existsByIdentifier(object.getIdentifier());
+				super.state(isUnique, "identifier", "authenticated.customer.form.error.duplicate-identifier");
+			}
+		}
 
 		if (!super.getBuffer().getErrors().hasErrors("phoneNumber"))
 			super.state(object.getPhoneNumber().matches("^\\+?\\d{6,15}$"), "phoneNumber", "authenticated.customer.form.error.invalid-phone");

@@ -21,16 +21,12 @@ public class AnyFlightAssignmentShowService extends AbstractGuiService<Any, Flig
 
 	@Override
 	public void authorise() {
-		boolean status;
-		int id;
-		FlightAssignment assignment;
+		int id = super.getRequest().getData("id", int.class);
+		FlightAssignment assignment = this.repository.findAssignmentById(id);
 
-		id = super.getRequest().getData("id", int.class);
-		assignment = this.repository.findAssignmentById(id);
+		boolean authorised = assignment != null && !assignment.isDraftMode() && !assignment.getLeg().isDraftMode();
 
-		status = assignment != null && !assignment.isDraftMode() && super.getRequest().getPrincipal().isAuthenticated();
-
-		super.getResponse().setAuthorised(status);
+		super.getResponse().setAuthorised(authorised);
 	}
 
 	@Override
@@ -54,4 +50,5 @@ public class AnyFlightAssignmentShowService extends AbstractGuiService<Any, Flig
 
 		super.getResponse().addData(dataset);
 	}
+
 }

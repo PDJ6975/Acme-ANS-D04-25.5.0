@@ -87,6 +87,8 @@ public class ManagerLegCreateService extends AbstractGuiService<Manager, Leg> {
 		if (legs.size() > 0) {
 			boolean dateAfter = lastLeg.getScheduledArrival().before(leg.getScheduledDeparture());
 			super.state(dateAfter, "scheduledDeparture", "manager.leg.error.scheduledDeparture");
+			boolean airportConexion = lastLeg.getArrivalAirport().equals(leg.getDepartureAirport());
+			super.state(!airportConexion, "departureAirport", "manager.leg.error.airportConexion");
 		}
 
 		boolean departureBeforeArrival = leg.getScheduledDeparture().before(leg.getScheduledArrival());

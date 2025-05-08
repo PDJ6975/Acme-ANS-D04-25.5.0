@@ -25,11 +25,9 @@
     
     <jstl:choose>
     <jstl:when test="${acme:anyOf(_command, 'show|update|delete')}">
-    	<jstl:if test="${draftLeg == true}">
+    	<jstl:if test="${validDraft == true}">
     		<acme:submit code="crewMember.log.list.button.update" action="/flight-crew-member/activity-log/update"/>
         	<acme:submit code="crewMember.log.list.button.delete" action="/flight-crew-member/activity-log/delete"/>
-		</jstl:if>
-		<jstl:if test="${draftMode == false && draftLeg == true}">
     		<acme:submit code="crewMember.log.list.button.publish" action="/flight-crew-member/activity-log/publish"/>
 		</jstl:if> 
     </jstl:when>

@@ -1,0 +1,16 @@
+administrator.banned-passenger.list.title = Pasajeros baneados
+administrator.banned-passenger.form.title = Formulario pasajero baneado
+
+administrator.banned.passenger.list.label.fullName = Nombre completo
+administrator.banned.passenger.list.label.passportNumber = Numero de pasaporte
+administrator.banned.passenger.list.label.reason = Motivo
+
+administrator.banned.passenger.show.label.dateOfBirth = Fecha de nacimiento
+administrator.banned.passenger.show.label.nationality = Nacionalidad
+administrator.banned.passenger.show.label.banDate = Fecha de baneo
+administrator.banned.passenger.show.label.liftDate = Fecha fin de baneo
+
+administrator.update.lift-date-cant-be-before = La fecha de fin del ban debe ser posterior a la del comienzo del ban.
+
+administrator.banned.passenger.form.submit.create = Crear
+administrator.banned.passenger.form.submit.update = Actualizar

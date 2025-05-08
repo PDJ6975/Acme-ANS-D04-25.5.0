@@ -1,5 +1,5 @@
 
-package acme.entities.systemCurrencies;
+package acme.entities.systemConfigurations;
 
 import javax.persistence.Entity;
 

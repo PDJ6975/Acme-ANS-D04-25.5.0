@@ -9,6 +9,8 @@ import acme.client.components.models.Dataset;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.activityLogs.ActivityLog;
+import acme.entities.assignments.AssignmentStatus;
+import acme.entities.assignments.FlightAssignment;
 import acme.realms.members.FlightCrewMember;
 
 @GuiService
@@ -17,12 +19,22 @@ public class CrewMemberActivityLogListService extends AbstractGuiService<FlightC
 	@Autowired
 	private CrewMemberActivityLogRepository repository;
 
-	// AbstractGuiService interface -------------------------------------------
-
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean authorised = false;
+
+		if (super.getRequest().hasData("masterId", int.class)) {
+			int assignmentId = super.getRequest().getData("masterId", int.class);
+			FlightAssignment assignment = this.repository.findAssignmentById(assignmentId);
+
+			// Entendemos que una asignación solo puede tener logs si: ella y la etapa son públicas y si la asignación está confirmada (para evitar incongruencias)
+
+			authorised = assignment != null && super.getRequest().getPrincipal().hasRealm(assignment.getFlightCrewMember()) && assignment.getAssignmentStatus() == AssignmentStatus.CONFIRMED && !assignment.isDraftMode()
+				&& !assignment.getLeg().isDraftMode();
+		}
+
+		super.getResponse().setAuthorised(authorised);
 	}
 
 	@Override
@@ -53,7 +65,11 @@ public class CrewMemberActivityLogListService extends AbstractGuiService<FlightC
 		int masterId;
 
 		masterId = super.getRequest().getData("masterId", int.class);
+		FlightAssignment assignment = this.repository.findAssignmentById(masterId);
 
+		boolean canCreate = assignment.getAssignmentStatus() == AssignmentStatus.CONFIRMED && !assignment.isDraftMode() && !assignment.getLeg().isDraftMode();
+
+		super.getResponse().addGlobal("canCreate", canCreate);
 		super.getResponse().addGlobal("masterId", masterId);
 	}
 

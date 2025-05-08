@@ -21,6 +21,8 @@ master.menu.anonymous.favourite-link-pabolimor = 53345421A: Olivencia Moreno, Pa
 
 master.menu.authenticated = Authenticated
 master.menu.authenticated.list-assignments = List Assignments
+master.menu.authenticated.list-service = List Services
+master.menu.authenticated.list-airports=List Airports
 
 # master.menu.administrator ###################################################
 
@@ -35,6 +37,14 @@ master.menu.administrator.list-bookings = List Bookings
 master.menu.administrator.list-airlines = List Airlines
 administrator.menu.populate-visa = Populate DB (Visa Requirements)
 master.menu.administrator.list-services = List Services
+master.menu.administrator.list-maintenanceRecord = List Maintenances Records
+master.menu.administrator.show-dashboard=Dashboard
+master.menu.administrator.banned-passengers= Banned Passangers
+master.menu.administrator.list-banned-passanger = Current banned Passangers
+master.menu.administrator.show-systemConfiguration=System Configuration
+master.menu.administrator.list-past-banned-passanger = Past Banned Passanger
+master.menu.administrator.list-last-month-banned-passanger = Last Month Banned Passangers
+
 
 # master.menu.provider ########################################################
 
@@ -90,9 +100,10 @@ master.menu.customer.dashboard = Dashboard
 master.menu.technician = Technician
 master.menu.technician.list-my-maintenance-records= List my maintenance records
 master.menu.technician.list-my-tasks = List my tasks
+master.menu.technician.show-dashboard=Dashboard
 master.menu.technician.list-maintenance-record-catalogue = List maintenance record catalogue
 master.menu.technician.list-task-catalogue = List task catalogue
-
+master.menu.technician.list-notice-board=List Courses
 master.menu.authenticated.list-reviews = List Reviews
 
 master.menu.customer.recommendations = Recommendations

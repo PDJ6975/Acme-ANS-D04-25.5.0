@@ -13,3 +13,5 @@ authenticated.customer.form.error.invalid-identifier = Invalid identifier format
 authenticated.customer.form.error.invalid-phone = Invalid phone number, use 6-15 digits with optional leading '+'
 
 authenticated.customer.form.error.spam = Spam has been detected
+acme.validation.length = Input is too long
+authenticated.customer.form.error.duplicate-identifier = Duplicated Identifier

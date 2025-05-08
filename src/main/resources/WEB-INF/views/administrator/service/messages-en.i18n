@@ -1,4 +1,28 @@
 administrator.service.list.title = Services List
+administrator.service.form.title = Service Form
+
 administrator.service.list.label.name = Service Name
 administrator.service.list.label.averageDwellTime = Average Dwell Time (hours)
 administrator.service.list.label.airport = Airport
+
+administrator.service.form.label.name = Name:
+administrator.service.form.label.link = Link:
+administrator.service.form.label.averageDwellTime = Average dwell time:
+administrator.service.form.label.promotionCode = Promotion code:
+administrator.service.form.label.discountMoney = Discount:
+administrator.service.form.label.airport.name = Airport name:
+administrator.service.form.label.airport.iata = Airport IATA:
+
+administrator.service.form.button.create = Create
+administrator.service.form.button.update = Update
+administrator.service.form.button.delete = Delete
+
+administrator.service.list.button.create = Create new service
+
+administrator.service.error.airport-required=You must select an airport
+administrator.service.error.duplicate-promotion-code=This promotion code is already in use
+administrator.service.error.discount-required=A discount amount must be provided when a promotion code is set
+administrator.service.error.promotion-code-required=A promotion code must be provided if a discount is specified
+administrator.service.error.year-mismatch=The promotion code must end with the current year
+
+

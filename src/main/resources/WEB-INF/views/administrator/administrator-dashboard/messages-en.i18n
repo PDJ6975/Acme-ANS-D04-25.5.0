@@ -1,0 +1,32 @@
+# Form title
+administrator.administrator-dashboard.form.title = Administrator Dashboard
+
+# 1. Airports by Operational Scope
+administrator.dashboard.title.airports-by-scope = Airports by Operational Scope
+administrator.dashboard.label.operational-scope = Operational Scope
+administrator.dashboard.label.count = Count
+
+# 2. Airlines by Type
+administrator.dashboard.title.airlines-by-type = Airlines by Type
+administrator.dashboard.label.airline-type = Airline Type
+
+# 3. Ratio of Airlines with both Email and Phone
+administrator.dashboard.title.ratio-airlines-contact = Ratio of Airlines with Contact Info
+administrator.dashboard.label.ratio-airlines-contact = Airlines with Email & Phone Ratio
+
+# 4. Aircraft Status Ratios
+administrator.dashboard.title.aircraft-status = Aircraft Status Ratios
+administrator.dashboard.label.aircraft-status = Status
+administrator.dashboard.label.ratio = Ratio
+
+# 5. Ratio of Reviews with Score Above 5.00
+administrator.dashboard.title.ratio-reviews-above-five = Ratio of Reviews Above 5.00
+administrator.dashboard.label.ratio-reviews-above-five = Reviews Above 5.00 Ratio
+
+# 6. Review Statistics (Last 10 Weeks)
+administrator.dashboard.title.review-statistics = Review Statistics (Last 10 Weeks)
+administrator.dashboard.label.review-count = Review Count
+administrator.dashboard.label.review-average = Average Review Score
+administrator.dashboard.label.review-minimum = Minimum Review Score
+administrator.dashboard.label.review-maximum = Maximum Review Score
+administrator.dashboard.label.review-stddev = Review Score Standard Deviation

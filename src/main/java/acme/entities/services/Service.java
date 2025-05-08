@@ -62,4 +62,14 @@ public class Service extends AbstractEntity {
 	@ManyToOne(optional = false)
 	private Airport				airport;
 
+	// Evitamos cadenas vacías no nulas, pues optional no las convierte a null
+
+
+	public void setPromotionCode(String p) {
+		// Si c está vacío o son solo espacios, lo pongo a null
+		if (p != null && p.trim().isEmpty())
+			p = null;
+		this.promotionCode = p;
+	}
+
 }

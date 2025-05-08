@@ -48,7 +48,7 @@ public class CustomerBookingCreateService extends AbstractGuiService<Customer, B
 
 	@Override
 	public void bind(final Booking booking) {
-		super.bindObject(booking, "locatorCode", "purchaseMoment", "travelClass", "price", "creditCardNibble", "flight");
+		super.bindObject(booking, "locatorCode", "travelClass", "price", "creditCardNibble", "flight");
 		Customer customer = (Customer) super.getRequest().getPrincipal().getActiveRealm();
 		booking.setCustomer(customer);
 	}
