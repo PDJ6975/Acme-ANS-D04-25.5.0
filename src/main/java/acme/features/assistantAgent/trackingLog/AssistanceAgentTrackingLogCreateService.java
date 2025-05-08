@@ -69,6 +69,11 @@ public class AssistanceAgentTrackingLogCreateService extends AbstractGuiService<
 	public void validate(final TrackingLog log) {
 		Double resolutionCreate;
 		int masterId;
+		Indicator i;
+
+		if (!(log.getIndicator() == null))
+			i = super.getRequest().getData("indicator", Indicator.class);
+
 		Collection<TrackingLog> logMaxResolution;
 
 		resolutionCreate = log.getResolutionPercentage();

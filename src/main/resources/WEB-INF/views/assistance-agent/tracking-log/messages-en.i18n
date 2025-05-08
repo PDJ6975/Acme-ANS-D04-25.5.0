@@ -15,7 +15,7 @@ assistance-agent.tracking-log.form.submit.update = Update
 assistance-agent.tracking-log.form.submit.delete = Delete
 assistance-agent.tracking-log.form.submit.publish = Publish
 
-assistant-agent.create.resolution-lower-than-previous = The resolution percentage must be greater than that of the last tracking entry
+assistant-agent.create.resolution-lower-than-previous = The resolution percentage must be greater than that of the last tracking entry or 100% if it is finished
 assistant-agent.create.only-one-resolution-100 = There cannot be more than 2 tracking entries with the resolution percentage set to 100%
 assistant-agent.create.indicator-resolution-problem = When the resolution percentage is 100%, the resolution cannot be empty and the indicator must not be ONGOING
 assistant-agent.create.resolution-problem = When the resolution percentage is not 100%, the resolution must be empty and the indicator must be ONGOING

@@ -21,5 +21,8 @@ assistance-agent.claim.form.submit.publish = Publish
 
 assistant-agent.create.user-not-passenger-or-customer = The user must be a passanger or a customer	
 assistant-agent.create.leg-not-exist = There is no Leg with the flight number
-assistant-agent.create.user-cant-be-null = The user cant be null
+assistant-agent.create.user-cant-be-null = The username cant be null
+assistant-agent.create.user-not-exist = There is no user with the provided username
+assistant-agent.create.leg-cant-be-null = Leg Flight Number cant be null
+assistant-agent.create.leg-is-not-published = Leg is not published yet
 

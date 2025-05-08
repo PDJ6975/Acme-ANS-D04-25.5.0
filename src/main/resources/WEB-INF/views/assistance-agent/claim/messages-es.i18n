@@ -20,5 +20,8 @@ assistance-agent.claim.form.submit.publish = Publicar
 
 
 assistant-agent.create.user-not-passenger-or-customer = El usuario debe ser un pasajero o un cliente
-assistant-agent.create.leg-not-exist = No exite ningún leg con ese numero de vuelo
-assistant-agent.create.user-cant-be-null = El usuario no puede ser nulo
+assistant-agent.create.leg-not-exist = No exite ningún tramo con ese numero de vuelo
+assistant-agent.create.user-cant-be-null = El nombre de usuario no puede ser nulo
+assistant-agent.create.user-not-exist = No existe ningun usuario con dicho nombre de usuario
+assistant-agent.create.leg-cant-be-null = El numero del tramo no puede ser nulo 
+assistant-agent.create.leg-is-not-published = Ese tramo no ha sido publicado todavía
