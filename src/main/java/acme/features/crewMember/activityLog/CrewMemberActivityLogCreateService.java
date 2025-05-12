@@ -3,6 +3,8 @@ package acme.features.crewMember.activityLog;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.acme.spam.detection.SpamDetector;
+
 import acme.client.components.models.Dataset;
 import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
@@ -16,7 +18,10 @@ import acme.realms.members.FlightCrewMember;
 public class CrewMemberActivityLogCreateService extends AbstractGuiService<FlightCrewMember, ActivityLog> {
 
 	@Autowired
-	protected CrewMemberActivityLogRepository repository;
+	protected CrewMemberActivityLogRepository	repository;
+
+	@Autowired
+	private SpamDetector						spamDetector;
 
 
 	@Override
@@ -67,6 +72,16 @@ public class CrewMemberActivityLogCreateService extends AbstractGuiService<Fligh
 		super.state(log.getFlightAssignment().getAssignmentStatus() == AssignmentStatus.CONFIRMED, "*", "crewMember.log.error.assignment.not-confirmed");
 		super.state(!log.getFlightAssignment().isDraftMode(), "*", "crewMember.log.error.assignment.not-published");
 		super.state(!log.getFlightAssignment().getLeg().isDraftMode(), "*", "crewMember.log.error.leg.not-published");
+
+		if (!super.getBuffer().getErrors().hasErrors("typeOfIncident")) {
+			boolean isSpamFn = this.spamDetector.isSpam(log.getTypeOfIncident());
+			super.state(!isSpamFn, "typeOfIncident", "customer.passenger.error.spam");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("description")) {
+			boolean isSpamFn = this.spamDetector.isSpam(log.getDescription());
+			super.state(!isSpamFn, "description", "customer.passenger.error.spam");
+		}
 	}
 
 	@Override
