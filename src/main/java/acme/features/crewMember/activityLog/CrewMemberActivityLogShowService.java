@@ -4,6 +4,7 @@ package acme.features.crewMember.activityLog;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.activityLogs.ActivityLog;
@@ -27,10 +28,13 @@ public class CrewMemberActivityLogShowService extends AbstractGuiService<FlightC
 			logId = super.getRequest().getData("id", int.class);
 			log = this.repository.findOneById(logId);
 
+			// El vuelo debe haber comenzado
+			boolean legStarted = log.getFlightAssignment().getLeg().getScheduledDeparture().before(MomentHelper.getCurrentMoment());
+
 			// Entendemos que una asignación solo puede tener logs si: ella y la etapa son públicas y si la asignación está confirmada (para evitar incongruencias)
 
 			authorised = log != null && super.getRequest().getPrincipal().hasRealm(log.getFlightAssignment().getFlightCrewMember()) && log.getFlightAssignment().getAssignmentStatus() == AssignmentStatus.CONFIRMED && !log.getFlightAssignment().isDraftMode()
-				&& !log.getFlightAssignment().getLeg().isDraftMode();
+				&& !log.getFlightAssignment().getLeg().isDraftMode() && legStarted;
 		}
 
 		super.getResponse().setAuthorised(authorised);

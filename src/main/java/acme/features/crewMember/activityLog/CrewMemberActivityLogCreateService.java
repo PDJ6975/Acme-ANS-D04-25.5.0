@@ -1,6 +1,8 @@
 
 package acme.features.crewMember.activityLog;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.acme.spam.detection.SpamDetector;
@@ -32,10 +34,13 @@ public class CrewMemberActivityLogCreateService extends AbstractGuiService<Fligh
 			int assignmentId = super.getRequest().getData("masterId", int.class);
 			FlightAssignment assignment = this.repository.findAssignmentById(assignmentId);
 
+			// El vuelo debe haber comenzado
+			boolean legStarted = assignment.getLeg().getScheduledDeparture().before(MomentHelper.getCurrentMoment());
+
 			// Entendemos que una asignación solo puede tener logs si: ella y la etapa son públicas y si la asignación está confirmada (para evitar incongruencias)
 
-			authorised = assignment != null && super.getRequest().getPrincipal().hasRealm(assignment.getFlightCrewMember()) && assignment.getAssignmentStatus() == AssignmentStatus.CONFIRMED && !assignment.isDraftMode()
-				&& !assignment.getLeg().isDraftMode();
+			authorised = assignment != null && super.getRequest().getPrincipal().hasRealm(assignment.getFlightCrewMember()) && assignment.getAssignmentStatus() == AssignmentStatus.CONFIRMED && !assignment.isDraftMode() && !assignment.getLeg().isDraftMode()
+				&& legStarted;
 		}
 
 		super.getResponse().setAuthorised(authorised);
@@ -68,6 +73,8 @@ public class CrewMemberActivityLogCreateService extends AbstractGuiService<Fligh
 	@Override
 	public void validate(final ActivityLog log) {
 
+		Date now = MomentHelper.getCurrentMoment();
+
 		// Protección adicional contra inconsistencias (duplicado defensivo con authorise)
 		super.state(log.getFlightAssignment().getAssignmentStatus() == AssignmentStatus.CONFIRMED, "*", "crewMember.log.error.assignment.not-confirmed");
 		super.state(!log.getFlightAssignment().isDraftMode(), "*", "crewMember.log.error.assignment.not-published");
@@ -82,6 +89,8 @@ public class CrewMemberActivityLogCreateService extends AbstractGuiService<Fligh
 			boolean isSpamFn = this.spamDetector.isSpam(log.getDescription());
 			super.state(!isSpamFn, "description", "customer.passenger.error.spam");
 		}
+		Date departure = log.getFlightAssignment().getLeg().getScheduledDeparture();
+		super.state(departure.before(now), "*", "crewMember.log.error.leg.not-started");
 	}
 
 	@Override

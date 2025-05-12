@@ -1,10 +1,13 @@
 
 package acme.features.crewMember.assignment;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.assignments.AssignmentStatus;
@@ -55,6 +58,8 @@ public class CrewMemberAssignmentShowService extends AbstractGuiService<FlightCr
 	@Override
 	public void unbind(final FlightAssignment assignment) {
 		Dataset dataset;
+		Date now = MomentHelper.getCurrentMoment();
+		boolean legInProgressOrCompleted = assignment.getLeg().getScheduledDeparture().before(now);
 		SelectChoices choicesCrewRole = SelectChoices.from(CrewRole.class, assignment.getCrewRole());
 		SelectChoices choicesAssignmentStatus = SelectChoices.from(AssignmentStatus.class, assignment.getAssignmentStatus());
 
@@ -67,7 +72,8 @@ public class CrewMemberAssignmentShowService extends AbstractGuiService<FlightCr
 		dataset.put("draftMode", assignment.isDraftMode());
 
 		// ¿puede ver logs esta asignación?
-		boolean hasLog = assignment.getAssignmentStatus() == AssignmentStatus.CONFIRMED && !assignment.isDraftMode() && !assignment.getLeg().isDraftMode();
+
+		boolean hasLog = assignment.getAssignmentStatus() == AssignmentStatus.CONFIRMED && !assignment.isDraftMode() && !assignment.getLeg().isDraftMode() && legInProgressOrCompleted;
 
 		dataset.put("hasLog", hasLog);
 

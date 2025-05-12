@@ -24,5 +24,7 @@ administrator.service.error.duplicate-promotion-code=This promotion code is alre
 administrator.service.error.discount-required=A discount amount must be provided when a promotion code is set
 administrator.service.error.promotion-code-required=A promotion code must be provided if a discount is specified
 administrator.service.error.year-mismatch=The promotion code must end with the current year
+administrator.service.error.invalid-currency=The currency is not valid
+
 
 

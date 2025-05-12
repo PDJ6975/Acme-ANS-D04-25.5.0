@@ -14,5 +14,5 @@ authenticated.flight-crew-member.error.null-airline = Debes seleccionar una aero
 
 authenticated.flight-crew-member.form.button.create = Registrarse
 authenticated.flight-crew-member.form.button.update = Actualizar perfil
-
+authenticated.flight-crew-member.form.button.currency = La moneda especificada no es válida
 

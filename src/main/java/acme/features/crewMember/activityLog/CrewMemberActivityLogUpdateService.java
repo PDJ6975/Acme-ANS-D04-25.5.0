@@ -1,11 +1,14 @@
 
 package acme.features.crewMember.activityLog;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.acme.spam.detection.SpamDetector;
 
 import acme.client.components.models.Dataset;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.activityLogs.ActivityLog;
@@ -32,8 +35,11 @@ public class CrewMemberActivityLogUpdateService extends AbstractGuiService<Fligh
 			logId = super.getRequest().getData("id", int.class);
 			log = this.repository.findOneById(logId);
 
+			// El vuelo debe haber comenzado
+			boolean legStarted = log.getFlightAssignment().getLeg().getScheduledDeparture().before(MomentHelper.getCurrentMoment());
+
 			authorised = log != null && log.isDraftMode() && super.getRequest().getPrincipal().hasRealm(log.getFlightAssignment().getFlightCrewMember()) && log.getFlightAssignment().getAssignmentStatus() == AssignmentStatus.CONFIRMED
-				&& !log.getFlightAssignment().isDraftMode() && !log.getFlightAssignment().getLeg().isDraftMode();
+				&& !log.getFlightAssignment().isDraftMode() && !log.getFlightAssignment().getLeg().isDraftMode() && legStarted;
 		}
 
 		super.getResponse().setAuthorised(authorised);
@@ -75,6 +81,9 @@ public class CrewMemberActivityLogUpdateService extends AbstractGuiService<Fligh
 			boolean isSpamFn = this.spamDetector.isSpam(log.getDescription());
 			super.state(!isSpamFn, "description", "customer.passenger.error.spam");
 		}
+		Date now = MomentHelper.getCurrentMoment();
+		Date departure = log.getFlightAssignment().getLeg().getScheduledDeparture();
+		super.state(departure.before(now), "*", "crewMember.log.error.leg.not-started");
 	}
 
 	@Override
