@@ -7,6 +7,8 @@ import java.util.Currency;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.acme.spam.detection.SpamDetector;
+
 import acme.client.components.datatypes.Money;
 import acme.client.components.models.Dataset;
 import acme.client.components.principals.Administrator;
@@ -21,7 +23,10 @@ import acme.entities.services.Service;
 public class AdministratorServiceCreateService extends AbstractGuiService<Administrator, Service> {
 
 	@Autowired
-	protected AdministratorServiceRepository repository;
+	protected AdministratorServiceRepository	repository;
+
+	@Autowired
+	private SpamDetector						spamDetector;
 
 
 	@Override
@@ -83,6 +88,12 @@ public class AdministratorServiceCreateService extends AbstractGuiService<Admini
 
 		// Un servicio de se debe asociar a un aeropuerto
 		super.state(service.getAirport() != null, "airport", "administrator.service.error.airport-required");
+
+		if (!super.getBuffer().getErrors().hasErrors("name")) {
+			boolean isSpamFn = this.spamDetector.isSpam(service.getName());
+			super.state(!isSpamFn, "name", "customer.passenger.error.spam");
+		}
+
 	}
 
 	@Override

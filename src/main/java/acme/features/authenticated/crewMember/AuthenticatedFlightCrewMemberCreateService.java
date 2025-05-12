@@ -6,6 +6,8 @@ import java.util.Currency;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.acme.spam.detection.SpamDetector;
+
 import acme.client.components.models.Dataset;
 import acme.client.components.principals.Authenticated;
 import acme.client.components.principals.UserAccount;
@@ -21,7 +23,10 @@ import acme.realms.members.FlightCrewMember;
 public class AuthenticatedFlightCrewMemberCreateService extends AbstractGuiService<Authenticated, FlightCrewMember> {
 
 	@Autowired
-	protected AuthenticatedFlightCrewMemberRepository repository;
+	protected AuthenticatedFlightCrewMemberRepository	repository;
+
+	@Autowired
+	private SpamDetector								spamDetector;
 
 
 	@Override
@@ -78,6 +83,11 @@ public class AuthenticatedFlightCrewMemberCreateService extends AbstractGuiServi
 			} catch (IllegalArgumentException ex) {
 				super.state(false, "salary", "administrator.service.error.invalid-currency");
 			}
+
+		if (!super.getBuffer().getErrors().hasErrors("languageSkills")) {
+			boolean isSpamFn = this.spamDetector.isSpam(member.getLanguageSkills());
+			super.state(!isSpamFn, "languageSkills", "customer.passenger.error.spam");
+		}
 	}
 
 	@Override
