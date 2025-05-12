@@ -3,6 +3,7 @@ package acme.features.administrator.service;
 
 import java.time.ZoneId;
 import java.util.Collection;
+import java.util.Currency;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -58,6 +59,15 @@ public class AdministratorServiceCreateService extends AbstractGuiService<Admini
 
 			// Validar que haya descuento si hay código
 			super.state(discountMoney != null, "discountMoney", "administrator.service.error.discount-required");
+
+			// Validar la currency
+
+			if (discountMoney != null)
+				try {
+					Currency.getInstance(discountMoney.getCurrency());
+				} catch (IllegalArgumentException ex) {
+					super.state(false, "discountMoney", "administrator.service.error.invalid-currency");
+				}
 
 			// Obtener el año actual desde MomentHelper
 			String expectedYear = String.valueOf(MomentHelper.getCurrentMoment().toInstant().atZone(ZoneId.systemDefault()).getYear()).substring(2);
