@@ -51,7 +51,7 @@ public class Airport extends AbstractEntity {
 	private String				country;
 
 	@Optional
-	@ValidUrl(message = "Formato de dirección web incorrecto")
+	@ValidUrl(message = "Formato de dirección web incorrecto", remote = false)
 	@Automapped
 	private String				website;
 

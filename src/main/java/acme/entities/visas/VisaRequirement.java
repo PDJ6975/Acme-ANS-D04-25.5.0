@@ -90,7 +90,7 @@ public class VisaRequirement extends AbstractEntity {
 	private String				additionalInfo; // Texto adicional de excepciones sobre los requisitos de visa
 
 	@Optional
-	@ValidUrl
+	@ValidUrl(remote = false)
 	@Automapped
 	private String				officialLink; // Enlace oficial para más detalles
 
