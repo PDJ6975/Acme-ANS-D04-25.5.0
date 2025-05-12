@@ -41,3 +41,4 @@ technician.maintenance-record.form.error.aircraft = El avión seleccionado no ex
 
 technician.maintenance-record.form.error.zero-tasks = Para publicar un registro de mantenimiento, este debe tener al menos una tarea publicada
 technician.maintenance-record.form.error.not-all-tasks-published = Para publicar un registro de mantenimiento, este debe tener todas sus tareas publicadas
+technician.error.spam = Esta entrada fué detectada como spam
