@@ -2,6 +2,7 @@
 package acme.features.authenticated.crewMember;
 
 import java.util.Collection;
+import java.util.Currency;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -62,6 +63,15 @@ public class AuthenticatedFlightCrewMemberUpdateService extends AbstractGuiServi
 		}
 
 		super.state(member.getAirline() != null, "airlineId", "authenticated.flight-crew-member.error.null-airline");
+
+		// Validar currency del salary
+
+		if (member.getSalary() != null)
+			try {
+				Currency.getInstance(member.getSalary().getCurrency());
+			} catch (IllegalArgumentException ex) {
+				super.state(false, "salary", "administrator.service.error.invalid-currency");
+			}
 	}
 
 	@Override

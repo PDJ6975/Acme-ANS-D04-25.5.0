@@ -28,3 +28,4 @@ crewMember.log.error.already-published=Este incidente ya ha sido publicado
 crewMember.log.error.assignment.not-confirmed=No se puede publicar un log para una asignación no confirmada
 crewMember.log.error.assignment.not-published=No se puede publicar un log para una asignación no publicada
 crewMember.log.error.leg.not-published=No se puede publicar un log si la etapa no está publicada
+crewMember.log.error.leg.not-started = La etapa todavía no ha comenzado
