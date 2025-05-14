@@ -1,41 +1,41 @@
 key,key:flightCrewMember,key:leg,crewRole,lastUpdated,assignmentStatus,comments,draftMode
-#base entity -> unique restriction crewMember-leg
-flight-assignment-01,flight-crew-member-01,leg-01,PILOT,2011/04/16 0:00,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",TRUE
+#base entity -> unique restriction crewMember-leg,"","","","","","",""
+flight-assignment-01,flight-crew-member-01,leg-01,PILOT,2011/04/16 0:00,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FALSE
 # comments - standart variations
-flight-assignment-02,flight-crew-member-01,leg-02,PILOT,2011/04/16 0:00,CONFIRMED,,TRUE
-flight-assignment-03,flight-crew-member-01,leg-03,PILOT,2011/04/16 0:00,CONFIRMED,null,TRUE
-flight-assignment-04,flight-crew-member-01,leg-04,PILOT,2011/04/16 0:00,CONFIRMED,L,TRUE
-flight-assignment-05,flight-crew-member-01,leg-05,PILOT,2011/04/16 0:00,CONFIRMED,Lo,TRUE
-flight-assignment-06,flight-crew-member-01,leg-06,PILOT,2011/04/16 0:00,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",TRUE
-flight-assignment-07,flight-crew-member-01,leg-07,PILOT,2011/04/16 0:00,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",TRUE
-flight-assignment-08,flight-crew-member-01,leg-08,PILOT,2011/04/16 0:00,CONFIRMED,โลเร็ม อิปซัม,TRUE
-flight-assignment-09,flight-crew-member-01,leg-09,PILOT,2011/04/16 0:00,CONFIRMED,لوريم إيبسوم,TRUE
-flight-assignment-10,flight-crew-member-01,leg-10,PILOT,2011/04/16 0:00,CONFIRMED,洛伦·伊普森,TRUE
-flight-assignment-11,flight-crew-member-01,leg-11,PILOT,2011/04/16 0:00,CONFIRMED,<marquee>Hacked</marquee>,TRUE
-flight-assignment-12,flight-crew-member-01,leg-12,PILOT,2011/04/16 0:00,CONFIRMED,<script>alert(�Hacked!�);</script>,TRUE
-flight-assignment-13,flight-crew-member-01,leg-13,PILOT,2011/04/16 0:00,CONFIRMED,' or 'A' = 'A,TRUE
+flight-assignment-02,flight-crew-member-01,leg-02,PILOT,2011/04/16 0:00,CONFIRMED,,FALSE
+flight-assignment-03,flight-crew-member-01,leg-03,PILOT,2011/04/16 0:00,CONFIRMED,null,FALSE
+flight-assignment-04,flight-crew-member-01,leg-04,PILOT,2011/04/16 0:00,CONFIRMED,L,FALSE
+flight-assignment-05,flight-crew-member-01,leg-05,PILOT,2011/04/16 0:00,CONFIRMED,Lo,FALSE
+flight-assignment-06,flight-crew-member-01,leg-06,PILOT,2011/04/16 0:00,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",FALSE
+flight-assignment-07,flight-crew-member-01,leg-07,PILOT,2011/04/16 0:00,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",FALSE
+flight-assignment-08,flight-crew-member-01,leg-08,PILOT,2011/04/16 0:00,CONFIRMED,โลเร็ม อิปซัม,FALSE
+flight-assignment-09,flight-crew-member-01,leg-09,PILOT,2011/04/16 0:00,CONFIRMED,لوريم إيبسوم,FALSE
+flight-assignment-10,flight-crew-member-01,leg-36,PILOT,2011/04/16 0:00,CONFIRMED,洛伦·伊普森,FALSE
+flight-assignment-11,flight-crew-member-01,leg-37,PILOT,2011/04/16 0:00,CONFIRMED,<marquee>Hacked</marquee>,FALSE
+flight-assignment-12,flight-crew-member-01,leg-38,PILOT,2011/04/16 0:00,CONFIRMED,<script>alert(�Hacked!�);</script>,FALSE
+flight-assignment-13,flight-crew-member-01,leg-39,PILOT,2011/04/16 0:00,CONFIRMED,' or 'A' = 'A,FALSE
 # lastUpdate - standart variations
-flight-assignment-14,flight-crew-member-02,leg-01,PILOT,2000/01/01 0:00,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",TRUE
-flight-assignment-15,flight-crew-member-02,leg-02,PILOT,2000/01/01 0:01,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",TRUE
-flight-assignment-16,flight-crew-member-02,leg-03,PILOT,2022/07/29 23:59,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",TRUE
-flight-assignment-17,flight-crew-member-02,leg-04,PILOT,2022/07/30 0:00,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",TRUE
+flight-assignment-14,flight-crew-member-02,leg-01,PILOT,2000/01/01 0:00,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FALSE
+flight-assignment-15,flight-crew-member-02,leg-02,PILOT,2000/01/01 0:01,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FALSE
+flight-assignment-16,flight-crew-member-02,leg-03,PILOT,2022/07/29 23:59,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FALSE
+flight-assignment-17,flight-crew-member-02,leg-36,PILOT,2022/07/30 0:00,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FALSE
 # crewRole - basic variations
-flight-assignment-18,flight-crew-member-02,leg-05,COPILOT,2011/04/16 0:00,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",TRUE
-flight-assignment-19,flight-crew-member-02,leg-06,LEADATTENDANT,2011/04/16 0:00,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",TRUE
-flight-assignment-20,flight-crew-member-02,leg-07,CABINATTENDANT,2011/04/16 0:00,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",TRUE
+flight-assignment-18,flight-crew-member-02,leg-37,COPILOT,2011/04/16 0:00,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FALSE
+flight-assignment-19,flight-crew-member-02,leg-38,LEADATTENDANT,2011/04/16 0:00,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FALSE
+flight-assignment-20,flight-crew-member-02,leg-39,CABINATTENDANT,2011/04/16 0:00,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FALSE
 # assignmentStatus - basic variations
-flight-assignment-21,flight-crew-member-02,leg-08,PILOT,2011/04/16 0:00,PENDING,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",TRUE
-flight-assignment-22,flight-crew-member-02,leg-09,PILOT,2011/04/16 0:00,CANCELLED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",TRUE
+flight-assignment-21,flight-crew-member-02,leg-08,PILOT,2011/04/16 0:00,PENDING,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FALSE
+flight-assignment-22,flight-crew-member-02,leg-09,PILOT,2011/04/16 0:00,CANCELLED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FALSE
 # assignmentStatus - no singular values
 # crewMember - standard variations
-flight-assignment-23,flight-crew-member-03,leg-01,PILOT,2011/04/16 0:00,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",TRUE
-flight-assignment-24,flight-crew-member-04,leg-01,PILOT,2011/04/16 0:00,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",TRUE
+flight-assignment-23,flight-crew-member-03,leg-01,PILOT,2011/04/16 0:00,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FALSE
+flight-assignment-24,flight-crew-member-04,leg-01,PILOT,2011/04/16 0:00,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FALSE
 # crewMember - no singular values
 # flightStage - variations already done because of restrictions
 # draftMode - standart variations
-flight-assignment-25,flight-crew-member-01,leg-14,PILOT,2011/04/16 0:00,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FALSE
+flight-assignment-25,flight-crew-member-01,leg-35,PILOT,2011/04/16 0:00,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",TRUE
 # draftMode - no singular values
 #
 # flightAssignment PRUEBA BORRADO FLIGHT
 #
-flight-assignment-26,flight-crew-member-01,leg-33,PILOT,2011/04/16 0:00,CONFIRMED,"prueba borrado",TRUE
+flight-assignment-26,flight-crew-member-01,leg-33,PILOT,2011/04/16 0:00,CONFIRMED,prueba borrado,FALSE

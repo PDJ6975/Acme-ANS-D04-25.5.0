@@ -50,7 +50,6 @@ public class CrewMemberAssignmentListPlannedService extends AbstractGuiService<F
 
 		dataset = super.unbindObject(assignment, "leg.flightNumber", "crewRole", "leg.departureAirport.name", "leg.arrivalAirport.name");
 
-		super.getResponse().addGlobal("canCreate", true);
 		super.getResponse().addData(dataset);
 
 	}

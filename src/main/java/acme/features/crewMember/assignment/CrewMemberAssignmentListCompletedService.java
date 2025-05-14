@@ -38,7 +38,7 @@ public class CrewMemberAssignmentListCompletedService extends AbstractGuiService
 		flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
 		assignments = this.repository.findAssignmentsCompletedByMemberId(flightCrewMemberId);
 
-		Collection<FlightAssignment> completed = assignments.stream().filter(fa -> fa.getLeg().getScheduledArrival().before(MomentHelper.getCurrentMoment())).collect(Collectors.toList());
+		Collection<FlightAssignment> completed = assignments.stream().filter(fa -> !fa.getLeg().getScheduledArrival().after(MomentHelper.getCurrentMoment())).collect(Collectors.toList());
 
 		super.getBuffer().addData(completed);
 

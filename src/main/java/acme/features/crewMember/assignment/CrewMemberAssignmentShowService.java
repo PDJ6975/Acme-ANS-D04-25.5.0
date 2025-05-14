@@ -1,8 +1,6 @@
 
 package acme.features.crewMember.assignment;
 
-import java.util.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
@@ -58,8 +56,7 @@ public class CrewMemberAssignmentShowService extends AbstractGuiService<FlightCr
 	@Override
 	public void unbind(final FlightAssignment assignment) {
 		Dataset dataset;
-		Date now = MomentHelper.getCurrentMoment();
-		boolean legInProgressOrCompleted = assignment.getLeg().getScheduledDeparture().before(now);
+		boolean legInProgressOrCompleted = !assignment.getLeg().getScheduledDeparture().after(MomentHelper.getCurrentMoment());
 		SelectChoices choicesCrewRole = SelectChoices.from(CrewRole.class, assignment.getCrewRole());
 		SelectChoices choicesAssignmentStatus = SelectChoices.from(AssignmentStatus.class, assignment.getAssignmentStatus());
 

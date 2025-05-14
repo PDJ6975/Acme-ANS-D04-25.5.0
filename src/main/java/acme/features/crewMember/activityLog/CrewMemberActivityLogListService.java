@@ -71,7 +71,7 @@ public class CrewMemberActivityLogListService extends AbstractGuiService<FlightC
 		masterId = super.getRequest().getData("masterId", int.class);
 		FlightAssignment assignment = this.repository.findAssignmentById(masterId);
 
-		boolean canCreate = assignment.getAssignmentStatus() == AssignmentStatus.CONFIRMED && !assignment.isDraftMode() && !assignment.getLeg().isDraftMode() && assignment.getLeg().getScheduledDeparture().before(MomentHelper.getCurrentMoment());
+		boolean canCreate = assignment.getAssignmentStatus() == AssignmentStatus.CONFIRMED && !assignment.isDraftMode() && !assignment.getLeg().isDraftMode() && !assignment.getLeg().getScheduledDeparture().after(MomentHelper.getCurrentMoment());
 
 		super.getResponse().addGlobal("canCreate", canCreate);
 		super.getResponse().addGlobal("masterId", masterId);

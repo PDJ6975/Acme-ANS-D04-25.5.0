@@ -31,7 +31,7 @@ public class CrewMemberActivityLogUpdateService extends AbstractGuiService<Fligh
 			log = this.repository.findOneById(logId);
 
 			// El vuelo debe haber comenzado
-			boolean legStarted = log.getFlightAssignment().getLeg().getScheduledDeparture().before(MomentHelper.getCurrentMoment());
+			boolean legStarted = !log.getFlightAssignment().getLeg().getScheduledDeparture().after(MomentHelper.getCurrentMoment());
 
 			authorised = log != null && log.isDraftMode() && super.getRequest().getPrincipal().hasRealm(log.getFlightAssignment().getFlightCrewMember()) && log.getFlightAssignment().getAssignmentStatus() == AssignmentStatus.CONFIRMED
 				&& !log.getFlightAssignment().isDraftMode() && !log.getFlightAssignment().getLeg().isDraftMode() && legStarted;
