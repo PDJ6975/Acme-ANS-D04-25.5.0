@@ -68,7 +68,7 @@ public class ManagerFlightPublishService extends AbstractGuiService<Manager, Fli
 		boolean legsDraftMode = legs.stream().allMatch(leg -> !leg.isDraftMode());
 
 		super.state(minimumLegs, "*", "administrator.flight.error.minimumLegs");
-		super.state(legsDraftMode, "*", "administrator.flight.error.legDraftMode-false");
+		super.state(legsDraftMode, "*", "manager.flight.error.legDraftMode-false");
 	}
 
 	@Override

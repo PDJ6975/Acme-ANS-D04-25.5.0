@@ -1,5 +1,5 @@
 
-package acme.features.administrator.systemConfiguration;
+package acme.features.administrator.systemCurrency;
 
 import javax.annotation.PostConstruct;
 
@@ -11,13 +11,13 @@ import acme.client.controllers.GuiController;
 import acme.entities.systemConfigurations.SystemCurrency;
 
 @GuiController
-public class AdministratorSystemConfigurationController extends AbstractGuiController<Administrator, SystemCurrency> {
+public class AdministratorSystemCurrencyController extends AbstractGuiController<Administrator, SystemCurrency> {
 
 	@Autowired
-	private AdministratorSystemConfigurationShowService		showService;
+	private AdministratorSystemCurrencyShowService		showService;
 
 	@Autowired
-	private AdministratorSystemConfigurationUpdateService	updateService;
+	private AdministratorSystemCurrencyUpdateService	updateService;
 
 
 	@PostConstruct

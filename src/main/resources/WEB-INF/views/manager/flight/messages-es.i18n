@@ -35,6 +35,7 @@ manager.flight.form.button.publish = Publicar
 manager.flight.form.button.legs = Mostrar Tramos
 
 manager.flight.error.null-airline = La aerolínea no puede ser nula
+manager.flight.error.legDraftMode-false = Existe una relación con una etapa no publicada
 administrator.flight.error.draftMode-false = El vuelo debe estar en modo borrador
 administrator.flight.error.bookingDraftMode-false = Existe una relación con un Booking publicado
 administrator.flight.error.passengersDraftMode-false = Existe una relación con un Passenger publicado

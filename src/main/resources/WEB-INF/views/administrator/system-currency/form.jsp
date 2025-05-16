@@ -18,7 +18,7 @@
 
             <acme:submit 
                 code="administrator.system-configuration.form.button.update" 
-                action="/administrator/system-configuration/update"/>
+                action="/administrator/system-currency/update"/>
 
         </jstl:when>
     </jstl:choose>

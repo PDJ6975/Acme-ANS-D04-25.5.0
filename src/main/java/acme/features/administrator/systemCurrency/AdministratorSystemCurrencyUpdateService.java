@@ -1,5 +1,5 @@
 
-package acme.features.administrator.systemConfiguration;
+package acme.features.administrator.systemCurrency;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -10,10 +10,10 @@ import acme.client.services.GuiService;
 import acme.entities.systemConfigurations.SystemCurrency;
 
 @GuiService
-public class AdministratorSystemConfigurationUpdateService extends AbstractGuiService<Administrator, SystemCurrency> {
+public class AdministratorSystemCurrencyUpdateService extends AbstractGuiService<Administrator, SystemCurrency> {
 
 	@Autowired
-	protected AdministratorSystemConfigurationRepository repository;
+	protected AdministratorSystemCurrencyRepository repository;
 
 
 	@Override

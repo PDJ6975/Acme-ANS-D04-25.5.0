@@ -35,6 +35,7 @@ manager.flight.form.button.publish = Publish
 manager.flight.form.button.legs = Show Legs
 
 manager.flight.error.null-airline = Airline may not be null
+manager.flight.error.legDraftMode-false = There's a relationship with an unpublished Leg
 administrator.flight.error.draftMode-false = Flight must be in draftMode
 administrator.flight.error.bookingDraftMode-false = There's a relationship with a published Booking
 administrator.flight.error.passengersDraftMode-false = There's a relationship with a published Passenger

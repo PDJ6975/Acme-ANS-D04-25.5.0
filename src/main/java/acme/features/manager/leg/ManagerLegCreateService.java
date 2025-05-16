@@ -69,7 +69,6 @@ public class ManagerLegCreateService extends AbstractGuiService<Manager, Leg> {
 		if (leg.getFlightNumber() != null) {
 			boolean exists = this.repository.existsLegByFlightNumber(leg.getFlightNumber());
 			super.state(!exists, "flightNumber", "manager.leg.error.duplicated-flightNumber");
-
 		}
 
 		super.state(leg.getDepartureAirport() != null, "departureAirport", "manager.leg.error.null-departureAirport");
@@ -77,31 +76,34 @@ public class ManagerLegCreateService extends AbstractGuiService<Manager, Leg> {
 		super.state(leg.getAircraft() != null, "aircraft", "manager.leg.error.null-aircraft");
 		super.state(leg.getFlight() != null, "flight", "manager.leg.error.null-flight");
 
-		Flight flight = leg.getFlight();
+		if (leg.getScheduledDeparture() != null && leg.getScheduledArrival() != null) {
+			boolean departureBeforeArrival = leg.getScheduledDeparture().before(leg.getScheduledArrival());
+			super.state(departureBeforeArrival, "scheduledDeparture", "manager.leg.error.departureBeforeArrival");
 
-		List<Leg> legs = this.repository.findLegsSortedMomentByFlightId(flight.getId());
-
-		Leg firstLeg = legs.getFirst();
-		Leg lastLeg = legs.getLast();
-
-		if (legs.size() > 0) {
-			boolean dateAfter = lastLeg.getScheduledArrival().before(leg.getScheduledDeparture());
-			super.state(dateAfter, "scheduledDeparture", "manager.leg.error.scheduledDeparture");
-			boolean airportConexion = lastLeg.getArrivalAirport().equals(leg.getDepartureAirport());
-			super.state(!airportConexion, "departureAirport", "manager.leg.error.airportConexion");
+			boolean arrivalAfterDeparture = leg.getScheduledArrival().after(leg.getScheduledDeparture());
+			super.state(arrivalAfterDeparture, "scheduledArrival", "manager.leg.error.arrivalAfterDeparture");
 		}
 
-		boolean departureBeforeArrival = leg.getScheduledDeparture().before(leg.getScheduledArrival());
-		super.state(departureBeforeArrival, "scheduledDeparture", "manager.leg.error.departureBeforeArrival");
+		if (leg.getDepartureAirport() != null && leg.getArrivalAirport() != null) {
+			boolean equalAirport = leg.getDepartureAirport().equals(leg.getArrivalAirport());
+			super.state(!equalAirport, "departureAirport", "manager.leg.error.equalAirport");
+			super.state(!equalAirport, "arrivalAirport", "manager.leg.error.equalAirport");
+		}
 
-		boolean arrivalAfterDeparture = leg.getScheduledArrival().after(leg.getScheduledDeparture());
-		super.state(arrivalAfterDeparture, "scheduledArrival", "manager.leg.error.arrivalAfterDeparture");
+		if (leg.getScheduledDeparture() != null && !this.repository.findLegsSortedMomentByFlightId(leg.getFlight().getId()).isEmpty()) {
+			List<Leg> legs = this.repository.findLegsSortedMomentByFlightId(leg.getFlight().getId());
+			Leg lastLeg = legs.get(legs.size() - 1);
 
-		boolean equalAirport1 = leg.getDepartureAirport().equals(leg.getArrivalAirport());
-		super.state(!equalAirport1, "departureAirport", "manager.leg.error.equalAirport");
+			if (lastLeg.getScheduledArrival() != null) {
+				boolean dateAfter = lastLeg.getScheduledArrival().before(leg.getScheduledDeparture());
+				super.state(dateAfter, "scheduledDeparture", "manager.leg.error.scheduledDeparture");
 
-		boolean equalAirport2 = leg.getDepartureAirport().equals(leg.getArrivalAirport());
-		super.state(!equalAirport2, "arrivalAirport", "manager.leg.error.equalAirport");
+				if (lastLeg.getArrivalAirport() != null && leg.getDepartureAirport() != null) {
+					boolean airportConexion = lastLeg.getArrivalAirport().equals(leg.getDepartureAirport());
+					super.state(airportConexion, "departureAirport", "manager.leg.error.airportConexion");
+				}
+			}
+		}
 	}
 
 	@Override
