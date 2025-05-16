@@ -41,3 +41,5 @@ customer.booking.form.error.invalid-locator = Locator code must be 6-8 uppercase
 customer.booking.form.error.invalid-credit-card = Credit card nibble must be exactly 4 digits
 
 customer.booking.form.label.flightInfo = Flight:
+
+customer.booking.form.error.invalid-currency = The currency is not valid. Please use one of the allowed currencies.
