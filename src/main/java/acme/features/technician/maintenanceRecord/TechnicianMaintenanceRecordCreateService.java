@@ -5,6 +5,8 @@ import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.acme.spam.detection.SpamDetector;
+
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractGuiService;
@@ -18,7 +20,10 @@ import acme.realms.technicians.Technician;
 public class TechnicianMaintenanceRecordCreateService extends AbstractGuiService<Technician, MaintenanceRecord> {
 
 	@Autowired
-	protected TechnicianMaintenanceRecordRepository repository;
+	protected TechnicianMaintenanceRecordRepository	repository;
+
+	@Autowired
+	private SpamDetector							spamDetector;
 
 
 	@Override
@@ -62,6 +67,12 @@ public class TechnicianMaintenanceRecordCreateService extends AbstractGuiService
 
 		if (!this.getBuffer().getErrors().hasErrors("aircraft") && maintenanceRecord.getAircraft() != null)
 			super.state(this.repository.findAllAircrafts().contains(maintenanceRecord.getAircraft()), "aircraft", "technician.maintenance-record.form.error.aircraft", maintenanceRecord);
+
+		if (!super.getBuffer().getErrors().hasErrors("notes")) {
+			boolean isSpamFn = this.spamDetector.isSpam(maintenanceRecord.getNotes());
+			super.state(!isSpamFn, "notes", "technician.error.spam");
+		}
+
 	}
 
 	@Override

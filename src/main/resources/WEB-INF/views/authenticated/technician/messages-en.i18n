@@ -12,3 +12,4 @@ authenticated.technician.form.button.update = Update
 
 authenticated.technician.form.error.invalid-licenseNumber = Invalid license number format, use 2-3 uppercase letters followed by 6 digits
 authenticated.technician.form.error.invalid-phone = Invalid phone number, use 6-15 digits with optional leading '+'
+authenticated.error.spam=Your input was detected as spam

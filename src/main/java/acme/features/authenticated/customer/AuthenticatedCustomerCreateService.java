@@ -3,6 +3,8 @@ package acme.features.authenticated.customer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.acme.spam.detection.SpamDetector;
+
 import acme.client.components.models.Dataset;
 import acme.client.components.principals.Authenticated;
 import acme.client.components.principals.UserAccount;
@@ -15,7 +17,10 @@ import acme.realms.Customer;
 public class AuthenticatedCustomerCreateService extends AbstractGuiService<Authenticated, Customer> {
 
 	@Autowired
-	private AuthenticatedCustomerRepository repository;
+	private AuthenticatedCustomerRepository	repository;
+
+	@Autowired
+	private SpamDetector					spamDetector;
 
 
 	@Override
@@ -38,7 +43,7 @@ public class AuthenticatedCustomerCreateService extends AbstractGuiService<Authe
 
 		object = new Customer();
 		object.setUserAccount(userAccount);
-		object.setEarnedPoints(0); // Valor inicial de puntos
+		object.setEarnedPoints(0);
 
 		super.getBuffer().addData(object);
 	}
@@ -65,6 +70,19 @@ public class AuthenticatedCustomerCreateService extends AbstractGuiService<Authe
 
 		if (!super.getBuffer().getErrors().hasErrors("phoneNumber"))
 			super.state(object.getPhoneNumber().matches("^\\+?\\d{6,15}$"), "phoneNumber", "authenticated.customer.form.error.invalid-phone");
+
+		if (!super.getBuffer().getErrors().hasErrors("address")) {
+			boolean spamAddr = this.spamDetector.isSpam(object.getAddress());
+			super.state(!spamAddr, "address", "authenticated.customer.form.error.spam");
+		}
+		if (!super.getBuffer().getErrors().hasErrors("city")) {
+			boolean spamCity = this.spamDetector.isSpam(object.getCity());
+			super.state(!spamCity, "city", "authenticated.customer.form.error.spam");
+		}
+		if (!super.getBuffer().getErrors().hasErrors("country")) {
+			boolean spamCountry = this.spamDetector.isSpam(object.getCountry());
+			super.state(!spamCountry, "country", "authenticated.customer.form.error.spam");
+		}
 	}
 
 	@Override

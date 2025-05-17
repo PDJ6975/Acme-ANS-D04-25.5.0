@@ -3,6 +3,8 @@ package acme.features.crewMember.assignment;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.acme.spam.detection.SpamDetector;
+
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
 import acme.client.helpers.MomentHelper;
@@ -18,7 +20,10 @@ import acme.realms.members.FlightCrewMember;
 public class CrewMemberAssignmentUpdateService extends AbstractGuiService<FlightCrewMember, FlightAssignment> {
 
 	@Autowired
-	protected CrewMemberAssignmentRepository repository;
+	protected CrewMemberAssignmentRepository	repository;
+
+	@Autowired
+	private SpamDetector						spamDetector;
 
 
 	@Override
@@ -61,13 +66,19 @@ public class CrewMemberAssignmentUpdateService extends AbstractGuiService<Flight
 		super.state(leg != null, "leg", "crewMember.assignment.error.missing-leg");
 		super.state(member != null, "*", "crewMember.assignment.error.missing-member");
 
-		if (leg != null && member != null)
+		if (leg != null && member != null) {
 
 			if (role == CrewRole.PILOT || role == CrewRole.COPILOT || role == CrewRole.LEADATTENDANT) {
 				boolean roleAlreadyAssigned = this.repository.existsPublishedAssignmentForLegWithRole(leg.getId(), role);
 				boolean isSame = roleAlreadyAssigned && this.repository.findAssignmentById(assignment.getId()).getCrewRole() == role;
 				super.state(!roleAlreadyAssigned || isSame, "crewRole", "crewMember.assignment.error.duplicate-role");
 			}
+
+			if (!super.getBuffer().getErrors().hasErrors("comments")) {
+				boolean isSpamFn = this.spamDetector.isSpam(assignment.getComments());
+				super.state(!isSpamFn, "comments", "customer.passenger.error.spam");
+			}
+		}
 
 	}
 

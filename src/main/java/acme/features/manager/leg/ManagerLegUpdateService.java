@@ -6,6 +6,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.acme.spam.detection.SpamDetector;
+
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractGuiService;
@@ -26,6 +28,9 @@ public class ManagerLegUpdateService extends AbstractGuiService<Manager, Leg> {
 
 	@Autowired
 	protected ManagerFlightRepository	flightRepository;
+
+	@Autowired
+	private SpamDetector				spamDetector;
 
 
 	@Override
@@ -93,6 +98,11 @@ public class ManagerLegUpdateService extends AbstractGuiService<Manager, Leg> {
 
 		boolean equalAirport2 = leg.getDepartureAirport().equals(leg.getArrivalAirport());
 		super.state(!equalAirport2, "arrivalAirport", "manager.leg.error.equalAirport");
+
+		if (!super.getBuffer().getErrors().hasErrors("description")) {
+			boolean isSpamFn = this.spamDetector.isSpam(leg.getDescription());
+			super.state(!isSpamFn, "description", "customer.passenger.error.spam");
+		}
 	}
 
 	@Override

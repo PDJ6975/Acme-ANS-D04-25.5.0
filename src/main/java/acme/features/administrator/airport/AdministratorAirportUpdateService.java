@@ -3,6 +3,8 @@ package acme.features.administrator.airport;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.acme.spam.detection.SpamDetector;
+
 import acme.client.components.models.Dataset;
 import acme.client.components.principals.Administrator;
 import acme.client.components.views.SelectChoices;
@@ -15,7 +17,10 @@ import acme.entities.airports.OperationalScope;
 public class AdministratorAirportUpdateService extends AbstractGuiService<Administrator, Airport> {
 
 	@Autowired
-	protected AdministratorAirportRepository repository;
+	protected AdministratorAirportRepository	repository;
+
+	@Autowired
+	private SpamDetector						spamDetector;
 
 
 	@Override
@@ -46,6 +51,21 @@ public class AdministratorAirportUpdateService extends AbstractGuiService<Admini
 
 		boolean confirmation = super.getRequest().getData("confirmation", boolean.class);
 		super.state(confirmation, "confirmation", "administrator.airport.error.confirmation-required");
+
+		if (!super.getBuffer().getErrors().hasErrors("name")) {
+			boolean isSpamFn = this.spamDetector.isSpam(airport.getName());
+			super.state(!isSpamFn, "name", "customer.passenger.error.spam");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("city")) {
+			boolean isSpamFn = this.spamDetector.isSpam(airport.getCity());
+			super.state(!isSpamFn, "city", "customer.passenger.error.spam");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("country")) {
+			boolean isSpamFn = this.spamDetector.isSpam(airport.getCountry());
+			super.state(!isSpamFn, "country", "customer.passenger.error.spam");
+		}
 	}
 
 	@Override

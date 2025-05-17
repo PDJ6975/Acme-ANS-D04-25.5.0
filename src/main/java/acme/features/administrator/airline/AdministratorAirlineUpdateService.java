@@ -3,6 +3,8 @@ package acme.features.administrator.airline;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.acme.spam.detection.SpamDetector;
+
 import acme.client.components.models.Dataset;
 import acme.client.components.principals.Administrator;
 import acme.client.services.AbstractGuiService;
@@ -13,7 +15,10 @@ import acme.entities.airlines.Airline;
 public class AdministratorAirlineUpdateService extends AbstractGuiService<Administrator, Airline> {
 
 	@Autowired
-	protected AdministratorAirlineRepository repository;
+	protected AdministratorAirlineRepository	repository;
+
+	@Autowired
+	private SpamDetector						spamDetector;
 
 
 	@Override
@@ -52,6 +57,11 @@ public class AdministratorAirlineUpdateService extends AbstractGuiService<Admini
 			Airline existing = this.repository.findByIataCode(airline.getIataCode());
 			super.state(existing == null || existing.getId() == airline.getId(), //
 				"iataCode", "administrator.airline.form.error.duplicated-iata");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("name")) {
+			boolean isSpamFn = this.spamDetector.isSpam(airline.getName());
+			super.state(!isSpamFn, "name", "airline.error.spam");
 		}
 	}
 

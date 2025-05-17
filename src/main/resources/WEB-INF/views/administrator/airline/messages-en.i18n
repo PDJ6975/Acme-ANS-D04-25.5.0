@@ -21,3 +21,4 @@ administrator.airline.list.label.phoneNumber = Phone Number
 administrator.airline.list.title = List of Airlines
 
 administrator.airline.list.button.create=Create Airline
+airline.error.spam=Your input was detected as spam

@@ -12,3 +12,4 @@ authenticated.technician.form.button.update = Actualizar
 
 authenticated.technician.form.error.invalid-identifier = Formato de Número de Licencia inválido, use 2-3 letras mayúsculas seguidas de 6 dígitos
 authenticated.technician.form.error.invalid-phone = Número de teléfono inválido, use 6-15 dígitos con un '+' inicial opcional
+authenticated.error.spam=Esta entrada fué detectada como spam

@@ -3,14 +3,17 @@ package acme.features.customer.booking;
 
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
 import acme.entities.bookings.Booking;
 import acme.entities.bookings.BookingRecord;
 import acme.entities.flights.Flight;
+import acme.entities.legs.Leg;
 import acme.realms.Customer;
 
 @Repository
@@ -39,4 +42,10 @@ public interface CustomerBookingRepository extends AbstractRepository {
 
 	@Query("SELECT COUNT(b) > 0 FROM Booking b WHERE b.locatorCode = :locatorCode AND b.id != :id")
 	boolean existsByLocatorCodeAndNotId(String locatorCode, int id);
+
+	@Query("SELECT l FROM Leg l WHERE l.flight.id = :flightId ORDER BY l.scheduledArrival ASC")
+	List<Leg> findLegsByFlightIdOrderedByArrival(@Param("flightId") int flightId);
+
+	@Query("SELECT l FROM Leg l WHERE l.flight.id = :flightId ORDER BY l.scheduledDeparture ASC")
+	List<Leg> findLegsByFlightIdOrderedByDeparture(@Param("flightId") int flightId);
 }

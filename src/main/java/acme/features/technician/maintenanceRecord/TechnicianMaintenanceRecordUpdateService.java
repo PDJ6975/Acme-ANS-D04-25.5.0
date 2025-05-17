@@ -5,6 +5,8 @@ import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.acme.spam.detection.SpamDetector;
+
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractGuiService;
@@ -19,8 +21,10 @@ public class TechnicianMaintenanceRecordUpdateService extends AbstractGuiService
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private TechnicianMaintenanceRecordRepository repository;
+	private TechnicianMaintenanceRecordRepository	repository;
 
+	@Autowired
+	private SpamDetector							spamDetector;
 	// AbstractGuiService interface -------------------------------------------
 
 
@@ -71,6 +75,11 @@ public class TechnicianMaintenanceRecordUpdateService extends AbstractGuiService
 
 		if (!super.getBuffer().getErrors().hasErrors("estimatedCost") && maintenanceRecord.getEstimatedCost() != null)
 			super.state(maintenanceRecord.getEstimatedCost().getAmount() >= 0.0 && maintenanceRecord.getEstimatedCost().getAmount() <= 1_000_000.0, "estimatedCost", "technician.maintenance-record.form.error.estimatedCost", maintenanceRecord);
+
+		if (!super.getBuffer().getErrors().hasErrors("notes")) {
+			boolean isSpamFn = this.spamDetector.isSpam(maintenanceRecord.getNotes());
+			super.state(!isSpamFn, "notes", "technician.error.spam");
+		}
 	}
 
 	@Override
