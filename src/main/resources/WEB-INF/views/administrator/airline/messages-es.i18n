@@ -21,3 +21,4 @@ administrator.airline.list.label.phoneNumber = Teléfono
 administrator.airline.list.title = Listado de aerolíneas
 
 administrator.airline.list.button.create=Crear Aerolinea
+airline.error.spam=Esta entrada fué detectada como spam

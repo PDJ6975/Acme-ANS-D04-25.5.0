@@ -15,6 +15,9 @@ public class AdministratorSystemCurrencyUpdateService extends AbstractGuiService
 	@Autowired
 	protected AdministratorSystemCurrencyRepository repository;
 
+	@Autowired
+	private SpamDetector				spamDetector;
+
 
 	@Override
 	public void authorise() {
@@ -42,6 +45,16 @@ public class AdministratorSystemCurrencyUpdateService extends AbstractGuiService
 			String validCurrencies = systemConfiguration.getValidCurrencies();
 			boolean validCurrency = validCurrencies.contains(actualCurrency);
 			super.state(validCurrency, "actualCurrency", "administrator.system-configuration.error.invalid-currency");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("actualCurrency")) {
+			boolean isSpamFn = this.spamDetector.isSpam(systemConfiguration.getActualCurrency());
+			super.state(!isSpamFn, "actualCurrency", "customer.passenger.error.spam");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("validCurrencies")) {
+			boolean isSpamFn = this.spamDetector.isSpam(systemConfiguration.getValidCurrencies());
+			super.state(!isSpamFn, "validCurrencies", "customer.passenger.error.spam");
 		}
 	}
 

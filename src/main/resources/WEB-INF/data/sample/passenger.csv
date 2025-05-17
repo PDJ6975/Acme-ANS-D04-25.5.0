@@ -57,3 +57,20 @@ passenger-26,Pasaporte9,sofia@example.com,XA1234567,2000/03/03 00:00,,false
 #
 passenger-27,Ayuda Total,jose@example.com,ZA123456,2000/06/01 00:00,"Necesita ayuda por movilidad reducida y visión",false
 
+passenger-28,Injection Test,injection@example.com,AB123456,2001/01/01 00:00,"<marquee>Hacked</marquee>",false
+passenger-29,Latin Needs,latin@example.com,CD123456,2001/02/02 00:00,"โคโดโม อิปปง",false
+passenger-30,Email ESX,a@b.esx,EF123456,2001/03/03 00:00,,false
+passenger-31,Email Long1,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.doloris.edu,GH123456,2001/04/04 00:00,,false
+passenger-32,Email Long2,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolor.es.org,IJ123456,2001/05/05 00:00,,false
+passenger-33,DOB Min+Delta,dobmin@example.com,KL123456,2000/01/01 00:01,,false
+passenger-34,DOB Max,dobmax@example.com,MN123456,2022/07/30 00:00,,false
+passenger-35,Test Base,test.base@example.com,TB000001,2000/01/01 00:00,"Lorem ipsum dolor sit amet",false
+passenger-36,Test Empty,test.empty@example.com,TE000002,2000/01/01 00:00,,false
+passenger-37,Test MinPlus,test.minplus@example.com,TM000003,2000/01/01 00:00,"L",false
+passenger-38,Test Max,test.max@example.com,TX000004,2000/01/01 00:00,"Lorem ipsum dolor sit amet, consectetur adipiscing",false
+passenger-39,Test TooLong,test.toolong@example.com,TO000005,2000/01/01 00:00,"Lorem ipsum dolor sit amet, consectetur adipiscin",false
+passenger-40,Test Thai,test.thai@example.com,TT000006,2000/01/01 00:00,"โคโดโม อิปปง",false
+passenger-41,Test Arabic,test.arabic@example.com,TA000007,2000/01/01 00:00,"لوريم إيبسوم",false
+passenger-42,Test Chinese,test.chinese@example.com,TC000008,2000/01/01 00:00,"洛伦·伊普森",false
+passenger-43,Test Script,test.script@example.com,TS000009,2000/01/01 00:00,"<script>alert('Hacked!')</script>",false
+passenger-44,Test SQL,test.sql@example.com,TT000010,2000/01/01 00:00,"' or 'A' = 'A",false

@@ -41,3 +41,5 @@ customer.booking.form.error.invalid-locator = El código localizador debe tener 
 customer.booking.form.error.invalid-credit-card = El fragmento de tarjeta de crédito debe tener exactamente 4 dígitos
 
 customer.booking.form.label.flightInfo = Vuelo:
+
+customer.booking.form.error.invalid-currency = La moneda no es válida. Por favor, utilice una de las monedas permitidas.

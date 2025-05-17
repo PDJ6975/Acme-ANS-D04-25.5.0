@@ -3,6 +3,8 @@ package acme.features.authenticated.customer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.acme.spam.detection.SpamDetector;
+
 import acme.client.components.models.Dataset;
 import acme.client.components.principals.Authenticated;
 import acme.client.helpers.PrincipalHelper;
@@ -14,7 +16,10 @@ import acme.realms.Customer;
 public class AuthenticatedCustomerUpdateService extends AbstractGuiService<Authenticated, Customer> {
 
 	@Autowired
-	private AuthenticatedCustomerRepository repository;
+	private AuthenticatedCustomerRepository	repository;
+
+	@Autowired
+	private SpamDetector					spamDetector;
 
 
 	@Override
@@ -45,27 +50,34 @@ public class AuthenticatedCustomerUpdateService extends AbstractGuiService<Authe
 	}
 
 	@Override
-public void validate(final Customer object) {
-    assert object != null;
+	public void validate(final Customer object) {
+		assert object != null;
 
-    if (!super.getBuffer().getErrors().hasErrors("identifier")) {
-        super.state(object.getIdentifier().matches("^[A-Z]{2,3}\\d{6}$"), "identifier", 
-            "authenticated.customer.form.error.invalid-identifier");
-        
+		if (!super.getBuffer().getErrors().hasErrors("identifier")) {
+			super.state(object.getIdentifier().matches("^[A-Z]{2,3}\\d{6}$"), "identifier", "authenticated.customer.form.error.invalid-identifier");
 
-        if (!super.getBuffer().getErrors().hasErrors("identifier")) {
+			boolean isUnique = !this.repository.existsByIdentifierAndNotId(object.getIdentifier(), object.getId());
+			super.state(isUnique, "identifier", "authenticated.customer.form.error.duplicate-identifier");
+		}
 
-            boolean isUnique = !this.repository.existsByIdentifierAndNotId(
-                object.getIdentifier(), object.getId());
-            super.state(isUnique, "identifier", 
-                "authenticated.customer.form.error.duplicate-identifier");
-        }
-    }
+		if (!super.getBuffer().getErrors().hasErrors("phoneNumber"))
+			super.state(object.getPhoneNumber().matches("^\\+?\\d{6,15}$"), "phoneNumber", "authenticated.customer.form.error.invalid-phone");
 
-    if (!super.getBuffer().getErrors().hasErrors("phoneNumber"))
-        super.state(object.getPhoneNumber().matches("^\\+?\\d{6,15}$"), "phoneNumber", 
-            "authenticated.customer.form.error.invalid-phone");
-}
+		if (!super.getBuffer().getErrors().hasErrors("address")) {
+			boolean spamAddr = this.spamDetector.isSpam(object.getAddress());
+			super.state(!spamAddr, "address", "authenticated.customer.form.error.spam");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("city")) {
+			boolean spamCity = this.spamDetector.isSpam(object.getCity());
+			super.state(!spamCity, "city", "authenticated.customer.form.error.spam");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("country")) {
+			boolean spamCountry = this.spamDetector.isSpam(object.getCountry());
+			super.state(!spamCountry, "country", "authenticated.customer.form.error.spam");
+		}
+	}
 
 	@Override
 	public void perform(final Customer object) {

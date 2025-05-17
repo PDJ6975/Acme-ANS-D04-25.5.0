@@ -6,6 +6,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.acme.spam.detection.SpamDetector;
+
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractGuiService;
@@ -19,7 +21,10 @@ import acme.realms.managers.Manager;
 public class ManagerFlightCreateService extends AbstractGuiService<Manager, Flight> {
 
 	@Autowired
-	protected ManagerFlightRepository repository;
+	protected ManagerFlightRepository	repository;
+
+	@Autowired
+	private SpamDetector				spamDetector;
 
 
 	@Override
@@ -77,6 +82,11 @@ public class ManagerFlightCreateService extends AbstractGuiService<Manager, Flig
 	@Override
 	public void validate(final Flight flight) {
 		super.state(flight.getAirline() != null, "iataCode", "administrator.flight.error.null-airline");
+
+		if (!super.getBuffer().getErrors().hasErrors("description")) {
+			boolean isSpamFn = this.spamDetector.isSpam(flight.getDescription());
+			super.state(!isSpamFn, "description", "customer.passenger.error.spam");
+		}
 	}
 
 	@Override

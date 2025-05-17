@@ -48,3 +48,13 @@ user-account-customer-23,true,"UserIdentity{name: 'Cliente', surname: 'Veintitr√
 user-account-customer-24,true,"UserIdentity{name: 'Cliente', surname: 'Veinticuatro', email: 'customer24@acme.com'}",customer24,customer24
 user-account-customer-25,true,"UserIdentity{name: 'Cliente', surname: 'Veinticinco', email: 'customer25@acme.com'}",customer25,customer25
 user-account-customer-26,true,"UserIdentity{name: 'Cliente', surname: 'Veintis√©is', email: 'customer26@acme.com'}",customer26,customer26
+user-account-customer-27,true,"UserIdentity{name: 'New', surname: 'Customer27', email: 'customer27@acme.com'}",customer27,customer27
+user-account-customer-28,true,"UserIdentity{name: 'New', surname: 'Customer28', email: 'customer28@acme.com'}",customer28,customer28
+user-account-customer-29,true,"UserIdentity{name: 'New', surname: 'Customer29', email: 'customer29@acme.com'}",customer29,customer29
+user-account-customer-30,true,"UserIdentity{name: 'New', surname: 'Customer30', email: 'customer30@acme.com'}",customer30,customer30
+user-account-customer-31,true,"UserIdentity{name: 'New', surname: 'Customer31', email: 'customer31@acme.com'}",customer31,customer31
+user-account-customer-32,true,"UserIdentity{name: 'New', surname: 'Customer32', email: 'customer32@acme.com'}",customer32,customer32
+user-account-customer-33,true,"UserIdentity{name: 'New', surname: 'Customer33', email: 'customer33@acme.com'}",customer33,customer33
+user-account-customer-34,true,"UserIdentity{name: 'New', surname: 'Customer34', email: 'customer34@acme.com'}",customer34,customer34
+user-account-customer-35,true,"UserIdentity{name: 'New', surname: 'Customer35', email: 'customer35@acme.com'}",customer35,customer35
+user-account-customer-36,true,"UserIdentity{name: 'New', surname: 'Customer36', email: 'customer36@acme.com'}",customer36,customer36
