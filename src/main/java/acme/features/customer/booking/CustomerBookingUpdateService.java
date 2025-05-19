@@ -16,17 +16,17 @@ import acme.entities.bookings.TravelClass;
 import acme.entities.flights.Flight;
 import acme.entities.legs.Leg;
 import acme.entities.systemConfigurations.SystemCurrency;
-import acme.features.administrator.systemConfiguration.AdministratorSystemConfigurationRepository;
+import acme.features.administrator.systemCurrency.AdministratorSystemCurrencyRepository;
 import acme.realms.Customer;
 
 @GuiService
 public class CustomerBookingUpdateService extends AbstractGuiService<Customer, Booking> {
 
 	@Autowired
-	protected CustomerBookingRepository					repository;
+	protected CustomerBookingRepository				repository;
 
 	@Autowired
-	private AdministratorSystemConfigurationRepository	systemConfigRepository;
+	private AdministratorSystemCurrencyRepository	systemConfigRepository;
 
 
 	@Override

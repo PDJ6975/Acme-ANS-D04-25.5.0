@@ -3,6 +3,8 @@ package acme.features.administrator.systemCurrency;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.acme.spam.detection.SpamDetector;
+
 import acme.client.components.models.Dataset;
 import acme.client.components.principals.Administrator;
 import acme.client.services.AbstractGuiService;
@@ -13,10 +15,10 @@ import acme.entities.systemConfigurations.SystemCurrency;
 public class AdministratorSystemCurrencyUpdateService extends AbstractGuiService<Administrator, SystemCurrency> {
 
 	@Autowired
-	protected AdministratorSystemCurrencyRepository repository;
+	protected AdministratorSystemCurrencyRepository	repository;
 
 	@Autowired
-	private SpamDetector				spamDetector;
+	private SpamDetector							spamDetector;
 
 
 	@Override

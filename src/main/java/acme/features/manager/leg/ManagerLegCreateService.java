@@ -108,12 +108,13 @@ public class ManagerLegCreateService extends AbstractGuiService<Manager, Leg> {
 					super.state(airportConexion, "departureAirport", "manager.leg.error.airportConexion");
 				}
 			}
-		boolean equalAirport2 = leg.getDepartureAirport().equals(leg.getArrivalAirport());
-		super.state(!equalAirport2, "arrivalAirport", "manager.leg.error.equalAirport");
+			boolean equalAirport2 = leg.getDepartureAirport().equals(leg.getArrivalAirport());
+			super.state(!equalAirport2, "arrivalAirport", "manager.leg.error.equalAirport");
 
-		if (!super.getBuffer().getErrors().hasErrors("description")) {
-			boolean isSpamFn = this.spamDetector.isSpam(leg.getDescription());
-			super.state(!isSpamFn, "description", "customer.passenger.error.spam");
+			if (!super.getBuffer().getErrors().hasErrors("description")) {
+				boolean isSpamFn = this.spamDetector.isSpam(leg.getDescription());
+				super.state(!isSpamFn, "description", "customer.passenger.error.spam");
+			}
 		}
 	}
 
