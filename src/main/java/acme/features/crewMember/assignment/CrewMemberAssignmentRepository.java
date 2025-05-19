@@ -90,7 +90,7 @@ public interface CrewMemberAssignmentRepository extends AbstractRepository {
 			  AND a.draftMode = false
 			  AND a.leg.draftMode = false
 			  AND (
-			      a.leg.scheduledDeparture < :end AND a.leg.scheduledArrival > :start
+			      a.leg.scheduledDeparture <= :end AND a.leg.scheduledArrival >= :start
 			  )
 		""")
 	boolean existsOverlappingAssignment(int memberId, Date start, Date end);

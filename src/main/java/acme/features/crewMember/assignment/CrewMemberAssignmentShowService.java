@@ -70,7 +70,7 @@ public class CrewMemberAssignmentShowService extends AbstractGuiService<FlightCr
 
 		// ¿puede ver logs esta asignación?
 
-		boolean hasLog = assignment.getAssignmentStatus() == AssignmentStatus.CONFIRMED && !assignment.isDraftMode() && !assignment.getLeg().isDraftMode() && legInProgressOrCompleted;
+		boolean hasLog = assignment.getAssignmentStatus() == AssignmentStatus.CONFIRMED && !assignment.isDraftMode() && legInProgressOrCompleted;
 
 		dataset.put("hasLog", hasLog);
 
