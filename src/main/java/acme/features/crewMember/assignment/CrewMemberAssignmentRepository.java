@@ -26,7 +26,8 @@ public interface CrewMemberAssignmentRepository extends AbstractRepository {
 			  AND fa.assignmentStatus = 'CONFIRMED'
 			  AND fa.draftMode = false
 			  AND fa.leg.draftMode = false
-			ORDER BY fa.leg.scheduledArrival DESC
+			ORDER BY fa.leg.scheduledArrival DESC,
+				fa.id                    ASC
 		""")
 	Collection<FlightAssignment> findAssignmentsCompletedByMemberId(int memberId);
 
@@ -35,7 +36,8 @@ public interface CrewMemberAssignmentRepository extends AbstractRepository {
 			FROM FlightAssignment fa
 			WHERE fa.flightCrewMember.id = :memberId
 			  AND fa.leg.draftMode = false
-			ORDER BY fa.leg.scheduledArrival ASC
+			ORDER BY fa.leg.scheduledArrival ASC,
+				fa.id                    ASC
 		""")
 	Collection<FlightAssignment> findAssignmentsPlannedByMemberId(int memberId);
 
@@ -103,7 +105,8 @@ public interface CrewMemberAssignmentRepository extends AbstractRepository {
 			FROM Leg l
 			WHERE l.draftMode = false
 			  AND l.scheduledArrival > :now
-			ORDER BY l.scheduledDeparture ASC
+			ORDER BY l.scheduledDeparture ASC,
+				l.id                   ASC
 		""")
 	Collection<Leg> findAllLegsAvailableForAssignment(Date now);
 
