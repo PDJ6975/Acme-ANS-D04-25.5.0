@@ -5,6 +5,8 @@ import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.acme.spam.detection.SpamDetector;
+
 import acme.client.components.models.Dataset;
 import acme.client.components.principals.Administrator;
 import acme.client.components.views.SelectChoices;
@@ -18,7 +20,10 @@ import acme.entities.airlines.Airline;
 public class AdministratorAircraftCreateService extends AbstractGuiService<Administrator, Aircraft> {
 
 	@Autowired
-	protected AdministratorAircraftRepository repository;
+	protected AdministratorAircraftRepository	repository;
+
+	@Autowired
+	private SpamDetector						spamDetector;
 
 
 	@Override
@@ -59,6 +64,21 @@ public class AdministratorAircraftCreateService extends AbstractGuiService<Admin
 
 		boolean confirmation = super.getRequest().getData("confirmation", boolean.class);
 		super.state(confirmation, "confirmation", "administrator.aircraft.error.confirmation-required");
+
+		if (!super.getBuffer().getErrors().hasErrors("model")) {
+			boolean isSpamFn = this.spamDetector.isSpam(aircraft.getModel());
+			super.state(!isSpamFn, "model", "customer.passenger.error.spam");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("registrationNumber")) {
+			boolean isSpamFn = this.spamDetector.isSpam(aircraft.getRegistrationNumber());
+			super.state(!isSpamFn, "registrationNumber", "customer.passenger.error.spam");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("details")) {
+			boolean isSpamFn = this.spamDetector.isSpam(aircraft.getDetails());
+			super.state(!isSpamFn, "details", "customer.passenger.error.spam");
+		}
 	}
 
 	@Override

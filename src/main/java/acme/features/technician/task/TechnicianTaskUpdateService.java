@@ -3,6 +3,8 @@ package acme.features.technician.task;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.acme.spam.detection.SpamDetector;
+
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractGuiService;
@@ -15,7 +17,10 @@ import acme.realms.technicians.Technician;
 public class TechnicianTaskUpdateService extends AbstractGuiService<Technician, Task> {
 
 	@Autowired
-	private TechnicianTaskRepository repository;
+	private TechnicianTaskRepository	repository;
+
+	@Autowired
+	private SpamDetector				spamDetector;
 
 	// AbstractGuiService interface -------------------------------------------
 
@@ -56,6 +61,7 @@ public class TechnicianTaskUpdateService extends AbstractGuiService<Technician, 
 	public void validate(final Task task) {
 		if (task.getPriority() == null)
 			super.state(false, "priority", "typeMismatch.priority", task);
+
 		if (!super.getBuffer().getErrors().hasErrors("description") && task.getDescription() != null)
 			super.state(task.getDescription().length() <= 255, "description", "technician.task.form.error.description", task);
 
@@ -64,6 +70,11 @@ public class TechnicianTaskUpdateService extends AbstractGuiService<Technician, 
 
 		if (!super.getBuffer().getErrors().hasErrors("estimatedDuration") && task.getEstimatedDuration() != null)
 			super.state(task.getEstimatedDuration() >= 0 && task.getEstimatedDuration() <= 1000, "estimatedDuration", "technician.task.form.error.estimatedDuration", task);
+
+		if (!super.getBuffer().getErrors().hasErrors("description")) {
+			boolean isSpamFn = this.spamDetector.isSpam(task.getDescription());
+			super.state(!isSpamFn, "description", "technician.error.spam");
+		}
 	}
 
 	@Override

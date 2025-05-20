@@ -51,3 +51,8 @@ booking-27,SPEC50X,2022/01/12 20:00,ECONOMY,EUR 230.00,3456,false,customer-01,fl
 #
 booking-28,SPAG6F,2022/01/12 20:00,ECONOMY,EUR 230.00,3456,true,customer-01,flight-67
 
+booking-29,LOCBAS1,2022/09/01 10:00,ECONOMY,EUR 5000.00,1234,false,customer-03,flight-16
+booking-30,LOCMINA,2022/08/04 00:00,ECONOMY,EUR 100.00,2345,false,customer-04,flight-17
+booking-31,LOCMINB,2022/08/04 00:01,BUSINESS,EUR 200.00,3456,false,customer-05,flight-18
+booking-32,LOCMAXD,2200/12/31 23:58,ECONOMY,EUR 300.00,4567,false,customer-06,flight-19
+booking-33,LOCMAXE,2200/12/31 23:59,BUSINESS,EUR 400.00,5678,false,customer-07,flight-20

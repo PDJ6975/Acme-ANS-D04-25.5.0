@@ -3,6 +3,8 @@ package acme.features.authenticated.technician;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.acme.spam.detection.SpamDetector;
+
 import acme.client.components.models.Dataset;
 import acme.client.components.principals.Authenticated;
 import acme.client.components.principals.UserAccount;
@@ -15,7 +17,10 @@ import acme.realms.technicians.Technician;
 public class AuthenticatedTechnicianCreateService extends AbstractGuiService<Authenticated, Technician> {
 
 	@Autowired
-	private AuthenticatedTechnicianRepository repository;
+	private AuthenticatedTechnicianRepository	repository;
+
+	@Autowired
+	private SpamDetector						spamDetector;
 
 
 	@Override
@@ -59,6 +64,16 @@ public class AuthenticatedTechnicianCreateService extends AbstractGuiService<Aut
 
 		if (!super.getBuffer().getErrors().hasErrors("phoneNumber"))
 			super.state(object.getPhoneNumber().matches("^\\+?\\d{6,15}$"), "phoneNumber", "authenticated.technician.form.error.invalid-phone");
+
+		if (!super.getBuffer().getErrors().hasErrors("specialisation")) {
+			boolean isSpamFn = this.spamDetector.isSpam(object.getSpecialisation());
+			super.state(!isSpamFn, "specialisation", "authenticated.error.spam");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("certifications")) {
+			boolean isSpamFn = this.spamDetector.isSpam(object.getCertifications());
+			super.state(!isSpamFn, "certifications", "authenticated.error.spam");
+		}
 	}
 
 	@Override

@@ -4,6 +4,7 @@ package acme.features.customer.booking;
 import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -15,13 +16,19 @@ import acme.client.services.GuiService;
 import acme.entities.bookings.Booking;
 import acme.entities.bookings.TravelClass;
 import acme.entities.flights.Flight;
+import acme.entities.legs.Leg;
+import acme.entities.systemConfigurations.SystemCurrency;
+import acme.features.administrator.systemCurrency.AdministratorSystemCurrencyRepository;
 import acme.realms.Customer;
 
 @GuiService
 public class CustomerBookingCreateService extends AbstractGuiService<Customer, Booking> {
 
 	@Autowired
-	protected CustomerBookingRepository repository;
+	protected CustomerBookingRepository				repository;
+
+	@Autowired
+	private AdministratorSystemCurrencyRepository	systemConfigRepository;
 
 
 	@Override
@@ -60,6 +67,16 @@ public class CustomerBookingCreateService extends AbstractGuiService<Customer, B
 		super.state(existing == null, "locatorCode", "customer.booking.form.error.duplicate-locator");
 		super.state(booking.getFlight() != null, "flight", "customer.booking.form.error.flight-required");
 
+		if (!super.getBuffer().getErrors().hasErrors("price") && booking.getPrice() != null) {
+			String currency = booking.getPrice().getCurrency();
+			SystemCurrency systemConfig = this.systemConfigRepository.findSystemConfiguration();
+
+			if (systemConfig != null) {
+				boolean validCurrency = systemConfig.getValidCurrencies().contains(currency);
+				super.state(validCurrency, "price", "customer.booking.form.error.invalid-currency");
+			}
+		}
+
 		if (booking.getFlight() != null) {
 			Flight flight = booking.getFlight();
 
@@ -94,17 +111,19 @@ public class CustomerBookingCreateService extends AbstractGuiService<Customer, B
 		flights.add("0", "----", booking.getFlight() == null);
 
 		for (Flight flight : availableFlights) {
-
 			String tag = flight.getTag();
 			String shortTag = tag.length() > 20 ? tag.substring(0, 17) + "..." : tag;
 
+			Date scheduledDeparture = this.calculateScheduledDeparture(flight);
+			String destinationCity = this.calculateDestinationCity(flight);
+
 			String departureDateStr = "";
-			if (flight.getScheduledDeparture() != null) {
+			if (scheduledDeparture != null) {
 				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-				departureDateStr = sdf.format(flight.getScheduledDeparture());
+				departureDateStr = sdf.format(scheduledDeparture);
 			}
 
-			String destination = flight.getDestinationCity() != null ? flight.getDestinationCity() : "N/A";
+			String destination = destinationCity != null ? destinationCity : "N/A";
 			String label = String.format("%s | %s | %s", shortTag, departureDateStr, destination);
 
 			flights.add(Integer.toString(flight.getId()), label, flight.equals(booking.getFlight()));
@@ -112,6 +131,30 @@ public class CustomerBookingCreateService extends AbstractGuiService<Customer, B
 
 		dataset.put("flights", flights);
 		super.getResponse().addData(dataset);
+	}
+
+	private Date calculateScheduledDeparture(final Flight flight) {
+		List<Leg> legs = this.repository.findLegsByFlightIdOrderedByDeparture(flight.getId());
+
+		if (legs == null || legs.isEmpty())
+			return null;
+
+		Leg firstLeg = legs.get(0);
+		return firstLeg.getScheduledDeparture();
+	}
+
+	private String calculateDestinationCity(final Flight flight) {
+		List<Leg> legs = this.repository.findLegsByFlightIdOrderedByArrival(flight.getId());
+
+		if (legs == null || legs.isEmpty())
+			return "No legs available";
+
+		Leg lastLeg = legs.get(legs.size() - 1);
+
+		if (lastLeg.getArrivalAirport() != null)
+			return lastLeg.getArrivalAirport().getCity();
+		else
+			return "No arrival airport defined";
 	}
 
 }

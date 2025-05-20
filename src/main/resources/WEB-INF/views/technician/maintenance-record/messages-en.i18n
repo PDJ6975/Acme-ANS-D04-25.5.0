@@ -31,6 +31,7 @@ technician.maintenance-record.list.label.moment = Maintenance moment
 technician.maintenance-record.list.label.status = Status
 technician.maintenance-record.list.label.nextInspectionDue = Inspection due date
 technician.maintenance-record.list.label.draftMode = Draft mode
+technician.error.spam = Your input was detected as spam
 
 technician.maintenance-record.list.button.create = Create
 

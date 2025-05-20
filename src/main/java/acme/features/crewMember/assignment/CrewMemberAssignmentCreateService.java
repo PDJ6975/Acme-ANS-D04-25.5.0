@@ -5,6 +5,8 @@ import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.acme.spam.detection.SpamDetector;
+
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
 import acme.client.helpers.MomentHelper;
@@ -21,7 +23,10 @@ import acme.realms.members.FlightCrewMember;
 public class CrewMemberAssignmentCreateService extends AbstractGuiService<FlightCrewMember, FlightAssignment> {
 
 	@Autowired
-	protected CrewMemberAssignmentRepository repository;
+	protected CrewMemberAssignmentRepository	repository;
+
+	@Autowired
+	private SpamDetector						spamDetector;
 
 
 	@Override
@@ -96,6 +101,11 @@ public class CrewMemberAssignmentCreateService extends AbstractGuiService<Flight
 			// 5. No debe haber solapamiento
 			boolean isOverlapping = this.repository.existsOverlappingAssignment(member.getId(), leg.getScheduledDeparture(), leg.getScheduledArrival());
 			super.state(!isOverlapping, "*", "crewMember.assignment.error.overlapping");
+
+			if (!super.getBuffer().getErrors().hasErrors("comments")) {
+				boolean isSpamFn = this.spamDetector.isSpam(assignment.getComments());
+				super.state(!isSpamFn, "comments", "customer.passenger.error.spam");
+			}
 		}
 	}
 
