@@ -86,6 +86,7 @@ public class CrewMemberAssignmentDeleteService extends AbstractGuiService<Flight
 		dataset.put("crewRoles", choicesCrewRol);
 		dataset.put("assignmentStatuses", choicesAssignmentStatus);
 		dataset.put("masterId", assignment.getId());
+		dataset.put("draftMode", assignment.isDraftMode());
 
 		super.getResponse().addData(dataset);
 	}

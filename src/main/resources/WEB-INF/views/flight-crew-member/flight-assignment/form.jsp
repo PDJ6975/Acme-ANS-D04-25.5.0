@@ -57,7 +57,7 @@
     />
 
     <jstl:choose>    
-        <jstl:when test="${acme:anyOf(_command, 'show|update|publish')}">
+        <jstl:when test="${acme:anyOf(_command, 'show|update|publish|delete')}">
             <jstl:if test="${hasLog}">
 				<acme:button 
 					code="crewMember.assignment.form.button.logs" 
