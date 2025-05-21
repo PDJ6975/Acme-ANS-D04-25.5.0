@@ -29,13 +29,14 @@ public class CrewMemberActivityLogListService extends AbstractGuiService<FlightC
 			int assignmentId = super.getRequest().getData("masterId", int.class);
 			FlightAssignment assignment = this.repository.findAssignmentById(assignmentId);
 
-			// El vuelo debe haber comenzado
-			boolean legStarted = assignment.getLeg().getScheduledDeparture().before(MomentHelper.getCurrentMoment());
+			if (assignment != null) {
+				// El vuelo debe haber comenzado
+				boolean legStarted = assignment.getLeg().getScheduledDeparture().before(MomentHelper.getCurrentMoment());
 
-			// Entendemos que una asignación solo puede tener logs si: ella y la etapa son públicas y si la asignación está confirmada (para evitar incongruencias)
+				// Entendemos que una asignación solo puede tener logs si: ella y la etapa son públicas y si la asignación está confirmada (para evitar incongruencias)
 
-			authorised = assignment != null && super.getRequest().getPrincipal().hasRealm(assignment.getFlightCrewMember()) && assignment.getAssignmentStatus() == AssignmentStatus.CONFIRMED && !assignment.isDraftMode() && !assignment.getLeg().isDraftMode()
-				&& legStarted;
+				authorised = super.getRequest().getPrincipal().hasRealm(assignment.getFlightCrewMember()) && assignment.getAssignmentStatus() == AssignmentStatus.CONFIRMED && !assignment.isDraftMode() && !assignment.getLeg().isDraftMode() && legStarted;
+			}
 		}
 
 		super.getResponse().setAuthorised(authorised);

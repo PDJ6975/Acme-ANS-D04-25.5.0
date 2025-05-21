@@ -24,7 +24,7 @@
     <acme:input-integer code="crewMember.log.form.label.severityLevel" path="severityLevel" placeholder="crewMember.log.form.placeholder.severityLevel"/>
     
     <jstl:choose>
-    <jstl:when test="${acme:anyOf(_command, 'show|update|delete')}">
+    <jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish')}">
     	<jstl:if test="${validDraft == true}">
     		<acme:submit code="crewMember.log.list.button.update" action="/flight-crew-member/activity-log/update"/>
         	<acme:submit code="crewMember.log.list.button.delete" action="/flight-crew-member/activity-log/delete"/>

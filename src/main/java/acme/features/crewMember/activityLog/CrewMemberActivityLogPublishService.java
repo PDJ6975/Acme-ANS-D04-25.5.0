@@ -30,11 +30,13 @@ public class CrewMemberActivityLogPublishService extends AbstractGuiService<Flig
 			logId = super.getRequest().getData("id", int.class);
 			log = this.repository.findOneById(logId);
 
-			// El vuelo debe haber comenzado
-			boolean legStarted = !log.getFlightAssignment().getLeg().getScheduledDeparture().after(MomentHelper.getCurrentMoment());
+			if (log != null) {
+				// El vuelo debe haber comenzado
+				boolean legStarted = !log.getFlightAssignment().getLeg().getScheduledDeparture().after(MomentHelper.getCurrentMoment());
 
-			authorised = log != null && log.isDraftMode() && super.getRequest().getPrincipal().hasRealm(log.getFlightAssignment().getFlightCrewMember()) && log.getFlightAssignment().getAssignmentStatus() == AssignmentStatus.CONFIRMED
-				&& !log.getFlightAssignment().isDraftMode() && !log.getFlightAssignment().getLeg().isDraftMode() && legStarted;
+				authorised = log.isDraftMode() && super.getRequest().getPrincipal().hasRealm(log.getFlightAssignment().getFlightCrewMember()) && log.getFlightAssignment().getAssignmentStatus() == AssignmentStatus.CONFIRMED
+					&& !log.getFlightAssignment().isDraftMode() && !log.getFlightAssignment().getLeg().isDraftMode() && legStarted;
+			}
 		}
 
 		super.getResponse().setAuthorised(authorised);
@@ -84,7 +86,7 @@ public class CrewMemberActivityLogPublishService extends AbstractGuiService<Flig
 
 		dataset = super.unbindObject(log, "registrationMoment", "typeOfIncident", "description", "severityLevel");
 		dataset.put("validDraft", log.isDraftMode() && !log.getFlightAssignment().isDraftMode() && !log.getFlightAssignment().getLeg().isDraftMode());
-		dataset.put("masterId", super.getRequest().getData("masterId", int.class));
+		//dataset.put("masterId", super.getRequest().getData("masterId", int.class));
 
 		super.getResponse().addData(dataset);
 	}
