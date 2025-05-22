@@ -71,7 +71,7 @@ public class CrewMemberActivityLogPublishService extends AbstractGuiService<Flig
 
 		Date now = MomentHelper.getCurrentMoment();
 		Date departure = log.getFlightAssignment().getLeg().getScheduledDeparture();
-		super.state(departure.before(now), "*", "crewMember.log.error.leg.not-started");
+		super.state(!departure.after(now), "*", "crewMember.log.error.leg.not-started");
 	}
 
 	@Override

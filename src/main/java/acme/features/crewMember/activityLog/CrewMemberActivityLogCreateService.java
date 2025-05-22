@@ -91,7 +91,7 @@ public class CrewMemberActivityLogCreateService extends AbstractGuiService<Fligh
 			super.state(!isSpamFn, "description", "customer.passenger.error.spam");
 		}
 		Date departure = log.getFlightAssignment().getLeg().getScheduledDeparture();
-		super.state(departure.before(now), "*", "crewMember.log.error.leg.not-started");
+		super.state(!departure.after(now), "*", "crewMember.log.error.leg.not-started");
 	}
 
 	@Override

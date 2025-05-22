@@ -31,7 +31,7 @@ public class CrewMemberActivityLogListService extends AbstractGuiService<FlightC
 
 			if (assignment != null) {
 				// El vuelo debe haber comenzado
-				boolean legStarted = assignment.getLeg().getScheduledDeparture().before(MomentHelper.getCurrentMoment());
+				boolean legStarted = !assignment.getLeg().getScheduledDeparture().after(MomentHelper.getCurrentMoment());
 
 				// Entendemos que una asignación solo puede tener logs si: ella y la etapa son públicas y si la asignación está confirmada (para evitar incongruencias)
 
