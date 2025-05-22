@@ -26,6 +26,10 @@ Enlaces a videos:
 
 Antonio Rodríguez Calderón (PDJ6975) - Requisito 21 Sudent #3: https://youtu.be/2T38kO-ZmmQ
 
+Pablo Olivencia Moreno (pabolimor) - Requisito 21 Student #2: https://youtu.be/jZEeqYSy1Qo
+
+Testing informal requisito 14 (grupal): https://youtu.be/qkmyFK2sCe0
+
 
 Descripción del Proyecto
 
