@@ -12,7 +12,7 @@ passenger-04,"Nombre Larguísimo Lorem Ipsum Dolor Sit Amet, Consectetur Adipisc
 #
 # email
 #
-passenger-05,Ana Ruiz,a@b.es,IJ654321,2000/02/02 00:00,,false
+passenger-05,Ana Ruiz,a@b.es,IJ654321,2000/02/02 00:00,,true
 passenger-06,Carlos Gutiérrez,"nombre.muy.largo+alias@subdominio.ejemplo.com",KL765432,2002/11/19 00:00,,false
 #
 # passportNumber
@@ -73,4 +73,4 @@ passenger-40,Test Thai,test.thai@example.com,TT000006,2000/01/01 00:00,"โค�
 passenger-41,Test Arabic,test.arabic@example.com,TA000007,2000/01/01 00:00,"لوريم إيبسوم",false
 passenger-42,Test Chinese,test.chinese@example.com,TC000008,2000/01/01 00:00,"洛伦·伊普森",false
 passenger-43,Test Script,test.script@example.com,TS000009,2000/01/01 00:00,"<script>alert('Hacked!')</script>",false
-passenger-44,Test SQL,test.sql@example.com,TT000010,2000/01/01 00:00,"' or 'A' = 'A",false
+passenger-45,Maria Perez,maria@maria.com,53345421A,2000/01/01 00:00,"Lorem ipsum",false

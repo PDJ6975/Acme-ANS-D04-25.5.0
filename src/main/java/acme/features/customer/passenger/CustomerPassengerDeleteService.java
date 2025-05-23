@@ -5,7 +5,6 @@ import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import acme.client.components.models.Dataset;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.bookings.BookingRecord;
@@ -58,14 +57,6 @@ public class CustomerPassengerDeleteService extends AbstractGuiService<Customer,
 
 	@Override
 	public void unbind(final Passenger passenger) {
-		Dataset dataset = super.unbindObject(passenger, "fullName", "email", "passportNumber", "dateOfBirth", "specialNeeds", "draftMode");
-		int passengerId = passenger.getId();
-		Collection<BookingRecord> records = this.repository.findBookingRecordsByPassengerId(passengerId);
-		if (!records.isEmpty()) {
-			BookingRecord record = records.iterator().next();
-			dataset.put("masterId", record.getBooking().getId());
-		}
-
-		super.getResponse().addData(dataset);
+		;
 	}
 }
