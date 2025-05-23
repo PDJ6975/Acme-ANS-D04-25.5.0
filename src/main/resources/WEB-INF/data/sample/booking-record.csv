@@ -1,6 +1,6 @@
 key,key:booking,key:passenger
 #
-# Registros para todos los pasajeros según la asignación del csv original
+#
 #
 booking-record-01,booking-01,passenger-01
 booking-record-02,booking-01,passenger-02
@@ -28,4 +28,4 @@ booking-record-23,booking-12,passenger-23
 booking-record-24,booking-13,passenger-24
 booking-record-25,booking-13,passenger-25
 booking-record-26,booking-14,passenger-26
-booking-record-27,booking-14,passenger-27
+booking-record-28,booking-28,passenger-45
