@@ -24,10 +24,12 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+
 @Table(indexes = {
 	@Index(columnList = "flight_assignment_id") // Optimiza findLogsByMasterId
 // Resto se ve optimizado por su PK
 })
+
 public class ActivityLog extends AbstractEntity {
 
 	// Serialisation version

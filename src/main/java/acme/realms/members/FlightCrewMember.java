@@ -25,7 +25,9 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+
 @Table(indexes = {
+
 	@Index(columnList = "availabilityStatus") // Mejora findAllAvailableCrewMembers del repositorio de FlightAssignment
 })
 public class FlightCrewMember extends AbstractRole {

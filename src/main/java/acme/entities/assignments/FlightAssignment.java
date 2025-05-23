@@ -27,13 +27,19 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+
 @Table(indexes = {
+
 	@Index(columnList = "flight_crew_member_id, assignmentStatus, draftMode"), // findAssignmentsCompletedByMemberId
+
 	@Index(columnList = "leg_id, flight_crew_member_id, draftMode"), // existsPublishedAssignmentForLegAndCrewMember
+
 	@Index(columnList = "leg_id, crewRole, draftMode"), // existsPublishedAssignmentForLegWithRole, findAssignmentByLegIdAndRole (dos prefijos izquierdos)
+
 	@Index(columnList = "flight_crew_member_id, draftMode") // existsOverlappingAssignment, findAssignmentsPlannedByMemberId (prefijo izquierdo)
 // El resto de queries o bien utilizan el PK implícito o hacen referencia a índices que deben ser declarados en otras entidades
 })
+
 public class FlightAssignment extends AbstractEntity {
 
 	// Serialisation version
