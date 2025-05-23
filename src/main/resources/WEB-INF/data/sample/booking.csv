@@ -7,7 +7,7 @@ booking-02,XY987Z,2024/11/10 08:30,ECONOMY,EUR 100.00,,true,customer-02,flight-0
 #
 # locatorCode probado (longitud 6 y 8)
 #
-booking-03,ABC123,2024/12/20 15:00,ECONOMY,EUR 200.00,5678,false,customer-03,flight-03
+booking-03,ABC123,2024/12/20 15:00,ECONOMY,EUR 200.00,5678,true,customer-03,flight-03
 booking-04,ZXCV1234,2024/12/21 12:00,BUSINESS,EUR 300.00,4321,false,customer-04,flight-04
 #
 # purchaseMoment probado (límites válidos)
@@ -43,7 +43,7 @@ booking-23,PASSRT6A,2022/01/08 16:00,ECONOMY,EUR 190.00,2222,false,customer-23,f
 booking-24,PASSRT7B,2022/01/09 17:00,ECONOMY,EUR 200.00,1111,false,customer-24,flight-24
 booking-25,PASSRT8C,2022/01/10 18:00,BUSINESS,EUR 210.00,1234,false,customer-25,flight-25
 booking-26,PASSRT9D,2022/01/11 19:00,BUSINESS,EUR 220.00,2345,false,customer-26,flight-26
-booking-27,SPEC50X,2022/01/12 20:00,ECONOMY,EUR 230.00,3456,false,customer-01,flight-27
+booking-27,SPEC50X,2022/01/12 20:00,ECONOMY,EUR 230.00,1234,true,customer-01,flight-27
 
 
 #
