@@ -10,6 +10,7 @@ import java.net.http.HttpRequest.BodyPublishers;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -24,6 +25,7 @@ import acme.client.components.principals.Administrator;
 import acme.client.controllers.GuiController;
 import acme.client.helpers.Assert;
 import acme.client.helpers.PrincipalHelper;
+import acme.client.helpers.SpringHelper;
 import acme.entities.visas.VisaRequirement;
 
 @GuiController
@@ -73,11 +75,11 @@ public class AdministratorSystemPopulateVisaController {
 	// Hace ~25 llamadas a la API y retorna cuántos inserts hizo -> Limitado por plan gratuito
 
 	protected int doPopulateVisaRequirements() throws Exception {
-		// Lista limitada a ~25 combos para no agotar la cuota
+		// Lista limitada a ~2 combos para no agotar la cuota
 		List<String[]> combos = List.of(new String[] {
-			"US", "BH"
+			"US", "ES"
 		}, new String[] {
-			"US", "DE"
+			"GB", "DE"
 		});
 
 		/*
@@ -118,7 +120,7 @@ public class AdministratorSystemPopulateVisaController {
 			String destination = combo[1];
 
 			// 1) Llamar a la API -> si hay error lanza excepción
-			VisaRequirement result = this.callVisaApi(passport, destination);
+			VisaRequirement result = this.fetchVisaRequirement(passport, destination);
 
 			// 2) Comprobamos si existe en BD
 			VisaRequirement existing = this.repository.findOneByPassportAndDestination(result.getPassportCountry(), result.getDestinationCountry());
@@ -129,6 +131,14 @@ public class AdministratorSystemPopulateVisaController {
 		}
 
 		return insertedCount;
+	}
+
+	protected VisaRequirement fetchVisaRequirement(final String passport, final String destination) throws IOException, InterruptedException {
+
+		if (SpringHelper.isRunningOn("development"))
+			return this.callVisaApi(passport, destination);     // versión real
+		else
+			return this.computeMockedVisaRequirement(passport, destination); // mock
 	}
 
 	// callVisaApi -> Envía la request y parsea la respuesta, si algo falla lanza excepción
@@ -149,6 +159,43 @@ public class AdministratorSystemPopulateVisaController {
 		else
 			// Si no es 200, lanzamos excepción
 			throw new RuntimeException("API responded with status: " + response.statusCode());
+	}
+
+	//  Mock local para los tests funcionales 
+	protected VisaRequirement computeMockedVisaRequirement(final String passportIso, final String destinationIso) {
+
+		Map<String, VisaRequirement> catalogue = Map.ofEntries(
+
+			Map.entry("US-ES", AdministratorSystemPopulateVisaController.build("US", "Lorem ipsum dolor sit ame", "ASIA", "Manama", "BHD", "+973", "UTC+3", "ON-ARRIVAL", "14 days", "6 months", "Mock example", "https://example.com/bh")),
+
+			Map.entry("GB-DE", AdministratorSystemPopulateVisaController.build("GB", "Lorem ipsum dolor sit ame", "EUROPE", "Berlin", "EUR", "+49", "UTC+1", "SCHENGEN", "90 days", "3 months", "", "https://example.com/de"))
+
+		);
+
+		// valor por defecto
+		return catalogue.getOrDefault(passportIso + "-" + destinationIso, AdministratorSystemPopulateVisaController.build(passportIso, destinationIso, "", "", "", "", "", "UNKNOWN", "", "", "", ""));
+	}
+
+	// Definimos un método build para no repetir setters
+	private static VisaRequirement build(final String pass, final String dest, final String cont, final String capital, final String currency, final String phone, final String tz, final String visaType, final String stay, final String passValidity,
+		final String extra, final String link) {
+
+		VisaRequirement vr = new VisaRequirement();
+
+		vr.setPassportCountry(pass);
+		vr.setDestinationCountry(dest);
+		vr.setContinent(cont);
+		vr.setCapital(capital);
+		vr.setCurrency(currency);
+		vr.setPhoneCode(phone);
+		vr.setTimezone(tz);
+		vr.setVisaType(visaType);
+		vr.setStayDuration(stay);
+		vr.setPassportValidity(passValidity);
+		vr.setAdditionalInfo(extra);
+		vr.setOfficialLink(link);
+
+		return vr;
 	}
 
 	// parseApiResponse -> con Jackson, si algo falla, se lanza excepción.
