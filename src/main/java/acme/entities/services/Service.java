@@ -46,7 +46,7 @@ public class Service extends AbstractEntity {
 	private String				name;
 
 	@Mandatory
-	@ValidUrl(remote = false)
+	@ValidUrl(remote = true)
 	@Automapped
 	private String				link;
 
