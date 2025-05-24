@@ -3,7 +3,10 @@ package acme.entities.services;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Index;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
@@ -22,6 +25,13 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@Table(indexes = {
+	@Index(columnList = "name") // acelera ORDER BY name ASC
+}, uniqueConstraints = {
+	@UniqueConstraint(columnNames = {
+		"promotionCode"
+	})
+})
 public class Service extends AbstractEntity {
 
 	// Serialisation version
