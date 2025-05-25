@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.aircrafts.Aircraft;
@@ -20,12 +21,9 @@ public class TechnicianMaintenanceRecordShowService extends AbstractGuiService<T
 	@Autowired
 	private TechnicianMaintenanceRecordRepository repository;
 
-	// AbstractGuiService interface -------------------------------------------
-
 
 	@Override
 	public void authorise() {
-
 		boolean status;
 		int masterId;
 		MaintenanceRecord maintenanceRecord;
@@ -50,14 +48,15 @@ public class TechnicianMaintenanceRecordShowService extends AbstractGuiService<T
 
 	@Override
 	public void unbind(final MaintenanceRecord maintenanceRecord) {
-		Collection<Aircraft> aircrafts;
-		Dataset dataset;
-		SelectChoices selectAircrafts;
-		SelectChoices selectStatus;
-		aircrafts = this.repository.findAllAircrafts();
-		selectStatus = SelectChoices.from(StatusMaintenance.class, maintenanceRecord.getStatus());
-		selectAircrafts = SelectChoices.from(aircrafts, "registrationNumber", maintenanceRecord.getAircraft());
-		dataset = super.unbindObject(maintenanceRecord, "moment", "status", "nextInspectionDue", "estimatedCost", "notes", "draftMode");
+		Collection<Aircraft> aircrafts = this.repository.findAllAircrafts();
+		SelectChoices selectStatus = SelectChoices.from(StatusMaintenance.class, maintenanceRecord.getStatus());
+		SelectChoices selectAircrafts = SelectChoices.from(aircrafts, "registrationNumber", maintenanceRecord.getAircraft());
+
+		// Obtener dataset estándar
+		Dataset dataset = super.unbindObject(maintenanceRecord, "moment", "status", "nextInspectionDue", "estimatedCost", "notes", "draftMode");
+		// Sobrescribir el campo 'moment' con la fecha actual
+		dataset.put("moment", MomentHelper.getCurrentMoment());
+
 		dataset.put("technician", maintenanceRecord.getTechnician().getIdentity().getFullName());
 		dataset.put("aircraft", selectAircrafts.getSelected().getKey());
 		dataset.put("aircrafts", selectAircrafts);
