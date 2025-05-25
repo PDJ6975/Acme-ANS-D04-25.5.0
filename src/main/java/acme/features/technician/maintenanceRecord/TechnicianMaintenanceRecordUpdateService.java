@@ -41,13 +41,7 @@ public class TechnicianMaintenanceRecordUpdateService extends AbstractGuiService
 		maintenanceRecord = this.repository.findMaintenanceRecordById(maintenanceRecordId);
 		technician = maintenanceRecord == null ? null : maintenanceRecord.getTechnician();
 		status = maintenanceRecord != null && maintenanceRecord.isDraftMode() && super.getRequest().getPrincipal().hasRealm(technician);
-		Integer aircraftId = super.getRequest().getData("aircraft", int.class, null);
 
-		if (aircraftId != null && aircraftId != 0) {
-			Collection<Aircraft> available = this.repository.findAllAircrafts();
-			boolean aircraftIsAvailable = available.stream().anyMatch(l -> l.getId() == aircraftId);
-			status = status && aircraftIsAvailable;
-		}
 		super.getResponse().setAuthorised(status);
 	}
 
@@ -65,7 +59,14 @@ public class TechnicianMaintenanceRecordUpdateService extends AbstractGuiService
 		super.bindObject(maintenanceRecord, "status", "nextInspectionDue", "estimatedCost", "notes");
 		maintenanceRecord.setMoment(MomentHelper.getCurrentMoment());
 		maintenanceRecord.setTechnician(technician);
-		maintenanceRecord.setAircraft(super.getRequest().getData("aircraft", Aircraft.class));
+		// 1) Lee el id que vino en la petición (que tú mismo metes como hidden en el formulario)
+		int id = super.getRequest().getData("id", int.class);
+
+		// 2) Vuelve a cargar el objeto completo de la BD
+		MaintenanceRecord original = this.repository.findMaintenanceRecordById(id);
+
+		// 3) No aceptes ningún cambio en el aircraft: copia el que tenía antes
+		maintenanceRecord.setAircraft(original.getAircraft());
 	}
 
 	@Override

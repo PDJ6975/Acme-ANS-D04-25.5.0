@@ -5,8 +5,11 @@ import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.acme.spam.detection.SpamDetector;
+
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.aircrafts.Aircraft;
@@ -19,7 +22,10 @@ import acme.realms.technicians.Technician;
 public class TechnicianMaintenanceRecordPublishService extends AbstractGuiService<Technician, MaintenanceRecord> {
 
 	@Autowired
-	private TechnicianMaintenanceRecordRepository repository;
+	private TechnicianMaintenanceRecordRepository	repository;
+
+	@Autowired
+	private SpamDetector							spamDetector;
 
 	// AbstractGuiService interface -------------------------------------------
 
@@ -55,10 +61,18 @@ public class TechnicianMaintenanceRecordPublishService extends AbstractGuiServic
 
 		Technician technician = (Technician) super.getRequest().getPrincipal().getActiveRealm();
 
-		super.bindObject(maintenanceRecord, "moment", "status", "nextInspectionDue", "estimatedCost", "notes");
-
+		super.bindObject(maintenanceRecord, "status", "nextInspectionDue", "estimatedCost", "notes");
+		maintenanceRecord.setMoment(MomentHelper.getCurrentMoment());
 		maintenanceRecord.setTechnician(technician);
-		maintenanceRecord.setAircraft(super.getRequest().getData("aircraft", Aircraft.class));
+		// 1) Lee el id que vino en la petición (que tú mismo metes como hidden en el formulario)
+		int id = super.getRequest().getData("id", int.class);
+
+		// 2) Vuelve a cargar el objeto completo de la BD
+		MaintenanceRecord original = this.repository.findMaintenanceRecordById(id);
+
+		// 3) No aceptes ningún cambio en el aircraft: copia el que tenía antes
+		maintenanceRecord.setAircraft(original.getAircraft());
+
 	}
 
 	@Override
@@ -70,6 +84,20 @@ public class TechnicianMaintenanceRecordPublishService extends AbstractGuiServic
 
 		boolean hasUnpublishedTask = tasks.stream().anyMatch(Task::isDraftMode);
 		super.state(!hasUnpublishedTask, "*", "technician.maintenance-record.form.error.not-all-tasks-published");
+
+		if (!super.getBuffer().getErrors().hasErrors("status"))
+			super.state(maintenanceRecord.getStatus() != null, "status", "technician.maintenance-record.form.error.noStatus", maintenanceRecord);
+
+		if (!super.getBuffer().getErrors().hasErrors("nextInspectionDue") && maintenanceRecord.getNextInspectionDue() != null)
+			super.state(maintenanceRecord.getNextInspectionDue().compareTo(maintenanceRecord.getMoment()) > 0, "nextInspectionDue", "technician.maintenance-record.form.error.nextInspectionDue", maintenanceRecord);
+
+		if (!super.getBuffer().getErrors().hasErrors("estimatedCost") && maintenanceRecord.getEstimatedCost() != null)
+			super.state(maintenanceRecord.getEstimatedCost().getAmount() >= 0.0 && maintenanceRecord.getEstimatedCost().getAmount() <= 1_000_000.0, "estimatedCost", "technician.maintenance-record.form.error.estimatedCost", maintenanceRecord);
+
+		if (!super.getBuffer().getErrors().hasErrors("notes")) {
+			boolean isSpamFn = this.spamDetector.isSpam(maintenanceRecord.getNotes());
+			super.state(!isSpamFn, "notes", "technician.error.spam");
+		}
 	}
 
 	@Override

@@ -10,7 +10,7 @@
 	<acme:input-moment code="technician.maintenance-record.form.label.nextInspectionDue" path="nextInspectionDue"/>
 	<acme:input-money code="technician.maintenance-record.form.label.estimatedCost" path="estimatedCost"/>
 	<acme:input-textarea code="technician.maintenance-record.form.label.notes" path="notes"/>
-	<acme:input-select code="technician.maintenance-record.form.label.aircraft" path="aircraft" choices="${aircrafts}" readonly="${acme:anyOf(_command, 'show|update')}"/>
+	<acme:input-select code="technician.maintenance-record.form.label.aircraft" path="aircraft" choices="${aircrafts}" readonly="${acme:anyOf(_command, 'show|update|publish')}"/>
 	<acme:input-textarea code="technician.maintenance-record.form.label.technician" path="technician" readonly="true"/>
 	
 	
