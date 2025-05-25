@@ -44,7 +44,7 @@ public class Leg extends AbstractEntity {
 	private String				flightNumber;
 
 	@Mandatory
-	@ValidNumber(min = 0, max = 19, message = "La duración del vuelo debe ser mayor que 0 horas")
+	@ValidNumber(min = 0, max = 19, message = "La duración del vuelo debe ser mayor que 0 horas y menor o igual que 19 horas")
 	@Automapped
 	private Double				duration;
 
