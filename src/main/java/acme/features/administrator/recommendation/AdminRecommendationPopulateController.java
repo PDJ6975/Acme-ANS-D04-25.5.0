@@ -24,6 +24,7 @@ import acme.client.components.principals.Administrator;
 import acme.client.controllers.GuiController;
 import acme.client.helpers.Assert;
 import acme.client.helpers.PrincipalHelper;
+import acme.client.helpers.SpringHelper;
 import acme.entities.airports.Airport;
 import acme.entities.recommendations.Recommendation;
 
@@ -64,6 +65,27 @@ public class AdminRecommendationPopulateController {
 		return result;
 	}
 
+	protected List<Recommendation> computeMockedRecommendations(final Airport airport) {
+		List<Recommendation> recommendations = new ArrayList<>();
+
+		if ("Sevilla".equalsIgnoreCase(airport.getCity())) {
+			Recommendation r1 = new Recommendation();
+			r1.setName("Plaza de España");
+			r1.setCategory("Monument");
+			r1.setAddress("Av. Isabel la Católica, 41013 Sevilla, Spain");
+			r1.setCity("Sevilla");
+			r1.setCountry("Spain");
+			r1.setLatitude(37.3772);
+			r1.setLongitude(-5.9869);
+			r1.setExternalLink("https://example.com/plaza-espana");
+			r1.setIconUrl("https://example.com/icon1.png");
+			r1.setAirport(airport);
+			recommendations.add(r1);
+		}
+
+		return recommendations;
+	}
+
 	protected int doPopulateRecommendations() throws IOException, InterruptedException {
 		List<Airport> airports = this.repository.findAllAirports();
 		int insertedCount = 0;
@@ -72,7 +94,9 @@ public class AdminRecommendationPopulateController {
 
 			if (airport.getCity() != null && !airport.getCity().isEmpty() && !airport.getCity().toLowerCase().contains("lorem")) {
 
-				List<Recommendation> recommendations = this.fetchRecommendations(airport);
+				boolean useMock = SpringHelper.isRunningOn("development") || SpringHelper.isRunningOn("tester") || SpringHelper.isRunningOn("tester#replay");
+
+				List<Recommendation> recommendations = useMock ? this.computeMockedRecommendations(airport) : this.fetchRecommendations(airport);
 
 				for (Recommendation recommendation : recommendations)
 					if (!this.repository.existsByNameAndAirport(recommendation.getName(), airport.getId())) {
