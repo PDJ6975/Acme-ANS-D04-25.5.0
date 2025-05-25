@@ -81,16 +81,12 @@ public class AssistanceAgentClaimCreateService extends AbstractGuiService<Assist
 		String legFlightNumber;
 		String username;
 		UserAccount user;
-		Type t;
 
 		legFlightNumber = super.getRequest().getData("leg.flightNumber", String.class);
 		Leg leg = this.repository.findLegByFlightNumber(legFlightNumber);
 
 		username = super.getRequest().getData("userAccount.username", String.class);
 		user = this.repository.findUserAccountByUsername(username);
-
-		if (!(claim.getType() == null))
-			t = super.getRequest().getData("type", Type.class);
 
 		if (username == null || username.trim().isEmpty())
 			super.state(false, "*", "assistant-agent.create.user-cant-be-null");
