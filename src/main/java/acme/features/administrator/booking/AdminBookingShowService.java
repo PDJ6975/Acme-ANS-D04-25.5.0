@@ -2,6 +2,7 @@
 package acme.features.administrator.booking;
 
 import java.util.Collection;
+import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -47,7 +48,8 @@ public class AdminBookingShowService extends AbstractGuiService<Administrator, B
 
 	@Override
 	public void unbind(final Booking booking) {
-		assert booking != null;
+
+		Objects.requireNonNull(booking, "booking must not be null");
 
 		Dataset dataset;
 		Collection<Passenger> passengers;
