@@ -5,12 +5,12 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:form> 
-	<acme:input-moment code="technician.maintenance-record.form.label.moment" path="moment"/>
+	<acme:input-moment code="technician.maintenance-record.form.label.moment" path="moment" readonly="true"/>
 	<acme:input-select code="technician.maintenance-record.form.label.status" path="status" choices="${statuses}"/>
 	<acme:input-moment code="technician.maintenance-record.form.label.nextInspectionDue" path="nextInspectionDue"/>
 	<acme:input-money code="technician.maintenance-record.form.label.estimatedCost" path="estimatedCost"/>
 	<acme:input-textarea code="technician.maintenance-record.form.label.notes" path="notes"/>
-	<acme:input-select code="technician.maintenance-record.form.label.aircraft" path="aircraft" choices="${aircrafts}" readonly="${acme:anyOf(_command, 'show')}"/>
+	<acme:input-select code="technician.maintenance-record.form.label.aircraft" path="aircraft" choices="${aircrafts}" readonly="${acme:anyOf(_command, 'show|update')}"/>
 	<acme:input-textarea code="technician.maintenance-record.form.label.technician" path="technician" readonly="true"/>
 	
 	
