@@ -23,6 +23,7 @@ master.menu.authenticated = Authenticated
 master.menu.authenticated.list-assignments = List Assignments
 master.menu.authenticated.list-service = List Services
 master.menu.authenticated.list-airports=List Airports
+master.menu.authenticated.money-exchage = Money exchange
 
 # master.menu.administrator ###################################################
 
