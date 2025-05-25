@@ -37,7 +37,7 @@ public class ManagerFlightDeleteService extends AbstractGuiService<Manager, Flig
 		int flightId = super.getRequest().getData("id", int.class);
 		Flight flight = this.repository.findOneById(flightId);
 
-		boolean status = flight != null && super.getRequest().getPrincipal().hasRealm(flight.getManager());
+		boolean status = flight != null && flight.isDraftMode() && super.getRequest().getPrincipal().hasRealm(flight.getManager());
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -131,14 +131,12 @@ public class ManagerFlightDeleteService extends AbstractGuiService<Manager, Flig
 		this.repository.deleteAll(legs);
 		this.repository.deleteAll(bookingRecords);
 		this.repository.deleteAll(bookings);
-		if (weather != null) {
+		if (weather != null)
 			this.repository.delete(weather);
-		}
 
 		// Finalmente, eliminar el vuelo
 		this.repository.delete(flight);
 	}
-
 
 	@Override
 	public void unbind(final Flight flight) {

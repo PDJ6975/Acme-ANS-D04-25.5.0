@@ -45,7 +45,7 @@ public class ManagerFlightUpdateService extends AbstractGuiService<Manager, Flig
 	@Override
 	public void bind(final Flight flight) {
 
-		super.bindObject(flight, "tag", "selfTransfer", "cost", "description", "scheduledDeparture", "scheduledArrival", "originCity", "destinationCity", "layovers", "airline");
+		super.bindObject(flight, "tag", "selfTransfer", "cost", "description", "airline");
 
 		Manager manager = (Manager) super.getRequest().getPrincipal().getActiveRealm();
 		flight.setManager(manager);
