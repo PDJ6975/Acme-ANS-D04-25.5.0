@@ -7,12 +7,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.Index;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
@@ -30,6 +29,10 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+
+@Table(indexes = {
+	@Index(columnList = "flight_id"), @Index(columnList = "scheduledArrival"), @Index(columnList = "scheduledDeparture")
+})
 
 public class Leg extends AbstractEntity {
 
