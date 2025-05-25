@@ -20,18 +20,17 @@ public class CustomerPassengerListService extends AbstractGuiService<Customer, P
 
 
 	@Override
-public void authorise() {
-    boolean status = false;
-    
-    if (super.getRequest().hasData("masterId", int.class)) {
-        int masterId = super.getRequest().getData("masterId", int.class);
-        Booking booking = this.repo.findBookingById(masterId);
-        status = booking != null && 
-                super.getRequest().getPrincipal().hasRealm(booking.getCustomer());
-    }
-    
-    super.getResponse().setAuthorised(status);
-}
+	public void authorise() {
+		boolean status = false;
+
+		if (super.getRequest().hasData("masterId", int.class)) {
+			int masterId = super.getRequest().getData("masterId", int.class);
+			Booking booking = this.repo.findBookingById(masterId);
+			status = booking != null && super.getRequest().getPrincipal().hasRealm(booking.getCustomer());
+		}
+
+		super.getResponse().setAuthorised(status);
+	}
 
 	@Override
 	public void load() {
