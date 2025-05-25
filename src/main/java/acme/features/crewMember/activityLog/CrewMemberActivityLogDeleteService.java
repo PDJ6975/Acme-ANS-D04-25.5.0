@@ -32,11 +32,11 @@ public class CrewMemberActivityLogDeleteService extends AbstractGuiService<Fligh
 
 			if (log != null) {
 
-				// El vuelo debe haber comenzado
-				boolean legStarted = !log.getFlightAssignment().getLeg().getScheduledDeparture().after(MomentHelper.getCurrentMoment());
+				// La etapa debe haber finalizado
+				boolean legFinished = !log.getFlightAssignment().getLeg().getScheduledArrival().after(MomentHelper.getCurrentMoment());
 
 				authorised = log.isDraftMode() && super.getRequest().getPrincipal().hasRealm(log.getFlightAssignment().getFlightCrewMember()) && log.getFlightAssignment().getAssignmentStatus() == AssignmentStatus.CONFIRMED
-					&& !log.getFlightAssignment().isDraftMode() && !log.getFlightAssignment().getLeg().isDraftMode() && legStarted;
+					&& !log.getFlightAssignment().isDraftMode() && !log.getFlightAssignment().getLeg().isDraftMode() && legFinished;
 			}
 		}
 
@@ -66,8 +66,8 @@ public class CrewMemberActivityLogDeleteService extends AbstractGuiService<Fligh
 		super.state(log.isDraftMode(), "*", "crewMember.log.error.already-published");
 
 		Date now = MomentHelper.getCurrentMoment();
-		Date departure = log.getFlightAssignment().getLeg().getScheduledDeparture();
-		super.state(!departure.after(now), "*", "crewMember.log.error.leg.not-started");
+		Date arrival = log.getFlightAssignment().getLeg().getScheduledArrival();
+		super.state(!arrival.after(now), "*", "crewMember.log.error.leg.finished");
 	}
 
 	@Override

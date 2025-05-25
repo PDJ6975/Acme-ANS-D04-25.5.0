@@ -56,7 +56,7 @@ public class CrewMemberAssignmentShowService extends AbstractGuiService<FlightCr
 	@Override
 	public void unbind(final FlightAssignment assignment) {
 		Dataset dataset;
-		boolean legInProgressOrCompleted = !assignment.getLeg().getScheduledDeparture().after(MomentHelper.getCurrentMoment());
+		boolean legFinished = !assignment.getLeg().getScheduledArrival().after(MomentHelper.getCurrentMoment());
 		SelectChoices choicesCrewRole = SelectChoices.from(CrewRole.class, assignment.getCrewRole());
 		SelectChoices choicesAssignmentStatus = SelectChoices.from(AssignmentStatus.class, assignment.getAssignmentStatus());
 
@@ -70,7 +70,7 @@ public class CrewMemberAssignmentShowService extends AbstractGuiService<FlightCr
 
 		// ¿puede ver logs esta asignación?
 
-		boolean hasLog = assignment.getAssignmentStatus() == AssignmentStatus.CONFIRMED && !assignment.isDraftMode() && legInProgressOrCompleted;
+		boolean hasLog = assignment.getAssignmentStatus() == AssignmentStatus.CONFIRMED && !assignment.isDraftMode() && legFinished;
 
 		dataset.put("hasLog", hasLog);
 

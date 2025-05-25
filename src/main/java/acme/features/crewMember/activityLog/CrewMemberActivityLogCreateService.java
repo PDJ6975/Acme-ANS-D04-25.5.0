@@ -35,12 +35,12 @@ public class CrewMemberActivityLogCreateService extends AbstractGuiService<Fligh
 			FlightAssignment assignment = this.repository.findAssignmentById(assignmentId);
 
 			if (assignment != null) {
-				// El vuelo debe haber comenzado
-				boolean legStarted = !assignment.getLeg().getScheduledDeparture().after(MomentHelper.getCurrentMoment());
+				// La etapa debe haber finalizado
+				boolean legFinished = !assignment.getLeg().getScheduledArrival().after(MomentHelper.getCurrentMoment());
 
 				// Entendemos que una asignación solo puede tener logs si: ella y la etapa son públicas y si la asignación está confirmada (para evitar incongruencias)
 
-				authorised = super.getRequest().getPrincipal().hasRealm(assignment.getFlightCrewMember()) && assignment.getAssignmentStatus() == AssignmentStatus.CONFIRMED && !assignment.isDraftMode() && !assignment.getLeg().isDraftMode() && legStarted;
+				authorised = super.getRequest().getPrincipal().hasRealm(assignment.getFlightCrewMember()) && assignment.getAssignmentStatus() == AssignmentStatus.CONFIRMED && !assignment.isDraftMode() && !assignment.getLeg().isDraftMode() && legFinished;
 			}
 		}
 
@@ -90,8 +90,8 @@ public class CrewMemberActivityLogCreateService extends AbstractGuiService<Fligh
 			boolean isSpamFn = this.spamDetector.isSpam(log.getDescription());
 			super.state(!isSpamFn, "description", "customer.passenger.error.spam");
 		}
-		Date departure = log.getFlightAssignment().getLeg().getScheduledDeparture();
-		super.state(!departure.after(now), "*", "crewMember.log.error.leg.not-started");
+		Date arrival = log.getFlightAssignment().getLeg().getScheduledArrival();
+		super.state(!arrival.after(now), "*", "crewMember.log.error.leg.finished");
 	}
 
 	@Override

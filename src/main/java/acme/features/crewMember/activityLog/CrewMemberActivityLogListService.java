@@ -30,12 +30,12 @@ public class CrewMemberActivityLogListService extends AbstractGuiService<FlightC
 			FlightAssignment assignment = this.repository.findAssignmentById(assignmentId);
 
 			if (assignment != null) {
-				// El vuelo debe haber comenzado
-				boolean legStarted = !assignment.getLeg().getScheduledDeparture().after(MomentHelper.getCurrentMoment());
+				// La etapa debe haber finalizado
+				boolean legFinished = !assignment.getLeg().getScheduledArrival().after(MomentHelper.getCurrentMoment());
 
 				// Entendemos que una asignación solo puede tener logs si: ella y la etapa son públicas y si la asignación está confirmada (para evitar incongruencias)
 
-				authorised = super.getRequest().getPrincipal().hasRealm(assignment.getFlightCrewMember()) && assignment.getAssignmentStatus() == AssignmentStatus.CONFIRMED && !assignment.isDraftMode() && !assignment.getLeg().isDraftMode() && legStarted;
+				authorised = super.getRequest().getPrincipal().hasRealm(assignment.getFlightCrewMember()) && assignment.getAssignmentStatus() == AssignmentStatus.CONFIRMED && !assignment.isDraftMode() && !assignment.getLeg().isDraftMode() && legFinished;
 			}
 		}
 
@@ -72,7 +72,7 @@ public class CrewMemberActivityLogListService extends AbstractGuiService<FlightC
 		masterId = super.getRequest().getData("masterId", int.class);
 		FlightAssignment assignment = this.repository.findAssignmentById(masterId);
 
-		boolean canCreate = assignment.getAssignmentStatus() == AssignmentStatus.CONFIRMED && !assignment.isDraftMode() && !assignment.getLeg().isDraftMode() && !assignment.getLeg().getScheduledDeparture().after(MomentHelper.getCurrentMoment());
+		boolean canCreate = assignment.getAssignmentStatus() == AssignmentStatus.CONFIRMED && !assignment.isDraftMode() && !assignment.getLeg().isDraftMode() && !assignment.getLeg().getScheduledArrival().after(MomentHelper.getCurrentMoment());
 
 		super.getResponse().addGlobal("canCreate", canCreate);
 		super.getResponse().addGlobal("masterId", masterId);

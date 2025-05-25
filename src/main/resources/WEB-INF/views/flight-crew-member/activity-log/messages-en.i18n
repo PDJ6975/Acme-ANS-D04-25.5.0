@@ -28,4 +28,4 @@ crewMember.log.error.severityLevel.required=Severity level is required
 crewMember.log.error.severityLevel.range=Severity must be between 0 and 10
 crewMember.log.error.registrationMoment.required=Registration moment is required
 crewMember.log.error.registrationMoment.past=Registration moment must be in the past
-crewMember.log.error.leg.not-started = The leg has not started yet
+crewMember.log.error.leg.finished = The leg has not finished yet
