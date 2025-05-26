@@ -28,7 +28,7 @@ fontsize=10
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>324</x>
+      <x>387</x>
       <y>648</y>
       <w>612</w>
       <h>162</h>
@@ -41,14 +41,14 @@ Customer
 + address: String {Mandatory, ValidString(max=255), Automapped}
 + city: String {Mandatory, ValidString(max=50), Automapped}
 + country: String {Mandatory, ValidString(max=50), Automapped}
-+ earnedPoints: Integer {Optional, ValidNumber(min=0, max=500), Automapped}
++ earnedPoints: Integer {Optional, ValidNumber(min=0, max=500000), Automapped}
 bg=pink</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>333</x>
+      <x>396</x>
       <y>432</y>
       <w>612</w>
       <h>135</h>
@@ -57,7 +57,7 @@ bg=pink</panel_attributes>
 Booking
 --
 + locatorCode: String {Mandatory, ValidString(pattern="^[A-Z0-9]{6,8}$"), Unique}
-+ purchaseMoment: Date {Mandatory, ValidMoment, Temporal(TemporalType.TIMESTAMP)}
++ purchaseMoment: Date {Mandatory, ValidMoment(past=true), Temporal(TemporalType.TIMESTAMP)}
 + travelClass: TravelClass {Mandatory, Valid, Automapped}
 + price: Money {Mandatory, ValidMoney(min=0.00, max=10000.00), Automapped}
 + creditCardNibble: String {Optional, ValidString(min=4, max=4), Automapped}
@@ -68,7 +68,7 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1053</x>
+      <x>1116</x>
       <y>207</y>
       <w>612</w>
       <h>135</h>
@@ -76,11 +76,11 @@ bg=green</panel_attributes>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Passenger
 --
-+ fullName: String {Mandatory, ValidString(max=256), Automapped}
++ fullName: String {Mandatory, ValidString(max=250), Automapped}
 + email: String {Mandatory, ValidEmail, Automapped}
 + passportNumber: String {Mandatory, ValidString(pattern="^[A-Z0-9]{6,9}$"), Automapped}
 + dateOfBirth: Date {Mandatory, ValidMoment(past=true), Temporal(TemporalType.TIMESTAMP)}
-+ specialNeeds: String {Optional, ValidString(max=51), Automapped}
++ specialNeeds: String {Optional, ValidString(max=50), Automapped}
 + draftMode: boolean {Mandatory, Automapped}
 bg=green</panel_attributes>
     <additional_attributes/>
@@ -88,7 +88,7 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>324</x>
+      <x>387</x>
       <y>873</y>
       <w>549</w>
       <h>234</h>
@@ -116,7 +116,7 @@ bg=cyan
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>171</x>
+      <x>234</x>
       <y>432</y>
       <w>144</w>
       <h>99</h>
@@ -125,16 +125,14 @@ bg=cyan
 TravelClass
 --
 + ECONOMY
-+ PREMIUM_ECONOMY
 + BUSINESS
-+ FIRST
 bg=LIGHT_GRAY</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>558</x>
+      <x>621</x>
       <y>207</y>
       <w>144</w>
       <h>90</h>
@@ -148,7 +146,7 @@ bg=blue</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>90</x>
+      <x>153</x>
       <y>207</y>
       <w>144</w>
       <h>90</h>
@@ -166,7 +164,7 @@ bg=blue</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1161</x>
+      <x>1224</x>
       <y>612</y>
       <w>396</w>
       <h>225</h>
@@ -190,7 +188,7 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>621</x>
+      <x>684</x>
       <y>558</y>
       <w>81</w>
       <h>108</h>
@@ -204,7 +202,7 @@ m2=*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>936</x>
+      <x>999</x>
       <y>477</y>
       <w>135</w>
       <h>36</h>
@@ -218,7 +216,7 @@ m2=1..*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>621</x>
+      <x>684</x>
       <y>288</y>
       <w>72</w>
       <h>162</h>
@@ -232,7 +230,7 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>927</x>
+      <x>990</x>
       <y>711</y>
       <w>252</w>
       <h>36</h>
@@ -246,7 +244,7 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1053</x>
+      <x>1116</x>
       <y>450</y>
       <w>288</w>
       <h>72</h>
@@ -262,7 +260,7 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1188</x>
+      <x>1251</x>
       <y>333</y>
       <w>81</w>
       <h>135</h>
