@@ -86,7 +86,7 @@ public class AssistanceAgentTrackingLogPublishService extends AbstractGuiService
 				TrackingLog firstFullLog = logMaxResolution.iterator().next();
 
 				boolean indicatorChanged = !log.getIndicator().equals(firstFullLog.getIndicator());
-				if (indicatorChanged)
+				if (firstFullLog.getResolutionPercentage() == 100.0 && indicatorChanged)
 					super.state(false, "*", "assistant-agent.create.cannot-change-indicator");
 			}
 

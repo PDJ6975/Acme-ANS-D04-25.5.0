@@ -46,7 +46,8 @@ public class AuthenticatedCustomerUpdateService extends AbstractGuiService<Authe
 	public void bind(final Customer object) {
 		assert object != null;
 
-		super.bindObject(object, "identifier", "phoneNumber", "address", "city", "country");
+		// Eliminar "identifier" de la lista de campos que pueden ser modificados
+		super.bindObject(object, "phoneNumber", "address", "city", "country");
 	}
 
 	@Override
@@ -92,6 +93,7 @@ public class AuthenticatedCustomerUpdateService extends AbstractGuiService<Authe
 
 		Dataset dataset;
 
+		// Seguimos incluyendo "identifier" para que se muestre en la vista
 		dataset = super.unbindObject(object, "identifier", "phoneNumber", "address", "city", "country");
 
 		super.getResponse().addData(dataset);
