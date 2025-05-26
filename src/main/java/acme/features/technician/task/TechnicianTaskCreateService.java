@@ -29,7 +29,15 @@ public class TechnicianTaskCreateService extends AbstractGuiService<Technician, 
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		int mrId = super.getRequest().getData("maintenanceRecordId", int.class);
+		MaintenanceRecord mr = this.repository.findMaintenanceRecordById(mrId);
+
+		// 3) Obtenemos el técnico logeado
+		Technician tech = (Technician) super.getRequest().getPrincipal().getActiveRealm();
+
+		// 4) Sólo autorizamos si existe y pertenece al técnico
+		boolean owner = mr != null && mr.getTechnician().equals(tech);
+		super.getResponse().setAuthorised(owner);
 	}
 
 	@Override
@@ -101,7 +109,6 @@ public class TechnicianTaskCreateService extends AbstractGuiService<Technician, 
 		dataset.put("type", selection.getSelected().getKey());
 		dataset.put("types", selection);
 		dataset.put("maintenanceRecordId", super.getRequest().getData("maintenanceRecordId", Integer.class));
-		System.out.println(dataset);
 		super.getResponse().addData(dataset);
 	}
 
