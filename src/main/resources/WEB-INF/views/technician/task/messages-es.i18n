@@ -21,11 +21,16 @@ technician.task.form.button.update = Actualizar
 technician.task.form.button.delete = Borrar
 technician.task.form.button.publish = Publicar
 
+technician.task.form.button/create = Crear
+technician.task.form.button/update = Actualizar
+technician.task.form.button/delete = Borrar
+technician.task.form.button/publish = Publicar
+
 technician.task.form.placeholder.example = 0.00 - 100.00
 
 technician.task.list.label.type = Tipo
 technician.task.list.label.description = Descripción
 technician.task.list.label.priority = Prioridad
-
+technician.task.form.error.invalidMaintenanceRecord=Este tecnico no puede crear tareas para una maintenance record que no le pertenece.
 technician.task.list.button.create = Crear
 typeMismatch.priority = La prioridad debe ser un número entero (por ejemplo: 1, 2, 3)

@@ -23,11 +23,17 @@ technician.task.form.button.update = Update
 technician.task.form.button.delete = Delete
 technician.task.form.button.publish = Publish
 
+technician.task.form.button/create = Create		
+technician.task.form.button/update = Update
+technician.task.form.button/delete = Delete
+technician.task.form.button/publish = Publish
+
 technician.task.form.placeholder.example = 0.00 - 100.00
 
 technician.task.list.label.type = Type
 technician.task.list.label.description = Description
 technician.task.list.label.priority = Priority
 
+technician.task.form.error.invalidMaintenanceRecord=This maintencance record is not yours
 technician.task.list.button.create = Create
 typeMismatch.priority = Priority must be an integer (e.g., 1, 2, 3)
