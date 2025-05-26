@@ -27,17 +27,17 @@ public class Task extends AbstractEntity {
 	private TypeTask			type;
 
 	@Mandatory
-	@ValidString(max = 255, message = "Debe contener 255 caracteres has superado el limite.")
+	@ValidString(max = 255)
 	@Automapped
 	private String				description;
 
 	@Mandatory
-	@ValidNumber(min = 0, max = 10, message = "Debe estar comprendido entre 0 y 10")
+	@ValidNumber(min = 0, max = 10)
 	@Automapped
 	private Integer				priority;
 
 	@Mandatory
-	@ValidNumber(min = 0, max = 1000, integer = 4, fraction = 1, message = "Debe estar expresado en horas. Maximo 1000 horas.")
+	@ValidNumber(min = 0, max = 1000, integer = 4, fraction = 1)
 	@Automapped
 	private Double				estimatedDuration;
 
