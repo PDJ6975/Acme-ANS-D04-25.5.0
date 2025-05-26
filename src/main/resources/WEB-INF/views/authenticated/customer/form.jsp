@@ -3,7 +3,8 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:form>
-    <acme:input-textbox code="authenticated.customer.form.label.identifier" path="identifier"/>
+    <!-- Usar input-textbox con readonly="true" en lugar de input-readonly -->
+    <acme:input-textbox code="authenticated.customer.form.label.identifier" path="identifier" readonly="true"/>
     <acme:input-textbox code="authenticated.customer.form.label.phoneNumber" path="phoneNumber"/>
     <acme:input-textbox code="authenticated.customer.form.label.address" path="address"/>
     <acme:input-textbox code="authenticated.customer.form.label.city" path="city"/>

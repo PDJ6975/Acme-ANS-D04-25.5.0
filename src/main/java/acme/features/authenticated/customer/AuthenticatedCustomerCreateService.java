@@ -45,14 +45,49 @@ public class AuthenticatedCustomerCreateService extends AbstractGuiService<Authe
 		object.setUserAccount(userAccount);
 		object.setEarnedPoints(0);
 
+		// Generar identificador con las iniciales del username
+		String username = userAccount.getUsername();
+		String initials = this.generateInitials(username);
+		// Generar 6 dígitos aleatorios
+		String digits = String.format("%06d", (int) (Math.random() * 1000000));
+
+		// Combinar para crear el identificador
+		String identifier = initials + digits;
+		object.setIdentifier(identifier);
+
 		super.getBuffer().addData(object);
+	}
+
+	// Método auxiliar para extraer las iniciales
+	private String generateInitials(String username) {
+		if (username == null || username.isEmpty())
+			return "XX"; // Valor por defecto
+
+		// Convertir a mayúsculas
+		username = username.toUpperCase();
+
+		// Extraer las primeras 2-3 letras, asegurando que sean solo letras (A-Z)
+		StringBuilder initials = new StringBuilder();
+		for (char c : username.toCharArray()) {
+			if (Character.isLetter(c) && initials.length() < 3)
+				initials.append(c);
+			if (initials.length() >= 2)
+				break; // Mínimo 2 letras
+		}
+
+		// Si no se encontraron suficientes letras, añadir X hasta tener 2
+		while (initials.length() < 2)
+			initials.append('X');
+
+		return initials.toString();
 	}
 
 	@Override
 	public void bind(final Customer object) {
 		assert object != null;
 
-		super.bindObject(object, "identifier", "phoneNumber", "address", "city", "country");
+		// Eliminamos "identifier" de aquí para que no sea modificable
+		super.bindObject(object, "phoneNumber", "address", "city", "country");
 	}
 
 	@Override
@@ -98,6 +133,7 @@ public class AuthenticatedCustomerCreateService extends AbstractGuiService<Authe
 
 		Dataset dataset;
 
+		// Seguimos incluyendo "identifier" para que se muestre en la vista
 		dataset = super.unbindObject(object, "identifier", "phoneNumber", "address", "city", "country");
 
 		super.getResponse().addData(dataset);
