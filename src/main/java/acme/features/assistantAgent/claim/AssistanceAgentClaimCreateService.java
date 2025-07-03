@@ -1,6 +1,8 @@
 
 package acme.features.assistantAgent.claim;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.acme.spam.detection.SpamDetector;
@@ -60,30 +62,21 @@ public class AssistanceAgentClaimCreateService extends AbstractGuiService<Assist
 
 	@Override
 	public void bind(final Claim claim) {
-		String legflightNumber;
-		Leg leg;
 		String username;
 		UserAccount user;
 
 		username = super.getRequest().getData("userAccount.username", String.class);
 		user = this.repository.findUserAccountByUsername(username);
-		legflightNumber = super.getRequest().getData("leg.flightNumber", String.class);
-		leg = this.repository.findLegByFlightNumber(legflightNumber);
 
-		super.bindObject(claim, "passengerEmail", "description", "type");
-		claim.setLeg(leg);
+		super.bindObject(claim, "passengerEmail", "description", "type", "leg");
 		claim.setUserAccount(user);
 
 	}
 
 	@Override
 	public void validate(final Claim claim) {
-		String legFlightNumber;
 		String username;
 		UserAccount user;
-
-		legFlightNumber = super.getRequest().getData("leg.flightNumber", String.class);
-		Leg leg = this.repository.findLegByFlightNumber(legFlightNumber);
 
 		username = super.getRequest().getData("userAccount.username", String.class);
 		user = this.repository.findUserAccountByUsername(username);
@@ -97,15 +90,6 @@ public class AssistanceAgentClaimCreateService extends AbstractGuiService<Assist
 			else
 				super.state(false, "*", "assistant-agent.create.user-not-exist");
 
-		if (legFlightNumber == null || legFlightNumber.trim().isEmpty())
-			super.state(false, "*", "assistant-agent.create.leg-cant-be-null");
-
-		if (!(legFlightNumber == null || legFlightNumber.trim().isEmpty()))
-			if (leg != null)
-				super.state(!leg.isDraftMode(), "*", "assistant-agent.create.leg-is-not-published");
-			else
-				super.state(false, "*", "assistant-agent.create.leg-not-exist");
-
 		if (!super.getBuffer().getErrors().hasErrors("description")) {
 			boolean isSpamFn = this.spamDetector.isSpam(claim.getDescription());
 			super.state(!isSpamFn, "description", "customer.passenger.error.spam");
@@ -114,6 +98,16 @@ public class AssistanceAgentClaimCreateService extends AbstractGuiService<Assist
 		if (!super.getBuffer().getErrors().hasErrors("passengerEmail")) {
 			boolean isSpamSn = this.spamDetector.isSpam(claim.getPassengerEmail());
 			super.state(!isSpamSn, "passengerEmail", "customer.passenger.error.spam");
+		}
+
+		if (claim.getLeg() != null) {
+			Leg leg = claim.getLeg();
+
+			super.state(!leg.isDraftMode(), "leg", "assistant-agent.create.leg-is-not-published");
+
+			Collection<Leg> avaiableLegs = this.repository.findLegsPastOrOngoing(MomentHelper.getCurrentMoment());
+
+			super.state(avaiableLegs.contains(leg), "leg", "assistant-agent.create.leg-not-avaiable");
 		}
 
 		;
@@ -127,9 +121,16 @@ public class AssistanceAgentClaimCreateService extends AbstractGuiService<Assist
 	@Override
 	public void unbind(final Claim claim) {
 		Dataset dataset;
-		dataset = super.unbindObject(claim, "passengerEmail", "description", "type", "userAccount.username", "leg.flightNumber");
+		dataset = super.unbindObject(claim, "passengerEmail", "description", "type", "userAccount.username");
 		SelectChoices claimType = SelectChoices.from(Type.class, claim.getType());
 		SelectChoices claimState = SelectChoices.from(State.class, claim.getState());
+		Collection<Leg> avaiableLegs = this.repository.findLegsPastOrOngoing(MomentHelper.getCurrentMoment());
+		Leg currentLeg = claim.getLeg();
+		if (currentLeg != null && !avaiableLegs.contains(currentLeg))
+			avaiableLegs.add(currentLeg);
+		SelectChoices legs = SelectChoices.from(avaiableLegs, "flightNumber", claim.getLeg());
+		dataset.put("legs", legs);
+		dataset.put("leg", legs.getSelected().getKey());
 		dataset.put("claimType", claimType);
 		dataset.put("claimState", claimState);
 		super.getResponse().addData(dataset);

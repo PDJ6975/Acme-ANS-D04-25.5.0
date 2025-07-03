@@ -2,6 +2,7 @@
 package acme.features.assistantAgent.claim;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -66,5 +67,14 @@ public interface AssistanceAgentClaimRepository extends AbstractRepository {
 		WHERE l.claim.id = :id
 		""")
 	Collection<TrackingLog> findTrackingLogsByClaimId(int id);
+
+	@Query("""
+		    SELECT l
+		    FROM Leg l
+		    WHERE (l.scheduledArrival <= :currentTime
+		       OR (l.scheduledDeparture <= :currentTime AND l.scheduledArrival >= :currentTime))
+		      AND l.draftMode = false
+		""")
+	Collection<Leg> findLegsPastOrOngoing(Date currentTime);
 
 }

@@ -48,10 +48,10 @@
         path="userAccount.username" 
         readonly="false"
     />
-    <acme:input-textbox
+    <acme:input-select
         code="assistanceAgents.claim.list.label.legFlightNumber" 
-        path="leg.flightNumber" 
-        readonly="false"
+        path="leg" 
+        choices="${legs}"
     />
     
     <jstl:choose>

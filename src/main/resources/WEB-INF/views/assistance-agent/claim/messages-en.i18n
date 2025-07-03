@@ -20,7 +20,7 @@ assistance-agent.claim.form.submit.publish = Publish
  master.menu.assistanceAgent.list-tracking-log = Tracking Logs
 
 assistant-agent.create.user-not-passenger-or-customer = The user must be a passanger or a customer	
-assistant-agent.create.leg-not-exist = There is no Leg with the flight number
+assistant-agent.create.leg-not-avaiable = This leg is not avaiable
 assistant-agent.create.user-cant-be-null = The username cant be null
 assistant-agent.create.user-not-exist = There is no user with the provided username
 assistant-agent.create.leg-cant-be-null = Leg Flight Number cant be null
