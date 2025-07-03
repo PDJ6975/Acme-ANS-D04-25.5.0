@@ -25,22 +25,22 @@ public class Aircraft extends AbstractEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	@Mandatory
-	@ValidString(max = 50, message = "El modelo puede tener máximo 50 caractéres")
+	@ValidString(max = 50)
 	@Automapped
 	private String				model;
 
 	@Mandatory
-	@ValidString(max = 50, message = "El número de registro puede tener máximo 50 caractéres")
+	@ValidString(max = 50)
 	@Column(unique = true)
 	private String				registrationNumber;
 
 	@Mandatory
-	@ValidNumber(min = 1, max = 900, message = "La capacidad mínima debe ser mayor que 0")
+	@ValidNumber(min = 1, max = 900)
 	@Automapped
 	private Integer				capacity;
 
 	@Mandatory
-	@ValidNumber(min = 2000, max = 50000, fraction = 2, message = "La capacidad debe estar entre 2000 y 50000 kilos")
+	@ValidNumber(min = 2000, max = 50000, fraction = 2)
 	@Automapped
 	private Double				cargoWeight;
 
@@ -50,7 +50,7 @@ public class Aircraft extends AbstractEntity {
 	private AircraftStatus		aircraftStatus;
 
 	@Optional
-	@ValidString(max = 255, message = "La descripción debe tener máximo 255 caractéres")
+	@ValidString(max = 255)
 	@Automapped
 	private String				details;
 
